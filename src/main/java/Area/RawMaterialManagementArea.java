@@ -23,8 +23,6 @@ public class RawMaterialManagementArea extends Area {
         super("1","RawMaterialManagementArea",charlie,factory);
         blackMeterial=new Meterial(blackNum);
         whiteMeterial=new Meterial(whiteNum);
-        this.areaId=areaId;
-        this.areaName=areaName;
     }
     public int getBlackMaterialNum(){
         return blackMaterial.num;

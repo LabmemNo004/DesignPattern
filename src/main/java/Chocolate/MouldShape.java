@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*模具形状接口
 * 继承该接口的类：StarShaped,HeartShaped,SquareShaped,SphericalShaped*/
 public interface MouldShape {

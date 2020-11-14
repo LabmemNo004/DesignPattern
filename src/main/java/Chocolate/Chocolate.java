@@ -1,3 +1,5 @@
+package Chocolate;
+
 import java.util.Random;
 import java.util.Stack;
 /*import Factory.FactoryParameter;
@@ -10,7 +12,7 @@ public class Chocolate extends Items implements Chocolates{
     private Mould.Size size;//巧克力大小
     private MouldShape.Shapes shape;//巧克力形状
     private Color.Colors color;//巧克力颜色
-    private int state;//巧克力状态，1为待生产，可以理解为原料，2为生产完，3为装饰完，4为已销售
+    private int state;//巧克力状态，11为待生产的粉末状，12为待生产的液体状，可以理解为原料，2为生产完，3为装饰完，4为已销售
     /*该变量需修改为State类型*/
     private int quality;//质量系数,随机产生,{0,1,2}
     private double price;//巧克力价格

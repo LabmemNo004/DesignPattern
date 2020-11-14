@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*模具型号：中型*/
 public class MiddleMould extends Mould{
     @Override

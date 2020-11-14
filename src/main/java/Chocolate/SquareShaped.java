@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*模具形状：正方形*/
 public class SquareShaped implements MouldShape{
     @Override

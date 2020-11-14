@@ -3,8 +3,12 @@ package Area.ProcessChocolateArea;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+import Chocolate.Mould;
+import Chocolate.Color.Colors;
+import Chocolate.Chocolate;
+import Area.RawMaterialManagementArea;
 
-public class FreezeArea extends ChocolateProductionArea{
+public class FreezeArea extends ProduceLink{
     private List<Worker> workers;
     private List<Mould> moulds;//模具
 
@@ -29,33 +33,22 @@ public class FreezeArea extends ChocolateProductionArea{
     }
 
     //使用模具凝固
-    public List<Chocolate> freeze(Queue<Chocolate> fluid) {
+    public List<Chocolate> freeze(Queue<Chocolate> liquid) {
         List<Chocolate> chocolates = new ArrayList<>();
         for(Worker worker:workers){
             if(moulds.size()==0)break;//没有模具
-            Chocolate chocolate = fluid.poll();//获取液体巧克力
+            Chocolate chocolate = liquid.poll();//获取液体巧克力
             if(chocolate==null)break;
-            //Chocolate _chocolate = worker.func(chocolate);   //
             int mouldIdx = (int)Math.random()*100%moulds.size();//随机获取模具列表的索引
-            chocolate.produce(mould);//赋值
+            Mould mould = moulds.get(mouldIdx);//获取对应模具
+            // chocolate.produce(mould);//赋值
+            worker.liquidToSolid(chocolate,mould);//生产工人将巧克力从液体变为固体
+            //减少原料
+            if(mould.getColor()==Colors.black)RawMaterialManagementArea.blackProduce();
+            else RawMaterialManagementArea.whiteProduce();
+            System.out.println(worker.getName()+"生产了一份巧克力");
             chocolates.add(chocolate);
         }
         return chocolates;
-    }
-
-    // //往环节中添加工人
-	// public void addWorker(Worker worker) {
-	// 	workers.add(worker);
-	// }
-
-	// //从删除一个工人
-	// public void removeWorker(){
-	// 	Worker worker = workers.get(0);
-	// 	workers.remove(worker);
-	// }
-
-    //获取工人列表
-    public List<Worker> getWorkers() {
-        return workers;
     }
 }

@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*模具基类
 * 它的子类：BigMould,MiddleMould,SmallMould*/
 public abstract class Mould extends TheObject{

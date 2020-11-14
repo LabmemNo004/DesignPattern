@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 import Area.Area;
+import Chocolate.Chocolate;
+//差一个worker类
 
 public class ChocolateProductionArea extends Area{
     private List<Worker> freeWorkers,busyWorkers;
@@ -23,12 +25,12 @@ public class ChocolateProductionArea extends Area{
     }
 
     //添加空闲工人
-    public void addFreeWorker(ProcessWorker worker) {
+    public void addFreeWorker(Worker worker) {
         freeWorkers.add(worker);
     }
 
     //删除空闲工人
-    public boolean removeFreeWorker(ProcessWorker worker) {
+    public boolean removeFreeWorker(Worker worker) {
         return freeWorkers.remove(worker);
     }
 
@@ -38,12 +40,12 @@ public class ChocolateProductionArea extends Area{
     }
 
     //添加忙碌工人
-    public void addBusyWorker(ProcessWorker worker) {
+    public void addBusyWorker(Worker worker) {
         busyWorkers.add(worker);
     }
 
     //删除忙碌工人
-    public boolean removeBusyWorker(ProcessWorker worker) {
+    public boolean removeBusyWorker(Worker worker) {
         return busyWorkers.remove(worker);
     }
 
@@ -88,15 +90,15 @@ public class ChocolateProductionArea extends Area{
         return freezeArea;
     }
 
-    //添加工人到区域
-    public <T extends ChocolateProductionArea> void addAreaWorker(T area) {//参数需要输入某一个生产环节，只能输入通过此类get到的属性中的区域
+    //从总生产区分配工人到某个区域，参数只能传入本类的三个区域，使用get函数获取
+    public <T extends ChocolateProductionArea> void addAreaWorker(T area) {
         // if(area instanceof ChocolateProductionArea)return;
         Worker worker = workerFreeToBusy();
         if(worker!=null)area.getWorkers().add(worker);
     }
 
-    //从区域删除工人
-    public <T extends ChocolateProductionArea> boolean removeAreaWorker(T area) {//参数需要输入某一个生产环节，只能输入通过此类get到的属性中的区域
+    //从某个区域收回工人到总生产区，参数只能传入本类的三个区域，使用get函数获取
+    public <T extends ChocolateProductionArea> boolean removeAreaWorker(T area) {
         // if(area instanceof ChocolateProductionArea)return false;
         List<Worker> w = area.getWorkers();
         if(w.empty()){

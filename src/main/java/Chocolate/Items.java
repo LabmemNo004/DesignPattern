@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*抽象基类
 * 它的子类：Chocolate,Packet
 * */

@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*模具形状：心形*/
 public class HeartShaped implements MouldShape{
     @Override

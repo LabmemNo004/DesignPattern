@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*巧克力接口*/
 import java.util.List;
 /*import Mediator.*;*/

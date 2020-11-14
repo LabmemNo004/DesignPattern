@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*模具型号：小型*/
 public class SmallMould extends Mould{
     @Override

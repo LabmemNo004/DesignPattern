@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*原料类*/
 public class Material extends TheObject{
     protected int num;//原料数量

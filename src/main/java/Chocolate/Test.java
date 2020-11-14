@@ -1,3 +1,5 @@
+package Chocolate;
+
 public class Test {
     public static void main(String[]args){
         Mould mould1=new BigMould(new SphericalShaped(),new WhiteColor());

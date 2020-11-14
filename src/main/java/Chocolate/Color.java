@@ -1,3 +1,5 @@
+package Chocolate;
+
 /*巧克力颜色接口
 * 继承该接口的类：WhiteColor,BlackColor*/
 public interface Color {

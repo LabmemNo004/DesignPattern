@@ -1,3 +1,4 @@
+package Chocolate;
 /*模具型号：大型*/
 public class BigMould extends Mould{
     @Override

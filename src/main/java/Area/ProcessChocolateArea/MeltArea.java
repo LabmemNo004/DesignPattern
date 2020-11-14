@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
+import Chocolate.Chocolate;
+
 public class MeltArea extends ChocolateProductionArea{
     private List<Worker> workers;
 
@@ -16,24 +18,11 @@ public class MeltArea extends ChocolateProductionArea{
         for(Worker worker:workers){
             Chocolate chocolate = powder.poll();//获取下一个巧克力
             if(chocolate==null)break;//可能出现人多巧克力少的情况
+            if(worker instanceof concreteWorker)//出现强化工人的情况
+            worker.powderToLiquid(chocolate);//生产工人将巧克力从粉末变成液体
+            System.out.println(worker.getName()+"融化了一份巧克力");
             chocolates.add(chocolate);
         }
         return chocolates;
-    }
-
-    // //往环节中添加工人
-	// public void addWorker(Worker worker) {
-	// 	workers.add(worker);
-	// }
-
-	// //从环节中删除一个工人
-	// public void removeWorker(){
-	// 	Worker worker = workers.get(0);
-	// 	workers.remove(worker);
-    // }
-    
-    //获取工人列表
-    public List<Worker> getWorkers() {
-        return workers;
     }
 }

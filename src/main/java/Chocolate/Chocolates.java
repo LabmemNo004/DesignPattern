@@ -1,8 +1,9 @@
 package Chocolate;
 
 /*巧克力接口*/
+import Mediator.ChocolateMediator;
+
 import java.util.List;
-/*import Mediator.*;*/
 
 public interface Chocolates {
     String getName();
@@ -34,7 +35,9 @@ public interface Chocolates {
     void Produce(Mould m);
     // 为 size color shape price 赋
     // 随机产生质量系
-    /*ChocolateMediator getMediator();*/
+    void setMediator(ChocolateMediator chocolateMediator);
+
+    ChocolateMediator getMediator();
     //设置监察官
 
 }

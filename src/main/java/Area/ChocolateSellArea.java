@@ -41,16 +41,18 @@ public class ChocolateSellArea extends Area {
         areaChocolates.add(chocolate);
     }
 
-    public void sellChocolate(ArrayList<Chocolate> chocolates)
+    public void sellChocolate()
     {
-        charlie.addAccount(getPrice(chocolates));
-        chocolates.clear();
+        charlie.addAccount(getPrice(areaChocolates));
+        areaChocolates.clear();
     }
 
     //获取总售价，interpretor模式
     public Double getPrice(ArrayList<Chocolate> chocolates)
     {
-        return .9;
+        Double sum_val=0.0;
+        System.out.println("售出"+chocolates.size()+"个巧克力，得到"+sum_val+"元");
+        return sum_val;
     }
 
     private ChocolateSellArea(Charlie charlie,Factory factory)

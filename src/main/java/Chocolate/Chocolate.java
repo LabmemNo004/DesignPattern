@@ -1,13 +1,13 @@
 package Chocolate;
 
-import java.util.Random;
-import java.util.Stack;
-/*import Factory.FactoryParameter;
-import Mediator.*;*/
+import Mediator.ChocolateMediator;
+import Mediator.Colleague;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 /*巧克力类*/
-public class Chocolate extends Items implements Chocolates{
+public class Chocolate extends Items implements Chocolates,Colleague{
     private String name;//巧克力的名字，即巧克力的基本信息，eg:small square white chocolate
     private Mould.Size size;//巧克力大小
     private MouldShape.Shapes shape;//巧克力形状
@@ -19,7 +19,7 @@ public class Chocolate extends Items implements Chocolates{
     protected ArrayList<String> PackInfo ;//巧克力外层包装信息
     protected ArrayList<String> Pack; //巧克力外层包装实体
 
-    /*protected ChocolateMediator chocolateMediator;//巧克力监察者*/
+    protected ChocolateMediator chocolateMediator;//巧克力监察者
 
     @Override
     public String getName() {
@@ -96,6 +96,22 @@ public class Chocolate extends Items implements Chocolates{
     public int getState() {
         return state;
         //return this.state.getValue();
+    }
+
+    @Override
+    public void setMediator(ChocolateMediator chocolateMediator)
+    {
+        this.chocolateMediator=chocolateMediator;
+    }
+
+    @Override
+    public void setColleagueReport() {//更新状态，包装区包装完毕调用
+        chocolateMediator.colleagueReport();
+    }
+
+    public ChocolateMediator getMediator()
+    {
+        return chocolateMediator;
     }
 
 }

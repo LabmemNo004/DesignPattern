@@ -25,6 +25,12 @@ public class Chocolate extends Items implements Chocolates,Colleague{
     public String getName() {
         return this.name;
     }
+
+    @Override
+    public int getCount() {
+        return 1;
+    }
+
     public Chocolate(){//构造函数
         this.state=1;
     }
@@ -67,8 +73,6 @@ public class Chocolate extends Items implements Chocolates,Colleague{
 
     public void addPack(String pack){//增加巧克力最外层包装string（黑/白）
         Pack.add(pack);
-
-
     }
     public String deletePack(){//删除巧克力最外层包装
         return Pack.remove(Pack.size()-1);

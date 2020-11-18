@@ -11,6 +11,7 @@ public class FactoryParameter implements Serializable{
 	public static double whiteMeterialPrice;//白巧克力原材料价格
 	public static double blackMeterialPrice;//黑巧克力原材料价格
 	public static String SERVICE_DISPLAY_CHOCOLATE;
+	public static String SERVICE_DISPLAY_WORKERS;
 	public static Map<String,Double> chocolatePrice;//黑/白/大/中/小/圆/方巧克力价格
 	public Set<String> size;//大/中/小
 	public Set<String> shape;//圆/方
@@ -21,6 +22,7 @@ public class FactoryParameter implements Serializable{
 		whiteMeterialPrice=20;
 		blackMeterialPrice=10;
 		SERVICE_DISPLAY_CHOCOLATE= "DisplayChocolate";
+		SERVICE_DISPLAY_WORKERS="DisplayWorkers";
 		chocolatePrice=new HashMap<String,Double>(){{
 			put("black",20.0);
 			put("white",20.0);

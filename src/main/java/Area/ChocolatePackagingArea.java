@@ -17,7 +17,7 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     巧克力包装区构造函数
      */
     private ChocolatePackagingArea(Charlie charlie,Factory factory) {
-        super("3","PackagingArea",charlie);
+        super("3","PackagingArea",charlie,factory);
         this.chocolate=factory.getChocolate();//使用了未确定的Factory类的getChocolate()
     }
 

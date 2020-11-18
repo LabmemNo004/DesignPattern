@@ -2,7 +2,8 @@ package Chocolate;
 
 /*模具基类
 * 它的子类：BigMould,MiddleMould,SmallMould*/
-public abstract class Mould extends TheObject{
+public abstract class
+Mould extends TheObject implements Cloneable{
     protected MouldShape shape;//模具形状
     protected Color color;//巧克力颜色
     public static enum Size{big,middle,small};//三种模具型号
@@ -20,4 +21,13 @@ public abstract class Mould extends TheObject{
         return color.getColor();
     }
 
+    public Mould clone() {//克隆函数，用于原型设计模式
+        Mould clone = null;
+        try {
+            clone = (Mould)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
+    }
 }

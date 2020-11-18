@@ -1,52 +1,45 @@
 package Area;
 
 import Charlie.Charlie;
+import Chocolate.Material;
 import Factory.Factory;
-import Material.Material;
 
 
 public class RawMaterialManagementArea extends Area {
-    private Material blackMaterial;
-    private Material whiteMaterial;
+    private static Material blackMaterial=new Material(1,20);
+    private static Material whiteMaterial=new Material(2,20);
     private volatile static RawMaterialManagementArea ourInstance;
 
-    public static RawMaterialManagementArea getInstance(Charlie charlie,Factory factory,int blackNum,int whiteNum) {
+    public static RawMaterialManagementArea getInstance(Charlie charlie,Factory factory) {
         if (null == ourInstance) {
             synchronized (RawMaterialManagementArea.class) {
                 if (null == ourInstance) {
-                    ourInstance = new RawMaterialManagementArea(charlie,factory,blackNum,whiteNum);
+                    ourInstance = new RawMaterialManagementArea(charlie,factory);
+                    System.out.println("RawMaterialManagementArea has been initialized!");
                 }
             }
         }
         return ourInstance;
     }
 
-    private RawMaterialManagementArea(Charlie charlie,Factory factory,int blackNum,int whiteNum) {
+    private RawMaterialManagementArea(Charlie charlie,Factory factory) {
         super("1","RawMaterialManagementArea",charlie,factory);
-        blackMeterial=new Meterial(blackNum,10);
-        whiteMeterial=new Meterial(whiteNum,20);
     }
 
     public int getBlackMaterialNum(){
-        return blackMaterial.num;
+        return blackMaterial.getNum();
     }
 
     public int getWhiteMaterialNum(){
-        return whiteMaterial.num;
+        return whiteMaterial.getNum();
     }
 
-    public void setBlackMaterialNum(int num){
-        blackMaterial.setNum(num);
-    }
 
-    public void setWhiteMaterialNum(int num){
-        whiteMaterial.setNum(num);
-    }
 
-    public static void blackProduce(){
-        if(blackMaterial.num>=1)
+    public  static void blackProduce(){
+        if(blackMaterial.getNum()>=1)
         {
-            blackMaterial.reduce();
+            blackMaterial.reduce(1);
         }
         else
         {
@@ -54,9 +47,9 @@ public class RawMaterialManagementArea extends Area {
         }
     }
     public static void whiteProduce(){
-        if(whiteMaterial.num>=1)
+        if(whiteMaterial.getNum()>=1)
         {
-            whiteMaterial.reduce();
+            whiteMaterial.reduce(1);
         }
         else
         {

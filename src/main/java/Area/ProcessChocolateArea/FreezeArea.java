@@ -8,12 +8,10 @@ import Chocolate.Color.Colors;
 import Chocolate.Chocolate;
 import Area.RawMaterialManagementArea;
 
-public class FreezeArea extends ProduceLink{
-    private List<Worker> workers;
+public class FreezeArea extends WorkerProduceLink{
     private List<Mould> moulds;//模具
 
     FreezeArea(){
-        workers = new ArrayList<>();
         moulds = new ArrayList<>();
     }
 

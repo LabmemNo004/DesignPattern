@@ -88,4 +88,8 @@ public class Factory implements Serializable {
     {
         return _chocolates;
     }
+
+    public RawMaterialManagementArea getArea() {
+        return _manageArea;
+    }
 }

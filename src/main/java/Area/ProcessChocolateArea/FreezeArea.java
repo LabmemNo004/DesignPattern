@@ -33,7 +33,7 @@ public class FreezeArea extends WorkerProduceLink{
     //使用模具凝固
     public List<Chocolate> freeze(Queue<Chocolate> liquid) {
         List<Chocolate> chocolates = new ArrayList<>();
-        for(Worker worker:workers){
+        for(Worker worker:getWorkers()){
             if(moulds.size()==0)break;//没有模具
             Chocolate chocolate = liquid.poll();//获取液体巧克力
             if(chocolate==null)break;

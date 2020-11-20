@@ -7,6 +7,7 @@ import Criteria.ChocolateCriteria;
 import Chocolate.Chocolate;
 import Factory.Factory;
 
+//外观模式，封装生产这一系列操作
 public class ProcessFacade {
     private SmashArea smashArea;
     private MeltArea meltArea;

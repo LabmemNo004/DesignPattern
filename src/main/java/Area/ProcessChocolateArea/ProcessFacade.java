@@ -8,6 +8,7 @@ import Criteria.ChocolateCriteria;
 import Chocolate.Chocolate;
 import Chocolate.IChocolate;
 import Factory.Factory;
+import FactoryParameter.FactoryParameter;
 
 //外观模式，封装生产这一系列操作
 public class ProcessFacade {

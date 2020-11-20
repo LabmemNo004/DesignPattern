@@ -4,13 +4,13 @@ public class NullItem extends Items{
 	
 	@Override
     public String getName() {
-        System.out.printf("No available chocolate currently.");
+        System.out.println("No available item, check your input.");
         return "";
     }
 
     @Override
     public int getCount() {
-        System.out.println("No available chocolate currently.");
+        System.out.println("No available item, check your input.");
         return 0;
     }
 }

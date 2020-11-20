@@ -16,7 +16,7 @@ import Land.Land;
  * @designPattern:
  */
 public class FieldFactory extends DeFactory{
-    private List _usages = new ArrayList();     // 土地用途记录表，统计注册土地的用途
+    private List _usages = new ArrayList(); // 土地用途记录表，统计注册土地的用途
 
     public FieldFactory() {
         System.out.println("======== 使用工厂 Factory 模式 ========");

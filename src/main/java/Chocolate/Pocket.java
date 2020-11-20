@@ -12,6 +12,7 @@ public class Pocket extends Items{
     {
         return pocketList.size()<scale;
     }
+    
 
     public Pocket(String name,int scale) {
         System.out.println("使用Composite模式创建Pocket");
@@ -40,7 +41,12 @@ public class Pocket extends Items{
         }
         return size;
     }
-
+    
+    public Items getItem(int index) {
+    	if(index > -1 && index < pocketList.size()) return pocketList.get(index);
+    	else return new NullItem();
+    }
+    
     public void add(Items item){
         if(isFull()||item==null) return;
         pocketList.add(item);

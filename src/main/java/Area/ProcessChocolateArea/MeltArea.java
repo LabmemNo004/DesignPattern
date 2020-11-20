@@ -6,16 +6,10 @@ import java.util.Queue;
 
 import Chocolate.Chocolate;
 
-public class MeltArea extends ChocolateProductionArea{
-    private List<Worker> workers;
-
-    MeltArea(){
-        workers = new ArrayList<>();
-    }
-
+public class MeltArea extends WorkerProduceLink{
     public List<Chocolate> melt(Queue<Chocolate> powder){
         List<Chocolate> chocolates = new ArrayList<>();
-        for(Worker worker:workers){
+        for(Worker worker:getWorkers()){
             Chocolate chocolate = powder.poll();//获取下一个巧克力
             if(chocolate==null)break;//可能出现人多巧克力少的情况
             if(worker instanceof concreteWorker)//出现强化工人的情况

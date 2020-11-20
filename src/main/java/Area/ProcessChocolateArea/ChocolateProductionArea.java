@@ -16,15 +16,28 @@ public class ChocolateProductionArea extends Area{
     private SmashArea smashArea;
     private MeltArea meltArea;
     private FreezeArea freezeArea;
+    private volatile static ChocolateProductionArea ourInstance;
 
     //构造函数
     ChocolateProductionArea(Charlie charlie, Factory factory){// 留言：更新了super和参数
-        super("1","ProductionArea",charlie,factory);
+        super("2","ProductionArea",charlie,factory);
         freeWorkers = new ArrayList<Worker>();
         busyWorkers = new ArrayList<Worker>();
         smashArea = new SmashArea();
         meltArea = new MeltArea();
         freezeArea = new FreezeArea();
+    }
+
+    public static ChocolateProductionArea getInstance(Charlie charlie,Factory factory) {
+        if (null == ourInstance) {
+            synchronized (ChocolateProductionArea.class) {
+                if (null == ourInstance) {
+                    ourInstance = new ChocolateProductionArea(charlie,factory);
+                    System.out.println("ChocolateProductionArea has been initialized!");
+                }
+            }
+        }
+        return ourInstance;
     }
 
     //添加空闲工人
@@ -93,23 +106,16 @@ public class ChocolateProductionArea extends Area{
         return freezeArea;
     }
 
-    //从总生产区分配工人到某个区域，参数只能传入本类的三个区域，使用get函数获取
-    public <T extends ChocolateProductionArea> void addAreaWorker(T area) {
-        // if(area instanceof ChocolateProductionArea)return;
+    //从总生产区分配工人到某个区域，参数只能传入meltArea或freezeArea，使用get函数获取
+    public <T extends WorkerProduceLink> void addAreaWorker(T area) {
         Worker worker = workerFreeToBusy();
-        if(worker!=null)area.getWorkers().add(worker);
+        if(worker!=null)area.addWorker(worker);
     }
 
-    //从某个区域收回工人到总生产区，参数只能传入本类的三个区域，使用get函数获取
-    public <T extends ChocolateProductionArea> boolean removeAreaWorker(T area) {
-        // if(area instanceof ChocolateProductionArea)return false;
-        List<Worker> w = area.getWorkers();
-        if(w.empty()){
-            System.out.println("当前区域没有工人");
-            return false;
-        }
-        Worker worker = w.get(0);
-        worker.remove(0);
+    //从某个区域收回工人到总生产区，参数只能传入meltArea或freezeArea，使用get函数获取
+    public <T extends WorkerProduceLink> boolean removeAreaWorker(T area) {
+        Worker worker = area.removeWorker();
+        if(worker==null)return false;
         return workerBusyToFree(worker);
     }
 }

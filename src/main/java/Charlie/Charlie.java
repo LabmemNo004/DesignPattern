@@ -6,7 +6,7 @@ import Observer.MaterialObserver;
 import Chocolate.Material;
 import Chocolate.Color.Colors;
 
-public class Charlie implements MaterialObserver{
+public class Charlie implements MaterialObserver,Robot{
     private double account;
     private Charlie()
     {
@@ -22,8 +22,11 @@ public class Charlie implements MaterialObserver{
 
     public boolean reduceAccount(Double gold)
     {
-
-        account-=gold;
+        if (account <gold) {
+            return false;
+        }
+        account -= gold;
+        return true;
 
     }
 

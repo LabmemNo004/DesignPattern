@@ -1,12 +1,12 @@
 package Decorator;
 
-import Chocolate.Chocolates;
-import Factory.FactoryParameter;
+import Chocolate.IChocolate;
+import FactoryParameter.FactoryParameter;
 
 import java.io.Serializable;
 
 public class LqChocolateDecorator extends ChocolateDecorator implements Serializable {
-    public LqChocolateDecorator(Chocolates obj){
+    public LqChocolateDecorator(IChocolate obj){
         super(obj);
     }
 

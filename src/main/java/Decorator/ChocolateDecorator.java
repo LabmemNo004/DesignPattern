@@ -1,6 +1,6 @@
 package Decorator;
 
-import Chocolate.Chocolates;
+import Chocolate.IChocolate;
 import Chocolate.Color;
 import Chocolate.Mould;
 import Chocolate.MouldShape;
@@ -8,10 +8,10 @@ import Chocolate.Items;
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class ChocolateDecorator extends Items implements Serializable, Chocolates {
-    protected Chocolates obj;
+public abstract class ChocolateDecorator extends Items implements Serializable, IChocolate {
+    protected IChocolate obj;
 
-    public ChocolateDecorator(Chocolates obj){
+    public ChocolateDecorator(IChocolate obj){
         this.obj=obj;
         System.out.println("Create: "+this.getClass()+" @"+this.hashCode());
     }

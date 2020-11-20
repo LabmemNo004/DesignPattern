@@ -5,7 +5,7 @@ import Mediator.ChocolateMediator;
 
 import java.util.List;
 
-public interface Chocolates {
+public interface IChocolate {
     String getName();
     //获得巧克力的名称 eg:small square white chocolate
     Mould.Size getSize();

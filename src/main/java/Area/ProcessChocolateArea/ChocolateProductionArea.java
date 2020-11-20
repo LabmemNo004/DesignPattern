@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Set;
 import Area.Area;
 
+import Charlie.Charlie;
 import Chocolate.Chocolate;
+import Factory.Factory;
 //差一个worker类
 
 public class ChocolateProductionArea extends Area{
@@ -16,12 +18,13 @@ public class ChocolateProductionArea extends Area{
     private FreezeArea freezeArea;
 
     //构造函数
-    ChocolateProductionArea(){
-        freeWorkers = new ArrayList<>();
-        busyWorkers = new ArrayList<>();
-        sArea = new SmashArea();
-        mArea = new MeltArea();
-        fArea = new FreezeArea();
+    ChocolateProductionArea(Charlie charlie, Factory factory){// 留言：更新了super和参数
+        super("1","ProductionArea",charlie,factory);
+        freeWorkers = new ArrayList<Worker>();
+        busyWorkers = new ArrayList<Worker>();
+        smashArea = new SmashArea();
+        meltArea = new MeltArea();
+        freezeArea = new FreezeArea();
     }
 
     //添加空闲工人

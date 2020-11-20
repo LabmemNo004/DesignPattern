@@ -1,6 +1,6 @@
 package BusinessDelegate.Business;
 
-import Chocolate.Chocolate;
+import Chocolate.IChocolate;
 import Factory.Factory;
 import FactoryParameter.FactoryParameter;
 
@@ -11,7 +11,7 @@ public class DisplayChocolates implements BusinessService{
     public void doProcessing() {
         Factory factory=Factory.getInstance();
 
-        ArrayList<Chocolate> chocolates=factory.getChocolates();
+        ArrayList<IChocolate> chocolates=factory.getChocolates();//留言：Chocolate -->IChocolate
 
         System.out.println("使用业务代表 Business Delegate 模式");
         System.out.println("通过终端执行\"查看流水线中巧克力");
@@ -21,7 +21,7 @@ public class DisplayChocolates implements BusinessService{
         int waitSell=0;
         int hasSell=0;
 
-        for(Chocolate now:chocolates)
+        for(IChocolate now:chocolates)
         {
             if(now.getState()==FactoryParameter.waitProcess) waitProcess++;
             else if(now.getState()==FactoryParameter.waitPackage) waitPackage++;

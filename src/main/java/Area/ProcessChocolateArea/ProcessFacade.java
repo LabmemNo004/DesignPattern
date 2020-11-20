@@ -5,6 +5,7 @@ import java.util.Queue;
 
 import Criteria.ChocolateCriteria;
 import Chocolate.Chocolate;
+import Factory.Factory;
 
 public class ProcessFacade {
     private SmashArea smashArea;

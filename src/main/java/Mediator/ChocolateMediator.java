@@ -1,6 +1,6 @@
 package Mediator;
 
-import Chocolate.Chocolate;
+import Chocolate.IChocolate;
 import Factory.Factory;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class ChocolateMediator implements Mediator{
             System.out.println("工厂巧克力列表为空");
             return;
         }
-        for(Chocolate now:_chocolates)
+        for(IChocolate now:_chocolates)
         {
             if(now.getType()==3)
             {
@@ -36,7 +36,7 @@ public class ChocolateMediator implements Mediator{
             factory.chocolateSellArea.addSellAreaChoclates(_waitSellChocolates);
             factory.chocolateSellArea.sellChocolate();
             //巧克力已售出，清空巧克力列表的已售出巧克力
-            for(Chocolate now:_chocolates)
+            for(IChocolate now:_chocolates)
             {
                 if(now.getType()==4) _chocolates.remove(now);
             }
@@ -52,12 +52,12 @@ public class ChocolateMediator implements Mediator{
     public ChocolateMediator()
     {
         threshold=30;
-        _waitSellChocolates=new ArrayList<Chocolate>();
+        _waitSellChocolates=new ArrayList<IChocolate>();
         System.out.println("ChocolateMediator has been initialized!");
     }
 
     //获取待运送至销售区的巧克力
-    public List<Chocolate> getWaitSellChocolates()
+    public List<IChocolate> getWaitSellChocolates()
     {
         return _waitSellChocolates;
     }
@@ -75,6 +75,6 @@ public class ChocolateMediator implements Mediator{
 
     private Factory factory;
     private int threshold=0;
-    private ArrayList<Chocolate>_chocolates;
-    private ArrayList<Chocolate> _waitSellChocolates;
+    private ArrayList<IChocolate>_chocolates;
+    private ArrayList<IChocolate> _waitSellChocolates;//留言：
 }

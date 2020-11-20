@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Queue;
 import Chocolate.Mould;
 import Chocolate.Color.Colors;
+import Factory.Factory;
 import Chocolate.Chocolate;
 import Area.RawMaterialManagementArea;
 
@@ -33,7 +34,8 @@ public class FreezeArea extends WorkerProduceLink{
     //使用模具凝固
     public List<Chocolate> freeze(Queue<Chocolate> liquid) {
         List<Chocolate> chocolates = new ArrayList<>();
-        for(Worker worker:workers){
+        RawMaterialManagementArea area = Factory.getInstance().getManageArea();
+        for(Worker worker:getWorkers()){
             if(moulds.size()==0)break;//没有模具
             Chocolate chocolate = liquid.poll();//获取液体巧克力
             if(chocolate==null)break;
@@ -42,8 +44,8 @@ public class FreezeArea extends WorkerProduceLink{
             // chocolate.produce(mould);//赋值
             worker.liquidToSolid(chocolate,mould);//生产工人将巧克力从液体变为固体
             //减少原料
-            if(mould.getColor()==Colors.black)RawMaterialManagementArea.blackProduce();
-            else RawMaterialManagementArea.whiteProduce();
+            if(mould.getColor()==Colors.black)area.blackProduce();
+            else area.whiteProduce();
             System.out.println(worker.getName()+"生产了一份巧克力");
             chocolates.add(chocolate);
         }

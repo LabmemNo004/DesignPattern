@@ -44,7 +44,7 @@ public class ChocolateSellArea extends Area {
 
     public void sellChocolate()
     {
-        charlie.addAccount(getPrice(areaChocolates));
+        _charlie.addAccount(getPrice(areaChocolates));
         areaChocolates.clear();
     }
 

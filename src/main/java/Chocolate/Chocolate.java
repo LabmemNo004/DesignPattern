@@ -6,6 +6,9 @@ import Mediator.Colleague;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import Strategy.*;
+
 /*巧克力类*/
 public class Chocolate extends Items implements IChocolate,Colleague{
     private String name;//巧克力的名字，即巧克力的基本信息，eg:small square white chocolate
@@ -20,6 +23,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     protected ArrayList<String> Pack; //巧克力外层包装实体
 
     protected ChocolateMediator chocolateMediator;//巧克力监察者
+
+    private  ChocolateShaping strategy;//巧克力塑形
 
     @Override
     public String getName() {
@@ -45,6 +50,11 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.state=2;
         setPrice();
     }
+
+    public void Shaping(ChocolateShaping strategy){//为巧克力塑形
+        this.strategy=strategy;
+    }
+
     public double getPrice(){//获取巧克力价格
         return price;
 

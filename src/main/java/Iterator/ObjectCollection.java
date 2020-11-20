@@ -14,7 +14,7 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<T> iterator() {//为集合建立迭代器
         return new CollectionIterator();
     }
 
@@ -62,7 +62,7 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
 
         }
 
-        public void reSet(){//重置迭代器指针为0
+        public void reset(){//重置迭代器指针为0
             point=-1;
         }
     }

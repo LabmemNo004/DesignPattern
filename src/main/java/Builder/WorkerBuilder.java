@@ -37,4 +37,6 @@ public abstract class WorkerBuilder {
      * 抽象方法：为工人设置工作类型
      */
     public abstract void setWorkType();
+
+    public abstract void assignSpeed();
 }

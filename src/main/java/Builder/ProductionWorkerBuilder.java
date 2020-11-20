@@ -7,5 +7,5 @@ public class ProductionWorkerBuilder extends WorkerBuilder{
     public void setWorkType() {
         this._farmer.setType(Const.WorkType.PRODUCTION);
     }
-
+    public void assignSpeed() { this._farmer.setSpeed(Const.Speed.PRODUCTION);}
 }

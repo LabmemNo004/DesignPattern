@@ -7,4 +7,5 @@ public class MeterialWorkerBuilder {
     public void setWorkType() {
         this._farmer.setType(Const.WorkType.MATERIAL);
     }
+    public void assignSpeed() { this._farmer.setSpeed(Const.Speed.MATERIAL);}
 }

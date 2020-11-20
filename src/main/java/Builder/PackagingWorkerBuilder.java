@@ -7,4 +7,5 @@ public class PackagingWorkerBuilder {
     public void setWorkType() {
         this._farmer.setType(Const.WorkType.PACKAGING);
     }
+    public void assignSpeed() { this._farmer.setSpeed(Const.Speed.PACKAGING);}
 }

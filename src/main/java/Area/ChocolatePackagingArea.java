@@ -2,7 +2,7 @@ package Area;
 
 import Chocolate.Chocolate;
 import Factory.Factory;//未确定的类
-import Factory.Charlie;//未确定的类
+import Charlie.Charlie;//未确定的类
 import java.io.Serializable;
 import java.util.List;
 /*
@@ -18,13 +18,14 @@ public class ChocolatePackagingArea extends Area implements Serializable {
      */
     private ChocolatePackagingArea(Charlie charlie,Factory factory) {
         super("3","PackagingArea",charlie,factory);
-        this.chocolate=factory.getChocolate();//使用了未确定的Factory类的getChocolate()
+        this.chocolate=factory.getChocolates();//使用了未确定的Factory类的getChocolate()
+        // 回复：目前好像只有getchocolates(),我先给你改了.或者你有需要你的函数可以自己加
     }
 
     /*
     双重检查锁
      */
-    public ChocolatePackagingArea getInstance(Charlie charlie,Factory factory) {
+    public static ChocolatePackagingArea getInstance(Charlie charlie, Factory factory) {
         if (null == uniqueArea) {
             synchronized (ChocolatePackagingArea.class) {
                 if (null == uniqueArea) {

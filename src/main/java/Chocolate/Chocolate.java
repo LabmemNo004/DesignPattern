@@ -2,7 +2,7 @@ package Chocolate;
 
 import Mediator.ChocolateMediator;
 import Mediator.Colleague;
-
+import FactoryParameter.FactoryParameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,6 +11,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     private String name;//巧克力的名字，即巧克力的基本信息，eg:small square white chocolate
     private Mould.Size size;//巧克力大小
     private MouldShape.Shapes shape;//巧克力形状
+    private String comment;//Charlie作为工厂管理者，对巧克力的评价
+    private String nickName;//由于Charlie比较喜欢某款巧克力，给巧克力取了一个别致的名字
     private Color.Colors color;//巧克力颜色
     private int state;//巧克力状态，11为待生产的粉末状，12为待生产的液体状，可以理解为原料，2为生产完，3为装饰完，4为已销售
     /*该变量需修改为State类型*/
@@ -83,12 +85,31 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     @Override
-    public void setPrice() {
-        /*int sizePrice= FactoryParameter.chocolatePrice.get(size.toString());
-        int shapePrice= FactoryParameter.chocolatePrice.get(shape.toString());
-        int colorPrice= FactoryParameter.chocolatePrice.get(color.toString());
-        price=sizePrice+shapePrice+colorPrice;*/
+    public void setPrice() {//巧克力初始价格
+        double sizePrice= FactoryParameter.chocolatePrice.get(size.toString());
+        double shapePrice= FactoryParameter.chocolatePrice.get(shape.toString());
+        double colorPrice= FactoryParameter.chocolatePrice.get(color.toString());
+        price=sizePrice+shapePrice+colorPrice;
+    }
 
+    public void setPrice(double p){//Charlie作为工厂的管理者，有权修改某款巧克力的价格，通过ChococlateController
+        price=p;
+    }
+
+    public void setComment(String comment){//Charlie作为工厂的管理者，有权评价巧克力，通过ChococlateController
+        this.comment=comment;
+    }
+
+    public void setNickname(String name){//Charlie作为工厂的管理者，有权给巧克力取一个别致的名字，通过ChococlateController
+        nickName=name;
+    }
+
+    public String getComment(){
+        return comment;
+    }
+
+    public String getNickname(){
+        return nickName;
     }
 
     @Override

@@ -3,8 +3,10 @@ package Area.ProcessChocolateArea;
 import java.util.List;
 import java.util.Queue;
 
+import Area.RawMaterialManagementArea;
 import Criteria.ChocolateCriteria;
 import Chocolate.Chocolate;
+import Chocolate.IChocolate;
 import Factory.Factory;
 
 //外观模式，封装生产这一系列操作
@@ -16,7 +18,7 @@ public class ProcessFacade {
     private Queue<Chocolate> powder,liquid;
 
     ProcessFacade(){
-        ChocolateProductionArea area = Factory.getInstance().getChocolateProductionArea();//获取唯一生产区
+        ChocolateProductionArea area = Factory.getInstance().getProductionArea();//获取唯一生产区
         smashArea = area.getSmashArea();
         meltArea = area.getMeltArea();
         freezeArea = area.getFreezeArea();
@@ -27,16 +29,17 @@ public class ProcessFacade {
         //从后往前模拟流水线
         System.out.println("======== 使用外观模式 ========");
         System.out.println("======== 使用过滤器模式 ========");
-        while(FactoryParameter._chocolates.size()<100){
+        List<IChocolate> chocolates = Factory.getInstance().getChocolates();
+        while(chocolates.size()<100){
             //凝固塑形
             List<Chocolate> produced = criteria.meetCriteria(freezeArea.freeze(liquid));
-            int offset = 100 - FactoryParameter._chocolates.size();
+            int offset = 100 - chocolates.size();
             if(offset<produced.size()){//加入全局巧克力list
                 for(int i=0;i<offset;i++){
-                    FactoryParameter._chocolates.add(produced.get(i));
+                    chocolates.add(produced.get(i));
                 }
             }
-            else FactoryParameter._chocolates.addAll(produced);
+            else chocolates.addAll(produced);
             //融化
             List<Chocolate> melted = meltArea.melt(powder);
             liquid.addAll(melted);

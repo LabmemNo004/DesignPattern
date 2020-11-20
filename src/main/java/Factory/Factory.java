@@ -34,8 +34,8 @@ public class Factory implements Serializable {
      * 构造函数
      */
     private Factory(){
-        this._manageArea=new RawMaterialManagementArea.getInstance(Charlie.charlie,this);
-        this._productionArea=new ChocolateProductionArea.getInstance(Charlie.charlie,this);
+        this._manageArea=RawMaterialManagementArea.getInstance(Charlie.charlie,this);
+        this._productionArea=ChocolateProductionArea.getInstance(Charlie.charlie,this);
         this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.charlie,this);
         this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
         this._chocolates=new ArrayList<Chocolate.IChocolate>();
@@ -89,7 +89,11 @@ public class Factory implements Serializable {
         return _chocolates;
     }
 
-    public RawMaterialManagementArea getArea() {
+    public RawMaterialManagementArea getManageArea() {
         return _manageArea;
+    }
+
+    public ChocolateProductionArea getProductionArea() {
+        return _productionArea;
     }
 }

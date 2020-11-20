@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 /*巧克力类*/
-public abstract class Chocolate extends Items implements IChocolate,Colleague{
+public class Chocolate extends Items implements IChocolate,Colleague{
     private String name;//巧克力的名字，即巧克力的基本信息，eg:small square white chocolate
     private Mould.Size size;//巧克力大小
     private MouldShape.Shapes shape;//巧克力形状
@@ -118,8 +118,8 @@ public abstract class Chocolate extends Items implements IChocolate,Colleague{
         return chocolateMediator;
     }
 
-    public abstract void produceSmallChocolate();
-    public abstract void produceMiddleChocolate();
-    public abstract void produceBigChocolate();
+    /*public void produceSmallChocolate();
+    public void produceMiddleChocolate();
+    public void produceBigChocolate();*/
 
 }

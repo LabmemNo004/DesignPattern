@@ -1,5 +1,11 @@
 package Chocolate;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import Observer.MaterialObservable;
+import Observer.MaterialObserver;
+
 /*原料类*/
 public class Material extends TheObject{
     protected int num;//原料数量

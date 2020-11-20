@@ -28,9 +28,9 @@ public class Director {
 
     /**
      * Construct farmer.
-     * 利用Builder模式建造一个农民。首先指定农民的工作类型，再根据工作类型为农民分配农具。
+     * 利用Builder模式建造一个工人。首先指定农民的工作类型，再根据工作类型为农民分配农具。
      */
-    public void constructFarmer() {
+    public void constructWorker() {
         _builder.createNewWorker();
         _builder.setWorkType();
         _builder.assignSpeed();

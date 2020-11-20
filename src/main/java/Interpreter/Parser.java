@@ -72,9 +72,9 @@ public class Parser {
      */
     public static void main() throws ParseException {
         System.out.println("======== 使用 解释器 Interpreter模式 =======");
-        System.out.println("欢迎来到查理的巧克力工厂，你出售了这些巧克力：");
+        System.out.println("欢迎来到查理的巧克力工厂，你出售了一些巧克力：");
         System.out.print("这是你的出售清单 ：");
-        String exp = "2 * " + Const.VALUE_TABLE_CHICKEN +" + "+ Const.VALUE_YELLOW_DUCK + " + "+ Const.VALUE_CROP;
+        String exp = "2 * " + Const.VALUE_BIG_SPHERICAL_BLACK +" + "+ Const.VALUE_MIDDLE_SQUARE_WHITE + " + "+ Const.VALUE_SMALL_STAR_WHITE;
         System.out.println(exp);
 
         System.out.println("你获得了以下金钱 ： " + Parser.parse(exp));

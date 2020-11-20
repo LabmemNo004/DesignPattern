@@ -6,13 +6,41 @@ import java.util.Arrays;
 
 public class Const {
     //巧克力原料的价值
-    public final static double VALUE_WHITE_MATERIAL = 20.0;
-    public final static double VALUE_BLACK_MATERIAL = 10.0;
+    public final static double VALUE_WHITE_MATERIAL = 6.0;
+    public final static double VALUE_BLACK_MATERIAL = 3.0;
 
     public final static double QUALITY = 0.2;
 
     //巧克力产品的价值
-    public final static double VALUE_CROP = 10.0;
+    public final static double VALUE_BIG_SPHERICAL_BLACK = 15.0;
+    public final static double VALUE_BIG_SQUARE_BLACK = 15.0;
+    public final static double VALUE_BIG_STAR_BLACK = 20.0;
+    public final static double VALUE_BIG_HEART_BLACK = 20.0;
+
+    public final static double VALUE_MIDDLE_SPHERICAL_BLACK = 10.0;
+    public final static double VALUE_MIDDLE_SQUARE_BLACK = 10.0;
+    public final static double VALUE_MIDDLE_STAR_BLACK = 15.0;
+    public final static double VALUE_MIDDLE_HEART_BLACK = 15.0;
+
+    public final static double VALUE_SMALL_SPHERICAL_BLACK = 5.0;
+    public final static double VALUE_SMALL_SQUARE_BLACK = 5.0;
+    public final static double VALUE_SMALL_STAR_BLACK = 10.0;
+    public final static double VALUE_SMALL_HEART_BLACK = 10.0;
+
+    public final static double VALUE_BIG_SPHERICAL_WHITE = 25.0;
+    public final static double VALUE_BIG_SQUARE_WHITE = 25.0;
+    public final static double VALUE_BIG_STAR_WHITE = 30.0;
+    public final static double VALUE_BIG_HEART_WHITE = 30.0;
+
+    public final static double VALUE_MIDDLE_SPHERICAL_WHITE = 20.0;
+    public final static double VALUE_MIDDLE_SQUARE_WHITE = 20.0;
+    public final static double VALUE_MIDDLE_STAR_WHITE = 25.0;
+    public final static double VALUE_MIDDLE_HEART_WHITE = 25.0;
+
+    public final static double VALUE_SMALL_SPHERICAL_WHITE = 15.0;
+    public final static double VALUE_SMALL_SQUARE_WHITE = 15.0;
+    public final static double VALUE_SMALL_STAR_WHITE = 20.0;
+    public final static double VALUE_SMALL_HEART_WHITE = 20.0;
 
     //生物的附加价值（装饰器）
     public final static double VALUE_ADDED_ORGANIC = 5.0;

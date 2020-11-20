@@ -13,10 +13,15 @@ public class FactoryParameter implements Serializable{
 	public static String SERVICE_DISPLAY_CHOCOLATE;
 	public static String SERVICE_DISPLAY_WORKERS;
 	public static Map<String,Double> chocolatePrice;//黑/白/大/中/小/圆/方巧克力价格
-	public Set<String> size;//大/中/小
-	public Set<String> shape;//圆/方
-	public Set<String> color;//黑/白
-	public double quality=0.2;//质量高的巧克力价格*=（1+quality）
+	public static Set<String> size;//大/中/小
+	public static Set<String> shape;//圆/方
+	public static Set<String> color;//黑/白
+	public static double quality=0.2;//质量高的巧克力价格*=（1+quality）
+	public static int powerState=11;
+	public static int liquidState=12;
+	public static int producedState=2;
+	public static int decoratedState=3;
+	public static int soldState=4;
 
 	public FactoryParameter(){
 		whiteMeterialPrice=20;

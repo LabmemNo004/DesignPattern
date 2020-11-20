@@ -6,6 +6,7 @@ import java.util.Queue;
 import Criteria.ChocolateCriteria;
 import Chocolate.Chocolate;
 import Factory.Factory;
+import FactoryParameter.FactoryParameter;
 
 public class ProcessFacade {
     private SmashArea smashArea;
@@ -26,6 +27,7 @@ public class ProcessFacade {
         //从后往前模拟流水线
         System.out.println("======== 使用外观模式 ========");
         System.out.println("======== 使用过滤器模式 ========");
+        //使用Factory中方法获取
         while(FactoryParameter._chocolates.size()<100){
             //凝固塑形
             List<Chocolate> produced = criteria.meetCriteria(freezeArea.freeze(liquid));

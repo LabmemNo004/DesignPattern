@@ -23,10 +23,10 @@ public class DisplayChocolates implements BusinessService{
 
         for(IChocolate now:chocolates)
         {
-            if(now.getState()==FactoryParameter.waitProcess) waitProcess++;
-            else if(now.getState()==FactoryParameter.waitPackage) waitPackage++;
-            else if(now.getState()==FactoryParameter.waitSell) waitSell++;
-            else if(now.getState()==FactoryParameter.hasSell) hasSell++;
+            if(now.getState()==FactoryParameter.powerState||now.getState()==FactoryParameter.liquidState) waitProcess++;
+            else if(now.getState()==FactoryParameter.producedState) waitPackage++;
+            else if(now.getState()==FactoryParameter.decoratedState) waitSell++;
+            else if(now.getState()==FactoryParameter.soldState) hasSell++;
             else continue;
         }
 

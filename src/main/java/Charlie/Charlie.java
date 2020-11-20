@@ -1,7 +1,9 @@
 package Charlie;
 
-public class Charlie {
-    private double accout;
+import java.io.Serializable;
+
+public class Charlie implements Robot, Serializable {
+    private double account;
     private Charlie()
     {
 
@@ -9,17 +11,22 @@ public class Charlie {
 
     public void addAccount(Double  gold)
     {
-        accout+=gold;
+        account +=gold;
     }
 
-    public void reduceAccount(Double  gold)
+    public boolean reduceAccount(Double m)
     {
-        accout-=gold;
+        if (account <m) {
+            return false;
+        }
+        account -= m;
+        return true;
     }
 
-    public double getAccout()
+
+    public double getAccount()
     {
-        return accout;
+        return account;
     }
     static public Charlie charlie=new Charlie();
 }

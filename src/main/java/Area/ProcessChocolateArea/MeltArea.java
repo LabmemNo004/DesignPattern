@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Queue;
 
 import Chocolate.Chocolate;
+import Worker.Worker;
 
 public class MeltArea extends WorkerProduceLink{
     public List<Chocolate> melt(Queue<Chocolate> powder){

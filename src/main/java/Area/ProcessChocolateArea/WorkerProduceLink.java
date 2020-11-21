@@ -1,7 +1,10 @@
 package Area.ProcessChocolateArea;
 
+import Worker.Worker;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 //描述由工人进行生产的生产环节，子类有MeltArea和FreezeArea
 public abstract class WorkerProduceLink {

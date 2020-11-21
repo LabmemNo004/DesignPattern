@@ -1,6 +1,7 @@
 package Worker;
 //import Object.*;    hzj:这边object的作用是什么？？？？
 import Chocolate.*;
+import Mould.Mould;
 
 public abstract class Worker extends Person {
 
@@ -14,7 +15,7 @@ public abstract class Worker extends Person {
     }
 
     public abstract Extension GetExtensionWoker(String extensionType);
-    public abstract Chocolate work(Chocolate chocolate,Mould mould);//hzj：增加mould
+    public abstract Chocolate work(Chocolate chocolate, Mould mould);//hzj：增加mould
 
     public String getWorkTypeString()
     {

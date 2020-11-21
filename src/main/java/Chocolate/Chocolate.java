@@ -70,7 +70,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         produceStrategy.doShape(this);
         Random r=new Random();
         this.quality= r.nextInt(2);
-        state.setState(new ProducedState(state));
+        state.setState(2,new ProducedState(state));
         setPrice();
     }
 

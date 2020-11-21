@@ -120,9 +120,8 @@ public class Parameter implements Serializable{
 <<<<<<< HEAD
 		quality=0.2;
 	}*/
-=======
-		*/
+
 		
-	}
->>>>>>> 0ac161412e7ed085ad5c68d67e74c822f9d64c88
+
+
 }

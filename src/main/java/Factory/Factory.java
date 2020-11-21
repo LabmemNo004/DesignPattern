@@ -10,6 +10,7 @@ import Area.ChocolatePackagingArea;
 import Area.RawMaterialManagementArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
 import Charlie.Charlie;
+import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
 
 
@@ -38,7 +39,7 @@ public class Factory implements Serializable {
         this._productionArea=ChocolateProductionArea.getInstance(Charlie.charlie,this);
         this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.charlie,this);
         this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
-        this._chocolates=new ArrayList<Chocolate.IChocolate>();
+        this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
 
     }
 

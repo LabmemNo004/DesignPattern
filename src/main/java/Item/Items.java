@@ -3,7 +3,8 @@ package Item;
 /*抽象基类
 * 它的子类：Chocolate,Packet
 * */
-public abstract class Items extends TheObject{
+public abstract class Items extends TheObject
+{
     public abstract String getName();//获取物品名称
 
     public abstract int getCount();//获取数量多少

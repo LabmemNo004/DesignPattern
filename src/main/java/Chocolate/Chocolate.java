@@ -2,6 +2,7 @@ package Chocolate;
 
 import Mediator.ChocolateMediator;
 import State.*;
+import Strategy.ProduceChocolate;
 import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
 import FactoryParameter.Parameter;
@@ -26,6 +27,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     protected ArrayList<String> Pack; //巧克力外层包装实体
 
     protected ChocolateMediator chocolateMediator;//巧克力监察者
+
+    private ProduceChocolate strategy;//生产巧克力策略
 
     /*private  ChocolateShaping strategy;//巧克力塑形*/
 

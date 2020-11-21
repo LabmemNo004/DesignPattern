@@ -4,4 +4,5 @@ package Iterator;
 public interface Iterator<T> {
     boolean hasNext();//是否有下一个元素
     T next();//返回下一个元素
+    int getPoint();
 }

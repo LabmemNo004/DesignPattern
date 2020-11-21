@@ -1,9 +1,10 @@
 package AbstractFactory;
 
 import Chocolate.*;
+import Iterator.Iterator;
 import Iterator.ObjectCollection;
 
-public class BigChocolateFactory {
+public class BigChocolateFactory extends AbstractChocolateFactory{
     private BigMould _WhiteSphericalMould;
     private BigMould _BlackSphericalMould;
     private BigMould _WhiteSquareMould;
@@ -35,6 +36,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteSphericalMould == null) {
             this._WhiteSphericalMould = new BigMould(new SphericalShaped(),new WhiteColor());
+            BigMouldCollection.add(_WhiteSphericalMould);//将新创建的模具加入集合中
         }
         return this._WhiteSphericalMould;
     }
@@ -45,6 +47,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackSphericalMould == null) {
             this._BlackSphericalMould = new BigMould(new SphericalShaped(),new BlackColor());
+            BigMouldCollection.add(_BlackSphericalMould);
         }
         return this._BlackSphericalMould;
     }
@@ -55,6 +58,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteSquareMould == null) {
             this._WhiteSquareMould =  new BigMould(new SquareShaped(),new WhiteColor());
+            BigMouldCollection.add(_WhiteSquareMould);
         }
         return this._WhiteSquareMould;
     }
@@ -65,6 +69,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackSquareMould == null) {
             this._BlackSquareMould = new BigMould(new SquareShaped(),new BlackColor());
+            BigMouldCollection.add(_BlackSquareMould);
         }
         return this._BlackSquareMould;
     }
@@ -75,6 +80,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteStarMould == null) {
             this._WhiteStarMould = new BigMould(new StarShaped(),new WhiteColor());
+            BigMouldCollection.add(_WhiteStarMould);
         }
         return this._WhiteStarMould;
     }
@@ -85,6 +91,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackStarMould == null) {
             this._BlackStarMould = new BigMould(new StarShaped(),new BlackColor());
+            BigMouldCollection.add(_BlackStarMould);
         }
         return this._BlackStarMould;
     }
@@ -95,6 +102,7 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteHeartMould == null) {
             this._WhiteHeartMould = new BigMould(new HeartShaped(),new WhiteColor());
+            BigMouldCollection.add(_WhiteHeartMould);
         }
         return this._WhiteHeartMould;
     }
@@ -105,7 +113,28 @@ public class BigChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackHeartMould == null) {
             this._BlackHeartMould = new BigMould(new HeartShaped(),new BlackColor());
+            BigMouldCollection.add(_BlackHeartMould);
         }
         return this._BlackHeartMould;
+    }
+
+    @Override
+    public void useIterator() {//对模具集合使用迭代器进行遍历
+        Iterator<BigMould>iter=BigMouldCollection.iterator();
+        if(iter.hasNext()){
+            System.out.println("BigChocolateFactory中已创建的模具信息如下:");
+            while(iter.hasNext()){
+                System.out.println("模具"+(iter.getPoint()+1)+":");
+                iter.next().getInfo();
+                System.out.println();
+            }
+        }
+        else{
+            System.out.println("BigChocolateFactory中暂时没有模具信息!");
+        }
+
+
+
+
     }
 }

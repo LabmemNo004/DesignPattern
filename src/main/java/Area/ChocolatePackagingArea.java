@@ -6,8 +6,8 @@ import Charlie.Charlie;
 import java.io.Serializable;
 import java.util.ArrayList;
 import FactoryParameter.Parameter;
-import Interpreter.ParseException;
-import Interpreter.Parser;
+import Decorator.*;
+
 /*
  额外使用了Charlie类
  */
@@ -41,22 +41,45 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     /*
     获取巧克力个体售价
      */
-    public void setPrice() throws ParseException {
+    public void setPrice()  {
         for(IChocolate now:chocolate)
         {
             if(now.getState()==2)
             {
-                //String now_str = Parameter.chocolatePrice.get(now.getSize().toString())+ "+" + now.getShape().toString() + "+" + now.getColor().toString();
-                //将枚举类型按照 ”大小_形状_颜色“ 的字符串格式返回，用Interpreter模式识别返回价格(Double)
                 double chocolateValue = Parameter.chocolatePrice.get(now.getSize().toString())+Parameter.chocolatePrice.get(now.getShape().toString())+Parameter.chocolatePrice.get(now.getColor().toString());
-
                 now.setPrice(chocolateValue);
                 System.out.println("巧克力" + now.getName() + "估值完成，售价" + chocolateValue + "元");
             }
         }
     }
 
-    public void decorator(){
+    /*
+    Decorator模式
+     */
+    public void filter(){
+        for(IChocolate now:chocolate)
+            if(now.getState()==2)
+            {
+                int quality=now.getQuality();
+                if(quality==1)
+                {
+                    now=new HqChocolateDecorator(now);
+                    System.out.println("该巧克力被分类为优质巧克力");
+                }
+                else{
+                    now=new LqChocolateDecorator(now);
+                    System.out.println("该巧克力被分类为劣质巧克力");
+                }
+            }
+    }
+
+    /*
+    undo redo 包装 memento模式
+     */
+    public void Decorator(){
+
+
+
 
 
     }

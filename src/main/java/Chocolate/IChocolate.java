@@ -8,7 +8,7 @@ import Shaped.MouldShape;
 import State.State;
 import Visitor.ChocolateVisitor;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface IChocolate {
     String getName();
@@ -29,9 +29,9 @@ public interface IChocolate {
     //设置巧克力价格
     double getPrice();
     //获得巧克力基础定价
-    List<String> getPackInfo();
+    ArrayList<String> getPackInfo();
     //获得巧克力外层包装信息
-    List<String> getPack();
+    ArrayList<String> getPack();
     //获得巧克力外层包装实体
     void addPack(String layer);
     //增加巧克力最外层包装string（黑/白）
@@ -44,9 +44,12 @@ public interface IChocolate {
     // 随机产生质量系
     void setMediator(ChocolateMediator chocolateMediator);
 
-    public void accept(ChocolateVisitor chocolateVisitor);
+    void accept(ChocolateVisitor chocolateVisitor);
 
     ChocolateMediator getMediator();
     //设置监察官
+
+    Chocolate getChocolate();
+    //获取巧克力
 
 }

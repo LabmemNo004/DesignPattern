@@ -11,7 +11,7 @@ public class Director {
     }
 
 
-    public Worker getFarmer() {
+    public Worker getWorker() {
         return _builder.getWorker();
     }
 

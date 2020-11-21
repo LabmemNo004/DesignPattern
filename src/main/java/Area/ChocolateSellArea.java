@@ -1,5 +1,6 @@
 package Area;
 
+import CallBack.AddMoneyCallBack;
 import Charlie.Charlie;
 import Chocolate.Chocolate;
 import Factory.Factory;
@@ -42,9 +43,11 @@ public class ChocolateSellArea extends Area {
         areaChocolates.add(chocolate);
     }
 
-    public void sellChocolate()
+    public void sellChocolate()//留言：使用回调模式销售巧克力
     {
-        _charlie.addAccount(getPrice(areaChocolates));
+        double addMoney=getPrice(areaChocolates);
+        addMoneyCallBack=new AddMoneyCallBack(addMoney,charlie);
+        addMoneyCallBack.call();
         areaChocolates.clear();
     }
 
@@ -70,4 +73,5 @@ public class ChocolateSellArea extends Area {
 
     private static volatile ChocolateSellArea chocolateSellArea;
     private ArrayList<Chocolate> areaChocolates;
+    private AddMoneyCallBack addMoneyCallBack;
 }

@@ -66,6 +66,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
         }
     }
 
+
     //留言：以下属于观察者模式
     @Override
     public void addObserber(MaterialObserver observer) {

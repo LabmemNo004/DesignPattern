@@ -7,7 +7,7 @@ import Chocolate.Material;
 import Chocolate.Color.Colors;
 
 public class Charlie implements MaterialObserver,Robot{
-    private double account;
+    private double account=1000;
     private Charlie()
     {
 

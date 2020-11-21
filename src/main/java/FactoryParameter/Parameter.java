@@ -124,7 +124,14 @@ public class Parameter implements Serializable{
 
 	}
 
-		
+	public enum WorkType {
+		SPARE, LTS, PTL
+	}
+
+	public final static ArrayList<String> WORKER_NAMES = new ArrayList<>(Arrays.asList(
+			"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"));
+
+	public static final int EACH_TYPE_NUM = 4;
 
 
 }

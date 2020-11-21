@@ -97,6 +97,32 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         return quality;
     }
 
+    //留言：转换器模式需要对巧克力里面的属性操作，故加了设置巧克力color,size,shape,state的函数
+    public void setSize(Mould.Size size)//设置巧克力的大小
+    {
+        this.size=size;
+    }
+
+    public void setShape(MouldShape.Shapes shape)//设置巧克力的形状
+    {
+        this.shape=shape;
+    }
+
+    public void setColor(Color.Colors color)//设置巧克力的颜色
+    {
+        this.color=color;
+    }
+
+    public Context getState1()//获取巧克力状态
+    {
+        return this.state;
+    }
+
+    public void setState1(Context state)//设置巧克力状态
+    {
+        this.state=state;
+    }
+
     @Override
     public void setPrice() {//巧克力初始价格
         double sizePrice= FactoryParameter.chocolatePrice.get(size.toString());

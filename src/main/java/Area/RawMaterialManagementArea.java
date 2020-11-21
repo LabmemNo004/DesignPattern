@@ -43,7 +43,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
     }
 
 
-
+    //原料的生产
     public void blackProduce(){//用了单例就不用静态
         if(blackMaterial.getNum()>=1)
         {
@@ -66,7 +66,16 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
             notifyAllObservers(whiteMaterial, Colors.white);
         }
     }
+    //巧克力原材料的购买过程之收货
+    public void buyBlackMaterial(int num)
+    {
+        blackMaterial.add(num);
+    }
 
+    public void buyWhiteMaterial(int num)
+    {
+        whiteMaterial.add(num);
+    }
 
     //留言：以下属于观察者模式
     @Override

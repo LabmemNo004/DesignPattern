@@ -1,11 +1,10 @@
-package Prototype;
-
 import Chocolate.Mould;
+import Prototype.MouldCahce;
 
 public class PrototypeTest {
     public static void main(String[] args) {
         MouldCahce.loadCache();
-        System.out.println("======通过Prototype原型模式创建模具======");
+        System.out.println("======测试 Prototype 原型模式======");
         Mould clonedShape1 = (Mould) MouldCahce.getShape("bigStarWhite");
         System.out.println("Size: "+clonedShape1.getSize()+"   Shape: " + clonedShape1.getShape()+"   Color: "+clonedShape1.getColor());
         Mould clonedShape2 = (Mould) MouldCahce.getShape("middleSquareBlack");

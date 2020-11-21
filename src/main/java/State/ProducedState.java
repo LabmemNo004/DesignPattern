@@ -25,7 +25,7 @@ public class ProducedState extends State{
      */
 	public void jumpState(Context context) {
 		System.out.println("Current chocolate state:"+context.getStateName());
-		context.setState(Parameter.decoratedState,context);
+		context.setState(Parameter.decoratedState);
 		System.out.println("Jump to next state:"+context.getStateName());
 	}
 }

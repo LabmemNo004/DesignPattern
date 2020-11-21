@@ -24,27 +24,22 @@ public class Context {
      *
      * @param state the state
      */
-	/*
-	public void setState(State state) {
-		this.state = state;
-	}
-	*/
-	public void setState(int stateId, Context context) {
+	public void setState(int stateId) {
 		switch(stateId){
 	    case 11 :
-	        this.state = new PowderState(context);
+	        this.state = new PowderState(this);
 	        break; 
 	    case 12 :
-	    	this.state = new LiquidState(context);
+	    	this.state = new LiquidState(this);
 	    	break; 
 	    case 2 :
-	    	this.state = new ProducedState(context);
+	    	this.state = new ProducedState(this);
 		    break; 
 	    case 3 :
-	    	this.state = new DecoratedState(context);
+	    	this.state = new DecoratedState(this);
 		    break; 
 	    case 4 :
-	    	this.state = new SoldState(context);
+	    	this.state = new SoldState(this);
 		    break; 
 	    default : 
 	    	System.out.println("Error, unknown stateValue! Check your input in setState()");

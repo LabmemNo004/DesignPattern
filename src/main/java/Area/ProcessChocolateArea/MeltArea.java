@@ -15,11 +15,21 @@ public class MeltArea extends WorkerProduceLink{
             PowderToLiquidWorker worker = (PowderToLiquidWorker)w;
             Chocolate chocolate = powder.poll();//获取下一个巧克力
             if(chocolate==null)break;//可能出现人多巧克力少的情况
-            if(worker instanceof concreteWorker)//出现强化工人的情况
-            worker.work(chocolate);//生产工人将巧克力从粉末变成液体
-            System.out.println("融化了一份巧克力");
-            chocolates.add(chocolate);
+            meltChocolate(worker, chocolates, chocolate);
+            // if(worker instanceof concreteWorker)//出现强化工人的情况
+            if(worker.GetExtensionWorker("PowderToLiquid")!=null){
+                Chocolate _chocolate = powder.poll();//获取下一个巧克力
+                if(_chocolate==null)break;//可能出现人多巧克力少的情况
+                meltChocolate(worker, chocolates, _chocolate);
+            }
+            
         }
         return chocolates;
+    }
+
+    private void meltChocolate(PowderToLiquidWorker worker,List<Chocolate> chocolates,Chocolate chocolate) {
+        worker.work(chocolate);//生产工人将巧克力从粉末变成液体
+        System.out.println("融化了一份巧克力");
+        chocolates.add(chocolate);
     }
 }

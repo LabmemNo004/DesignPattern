@@ -139,9 +139,18 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.color=color;
     }
 
+
+    @Override
+    public void setPrice() {//巧克力初始价格
+        double sizePrice= Parameter.chocolatePrice.get(size.toString());
+        double shapePrice= Parameter.chocolatePrice.get(shape.toString());
+        double colorPrice= Parameter.chocolatePrice.get(color.toString());
+        price=sizePrice+shapePrice+colorPrice;
+    }
+
     public void setPrice(double p){//Charlie作为工厂的管理者，有权修改某款巧克力的价格，通过ChococlateController
         price=p;
-    }//设置巧克力价格
+    }
 
     public void setComment(String comment){//Charlie作为工厂的管理者，有权评价巧克力，通过ChococlateController
         this.comment=comment;

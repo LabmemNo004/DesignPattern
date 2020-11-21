@@ -4,9 +4,7 @@ import Chocolate.Chocolate;
 import Color.Color;
 import Mould.Mould;
 import Shaped.MouldShape;
-import State.Context;
-import State.State;
-
+import State.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +14,7 @@ public class SimiFinishedChocolate {
     private Mould.Size size;//巧克力大小
     private MouldShape.Shapes shape;//巧克力形状
     private Color.Colors color;//巧克力颜色
-    private Context state;//巧克力状态，11为待生产的粉末状，12为待生产的液体状，可以理解为原料，2为生产完，3为装饰完，4为已销售
+    private int state;//巧克力状态，
     /*该变量需修改为State类型*/
 
 
@@ -25,16 +23,16 @@ public class SimiFinishedChocolate {
         this.size=m.getSize();
         this.shape=m.getShape();
         this.color=m.getColor();
-        this.state=m.getState1();
+        this.state=m.getState();
     }
 
-    public Context getState1(){//获取巧克力半成品状态
+    public int getState1(){//获取巧克力半成品状态
         return state;
 
     }
-    public State getState()
+    public int getState()
     {
-        return state.getState();
+        return state;
     }
     public static SimiFinishedChocolate getMemento(Chocolate chocolate){
         System.out.println("你正在获取chocolate的状态");
@@ -51,14 +49,14 @@ public class SimiFinishedChocolate {
         }
         return this.size == simiFinishedChocolate.getSize() &&
                 this.shape == simiFinishedChocolate.getShape()&&
-                this.state==simiFinishedChocolate.getState1()&&
+                this.state==simiFinishedChocolate.getState()&&
                 this.color==simiFinishedChocolate.getColor();
 
     }
 
     //
     public static void simiToChoco(Chocolate chocolate,SimiFinishedChocolate simiFinishedChocolate){//让巧克力回退到某个状态
-        chocolate.setState1(simiFinishedChocolate.getState1());
+        chocolate.setState(simiFinishedChocolate.getState());
         chocolate.setColor(simiFinishedChocolate.getColor());
         chocolate.setSize(simiFinishedChocolate.getSize());
         chocolate.setShape(simiFinishedChocolate.getShape());

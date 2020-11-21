@@ -1,7 +1,8 @@
 package Converter;
 
 import Chocolate.Chocolate;
-
+import Prototype.MouldCahce;
+import Chocolate.Mould;
 
 /**
  * @author : SCH001
@@ -12,6 +13,11 @@ public class ChocolateConverter extends Converter<SimiFinishedChocolate, Chocola
     public ChocolateConverter(){
         super(simiFinishedChocolate->{
             Chocolate chocolate = new Chocolate();
+            MouldCahce.loadCache();
+            Mould clonedShape1 = (Mould) MouldCahce.getShape("bigStarWhite");
+            System.out.println("======使用 Prototype原型======");
+            System.out.println("Size: "+clonedShape1.getSize()+"   Shape: " + clonedShape1.getShape()+"   Color: "+clonedShape1.getColor());
+            chocolate.Produce(clonedShape1);
             SimiFinishedChocolate.simiToChoco(chocolate,simiFinishedChocolate);
             return chocolate;
         }, SimiFinishedChocolate::getMemento);

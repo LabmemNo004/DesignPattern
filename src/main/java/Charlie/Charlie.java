@@ -1,7 +1,7 @@
 package Charlie;
 
 
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 import Observer.MaterialObserver;
 import Chocolate.Material;
 import Chocolate.Color.Colors;
@@ -42,12 +42,12 @@ public class Charlie implements MaterialObserver,Robot{
         int num=0;
         double cost = 0;
         if(color==Colors.black){
-            num = (int)(account/2/FactoryParameter.blackMeterialPrice);
-            cost = num*FactoryParameter.blackMeterialPrice;
+            num = (int)(account/2/ Parameter.blackMeterialPrice);
+            cost = num* Parameter.blackMeterialPrice;
         }
         else {
-            num = (int)(account/2/FactoryParameter.whiteMeterialPrice);
-            cost = num*FactoryParameter.whiteMeterialPrice;
+            num = (int)(account/2/ Parameter.whiteMeterialPrice);
+            cost = num* Parameter.whiteMeterialPrice;
         }
         reduceAccount(cost);
         material.add(num);

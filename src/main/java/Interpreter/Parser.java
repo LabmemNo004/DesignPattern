@@ -1,14 +1,7 @@
 package Interpreter;
-
-import Constant.Const;
-
+import FactoryParameter.Parameter;
 public class Parser {
-    /**
-     *
-     * @param exp 用户输入的语法表达式
-     * @return 解析得到的对应语法树
-     * @throws ParseException 当解析出现错误时抛出自定义的ParseException异常
-     */
+
     public static Expression parse(String exp) throws ParseException {
         String[] nodes = exp.split(" ");
 
@@ -16,14 +9,7 @@ public class Parser {
         return parse(nodes, 0, nodes.length);
     }
 
-    /**
-     *
-     * @param nodes 输入字符串分割后的词法单元
-     * @param start 当前解析子语法树的开始下标
-     * @param end 当前解析子语法树的结束下标
-     * @return 解析（[start, end)）获得的语法树
-     * @throws ParseException 当解析出现错误时抛出自定义的ParseException异常
-     */
+
     private static Expression parse(String[] nodes, int start, int end) throws ParseException {
         if(start == end){
             return null;
@@ -74,7 +60,7 @@ public class Parser {
         System.out.println("======== 使用 解释器 Interpreter模式 =======");
         System.out.println("欢迎来到查理的巧克力工厂，你出售了一些巧克力：");
         System.out.print("这是你的出售清单 ：");
-        String exp = "2 * " + Const.VALUE_BIG_SPHERICAL_BLACK +" + "+ Const.VALUE_MIDDLE_SQUARE_WHITE + " + "+ Const.VALUE_SMALL_STAR_WHITE;
+        String exp = "2 * " + Parameter.VALUE_BIG_SPHERICAL_BLACK +" + "+ Parameter.VALUE_MIDDLE_SQUARE_WHITE + " + "+ Parameter.VALUE_SMALL_STAR_WHITE;
         System.out.println(exp);
 
         System.out.println("你获得了以下金钱 ： " + Parser.parse(exp));

@@ -1,5 +1,7 @@
 package State;
 
+import FactoryParameter.Parameter;
+
 /**
  * The Chocolate State: SoldState(stateValue=4).
  */
@@ -13,7 +15,7 @@ public class SoldState extends State{
      */
 	public SoldState(Context context) {
 		stateName="SoldState";
-		stateValue=4;
+		stateValue=Parameter.soldState;
 	}
 	
 	/**
@@ -22,8 +24,8 @@ public class SoldState extends State{
      * @param context the context
      */
 	public void jumpState(Context context) {
-		System.out.println("Current chocolate state:"+context.getState().stateName);
-		System.out.println("Already in the last state:"+context.getState().stateName);
+		System.out.println("Current chocolate state:"+context.getStateName());
+		System.out.println("Already in the last state:"+context.getStateName());
 	}
 	
 }

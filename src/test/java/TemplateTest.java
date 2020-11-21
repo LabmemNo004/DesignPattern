@@ -1,5 +1,5 @@
 import org.junit.Test;
-import Person.worker;
+import Worker.worker;
 public class TemplateTest {
     @Test
     public void test(){

@@ -41,7 +41,7 @@ public class Parameter implements Serializable{
 		add("white");
 	}};//黑/白
 	public static double quality=0.2;//质量高的巧克力价格*=（1+quality）
-	public static int powerState=11;
+	public static int powderState=11;
 	public static int liquidState=12;
 	public static int producedState=2;
 	public static int decoratedState=3;
@@ -88,6 +88,7 @@ public class Parameter implements Serializable{
 		blackMeterialPrice=3;
 		SERVICE_DISPLAY_CHOCOLATE= "DisplayChocolate";
 		SERVICE_DISPLAY_WORKERS="DisplayWorkers";
+		quality=0.2;
 		chocolatePrice=new HashMap<String,Double>(){{
 			put("black",5.0);
 			put("white",10.0);
@@ -100,7 +101,7 @@ public class Parameter implements Serializable{
 			put("heart",10.0);
 		}};
 
-
+		/*
 		size=new HashSet<String>(){{
 			add("big");
 			add("middle");
@@ -116,6 +117,12 @@ public class Parameter implements Serializable{
 			add("black");
 			add("white");
 		}};
+<<<<<<< HEAD
 		quality=0.2;
 	}*/
+=======
+		*/
+		
+	}
+>>>>>>> 0ac161412e7ed085ad5c68d67e74c822f9d64c88
 }

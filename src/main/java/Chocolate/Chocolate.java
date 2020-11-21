@@ -2,9 +2,10 @@ package Chocolate;
 
 import Mediator.ChocolateMediator;
 import State.*;
+import Strategy.ProduceChocolate;
 import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,6 +27,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     protected ArrayList<String> Pack; //巧克力外层包装实体
 
     protected ChocolateMediator chocolateMediator;//巧克力监察者
+
+    private ProduceChocolate strategy;//生产巧克力策略
 
     /*private  ChocolateShaping strategy;//巧克力塑形*/
 
@@ -133,9 +136,9 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     @Override
     public void setPrice() {//巧克力初始价格
-        double sizePrice= FactoryParameter.chocolatePrice.get(size.toString());
-        double shapePrice= FactoryParameter.chocolatePrice.get(shape.toString());
-        double colorPrice= FactoryParameter.chocolatePrice.get(color.toString());
+        double sizePrice= Parameter.chocolatePrice.get(size.toString());
+        double shapePrice= Parameter.chocolatePrice.get(shape.toString());
+        double colorPrice= Parameter.chocolatePrice.get(color.toString());
         price=sizePrice+shapePrice+colorPrice;
     }
 

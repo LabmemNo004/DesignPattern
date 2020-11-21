@@ -31,41 +31,53 @@ public class Parameter implements Serializable{
 
 	public final static double QUALITY = 0.2;
 	//巧克力产品的价值
-	public final static double VALUE_BIG_SPHERICAL_BLACK = 15.0;
-	public final static double VALUE_BIG_SQUARE_BLACK = 15.0;
-	public final static double VALUE_BIG_STAR_BLACK = 20.0;
-	public final static double VALUE_BIG_HEART_BLACK = 20.0;
+	public final static double VALUE_BIG_SPHERICAL_BLACK = 25.0;
+	public final static double VALUE_BIG_SQUARE_BLACK = 25.0;
+	public final static double VALUE_BIG_STAR_BLACK = 30.0;
+	public final static double VALUE_BIG_HEART_BLACK = 30.0;
 
-	public final static double VALUE_MIDDLE_SPHERICAL_BLACK = 10.0;
-	public final static double VALUE_MIDDLE_SQUARE_BLACK = 10.0;
-	public final static double VALUE_MIDDLE_STAR_BLACK = 15.0;
-	public final static double VALUE_MIDDLE_HEART_BLACK = 15.0;
+	public final static double VALUE_MIDDLE_SPHERICAL_BLACK = 20.0;
+	public final static double VALUE_MIDDLE_SQUARE_BLACK = 20.0;
+	public final static double VALUE_MIDDLE_STAR_BLACK = 25.0;
+	public final static double VALUE_MIDDLE_HEART_BLACK = 25.0;
 
-	public final static double VALUE_SMALL_SPHERICAL_BLACK = 5.0;
-	public final static double VALUE_SMALL_SQUARE_BLACK = 5.0;
-	public final static double VALUE_SMALL_STAR_BLACK = 10.0;
-	public final static double VALUE_SMALL_HEART_BLACK = 10.0;
+	public final static double VALUE_SMALL_SPHERICAL_BLACK = 15.0;
+	public final static double VALUE_SMALL_SQUARE_BLACK = 15.0;
+	public final static double VALUE_SMALL_STAR_BLACK = 20.0;
+	public final static double VALUE_SMALL_HEART_BLACK = 20.0;
 
-	public final static double VALUE_BIG_SPHERICAL_WHITE = 25.0;
-	public final static double VALUE_BIG_SQUARE_WHITE = 25.0;
-	public final static double VALUE_BIG_STAR_WHITE = 30.0;
-	public final static double VALUE_BIG_HEART_WHITE = 30.0;
+	public final static double VALUE_BIG_SPHERICAL_WHITE = 30.0;
+	public final static double VALUE_BIG_SQUARE_WHITE = 30.0;
+	public final static double VALUE_BIG_STAR_WHITE = 35.0;
+	public final static double VALUE_BIG_HEART_WHITE = 35.0;
 
-	public final static double VALUE_MIDDLE_SPHERICAL_WHITE = 20.0;
-	public final static double VALUE_MIDDLE_SQUARE_WHITE = 20.0;
-	public final static double VALUE_MIDDLE_STAR_WHITE = 25.0;
-	public final static double VALUE_MIDDLE_HEART_WHITE = 25.0;
+	public final static double VALUE_MIDDLE_SPHERICAL_WHITE = 25.0;
+	public final static double VALUE_MIDDLE_SQUARE_WHITE = 25.0;
+	public final static double VALUE_MIDDLE_STAR_WHITE = 30.0;
+	public final static double VALUE_MIDDLE_HEART_WHITE = 30.0;
 
-	public final static double VALUE_SMALL_SPHERICAL_WHITE = 15.0;
-	public final static double VALUE_SMALL_SQUARE_WHITE = 15.0;
-	public final static double VALUE_SMALL_STAR_WHITE = 20.0;
-	public final static double VALUE_SMALL_HEART_WHITE = 20.0;
+	public final static double VALUE_SMALL_SPHERICAL_WHITE = 20.0;
+	public final static double VALUE_SMALL_SQUARE_WHITE = 20.0;
+	public final static double VALUE_SMALL_STAR_WHITE = 25.0;
+	public final static double VALUE_SMALL_HEART_WHITE = 25.0;
 
 	public Parameter(){
 		whiteMeterialPrice=6;
 		blackMeterialPrice=3;
 		SERVICE_DISPLAY_CHOCOLATE= "DisplayChocolate";
 		SERVICE_DISPLAY_WORKERS="DisplayWorkers";
+		chocolatePrice=new HashMap<String,Double>(){{
+			put("black",5.0);
+			put("white",10.0);
+			put("big",15.0);
+			put("middle",10.0);
+			put("small",5.0);
+			put("spherical",5.0);
+			put("square",5.0);
+			put("star",10.0);
+			put("heart",10.0);
+		}};
+
 
 		size=new HashSet<String>(){{
 			add("big");

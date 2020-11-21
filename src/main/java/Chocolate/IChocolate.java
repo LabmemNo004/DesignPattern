@@ -3,6 +3,7 @@ package Chocolate;
 /*巧克力接口*/
 import Color.Color;
 import Mediator.ChocolateMediator;
+import Memento.Memento;
 import Mould.Mould;
 import Shaped.MouldShape;
 import State.State;
@@ -51,5 +52,10 @@ public interface IChocolate {
 
     Chocolate getChocolate();
     //获取巧克力
+
+    Memento createMemento();
+    //创建备忘录
+
+    void reinstateMemento(Memento mem);
 
 }

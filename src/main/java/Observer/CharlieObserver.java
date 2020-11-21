@@ -2,7 +2,7 @@ package Observer;
 
 import Area.RawMaterialManagementArea;
 import Charlie.Charlie;
-import Chocolate.Color.Colors;
+import Color.Color.Colors;
 import Factory.Factory;
 import FactoryParameter.Parameter;
 

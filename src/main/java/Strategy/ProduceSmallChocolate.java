@@ -6,6 +6,7 @@ import Mould.*;
 public class ProduceSmallChocolate implements ProduceChocolate{
     SmallMould smallMould;
     public ProduceSmallChocolate(SmallMould m){
+        System.out.println("======== 使用策略 Strategy 模式 ========");
         smallMould=m;
     }
     @Override

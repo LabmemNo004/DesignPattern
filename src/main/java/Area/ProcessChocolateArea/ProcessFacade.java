@@ -1,5 +1,6 @@
 package Area.ProcessChocolateArea;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -22,6 +23,8 @@ public class ProcessFacade {
         meltArea = area.getMeltArea();
         freezeArea = area.getFreezeArea();
         criteria = new ChocolateCriteria();
+        powder = new LinkedList<>();
+        liquid = new LinkedList<>();
     }
 
     public void produceChocolate(){

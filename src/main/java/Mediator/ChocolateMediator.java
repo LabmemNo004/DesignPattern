@@ -29,7 +29,7 @@ public class ChocolateMediator implements Mediator{
             if(now.getState()== FactoryParameter.decoratedState)
             {
                 _waitSellChocolates.add(now);
-                now.setState(FactoryParameter.soldState);
+                now.setState(FactoryParameter.soldState);//或者是State模式的jump()
             }
         }//等待达到阈值
         if(_waitSellChocolates.size()>=threshold)

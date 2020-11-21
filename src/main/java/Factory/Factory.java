@@ -81,8 +81,10 @@ public class Factory implements Serializable {
     /**
      * 为整个工厂分配一个中介者
      */
-    public void setMediatorForFactory(ChocolateMediator chocolateMediator){
-        this._chocolateMediator = chocolateMediator;    }
+    public void setMediatorForFactory(ChocolateMediator chocolateMediator)
+    {
+        this._chocolateMediator = chocolateMediator;
+    }
 
     public ArrayList<IChocolate> getChocolates()
     {

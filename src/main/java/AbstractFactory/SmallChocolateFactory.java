@@ -1,6 +1,7 @@
 package AbstractFactory;
 
 import Chocolate.*;
+import Iterator.ObjectCollection;
 
 public class SmallChocolateFactory {
     private SmallMould _WhiteSphericalMould;
@@ -11,6 +12,7 @@ public class SmallChocolateFactory {
     private SmallMould _BlackStarMould;
     private SmallMould _WhiteHeartMould;
     private SmallMould _BlackHeartMould;
+    private ObjectCollection<SmallMould>SmallMouldCollection;
 
     public SmallChocolateFactory(){
         System.out.println("============Abstract Factory============");
@@ -24,6 +26,7 @@ public class SmallChocolateFactory {
         this._BlackHeartMould=null;
 
         System.out.println("成功创建小号巧克力模具抽象");
+        SmallMouldCollection=new ObjectCollection<SmallMould>();
     }
     
     /**Abstract

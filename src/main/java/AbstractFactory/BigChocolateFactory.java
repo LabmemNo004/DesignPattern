@@ -1,6 +1,7 @@
 package AbstractFactory;
 
 import Chocolate.*;
+import Iterator.ObjectCollection;
 
 public class BigChocolateFactory {
     private BigMould _WhiteSphericalMould;
@@ -11,6 +12,7 @@ public class BigChocolateFactory {
     private BigMould _BlackStarMould;
     private BigMould _WhiteHeartMould;
     private BigMould _BlackHeartMould;
+    private ObjectCollection<BigMould>BigMouldCollection;//大型模具的集合，使用iterator模式
 
     public BigChocolateFactory(){
         System.out.println("============Abstract Factory============");
@@ -22,8 +24,8 @@ public class BigChocolateFactory {
         this._BlackStarMould=null;
         this._WhiteHeartMould=null;
         this._BlackHeartMould=null;
-
         System.out.println("成功创建大号巧克力模具抽象");
+        BigMouldCollection=new ObjectCollection<BigMould>();
     }
     
     /**Abstract

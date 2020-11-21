@@ -59,6 +59,8 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
 
         CollectionIterator(){
             point=-1;
+            System.out.println("======== 使用迭代器 Iterator 模式 ========");
+            System.out.println("成功创建一个迭代器!");
 
         }
 

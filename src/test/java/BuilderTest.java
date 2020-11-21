@@ -1,5 +1,5 @@
 import org.junit.Test;
-import Person.Worker;//待完成
+import Worker.Worker;//待完成
 import Builder.*;
 
 public class BuilderTest {
@@ -11,26 +11,20 @@ public class BuilderTest {
 
         BuilderUse director = new BuilderUse();
 
-        // 使用Builder先后创建三种工种的工人
-        WorkerBuilder materialWorkerBuilder = new MaterialWorkerBuilder();
-        director.setBuilder( materialWorkerBuilder );
+        // 使用Builder先后创建二种工种的工人
+        WorkerBuilder powderToLiquidWorkerBuilder = new PowderToLiquidWorkerBuilder();
+        director.setBuilder( powderToLiquidWorkerBuilder );
         director.constructWorkerer();
         Worker worker1 = director.getWorker();
         System.out.println( director.toStringZh() );
         System.out.println("");
 
-        FarmerBuilder packagingWorkerBuilder = new PackagingWorkerBuilder();
-        director.setBuilder( cultivateFarmerBuilder );
-        director.constructFarmer();
+        FarmerBuilder liquidToSolidWorkerBuilder = new LiquidToSolidWorkerBuilder();
+        director.setBuilder( liquidToSolidWorkerBuilder );
+        director.constructWorkerer();
         Worker worker2 = director.getWorker();
         System.out.println( director.toStringZh() );
         System.out.println("");
-
-        FarmerBuilder productionWorkerBuilder = new ProductionWorkerBuilder();
-        director.setBuilder( feedWorkerBuilder );
-        director.constructWorker();
-        Worker worker3 = director.getWorker();
-        System.out.println( director.toStringZh() );
     }
 
 }

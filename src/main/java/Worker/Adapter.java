@@ -1,8 +1,9 @@
 package Worker;
-import Chocolate.*;
+
+import Chocolate.Chocolate;
 import FactoryParameter.Parameter;
 
-public class Adapter extends PowderToLiquidWorker{
+public class Adapter extends PowderToLiquidWorker {
     private ConcreteExtension _extension;
     public Adapter(Worker liquidToSolidWorker) {
         super(liquidToSolidWorker.attribute, liquidToSolidWorker.type);

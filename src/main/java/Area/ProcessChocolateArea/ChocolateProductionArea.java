@@ -1,13 +1,10 @@
 package Area.ProcessChocolateArea;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import Area.Area;
 
 import Charlie.Charlie;
-import Chocolate.Chocolate;
 import Factory.Factory;
 import Worker.Worker;
 //差一个worker类
@@ -40,11 +37,8 @@ public class ChocolateProductionArea extends Area{
         }
         return ourInstance;
     }
-    //更改生产状态
-    public void setProducePermission(int command)
-    {
-        this.smashArea.setProducePermission(command);
-    }
+
+
 
     //添加空闲工人
     public void addFreeWorker(Worker worker) {

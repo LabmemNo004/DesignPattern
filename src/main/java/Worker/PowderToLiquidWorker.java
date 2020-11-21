@@ -1,5 +1,6 @@
 package Worker;
-import Chocolate.*;
+
+import Chocolate.Chocolate;
 import FactoryParameter.Parameter;
 
 public class PowderToLiquidWorker extends Worker {

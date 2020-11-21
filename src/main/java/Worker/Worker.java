@@ -1,14 +1,12 @@
 package Worker;
 //import Object.*;    hzj:这边object的作用是什么？？？？
-import Chocolate.*;
-import Mould.Mould;
 
 public abstract class Worker extends Person {
 
     protected String type;
     protected Boolean state;
 
-    public Worker(Attribute attribute,String type) {
+    public Worker(Attribute attribute, String type) {
         super(attribute);
         this.type=type;
         state=true;

@@ -20,7 +20,7 @@ public class BigChocolateFactory extends AbstractChocolateFactory{
     private BigMould _BlackStarMould;
     private BigMould _WhiteHeartMould;
     private BigMould _BlackHeartMould;
-    private ObjectCollection<BigMould>BigMouldCollection;//大型模具的集合，使用iterator模式
+    public ObjectCollection<BigMould>BigMouldCollection;//大型模具的集合，使用iterator模式
 
     public BigChocolateFactory(){
         System.out.println("============Abstract Factory============");
@@ -139,9 +139,6 @@ public class BigChocolateFactory extends AbstractChocolateFactory{
         else{
             System.out.println("BigChocolateFactory中暂时没有模具信息!");
         }
-
-
-
 
     }
 }

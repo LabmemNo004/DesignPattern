@@ -2,7 +2,10 @@ package Chocolate;
 
 import Mediator.ChocolateMediator;
 import State.*;
+import Strategy.ProduceBigChocolate;
 import Strategy.ProduceChocolate;
+import Strategy.ProduceMiddleChocolate;
+import Strategy.ProduceSmallChocolate;
 import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
 import FactoryParameter.Parameter;
@@ -28,7 +31,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     protected ChocolateMediator chocolateMediator;//巧克力监察者
 
-    private ProduceChocolate strategy;//生产巧克力策略
+    private ProduceChocolate produceStrategy;//生产巧克力策略
 
     /*private  ChocolateShaping strategy;//巧克力塑形*/
 
@@ -48,11 +51,19 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.state=new Context();
     }
 
-    public void Produce(Mould m){//生产巧克力
-        this.size=m.getSize();
-        this.shape=m.getShape();
-        this.color=m.getColor();
-        this.name=size+" "+shape+" "+color+" "+"chocolate";
+    public void setProduceStrategy(Mould m){
+        switch (m.getSize().toString()){
+            case "big":
+                produceStrategy=new ProduceBigChocolate((BigMould)m);
+            case "middle":
+                produceStrategy=new ProduceMiddleChocolate((MiddleMould)m);
+            case "small":
+                produceStrategy=new ProduceSmallChocolate((SmallMould)m);
+        }
+    }
+
+    public void Produce(){//生产巧克力
+        produceStrategy.doShape(this);
         Random r=new Random();
         this.quality= r.nextInt(2);
         state.setState(new ProducedState(state));

@@ -53,7 +53,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
         else
         {
             System.out.println("黑巧克力原料不足！");
-            notifyAllObservers(blackMaterial, Colors.black);
+            notifyAllObservers(Colors.black);
         }
     }
     public void whiteProduce(){//用了单例就不用静态
@@ -64,7 +64,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
         else
         {
             System.out.println("白巧克力原料不足！");
-            notifyAllObservers(whiteMaterial, Colors.white);
+            notifyAllObservers(Colors.white);
         }
     }
     //巧克力原材料的购买过程之收货
@@ -90,9 +90,9 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
     }
 
     @Override
-    public void notifyAllObservers(Material material,Colors color) {
+    public void notifyAllObservers(Colors color) {
         for(MaterialObserver observer:observers){
-            observer.update(material,color);
+            observer.update(color);
         }
     }
 }

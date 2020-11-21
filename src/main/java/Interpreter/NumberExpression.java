@@ -1,7 +1,7 @@
 package Interpreter;
 
 import java.rmi.UnexpectedException;
-import static Constant.Const.*;
+import static FactoryParameter.Parameter.*;
 
 public class NumberExpression implements Expression{
     double _value;

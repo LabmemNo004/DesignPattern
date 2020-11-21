@@ -19,7 +19,7 @@ public class PowderToLiquidWorker extends Worker {
     }
 
     @Override
-    public Extension GetExtensionWoker(String extensionType) {
+    public Extension GetExtensionWorker(String extensionType) {
         if(extensionType=="PowderToLiquid")
         {
             return this._extension;

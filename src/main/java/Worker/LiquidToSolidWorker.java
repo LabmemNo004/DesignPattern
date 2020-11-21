@@ -19,7 +19,7 @@ public class LiquidToSolidWorker extends Worker {
     }
 
     @Override
-    public Extension GetExtensionWoker(String extensionType) {
+    public Extension GetExtensionWorker(String extensionType) {
         if(extensionType=="LiquidToSolid")
         {
             return this._extension;

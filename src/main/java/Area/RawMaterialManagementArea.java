@@ -6,6 +6,7 @@ import java.util.List;
 import Charlie.Charlie;
 import Chocolate.Material;
 import Factory.Factory;
+import Observer.CharlieObserver;
 import Observer.MaterialObservable;
 import Observer.MaterialObserver;
 import Chocolate.Color.Colors;
@@ -31,7 +32,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
 
     private RawMaterialManagementArea(Charlie charlie,Factory factory) {
         super("1","RawMaterialManagementArea",charlie,factory);
-        observers.add(charlie);
+        observers.add(new CharlieObserver());
     }
 
     public int getBlackMaterialNum(){

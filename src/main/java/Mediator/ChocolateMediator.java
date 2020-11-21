@@ -2,7 +2,7 @@ package Mediator;
 
 import Chocolate.IChocolate;
 import Factory.Factory;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 
 import java.util.ArrayList;
 import java.util.List;

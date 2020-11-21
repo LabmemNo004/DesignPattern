@@ -1,5 +1,4 @@
 import Converter.SimiFinishedChocolate;
-import Converter.Converter;
 import Converter.ChocolateConverter;
 import Chocolate.Chocolate;
 import Chocolate.BigMould;

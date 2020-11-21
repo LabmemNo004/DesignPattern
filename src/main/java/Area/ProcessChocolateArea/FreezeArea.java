@@ -73,6 +73,7 @@ public class FreezeArea extends WorkerProduceLink{
         if(mould.getColor()==Colors.black)area.blackProduce();
         else area.whiteProduce();
         System.out.println("生产了一份巧克力");
+        chocolate.setQuality((int)(Math.random()*100%4));
         chocolates.add(chocolate);
     }
 }

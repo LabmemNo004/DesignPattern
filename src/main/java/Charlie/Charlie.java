@@ -1,6 +1,12 @@
 package Charlie;
 
+import FactoryParameter.Parameter;
+import Observer.MaterialObserver;
+import Material.Material;
+import Color.Color.Colors;
+
 public class Charlie implements Robot{
+
     private double account=1000;
     private Charlie()
     {

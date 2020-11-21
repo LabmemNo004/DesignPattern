@@ -1,4 +1,4 @@
-package Chocolate;
+package Item;
 
 import java.io.Serializable;
 /*所有物品的抽象基类

@@ -1,11 +1,12 @@
 package Converter;
 
 import Chocolate.Chocolate;
-import Chocolate.Color;
-import Chocolate.Mould;
-import Chocolate.MouldShape;
+import Color.Color;
+import Mould.Mould;
+import Shaped.MouldShape;
 import State.Context;
 import State.State;
+
 
 import java.util.ArrayList;
 import java.util.Collections;

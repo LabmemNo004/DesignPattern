@@ -1,4 +1,8 @@
-package Chocolate;
+package Mould;
+
+import Color.Color;
+import Shaped.MouldShape;
+import Item.TheObject;
 
 /*模具基类
 * 它的子类：BigMould,MiddleMould,SmallMould*/

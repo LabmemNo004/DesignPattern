@@ -1,7 +1,6 @@
 import Chocolate.*;
 import org.junit.Test;
-import Chocolate.Items;
-import Chocolate.Pocket;
+import Pocket.Pocket;
 
 public class CompositeTest {
     @Test

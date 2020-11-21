@@ -1,10 +1,14 @@
-package Chocolate;
+package Mould;
 
-/*模具型号：中型*/
-public class MiddleMould extends Mould{
+import Color.Color;
+import Chocolate.Mould;
+import Shaped.MouldShape;
+
+/*模具型号：小型*/
+public class SmallMould extends Mould{
     @Override
     public Size getSize() {
-        return Size.middle;
+        return Size.small;
     }
 
     @Override
@@ -15,11 +19,11 @@ public class MiddleMould extends Mould{
         System.out.println("颜色:"+color.getColor());
 
     }
-    public MiddleMould(MouldShape s,Color c){
+
+    public SmallMould(MouldShape s, Color c){
         super(s,c);
         System.out.println("成功创建模具!该模具可以制作，");
         getInfo();
         System.out.println("的巧克力!");
     }
-
 }

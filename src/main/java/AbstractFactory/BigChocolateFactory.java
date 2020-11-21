@@ -1,8 +1,15 @@
 package AbstractFactory;
 
-import Chocolate.*;
+import Color.BlackColor;
+import Color.WhiteColor;
 import Iterator.Iterator;
 import Iterator.ObjectCollection;
+import Mould.BigMould;
+import Mould.Mould;
+import Shaped.HeartShaped;
+import Shaped.SphericalShaped;
+import Shaped.SquareShaped;
+import Shaped.StarShaped;
 
 public class BigChocolateFactory extends AbstractChocolateFactory{
     private BigMould _WhiteSphericalMould;

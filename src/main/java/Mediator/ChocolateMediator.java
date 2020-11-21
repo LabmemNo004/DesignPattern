@@ -17,8 +17,9 @@ public class ChocolateMediator implements Mediator{
 
     //组员报告
     @Override
-    public void colleagueReport() {
-        System.out.println("使用Mediator模式");
+    public void colleagueReport()
+    {
+        System.out.println("=====使用Mediator模式=====");
         if(_chocolates==null)
         {
             System.out.println("工厂巧克力列表为空");

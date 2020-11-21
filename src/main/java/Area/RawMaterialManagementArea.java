@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Charlie.Charlie;
-import Chocolate.Material;
+import Material.Material;
 import Factory.Factory;
 import Observer.CharlieObserver;
 import Observer.MaterialObservable;
 import Observer.MaterialObserver;
-import Chocolate.Color.Colors;
+import Color.Color.Colors;
 
 
 public class RawMaterialManagementArea extends Area  implements MaterialObservable{

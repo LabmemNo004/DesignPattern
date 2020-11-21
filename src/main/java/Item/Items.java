@@ -1,4 +1,4 @@
-package Chocolate;
+package Item;
 
 /*抽象基类
 * 它的子类：Chocolate,Packet

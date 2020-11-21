@@ -1,4 +1,4 @@
-import Chocolate.Mould;
+import Mould.Mould;
 import Prototype.MouldCahce;
 import org.junit.Test;
 

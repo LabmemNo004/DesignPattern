@@ -1,9 +1,12 @@
-package Chocolate;
+package Pocket;
+
+import Item.Items;
+import Item.NullItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Pocket extends Items{
+public class Pocket extends Items {
     private ArrayList<Items> pocketList;
     private String name;
     private int scale;

@@ -5,12 +5,10 @@ import Color.Color;
 import Mediator.ChocolateMediator;
 import Mould.Mould;
 import Shaped.MouldShape;
-import State.State;
-import Visitor.ChocolateVisitor;
 
 import java.util.List;
 
-public interface IChocolate {
+public interface Chocolates {
     String getName();
     //获得巧克力的名称 eg:small square white chocolate
     Mould.Size getSize();
@@ -19,11 +17,9 @@ public interface IChocolate {
     //获得巧克力形状
     Color.Colors getColor();
     //获得巧克力颜色
-    State getState();
+    int getState();
     //查看巧克力状态
-    void setSSC(Mould m);
-    //设置巧克力型号，形状，颜色的信息
-    void setState(State state);
+    void setState();
     //设置巧克力状态
     void setPrice();
     //设置巧克力价格
@@ -39,12 +35,10 @@ public interface IChocolate {
     //删除巧克力最外层包装
     int getQuality();
     //获取巧克力质量系数
-    void Produce();
+    void Produce(Mould m);
     // 为 size color shape price 赋
     // 随机产生质量系
     void setMediator(ChocolateMediator chocolateMediator);
-
-    public void accept(ChocolateVisitor chocolateVisitor);
 
     ChocolateMediator getMediator();
     //设置监察官

@@ -1,6 +1,10 @@
 package Chocolate;
 
+import Color.Color;
+import Item.Items;
 import Mediator.ChocolateMediator;
+import Mould.Mould;
+import Shaped.MouldShape;
 import State.*;
 import Strategy.ProduceBigChocolate;
 import Strategy.ProduceChocolate;

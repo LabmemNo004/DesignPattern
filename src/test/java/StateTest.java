@@ -13,7 +13,7 @@ public class StateTest {
         context.jumpState(); //处理请求
 	    context.jumpState(); //处理请求	
 	    context.jumpState(); //处理请求	
-	    System.out.println("The current StateValue is "+context.getStateValue());
+	    System.out.println("The current StateValue is "+context.getState());
 	}
 		    
 }

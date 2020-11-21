@@ -1,5 +1,7 @@
 package State;
 
+import FactoryParameter.Parameter;
+
 /**
  * The Chocolate State: PowderState(stateValue=11).
  */
@@ -13,7 +15,7 @@ public class PowderState extends State{
      */
 	public PowderState(Context context) {
 		stateName="PowderState";
-		stateValue=11;
+		stateValue=Parameter.powderState;
 	}
 	
 	/**
@@ -22,8 +24,8 @@ public class PowderState extends State{
      * @param context the context
      */
 	public void jumpState(Context context) {
-		System.out.println("Current chocolate state:"+context.getState().stateName);
-		context.setState(new LiquidState(context));
-		System.out.println("Jump to next state:"+context.getState().stateName);
+		System.out.println("Current chocolate state:"+context.getStateName());
+		context.setState(Parameter.liquidState,context);
+		System.out.println("Jump to next state:"+context.getStateName());
 	}
 }

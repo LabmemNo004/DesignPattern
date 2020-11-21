@@ -5,12 +5,12 @@ import java.util.List;
 
 import Chocolate.Chocolate;
 
-public class ChocolateCriteria implements Criteria{
+public class ChocolateZeroCriteria implements Criteria{
     @Override
     public List<Chocolate> meetCriteria(List<Chocolate> chocolates) {
         List<Chocolate> qualifiedChocolates = new ArrayList<>();
         for(Chocolate chocolate:chocolates){
-            if(chocolate.getQuality() != 2){
+            if(chocolate.getQuality() == 0){
                 qualifiedChocolates.add(chocolate);
             }
         }

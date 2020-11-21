@@ -1,7 +1,6 @@
 package Builder;
 
 import Worker.Worker;
-//工人还没写？
 
 public class Director {
     private WorkerBuilder _builder;

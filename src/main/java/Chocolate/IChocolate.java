@@ -25,7 +25,7 @@ public interface IChocolate {
     //设置巧克力型号，形状，颜色的信息
     void setState(int state);
     //设置巧克力状态
-    void setPrice();
+    void setPrice(double p);
     //设置巧克力价格
     double getPrice();
     //获得巧克力基础定价

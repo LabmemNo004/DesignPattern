@@ -25,7 +25,7 @@ public class PowderState extends State{
      */
 	public void jumpState(Context context) {
 		System.out.println("Current chocolate state:"+context.getStateName());
-		context.setState(Parameter.liquidState,context);
+		context.setState(Parameter.liquidState);
 		System.out.println("Jump to next state:"+context.getStateName());
 	}
 }

@@ -1,14 +1,18 @@
 package Decorator;
 
+import Chocolate.Chocolate;
 import Chocolate.IChocolate;
 import Color.Color;
+import Mediator.ChocolateMediator;
 import Mould.Mould;
 import Shaped.MouldShape;
 import Item.Items;
-import java.io.Serializable;
-import java.util.List;
+import Visitor.ChocolateVisitor;
 
-public abstract class ChocolateDecorator extends Items implements Serializable, IChocolate {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public abstract class ChocolateDecorator  implements Serializable, IChocolate {
     protected IChocolate obj;
 
     public ChocolateDecorator(IChocolate obj){
@@ -33,19 +37,10 @@ public abstract class ChocolateDecorator extends Items implements Serializable, 
     public Color.Colors getColor(){return obj.getColor();};
     //获得巧克力颜色
 
-    public void setName(String name){ System.out.println("In this step you cant do Set Operation");};
-    //设置巧克力名字
-
-    public void setSize(Mould.Size size){System.out.println("In this step you cant do Set Operation");};
-    //设置巧克力型号
-
-    public void setShape(MouldShape.Shapes shape){System.out.println("In this step you cant do Set Operation");};
-    //设置巧克力形状
-
-    public List<String> getPackInfo(){return obj.getPackInfo();};
+    public ArrayList<String> getPackInfo(){return obj.getPackInfo();};
     //获得巧克力外层包装信息
 
-    public List<String> getPack(){return obj.getPack();};
+    public ArrayList<String> getPack(){return obj.getPack();};
     //获得巧克力外层包装实体
 
     public void addPack(String layer){obj.addPack(layer);};
@@ -57,9 +52,27 @@ public abstract class ChocolateDecorator extends Items implements Serializable, 
     public int getQuality(){return obj.getQuality();};
     //获取巧克力质量系数
 
-    public void produce(Mould m){System.out.println("In this step you cant do Produce Operation");};
-    // 为 size color shape price 赋值
-    // 随机产生质量系数
-    //         设置状态和名字
+    public int getState(){return getState();}
+    //查看巧克力状态
+
+    public void setSSC(Mould m){obj.setSSC(m);};
+    //设置巧克力型号，形状，颜色的信息
+    public void setState(int state){obj.setState(state);};
+    //设置巧克力状态
+    public void setPrice(double p){obj.setPrice(p);};
+    //设置巧克力价格
+    public void Produce(){obj.Produce();};
+    // 为 size color shape price 赋
+    // 随机产生质量系
+    public void setMediator(ChocolateMediator chocolateMediator){obj.setMediator(chocolateMediator);};
+
+    public void accept(ChocolateVisitor chocolateVisitor){obj.accept(chocolateVisitor);};
+
+    public ChocolateMediator getMediator(){return obj.getMediator();};
+    //设置监察官
+
+    public Chocolate getChocolate(){return obj.getChocolate();};
+
+
 
 }

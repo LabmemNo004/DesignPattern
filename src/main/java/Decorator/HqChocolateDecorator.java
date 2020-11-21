@@ -12,5 +12,6 @@ public class HqChocolateDecorator extends ChocolateDecorator implements Serializ
 
     @Override
     public double getPrice(){return obj.getPrice()*(1+ Parameter.quality);};
+
     //获得巧克力基础定价
 }

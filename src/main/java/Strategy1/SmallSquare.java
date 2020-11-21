@@ -1,4 +1,4 @@
-package Strategy;
+package Strategy1;
 
 public class SmallSquare implements ProduceSmallChocolate{
 

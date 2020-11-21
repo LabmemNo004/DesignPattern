@@ -1,7 +1,7 @@
 package Strategy;
 
 import Chocolate.Chocolate;
-import Chocolate.SmallMould;
+import Mould.*;
 
 public class ProduceSmallChocolate implements ProduceChocolate{
     SmallMould smallMould;

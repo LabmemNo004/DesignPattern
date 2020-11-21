@@ -1,7 +1,6 @@
 package Mould;
 
 import Color.Color;
-import Chocolate.Mould;
 import Shaped.MouldShape;
 
 /*模具型号：小型*/

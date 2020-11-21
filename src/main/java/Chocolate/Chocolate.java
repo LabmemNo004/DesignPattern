@@ -34,6 +34,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         return this.name;
     }
 
+    public void setName(String name) {this.name=name;}//仅为了Pocket测试使用
+
     @Override
     public int getCount() {
         return 1;

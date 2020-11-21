@@ -1,6 +1,4 @@
-package Strategy;
-
-import Chocolate.*;
+package Strategy1;
 
 public class Test {
     public static void main(String[]args){

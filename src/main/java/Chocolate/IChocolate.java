@@ -5,6 +5,7 @@ import Color.Color;
 import Mediator.ChocolateMediator;
 import Mould.Mould;
 import Shaped.MouldShape;
+import State.State;
 import Visitor.ChocolateVisitor;
 
 import java.util.List;
@@ -18,9 +19,11 @@ public interface IChocolate {
     //获得巧克力形状
     Color.Colors getColor();
     //获得巧克力颜色
-    int getState();
+    State getState();
     //查看巧克力状态
-    void setState();
+    void setSSC(Mould m);
+    //设置巧克力型号，形状，颜色的信息
+    void setState(State state);
     //设置巧克力状态
     void setPrice();
     //设置巧克力价格

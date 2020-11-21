@@ -5,14 +5,16 @@ import Item.Items;
 import Mediator.ChocolateMediator;
 import Mould.Mould;
 import Shaped.MouldShape;
+import State.*;
+import Strategy.ProduceChocolate;
 import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import Strategy.*;
+
 
 /*巧克力类*/
 public class Chocolate extends Items implements IChocolate,Colleague{
@@ -22,8 +24,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     private String comment;//Charlie作为工厂管理者，对巧克力的评价
     private String nickName;//由于Charlie比较喜欢某款巧克力，给巧克力取了一个别致的名字
     private Color.Colors color;//巧克力颜色
-    private int state;//巧克力状态，11为待生产的粉末状，12为待生产的液体状，可以理解为原料，2为生产完，3为装饰完，4为已销售
-    /*该变量需修改为State类型*/
+    private Context state;//巧克力的状态
     private int quality;//质量系数,随机产生,{0,1,2}
     private double price;//巧克力价格
     protected ArrayList<String> PackInfo ;//巧克力外层包装信息
@@ -31,7 +32,9 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     protected ChocolateMediator chocolateMediator;//巧克力监察者
 
-    private  ChocolateShaping strategy;//巧克力塑形
+    private ProduceChocolate strategy;//生产巧克力策略
+
+    /*private  ChocolateShaping strategy;//巧克力塑形*/
 
     @Override
     public String getName() {
@@ -46,7 +49,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     public Chocolate(){//构造函数
-        this.state=1;
+        this.state=new Context();
     }
 
     public void Produce(Mould m){//生产巧克力
@@ -56,13 +59,13 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.name=size+" "+shape+" "+color+" "+"chocolate";
         Random r=new Random();
         this.quality= r.nextInt(2);
-        this.state=2;
+        state.setState(new ProducedState(state));
         setPrice();
     }
 
-    public void Shaping(ChocolateShaping strategy){//为巧克力塑形
+    /*public void Shaping(ChocolateShaping strategy){//为巧克力塑形
         this.strategy=strategy;
-    }
+    }*/
 
     public double getPrice(){//获取巧克力价格
         return price;
@@ -78,6 +81,14 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public Color.Colors getColor(){
         return color;//获取巧克力颜色
+    }
+
+    @Override
+    public void setSSC(Mould m) {//设置巧克力型号，形状，大小等信息
+        this.size=m.getSize();
+        this.shape=m.getShape();
+        this.color=m.getColor();
+        this.name=size+" "+shape+" "+color+" "+"chocolate";
     }
 
     public List<String> getPackInfo(){//获得巧克力外层包装信息
@@ -101,11 +112,37 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         return quality;
     }
 
+    //留言：转换器模式需要对巧克力里面的属性操作，故加了设置巧克力color,size,shape,state的函数
+    public void setSize(Mould.Size size)//设置巧克力的大小
+    {
+        this.size=size;
+    }
+
+    public void setShape(MouldShape.Shapes shape)//设置巧克力的形状
+    {
+        this.shape=shape;
+    }
+
+    public void setColor(Color.Colors color)//设置巧克力的颜色
+    {
+        this.color=color;
+    }
+
+    public Context getState1()//获取巧克力状态
+    {
+        return this.state;
+    }
+
+    public void setState1(Context state)//设置巧克力状态
+    {
+        this.state=state;
+    }
+
     @Override
     public void setPrice() {//巧克力初始价格
-        double sizePrice= FactoryParameter.chocolatePrice.get(size.toString());
-        double shapePrice= FactoryParameter.chocolatePrice.get(shape.toString());
-        double colorPrice= FactoryParameter.chocolatePrice.get(color.toString());
+        double sizePrice= Parameter.chocolatePrice.get(size.toString());
+        double shapePrice= Parameter.chocolatePrice.get(shape.toString());
+        double colorPrice= Parameter.chocolatePrice.get(color.toString());
         price=sizePrice+shapePrice+colorPrice;
     }
 
@@ -130,13 +167,13 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     @Override
-    public void setState() {
-        /*this.state.jump;*/
+    public void setState(State s) {
+        state.setState(s);
     }
 
     @Override
-    public int getState() {
-        return state;
+    public State getState() {
+        return state.getState();
         //return this.state.getValue();
     }
 

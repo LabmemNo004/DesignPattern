@@ -7,5 +7,5 @@ import Color.Color.Colors;
 public interface MaterialObservable {
     public void addObserber(MaterialObserver observer);
     public void removeObserver(MaterialObserver observer);
-    public void notifyAllObservers(Material material,Colors color);
+    public void notifyAllObservers(Colors color);
 }

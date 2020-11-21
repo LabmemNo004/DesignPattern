@@ -1,9 +1,10 @@
-package Strategy;
+package Strategy1;
 
-public class MiddleHeart implements ProduceMiddleChocolate{
+public class MiddleSquare implements ProduceMiddleChocolate{
 
     @Override
     public ChocolateShaping doShaping(){
+
         usingMiddleMould();
         return null;
     }
@@ -11,6 +12,6 @@ public class MiddleHeart implements ProduceMiddleChocolate{
     @Override
     public void usingMiddleMould(){
 
-        System.out.println("Shaping chocolate into middle heart shape");
+        System.out.println("Shaping chocolate into middle square shape");
     }
 }

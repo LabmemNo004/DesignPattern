@@ -1,4 +1,4 @@
-package Strategy;
+package Strategy1;
 
 public class MiddleStar implements ProduceMiddleChocolate{
 

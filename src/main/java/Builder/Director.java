@@ -3,7 +3,7 @@ package Builder;
 import Person.Worker;
 //工人还没写？
 
-public class BuilderUse {
+public class Director {
     private WorkerBuilder _builder;
 
 

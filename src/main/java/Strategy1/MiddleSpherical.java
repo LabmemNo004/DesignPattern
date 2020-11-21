@@ -1,6 +1,6 @@
-package Strategy;
+package Strategy1;
 
-public class MiddleSquare implements ProduceMiddleChocolate{
+public class MiddleSpherical implements ProduceMiddleChocolate{
 
     @Override
     public ChocolateShaping doShaping(){
@@ -12,6 +12,6 @@ public class MiddleSquare implements ProduceMiddleChocolate{
     @Override
     public void usingMiddleMould(){
 
-        System.out.println("Shaping chocolate into middle square shape");
+        System.out.println("Shaping chocolate into middle spherical shape");
     }
 }

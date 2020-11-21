@@ -3,16 +3,16 @@ package BusinessDelegate;
 import BusinessDelegate.Business.BusinessService;
 import BusinessDelegate.Business.DisplayChocolates;
 import BusinessDelegate.Business.DisplayWorkerState;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 
 public class BusinessLookUp {
     public BusinessService getBusinessService(String serviceType)
     {
-        if(serviceType.equalsIgnoreCase(FactoryParameter.SERVICE_DISPLAY_CHOCOLATE))
+        if(serviceType.equalsIgnoreCase(Parameter.SERVICE_DISPLAY_CHOCOLATE))
         {
             return new DisplayChocolates();
         }
-        else if(serviceType.equalsIgnoreCase(FactoryParameter.SERVICE_DISPLAY_WORKERS))
+        else if(serviceType.equalsIgnoreCase(Parameter.SERVICE_DISPLAY_WORKERS))
         {
             return new DisplayWorkerState();
         }

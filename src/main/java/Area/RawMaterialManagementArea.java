@@ -6,6 +6,7 @@ import java.util.List;
 import Charlie.Charlie;
 import Material.Material;
 import Factory.Factory;
+import Observer.CharlieObserver;
 import Observer.MaterialObservable;
 import Observer.MaterialObserver;
 import Color.Color.Colors;
@@ -31,7 +32,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
 
     private RawMaterialManagementArea(Charlie charlie,Factory factory) {
         super("1","RawMaterialManagementArea",charlie,factory);
-        observers.add(charlie);
+        observers.add(new CharlieObserver());
     }
 
     public int getBlackMaterialNum(){
@@ -43,7 +44,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
     }
 
 
-
+    //原料的生产
     public void blackProduce(){//用了单例就不用静态
         if(blackMaterial.getNum()>=1)
         {
@@ -52,7 +53,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
         else
         {
             System.out.println("黑巧克力原料不足！");
-            notifyAllObservers(blackMaterial, Colors.black);
+            notifyAllObservers(Colors.black);
         }
     }
     public void whiteProduce(){//用了单例就不用静态
@@ -63,10 +64,19 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
         else
         {
             System.out.println("白巧克力原料不足！");
-            notifyAllObservers(whiteMaterial, Colors.white);
+            notifyAllObservers(Colors.white);
         }
     }
+    //巧克力原材料的购买过程之收货
+    public void buyBlackMaterial(int num)
+    {
+        blackMaterial.add(num);
+    }
 
+    public void buyWhiteMaterial(int num)
+    {
+        whiteMaterial.add(num);
+    }
 
     //留言：以下属于观察者模式
     @Override
@@ -80,9 +90,9 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
     }
 
     @Override
-    public void notifyAllObservers(Material material,Colors color) {
+    public void notifyAllObservers(Colors color) {
         for(MaterialObserver observer:observers){
-            observer.update(material,color);
+            observer.update(color);
         }
     }
 }

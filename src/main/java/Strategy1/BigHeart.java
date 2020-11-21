@@ -1,9 +1,10 @@
-package Strategy;
+package Strategy1;
 
-public class BigSquare implements ProduceBigChocolate{
+public class BigHeart implements ProduceBigChocolate{
 
     @Override
     public ChocolateShaping doShaping() {
+
         usingBigMould();
         return null;
     }
@@ -11,6 +12,6 @@ public class BigSquare implements ProduceBigChocolate{
     @Override
     public void usingBigMould(){
 
-        System.out.println("Shaping chocolate into big square shape");
+        System.out.println("Shaping chocolate into big heart shape");
     }
 }

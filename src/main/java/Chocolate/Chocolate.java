@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import Strategy.*;
+
 
 /*巧克力类*/
 public class Chocolate extends Items implements IChocolate,Colleague{
@@ -27,7 +27,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     protected ChocolateMediator chocolateMediator;//巧克力监察者
 
-    private  ChocolateShaping strategy;//巧克力塑形
+    /*private  ChocolateShaping strategy;//巧克力塑形*/
 
     @Override
     public String getName() {
@@ -56,9 +56,9 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         setPrice();
     }
 
-    public void Shaping(ChocolateShaping strategy){//为巧克力塑形
+    /*public void Shaping(ChocolateShaping strategy){//为巧克力塑形
         this.strategy=strategy;
-    }
+    }*/
 
     public double getPrice(){//获取巧克力价格
         return price;
@@ -74,6 +74,14 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public Color.Colors getColor(){
         return color;//获取巧克力颜色
+    }
+
+    @Override
+    public void setSSC(Mould m) {//设置巧克力型号，形状，大小等信息
+        this.size=m.getSize();
+        this.shape=m.getShape();
+        this.color=m.getColor();
+        this.name=size+" "+shape+" "+color+" "+"chocolate";
     }
 
     public List<String> getPackInfo(){//获得巧克力外层包装信息
@@ -126,8 +134,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     @Override
-    public void setState() {
-        /*this.state.jump;*/
+    public void setState(State s) {
+        state.setState(s);
     }
 
     @Override

@@ -1,6 +1,19 @@
 package Strategy;
 
-public interface ProduceSmallChocolate extends ChocolateShaping{
+import Chocolate.Chocolate;
+import Chocolate.SmallMould;
 
-    void usingSmallMould();
+public class ProduceSmallChocolate implements ProduceChocolate{
+    SmallMould smallMould;
+    public ProduceSmallChocolate(SmallMould m){
+        smallMould=m;
+    }
+    @Override
+    public void doShape(Chocolate chocolate) {
+        useSmallChocolate();
+        chocolate.setSSC(smallMould);
+    }
+    public void useSmallChocolate(){
+        System.out.println("使用小型模具为巧克力塑形!");
+    }
 }

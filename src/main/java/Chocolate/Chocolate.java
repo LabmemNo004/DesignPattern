@@ -70,7 +70,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         produceStrategy.doShape(this);
         Random r=new Random();
         this.quality= r.nextInt(2);
-        state.setState(2,new ProducedState(state));
+        state.setState(2);
         setPrice();
     }
 
@@ -139,15 +139,6 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.color=color;
     }
 
-    public Context getState1()//获取巧克力状态
-    {
-        return this.state;
-    }
-
-    public void setState1(Context state)//设置巧克力状态
-    {
-        this.state=state;
-    }
 
     @Override
     public void setPrice() {//巧克力初始价格
@@ -178,14 +169,13 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     @Override
-    public void setState(State s) {
-        state.setState(s);
+    public void setState(int state) {
+        this.state.setState(state);
     }
 
     @Override
-    public State getState() {
-        return state.getState();
-        //return this.state.getValue();
+    public int getState() {
+        return this.state.getState();
     }
 
     @Override

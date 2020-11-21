@@ -27,10 +27,10 @@ public class ChocolateMediator implements Mediator{
         }
         for(IChocolate now:_chocolates)
         {
-            if(now.getState().stateValue== Parameter.decoratedState)
+            if(now.getState()== Parameter.decoratedState)
             {
                 _waitSellChocolates.add(now);
-                //now.setState(Parameter.soldState);//或者是State模式的jump()
+                now.setState(Parameter.soldState);
             }
         }//等待达到阈值
         if(_waitSellChocolates.size()>=threshold)

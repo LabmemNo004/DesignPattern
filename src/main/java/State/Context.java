@@ -8,11 +8,10 @@ import FactoryParameter.Parameter;
 public class Context {
 	
 	private State state;
-	
+
 	/**
      * New an initial state(i.e. PowderState).
      *
-     * @param state the state
      */
 	public Context(){
 		System.out.println("======== 使用  State 模式 ========");
@@ -22,23 +21,22 @@ public class Context {
 	/**
      * Set state.
      *
-     * @param state the state
      */
 	public void setState(int stateId) {
 		switch(stateId){
-	    case 11 :
+		case Parameter.powderState :
 	        this.state = new PowderState(this);
 	        break; 
-	    case 12 :
+		case Parameter.liquidState:
 	    	this.state = new LiquidState(this);
 	    	break; 
-	    case 2 :
+	    case Parameter.producedState:
 	    	this.state = new ProducedState(this);
 		    break; 
-	    case 3 :
+	    case Parameter.decoratedState:
 	    	this.state = new DecoratedState(this);
 		    break; 
-	    case 4 :
+	    case Parameter.soldState:
 	    	this.state = new SoldState(this);
 		    break; 
 	    default : 

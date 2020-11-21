@@ -8,7 +8,7 @@ import Mould.Mould;
 import Factory.Factory;
 import Chocolate.Chocolate;
 import Area.RawMaterialManagementArea;
-
+import Worker.Worker;
 public class FreezeArea extends WorkerProduceLink{
     private List<Mould> moulds;//模具
 

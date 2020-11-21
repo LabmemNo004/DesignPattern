@@ -1,5 +1,5 @@
 package AbstractFactory;
-/*Abstract Factory + Flyweight + Iterator
+/*Abstract Factory + Flyweight + Iterator + Bridge
 * 测试类*/
 
 public class AbstractFactoryTest {

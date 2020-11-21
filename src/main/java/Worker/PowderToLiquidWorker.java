@@ -1,5 +1,7 @@
 package Worker;
 import Chocolate.*;
+import Mould.Mould;
+
 
 public class PowderToLiquidWorker extends Worker {
     private ConcreteExtension _extension;
@@ -8,7 +10,7 @@ public class PowderToLiquidWorker extends Worker {
         super(attribute,type);
         _extension=new ConcreteExtension(this);
     }
-    public Chocolate work(Chocolate chocolate,Mould mould)
+    public Chocolate work(Chocolate chocolate, Mould mould)
     {
         System.out.println("----巧克力制作工序1：粉转液-----");
         chocolate.Produce(mould);

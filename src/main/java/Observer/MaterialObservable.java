@@ -1,6 +1,5 @@
 package Observer;
 
-import Material.Material;
 import Color.Color.Colors;
 
 //被观察者的接口，由原材料管理区实现

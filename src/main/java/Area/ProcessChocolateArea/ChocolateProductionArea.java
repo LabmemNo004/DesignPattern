@@ -9,6 +9,7 @@ import Area.Area;
 import Charlie.Charlie;
 import Chocolate.Chocolate;
 import Factory.Factory;
+import Worker.Worker;
 //差一个worker类
 
 public class ChocolateProductionArea extends Area{

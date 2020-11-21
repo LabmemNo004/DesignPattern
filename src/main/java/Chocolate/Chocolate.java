@@ -102,12 +102,12 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.name=size+" "+shape+" "+color+" "+"chocolate";
     }
 
-    public ArrayList<String> getPackInfo(){//获得巧克力外层包装信息
+    public List<String> getPackInfo(){//获得巧克力外层包装信息
         return PackInfo;
 
     }
 
-    public ArrayList<String>getPack(){//获得巧克力外层包装实体
+    public List<String>getPack(){//获得巧克力外层包装实体
         return Pack;
 
     }
@@ -115,7 +115,6 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     public void addPack(String pack){//增加巧克力最外层包装string（黑/白）
         Pack.add(pack);
     }
-
     public String deletePack(){//删除巧克力最外层包装
         return Pack.remove(Pack.size()-1);
 
@@ -140,9 +139,16 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.color=color;
     }
 
+    public void setPrice() {//巧克力初始价格
+        double sizePrice= Parameter.chocolatePrice.get(size.toString());
+        double shapePrice= Parameter.chocolatePrice.get(shape.toString());
+        double colorPrice= Parameter.chocolatePrice.get(color.toString());
+        price=sizePrice+shapePrice+colorPrice;
+    }
+
     public void setPrice(double p){//Charlie作为工厂的管理者，有权修改某款巧克力的价格，通过ChococlateController
         price=p;
-    }//设置巧克力价格
+    }
 
     public void setComment(String comment){//Charlie作为工厂的管理者，有权评价巧克力，通过ChococlateController
         this.comment=comment;
@@ -189,11 +195,6 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     public ChocolateMediator getMediator()
     {
         return chocolateMediator;
-    }
-
-    public Chocolate getChocolate()
-    {
-        return this;
     }
 
     /*public void produceSmallChocolate();

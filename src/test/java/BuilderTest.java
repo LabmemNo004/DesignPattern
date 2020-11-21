@@ -6,10 +6,10 @@ public class BuilderTest {
     @Test
     public void main(){
         System.out.println("测试Builder模式：");
-        System.out.println("提示：根据调用关系，在Builder模式内创建工人时会用到私有类数据模式，为农民分配速度享元模式。");
+        System.out.println("提示：根据调用关系，在Builder模式内创建工人时会用到私有类数据模式，为工人分配速度用到享元模式。");
         System.out.println("");
 
-        Director director = new Director();
+        BuilderUse director = new BuilderUse();
 
         // 使用Builder先后创建三种工种的工人
         WorkerBuilder materialWorkerBuilder = new MaterialWorkerBuilder();

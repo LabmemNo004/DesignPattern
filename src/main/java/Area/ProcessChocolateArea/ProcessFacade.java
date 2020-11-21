@@ -4,7 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import Criteria.ChocolateCriteria;
+
+import Criteria.ChocolateOneCriteria;
+import Criteria.ChocolateZeroCriteria;
+import Criteria.OrCriteria;
+import Criteria.Criteria;
 import Chocolate.Chocolate;
 import Chocolate.IChocolate;
 import Factory.Factory;
@@ -14,7 +18,6 @@ public class ProcessFacade {
     private SmashArea smashArea;
     private MeltArea meltArea;
     private FreezeArea freezeArea;
-    private ChocolateCriteria criteria;
     private Queue<Chocolate> powder,liquid;
 
     ProcessFacade(){
@@ -22,7 +25,6 @@ public class ProcessFacade {
         smashArea = area.getSmashArea();
         meltArea = area.getMeltArea();
         freezeArea = area.getFreezeArea();
-        criteria = new ChocolateCriteria();
         powder = new LinkedList<>();
         liquid = new LinkedList<>();
     }
@@ -32,9 +34,12 @@ public class ProcessFacade {
         System.out.println("======== 使用外观模式 ========");
         System.out.println("======== 使用过滤器模式 ========");
         List<IChocolate> chocolates = Factory.getInstance().getChocolates();
+        Criteria zeroCriteria = new ChocolateZeroCriteria();
+        Criteria oneCriteria = new ChocolateOneCriteria();
+        Criteria orCriteria = new OrCriteria(zeroCriteria,oneCriteria);
         while(chocolates.size()<100){
             //凝固塑形
-            List<Chocolate> produced = criteria.meetCriteria(freezeArea.freeze(liquid));
+            List<Chocolate> produced = orCriteria.meetCriteria(freezeArea.freeze(liquid));
             int offset = 100 - chocolates.size();
             if(offset<produced.size()){//加入全局巧克力list
                 for(int i=0;i<offset;i++){

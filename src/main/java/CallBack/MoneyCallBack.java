@@ -6,5 +6,5 @@ package CallBack;
 
 public interface MoneyCallBack {
     void setMoney(double money);
-    void call();
+    boolean call();
 }

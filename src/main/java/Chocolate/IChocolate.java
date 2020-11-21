@@ -2,6 +2,7 @@ package Chocolate;
 
 /*巧克力接口*/
 import Mediator.ChocolateMediator;
+import State.State;
 import Visitor.ChocolateVisitor;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface IChocolate {
     //获得巧克力形状
     Color.Colors getColor();
     //获得巧克力颜色
-    int getState();
+    State getState();
     //查看巧克力状态
     void setState();
     //设置巧克力状态

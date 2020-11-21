@@ -15,11 +15,12 @@ public class ReduceMoneyCallBack implements MoneyCallBack{
         _reduceMoney = money;
     }
 
-    public void call() {
+    public boolean call() {
         System.out.println("======== 使用回调 Callback 模式 ========");
-        if (charlie.getAccount()>=_reduceMoney) {
-            throw new RuntimeException("the owner doesn't have enough money");
+        if (charlie.getAccount()<_reduceMoney) {
+            throw new RuntimeException("charlie doesn't have enough money");
         }
         System.out.println("回调扣除资金 " + _reduceMoney + " 元");
+        return true;
     }
 }

@@ -1,9 +1,8 @@
 package Converter;
 
-import Chocolate.Chocolate;
 
 import java.util.function.Function;
-
+import Chocolate.*;
 /**
  * @author : SCH001
  * @description : converter，实现dto（Data Transfer Object）对象和entity（实体）对象的转换
@@ -43,30 +42,22 @@ public class Converter<T, U> {
     public static void main(){
         System.out.println("=======使用转换器Converter模式======");
         Chocolate chocolate = new Chocolate();
+        BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
+        chocolate.Produce(bigStarWhiteMould);
         System.out.println("待转换的chocolate状态如下");
-        System.out.println("name: "+chocolate.getName());
         System.out.println("size: "+chocolate.getSize());
         System.out.println("shape: "+chocolate.getShape());
         System.out.println("color: "+chocolate.getColor());
         System.out.println("state: "+chocolate.getState());
-        System.out.println("quality: "+chocolate.getQuality());
-        System.out.println("price: "+chocolate.getPrice());
-        System.out.println("packInfo: "+chocolate.getPackInfo());
-        System.out.println("pack: "+chocolate.getPack());
         System.out.println("你使用了转换器模式获得了一个dto");
         ChocolateConverter converter = new ChocolateConverter();
         SimiFinishedChocolate simiFinishedChocolate = converter.convertFromEntity(chocolate);
         System.out.println("你使用转换器将dto转成了一个新的chocolate");
         System.out.println("它的状态如下");
         Chocolate converted = converter.convertFromDto(simiFinishedChocolate);
-        System.out.println("name: "+converted.getName());
         System.out.println("size: "+converted.getSize());
         System.out.println("shape: "+converted.getShape());
         System.out.println("color: "+converted.getColor());
         System.out.println("state: "+converted.getState());
-        System.out.println("quality: "+converted.getQuality());
-        System.out.println("price: "+converted.getPrice());
-        System.out.println("packInfo: "+converted.getPackInfo());
-        System.out.println("pack: "+converted.getPack());
     }
 }

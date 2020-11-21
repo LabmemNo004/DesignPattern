@@ -1,7 +1,7 @@
 package Worker;
 //import Object.*;    hzj:这边object的作用是什么？？？？
-import Chocolate.*;
-import Mould.Mould;
+// import Chocolate.*;
+// import Mould.Mould;
 
 public abstract class Worker extends Person {
 

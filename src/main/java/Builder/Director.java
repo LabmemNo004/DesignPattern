@@ -1,6 +1,6 @@
 package Builder;
 
-import Person.Worker;
+import Worker.Worker;
 //工人还没写？
 
 public class Director {

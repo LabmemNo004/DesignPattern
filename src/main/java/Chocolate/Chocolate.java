@@ -123,6 +123,10 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         return quality;
     }
 
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
+
     //留言：转换器模式需要对巧克力里面的属性操作，故加了设置巧克力color,size,shape,state的函数
     public void setSize(Mould.Size size)//设置巧克力的大小
     {

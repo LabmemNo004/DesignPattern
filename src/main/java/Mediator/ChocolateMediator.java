@@ -40,7 +40,7 @@ public class ChocolateMediator implements Mediator{
             //巧克力已售出，清空巧克力列表的已售出巧克力
             for(IChocolate now:_chocolates)
             {
-                if(now.getState()==FactoryParameter.soldState) _chocolates.remove(now);
+                if(now.getState()==Parameter.soldState) _chocolates.remove(now);
             }
             _waitSellChocolates.clear();
             System.out.println("巧克力已从包装区运送到销售区");

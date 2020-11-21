@@ -7,6 +7,7 @@ public class ProduceMiddleChocolate implements ProduceChocolate{
     private MiddleMould middleMould;
 
     public ProduceMiddleChocolate(MiddleMould m){
+        System.out.println("======== 使用策略 Strategy 模式 ========");
         middleMould=m;
     }
 

@@ -15,7 +15,7 @@ public abstract class WorkerBuilder {
     public Worker getWorker()   {return _worker;}
 
 
-    public void createNewWorker(){_worker=new Worker();}
+    public abstract void createNewWorker();
 
 
     public abstract void setWorkType();

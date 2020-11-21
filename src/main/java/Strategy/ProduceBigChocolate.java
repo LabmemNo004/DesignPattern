@@ -9,6 +9,7 @@ public class ProduceBigChocolate implements ProduceChocolate{
 
 
     public ProduceBigChocolate(BigMould m){
+        System.out.println("======== 使用策略 Strategy 模式 ========");
         bigMould=m;
     }
     @Override

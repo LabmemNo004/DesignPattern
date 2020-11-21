@@ -2,6 +2,7 @@ package Mediator;
 
 import Chocolate.IChocolate;
 import Factory.Factory;
+import FactoryParameter.FactoryParameter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,20 +26,20 @@ public class ChocolateMediator implements Mediator{
         }
         for(IChocolate now:_chocolates)
         {
-            if(now.getType()==3)
+            if(now.getState()== FactoryParameter.decoratedState)
             {
                 _waitSellChocolates.add(now);
-                now.setType(4);
+                now.setState(FactoryParameter.soldState);
             }
         }//等待达到阈值
         if(_waitSellChocolates.size()>=threshold)
         {
-            factory.chocolateSellArea.addSellAreaChoclates(_waitSellChocolates);
-            factory.chocolateSellArea.sellChocolate();
+            factory.getSellArea().addSellAreaChoclates(_waitSellChocolates);
+            factory.getSellArea().sellChocolate();
             //巧克力已售出，清空巧克力列表的已售出巧克力
             for(IChocolate now:_chocolates)
             {
-                if(now.getType()==4) _chocolates.remove(now);
+                if(now.getState()==FactoryParameter.soldState) _chocolates.remove(now);
             }
             _waitSellChocolates.clear();
             System.out.println("巧克力已从包装区运送到销售区");

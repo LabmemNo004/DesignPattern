@@ -19,7 +19,7 @@ public abstract class WorkerProduceLink {
     }
 
     public Worker removeWorker() {
-        if(!workers.empty()){
+        if(!workers.isEmpty()){
             Worker worker = workers.get(0);
             workers.remove(0);
             return worker;

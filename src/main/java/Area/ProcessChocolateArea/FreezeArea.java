@@ -8,35 +8,16 @@ import Mould.Mould;
 import Factory.Factory;
 import Chocolate.Chocolate;
 import Area.RawMaterialManagementArea;
+import Worker.LiquidToSolidWorker;
 import Worker.Worker;
 public class FreezeArea extends WorkerProduceLink{
-    private List<Mould> moulds;//模具
-
-    FreezeArea(){
-        moulds = new ArrayList<>();
-    }
-
-    //添加模具
-    public void addMould(Mould mould) {
-        moulds.add(mould);
-    }
-
-    //删除模具
-    public boolean removeMould(Mould mould) {
-        return moulds.remove(mould);
-    }
-
-    //获取模具列表
-    public List<Mould> getMoulds(){
-        return moulds;
-    }
-
     //使用模具凝固
     public List<Chocolate> freeze(Queue<Chocolate> liquid) {
         List<Chocolate> chocolates = new ArrayList<>();
         RawMaterialManagementArea area = Factory.getInstance().getManageArea();
-        for(Worker worker:getWorkers()){
-            if(moulds.size()==0)break;//没有模具
+        for(Worker w:getWorkers()){
+            LiquidToSolidWorker worker = (LiquidToSolidWorker)w;
+            // if(moulds.size()==0)break;//没有模具
             Chocolate chocolate = liquid.poll();//获取液体巧克力
             if(chocolate==null)break;
             int mouldIdx = (int)Math.random()*100%moulds.size();//随机获取模具列表的索引

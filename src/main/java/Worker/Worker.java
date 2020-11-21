@@ -15,7 +15,7 @@ public abstract class Worker extends Person {
     }
 
     public abstract Extension GetExtensionWoker(String extensionType);
-    public abstract Chocolate work(Chocolate chocolate, Mould mould);//hzj：增加mould
+    //hzj：增加mould
 
     public String getWorkTypeString()
     {

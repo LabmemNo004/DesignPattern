@@ -2,7 +2,7 @@ package Converter;
 
 import Chocolate.Chocolate;
 import Prototype.MouldCahce;
-import Chocolate.Mould;
+import Mould.*;
 
 /**
  * @author : SCH001

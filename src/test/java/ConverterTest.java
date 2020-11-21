@@ -1,9 +1,9 @@
+import Color.WhiteColor;
 import Converter.SimiFinishedChocolate;
 import Converter.ChocolateConverter;
 import Chocolate.Chocolate;
-import Chocolate.BigMould;
-import Chocolate.StarShaped;
-import Chocolate.WhiteColor;
+import Mould.BigMould;
+import Shaped.StarShaped;
 import org.junit.Assert;
 import org.junit.Test;
 

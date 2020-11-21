@@ -20,7 +20,7 @@ public class BigChocolateFactory extends AbstractChocolateFactory{
     private BigMould _BlackStarMould;
     private BigMould _WhiteHeartMould;
     private BigMould _BlackHeartMould;
-    public ObjectCollection<BigMould>BigMouldCollection;//大型模具的集合，使用iterator模式
+    private ObjectCollection<BigMould>BigMouldCollection;//大型模具的集合，使用iterator模式
 
     public BigChocolateFactory(){
         System.out.println("============Abstract Factory============");
@@ -125,6 +125,11 @@ public class BigChocolateFactory extends AbstractChocolateFactory{
         return this._BlackHeartMould;
     }
 
+    public ObjectCollection<BigMould> getBigMouldCollection(){
+        this.createAllMould();
+        return BigMouldCollection;
+    }
+
     @Override
     public void useIterator() {//对模具集合使用迭代器进行遍历
         Iterator<BigMould>iter=BigMouldCollection.iterator();
@@ -141,4 +146,6 @@ public class BigChocolateFactory extends AbstractChocolateFactory{
         }
 
     }
+
+
 }

@@ -84,12 +84,12 @@ public class Parameter implements Serializable{
 	public final static double VALUE_SMALL_STAR_WHITE = 25.0;
 	public final static double VALUE_SMALL_HEART_WHITE = 25.0;
 
-	/*public Parameter(){
+	public Parameter(){
 		whiteMeterialPrice=6;
 		blackMeterialPrice=3;
 		SERVICE_DISPLAY_CHOCOLATE= "DisplayChocolate";
 		SERVICE_DISPLAY_WORKERS="DisplayWorkers";
-		quality=0.2;
+
 		chocolatePrice=new HashMap<String,Double>(){{
 			put("black",5.0);
 			put("white",10.0);
@@ -118,9 +118,11 @@ public class Parameter implements Serializable{
 			add("black");
 			add("white");
 		}};
-<<<<<<< HEAD
-		quality=0.2;
-	}*/
+
+		 */
+
+
+	}
 
 		
 

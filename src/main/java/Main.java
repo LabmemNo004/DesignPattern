@@ -34,9 +34,10 @@ public class Main {
 
         // 中介者模式
         ChocolateMediator chocolateMediator = new ChocolateMediator();
+        chocolateMediator.setFactory(factory);
         factory.setMediatorForFactory(chocolateMediator);
         factory.addMediatorForAll();
-        chocolateMediator.setFactory(factory);
+
 
     }
 }

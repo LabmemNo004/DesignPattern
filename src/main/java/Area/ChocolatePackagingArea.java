@@ -46,9 +46,10 @@ public class ChocolatePackagingArea extends Area implements Serializable {
         {
             if(now.getState()==2)
             {
-                String now_str = now.getSize().toString() + "+" + now.getShape().toString() + "+" + now.getColor().toString();
+                //String now_str = Parameter.chocolatePrice.get(now.getSize().toString())+ "+" + now.getShape().toString() + "+" + now.getColor().toString();
                 //将枚举类型按照 ”大小_形状_颜色“ 的字符串格式返回，用Interpreter模式识别返回价格(Double)
-                double chocolateValue = Parser.parse(now_str).interpret();
+                double chocolateValue = Parameter.chocolatePrice.get(now.getSize().toString())+Parameter.chocolatePrice.get(now.getShape().toString())+Parameter.chocolatePrice.get(now.getColor().toString());
+
                 now.setPrice(chocolateValue);
                 System.out.println("巧克力" + now.getName() + "估值完成，售价" + chocolateValue + "元");
             }

@@ -66,12 +66,12 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         }
     }
 
-    public void Produce(){//生产巧克力
+    public void Produce(){//生产巧克力,调用Produce之前，先调用setProduceStrategy
+        if(produceStrategy==null){
+            System.out.println("先设置produceStrategy!");
+            return;
+        }
         produceStrategy.doShape(this);
-        Random r=new Random();
-        this.quality= r.nextInt(2);
-        state.setState(2,new ProducedState(state));
-        setPrice();
     }
 
     /*public void Shaping(ChocolateShaping strategy){//为巧克力塑形
@@ -178,12 +178,12 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     @Override
-    public void setState(State s) {
+    public void setState(int s) {
         state.setState(s);
     }
 
     @Override
-    public State getState() {
+    public int getState() {
         return state.getState();
         //return this.state.getValue();
     }

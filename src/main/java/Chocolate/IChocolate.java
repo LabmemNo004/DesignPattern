@@ -19,11 +19,11 @@ public interface IChocolate {
     //获得巧克力形状
     Color.Colors getColor();
     //获得巧克力颜色
-    State getState();
+    int getState();
     //查看巧克力状态
     void setSSC(Mould m);
     //设置巧克力型号，形状，颜色的信息
-    void setState(State state);
+    void setState(int state);
     //设置巧克力状态
     void setPrice();
     //设置巧克力价格

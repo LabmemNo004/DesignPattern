@@ -4,7 +4,7 @@ import Mediator.ChocolateMediator;
 import State.*;
 import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -133,9 +133,9 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     @Override
     public void setPrice() {//巧克力初始价格
-        double sizePrice= FactoryParameter.chocolatePrice.get(size.toString());
-        double shapePrice= FactoryParameter.chocolatePrice.get(shape.toString());
-        double colorPrice= FactoryParameter.chocolatePrice.get(color.toString());
+        double sizePrice= Parameter.chocolatePrice.get(size.toString());
+        double shapePrice= Parameter.chocolatePrice.get(shape.toString());
+        double colorPrice= Parameter.chocolatePrice.get(color.toString());
         price=sizePrice+shapePrice+colorPrice;
     }
 

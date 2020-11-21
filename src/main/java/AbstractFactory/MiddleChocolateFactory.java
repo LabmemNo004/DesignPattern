@@ -1,10 +1,11 @@
 package AbstractFactory;
 
 import Chocolate.*;
+import Iterator.Iterator;
 import Iterator.ObjectCollection;
 
 
-public class MiddleChocolateFactory {
+public class MiddleChocolateFactory extends AbstractChocolateFactory{
     private MiddleMould _WhiteSphericalMould;
     private MiddleMould _BlackSphericalMould;
     private MiddleMould _WhiteSquareMould;
@@ -13,7 +14,7 @@ public class MiddleChocolateFactory {
     private MiddleMould _BlackStarMould;
     private MiddleMould _WhiteHeartMould;
     private MiddleMould _BlackHeartMould;
-    private ObjectCollection<MiddleMould>MiddleMouldCollection;
+    private ObjectCollection<MiddleMould>MiddleMouldCollection;//中型模具的集合，使用iterator模式
 
     public MiddleChocolateFactory(){
         System.out.println("============Abstract Factory============");
@@ -37,6 +38,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteSphericalMould == null) {
             this._WhiteSphericalMould = new MiddleMould(new SphericalShaped(),new WhiteColor());
+            MiddleMouldCollection.add(_WhiteSphericalMould);
         }
         return this._WhiteSphericalMould;
     }
@@ -47,6 +49,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackSphericalMould == null) {
             this._BlackSphericalMould = new MiddleMould(new SphericalShaped(),new BlackColor());
+            MiddleMouldCollection.add(_BlackSphericalMould);
         }
         return this._BlackSphericalMould;
     }
@@ -57,6 +60,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteSquareMould == null) {
             this._WhiteSquareMould =  new MiddleMould(new SquareShaped(),new WhiteColor());
+            MiddleMouldCollection.add(_WhiteSphericalMould);
         }
         return this._WhiteSquareMould;
     }
@@ -67,6 +71,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackSquareMould == null) {
             this._BlackSquareMould = new MiddleMould(new SquareShaped(),new BlackColor());
+            MiddleMouldCollection.add(_BlackSquareMould);
         }
         return this._BlackSquareMould;
     }
@@ -77,6 +82,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteStarMould == null) {
             this._WhiteStarMould = new MiddleMould(new StarShaped(),new WhiteColor());
+            MiddleMouldCollection.add(_WhiteStarMould);
         }
         return this._WhiteStarMould;
     }
@@ -87,6 +93,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackStarMould == null) {
             this._BlackStarMould = new MiddleMould(new StarShaped(),new BlackColor());
+            MiddleMouldCollection.add(_BlackStarMould);
         }
         return this._BlackStarMould;
     }
@@ -97,6 +104,7 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._WhiteHeartMould == null) {
             this._WhiteHeartMould = new MiddleMould(new HeartShaped(),new WhiteColor());
+            MiddleMouldCollection.add(_WhiteHeartMould);
         }
         return this._WhiteHeartMould;
     }
@@ -107,7 +115,25 @@ public class MiddleChocolateFactory {
         System.out.println("======== 使用享元 Flyweight 模式 ========");
         if (this._BlackHeartMould == null) {
             this._BlackHeartMould = new MiddleMould(new HeartShaped(),new BlackColor());
+            MiddleMouldCollection.add(_BlackHeartMould);
         }
         return this._BlackHeartMould;
+    }
+
+    @Override
+    public void useIterator() {
+        Iterator<MiddleMould> iter=MiddleMouldCollection.iterator();
+        if(iter.hasNext()){
+            System.out.println("MiddleChocolateFactory中已创建的模具信息如下:");
+            while(iter.hasNext()){
+                System.out.println("模具"+(iter.getPoint()+1)+":");
+                iter.next().getInfo();
+                System.out.println();
+            }
+        }
+        else{
+            System.out.println("MiddleChocolateFactory中暂时没有模具信息!");
+        }
+
     }
 }

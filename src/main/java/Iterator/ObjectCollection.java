@@ -57,6 +57,10 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
             return null;
         }
 
+        public int getPoint(){//获取迭代器指针位置
+            return point;
+        }
+
         CollectionIterator(){
             point=-1;
             System.out.println("======== 使用迭代器 Iterator 模式 ========");

@@ -43,4 +43,6 @@ public abstract class AbstractChocolateFactory {
      * 按照享元模式创建黑巧心形模具
      */
     public abstract Mould createBlackHeartMould();
+
+    public abstract void useIterator();//使用迭代器
 }

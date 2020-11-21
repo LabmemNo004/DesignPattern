@@ -8,14 +8,14 @@ public class Pocket extends Items{
     private String name;
     private int scale;
 
-    private boolean isFull()
+    public boolean isFull()
     {
         return pocketList.size()<scale;
     }
     
 
     public Pocket(String name,int scale) {
-        System.out.println("使用Composite模式创建Pocket");
+        System.out.println("=====使用Composite模式创建Pocket=====");
         this.name=name;
         if(scale<=0) this.scale=1;
         else this.scale=scale;
@@ -48,8 +48,13 @@ public class Pocket extends Items{
     }
     
     public void add(Items item){
-        if(isFull()||item==null) return;
+        if(isFull()||item==null)
+        {
+            System.out.println("当前神奇背包——"+this.name+"已满或加入物品不存在");
+            return;
+        }
         pocketList.add(item);
+        System.out.println("向神奇背包——"+this.name+"中加入"+item.getName());
     }
 
 }

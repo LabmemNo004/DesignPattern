@@ -1,4 +1,8 @@
+import BusinessDelegate.BusinessDelegate;
+import BusinessDelegate.Client;
 import Factory.Factory;
+import FactoryParameter.FactoryParameter;
+import Mediator.ChocolateMediator;
 
 public class Main {
     public static void main(String[] args){
@@ -13,5 +17,26 @@ public class Main {
         // 私有类数据模式
         // 组合模式
         Factory factory = Factory.getInstance();
+
+        //业务代理模式初始化，无需改动位置，可供查看工厂中_chocolates状态与生产区工人空闲与忙碌状态
+        BusinessDelegate businessDelegate = new BusinessDelegate();
+        Client client = new Client(businessDelegate);
+
+        //这一段代码可以加在任何区域代码之中
+        System.out.println("业务代理模式查看工厂巧克力状态");
+        businessDelegate.setBusinessService(FactoryParameter.SERVICE_DISPLAY_CHOCOLATE);
+        client.doTask();
+
+        //这一段代码必须加在生产区域代码之中
+        System.out.println("业务代理模式查看工人状态");
+        businessDelegate.setBusinessService(FactoryParameter.SERVICE_DISPLAY_WORKERS);
+        client.doTask();
+
+        // 中介者模式
+        ChocolateMediator chocolateMediator = new ChocolateMediator();
+        factory.setMediatorForFactory(chocolateMediator);
+        factory.addMediatorForAll();
+        chocolateMediator.setFactory(factory);
+
     }
 }

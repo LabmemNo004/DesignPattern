@@ -20,6 +20,8 @@ public class ProduceBigChocolate implements ProduceChocolate{
     }
     public void useBigMould(){
         System.out.println("使用大型模具为巧克力塑形...");
+        System.out.println("塑形后的巧克力:");
+        bigMould.getInfo();
 
     }
 }

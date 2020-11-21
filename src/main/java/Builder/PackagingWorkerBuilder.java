@@ -1,11 +1,11 @@
 package Builder;
 
 public class PackagingWorkerBuilder {
-    public ProductionWorkerBuilder() {
+    public PackagingWorkerBuilder() {
         System.out.println("成功创建包装型工人Builder");
     }
     public void setWorkType() {
-        this._farmer.setType(Const.WorkType.PACKAGING);
+        this._worker.setType(Const.WorkType.PACKAGING);
     }
-    public void assignSpeed() { this._farmer.setSpeed(Const.Speed.PACKAGING);}
+    public void assignSpeed() { this._worker.setSpeed(Const.Speed.PACKAGING);}
 }

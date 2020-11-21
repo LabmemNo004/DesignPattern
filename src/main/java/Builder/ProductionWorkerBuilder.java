@@ -5,7 +5,7 @@ public class ProductionWorkerBuilder extends WorkerBuilder{
         System.out.println("成功创建生产型工人Builder");
     }
     public void setWorkType() {
-        this._farmer.setType(Const.WorkType.PRODUCTION);
+        this._worker.setType(Const.WorkType.PRODUCTION);
     }
-    public void assignSpeed() { this._farmer.setSpeed(Const.Speed.PRODUCTION);}
+    public void assignSpeed() { this._worker.setSpeed(Const.Speed.PRODUCTION);}
 }

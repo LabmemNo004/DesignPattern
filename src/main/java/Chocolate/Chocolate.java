@@ -169,23 +169,13 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
 
     @Override
-<<<<<<< HEAD
     public void setState(int state) {
         this.state.setState(state);
-=======
-    public void setState(int s) {
-        state.setState(s);
->>>>>>> refs/remotes/origin/main
     }
 
     @Override
     public int getState() {
-<<<<<<< HEAD
-        return this.state.getState();
-=======
         return state.getState();
-        //return this.state.getValue();
->>>>>>> refs/remotes/origin/main
     }
 
     @Override

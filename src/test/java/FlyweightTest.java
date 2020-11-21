@@ -17,7 +17,7 @@ public class FlyweightTest {
         int hashCode_1 = firstBigBlackHeartMould.hashCode();
         System.out.println("Hash code of the first object of Mould is: " + hashCode_1);
         Mould secondBigBlackHeartMould = BigChocolateFactory.createBlackHeartMould();
-        int hashCode_2 = firstBigBlackHeartMould.hashCode();
+        int hashCode_2 = secondBigBlackHeartMould.hashCode();
         System.out.println("Hash code of the second object of Mould is: " + hashCode_2);
 
         assertEquals(hashCode_1, hashCode_2);

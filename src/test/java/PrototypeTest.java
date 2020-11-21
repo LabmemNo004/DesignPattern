@@ -1,8 +1,10 @@
 import Chocolate.Mould;
 import Prototype.MouldCahce;
+import org.junit.Test;
 
 public class PrototypeTest {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         MouldCahce.loadCache();
         System.out.println("======测试 Prototype 原型模式======");
         Mould clonedShape1 = (Mould) MouldCahce.getShape("bigStarWhite");

@@ -1,18 +1,20 @@
 import CallBack.ReduceMoneyCallBack;
 import Charlie.Charlie;
 import Factory.Factory;
-import FactoryParameter.FactoryParameter;
 import Area.RawMaterialManagementArea;
+import org.junit.Test;
+import org.junit.Assert;
 
 import static org.junit.Assert.assertEquals;
 public class CallBackTest {
+    @Test
     public void test() {
         System.out.println("======测试 CallBack 回调模式======");
         int buyBlackNum=1;
         int buyWhiteNum=1;
         double originAccout=Charlie.charlie.getAccount();
         double nowAccout;
-        double reduceAccout=buyBlackNum* FactoryParameter.blackMeterialPrice+buyWhiteNum*FactoryParameter.whiteMeterialPrice;
+        double reduceAccout=buyBlackNum* FactoryParameter.Parameter.blackMeterialPrice+buyWhiteNum*FactoryParameter.Parameter.whiteMeterialPrice;
         ReduceMoneyCallBack reduceMoneyCallBack=new ReduceMoneyCallBack(reduceAccout,Charlie.charlie);
         RawMaterialManagementArea area = Factory.getInstance().getManageArea();
         if(reduceMoneyCallBack.call()==true)

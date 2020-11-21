@@ -1,15 +1,15 @@
 import Converter.SimiFinishedChocolate;
-import Converter.Converter;
 import Converter.ChocolateConverter;
 import Chocolate.Chocolate;
 import Chocolate.BigMould;
 import Chocolate.StarShaped;
 import Chocolate.WhiteColor;
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 
 public class ConverterTest {
+    @Test
     public void test() {
         //创建一个巧克力和摸具
         Chocolate chocolate = new Chocolate();

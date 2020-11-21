@@ -144,7 +144,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     @Override
     public void accept(ChocolateVisitor chocolateVisitor){
-        ChocolateVisitor.visit(this);
+        chocolateVisitor.visit(this);
     }
 
     @Override

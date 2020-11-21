@@ -138,7 +138,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     {
         this.color=color;
     }
-
+    
 
     @Override
     public void setPrice() {//巧克力初始价格

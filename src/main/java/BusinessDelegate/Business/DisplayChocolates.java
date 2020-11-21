@@ -3,6 +3,7 @@ package BusinessDelegate.Business;
 import Chocolate.IChocolate;
 import Factory.Factory;
 import FactoryParameter.Parameter;
+import State.*;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class DisplayChocolates implements BusinessService{
 
         for(IChocolate now:chocolates)
         {
-            if(now.getState()== Parameter.powerState||now.getState()== Parameter.liquidState) waitProcess++;
+            if(now.getState()== Parameter.powderState||now.getState()== Parameter.liquidState) waitProcess++;
             else if(now.getState()== Parameter.producedState) waitPackage++;
             else if(now.getState()== Parameter.decoratedState) waitSell++;
             else if(now.getState()== Parameter.soldState) hasSell++;

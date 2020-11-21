@@ -6,6 +6,7 @@ public class CompositeTest {
     @Test
     public void test()
     {
+        System.out.println("=====测试Composite模式=====");
         Pocket originPocket=new Pocket("OriginPocket",5);
         System.out.println("背包"+originPocket.getName()+"已满:"+originPocket.isFull());
         Pocket childPocket1=new Pocket("childPocket1",2);

@@ -40,12 +40,12 @@ public class Parameter implements Serializable{
 		add("black");
 		add("white");
 	}};//黑/白
-	public static double quality=0.2;//质量高的巧克力价格*=（1+quality）
-	public static int powderState=11;
-	public static int liquidState=12;
-	public static int producedState=2;
-	public static int decoratedState=3;
-	public static int soldState=4;
+	public final static double quality=0.2;//质量高的巧克力价格*=（1+quality）
+	public final static int powderState=11;
+	public final static int liquidState=12;
+	public final static int producedState=2;
+	public final static int decoratedState=3;
+	public final static int soldState=4;
 
 
 	public final static double VALUE_WHITE_MATERIAL = 6.0;

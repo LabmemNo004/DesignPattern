@@ -6,8 +6,8 @@ package State;
 
 public abstract class State {
 	
-	protected String stateName;
-	protected int stateValue;
+	public String stateName;
+	public int stateValue;
 	
 	/**
      * Abstract method: Jump to the next state

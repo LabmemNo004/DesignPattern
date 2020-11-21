@@ -2,7 +2,8 @@ package Mediator;
 
 import Chocolate.IChocolate;
 import Factory.Factory;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
+import State.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +28,10 @@ public class ChocolateMediator implements Mediator{
         }
         for(IChocolate now:_chocolates)
         {
-            if(now.getState()== FactoryParameter.decoratedState)
+            if(now.getState().stateValue== Parameter.decoratedState)
             {
                 _waitSellChocolates.add(now);
-                now.setState(FactoryParameter.soldState);//或者是State模式的jump()
+                //now.setState(Parameter.soldState);//或者是State模式的jump()
             }
         }//等待达到阈值
         if(_waitSellChocolates.size()>=threshold)

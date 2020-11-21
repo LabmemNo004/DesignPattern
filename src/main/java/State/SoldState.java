@@ -25,5 +25,5 @@ public class SoldState extends State{
 		System.out.println("Current chocolate state:"+context.getState().stateName);
 		System.out.println("Already in the last state:"+context.getState().stateName);
 	}
-	
+
 }

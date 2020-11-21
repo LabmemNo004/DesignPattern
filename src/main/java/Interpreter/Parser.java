@@ -63,6 +63,6 @@ public class Parser {
         String exp = "2 * " + Parameter.VALUE_BIG_SPHERICAL_BLACK +" + "+ Parameter.VALUE_MIDDLE_SQUARE_WHITE + " + "+ Parameter.VALUE_SMALL_STAR_WHITE;
         System.out.println(exp);
 
-        System.out.println("你获得了以下金钱 ： " + Parser.parse(exp));
+        System.out.println("出售这些巧克力的标准总售价为 ： " + Parser.parse(exp));
     }
 }

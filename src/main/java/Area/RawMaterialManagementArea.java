@@ -31,6 +31,7 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
 
     private RawMaterialManagementArea(Charlie charlie,Factory factory) {
         super("1","RawMaterialManagementArea",charlie,factory);
+        observers.add(charlie);
     }
 
     public int getBlackMaterialNum(){

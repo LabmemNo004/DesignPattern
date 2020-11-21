@@ -1,6 +1,7 @@
 package Chocolate;
 
 import Mediator.ChocolateMediator;
+import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
 import FactoryParameter.FactoryParameter;
 import java.util.ArrayList;
@@ -137,6 +138,11 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     public void setMediator(ChocolateMediator chocolateMediator)
     {
         this.chocolateMediator=chocolateMediator;
+    }
+
+    @Override
+    public void accept(ChocolateVisitor chocolateVisitor){
+        ChocolateVisitor.visit(this);
     }
 
     @Override

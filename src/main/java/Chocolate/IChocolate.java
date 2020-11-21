@@ -2,6 +2,7 @@ package Chocolate;
 
 /*巧克力接口*/
 import Mediator.ChocolateMediator;
+import Visitor.ChocolateVisitor;
 
 import java.util.List;
 
@@ -36,6 +37,8 @@ public interface IChocolate {
     // 为 size color shape price 赋
     // 随机产生质量系
     void setMediator(ChocolateMediator chocolateMediator);
+
+    public void accept(ChocolateVisitor chocolateVisitor);
 
     ChocolateMediator getMediator();
     //设置监察官

@@ -40,6 +40,7 @@ public class Parameter implements Serializable{
 		add("black");
 		add("white");
 	}};//黑/白
+	public final  static int chocolatesCount=100;
 	public final static double quality=0.2;//质量高的巧克力价格*=（1+quality）
 	public final static int powderState=11;
 	public final static int liquidState=12;

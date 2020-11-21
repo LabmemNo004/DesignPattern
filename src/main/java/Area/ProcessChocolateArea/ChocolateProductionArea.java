@@ -73,7 +73,7 @@ public class ChocolateProductionArea extends Area{
 
     //选择一个空闲工人置为忙碌
     private Worker workerFreeToBusy() {
-        if(freeWorkers.size==0){
+        if(freeWorkers.size()==0){
             System.out.println("无空闲生产工人");
             return null;
         }

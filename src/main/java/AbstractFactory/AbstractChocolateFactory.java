@@ -1,6 +1,6 @@
 package AbstractFactory;
 
-import Chocolate.Mould;
+import Mould.Mould;
 
 public abstract class AbstractChocolateFactory {
 	

@@ -1,7 +1,7 @@
 package Observer;
 
-import Chocolate.Material;
-import Chocolate.Color.Colors;
+import Material.Material;
+import Color.Color.Colors;
 
 //观察者的接口，由Charlie实现
 public interface MaterialObserver {

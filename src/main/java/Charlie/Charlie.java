@@ -3,8 +3,8 @@ package Charlie;
 
 import FactoryParameter.FactoryParameter;
 import Observer.MaterialObserver;
-import Chocolate.Material;
-import Chocolate.Color.Colors;
+import Material.Material;
+import Color.Color.Colors;
 
 public class Charlie implements MaterialObserver,Robot{
     private double account=1000;

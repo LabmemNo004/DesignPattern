@@ -1,13 +1,9 @@
-package Chocolate;
+package Material;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import Observer.MaterialObservable;
-import Observer.MaterialObserver;
+import Item.TheObject;
 
 /*原料类*/
-public class Material extends TheObject{
+public class Material extends TheObject {
     protected int num;//原料数量
     protected int id;//原料编码
     public Material(int i,int n){

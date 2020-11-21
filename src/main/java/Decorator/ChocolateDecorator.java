@@ -1,10 +1,10 @@
 package Decorator;
 
 import Chocolate.IChocolate;
-import Chocolate.Color;
-import Chocolate.Mould;
-import Chocolate.MouldShape;
-import Chocolate.Items;
+import Color.Color;
+import Mould.Mould;
+import Shaped.MouldShape;
+import Item.Items;
 import java.io.Serializable;
 import java.util.List;
 

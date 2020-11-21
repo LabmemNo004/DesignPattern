@@ -1,7 +1,10 @@
 package Chocolate;
 
 /*巧克力接口*/
+import Color.Color;
 import Mediator.ChocolateMediator;
+import Mould.Mould;
+import Shaped.MouldShape;
 import Visitor.ChocolateVisitor;
 
 import java.util.List;

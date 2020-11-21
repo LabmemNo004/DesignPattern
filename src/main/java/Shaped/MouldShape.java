@@ -1,4 +1,4 @@
-package Chocolate;
+package Shaped;
 
 /*模具形状接口
 * 继承该接口的类：StarShaped,HeartShaped,SquareShaped,SphericalShaped*/

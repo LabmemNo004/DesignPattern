@@ -1,4 +1,9 @@
-package Chocolate;
+package Mould;
+
+import Color.Color;
+import Chocolate.Mould;
+import Shaped.MouldShape;
+
 /*模具型号：大型*/
 public class BigMould extends Mould{
     @Override
@@ -16,7 +21,7 @@ public class BigMould extends Mould{
 
     }
 
-    public BigMould(MouldShape s,Color c){
+    public BigMould(MouldShape s, Color c){
         super(s,c);
         System.out.println("成功创建模具!该模具可以制作，");
         getInfo();

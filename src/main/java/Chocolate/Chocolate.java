@@ -1,6 +1,10 @@
 package Chocolate;
 
+import Color.Color;
+import Item.Items;
 import Mediator.ChocolateMediator;
+import Mould.Mould;
+import Shaped.MouldShape;
 import Visitor.ChocolateVisitor;
 import Mediator.Colleague;
 import FactoryParameter.FactoryParameter;

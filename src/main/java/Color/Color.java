@@ -1,4 +1,4 @@
-package Chocolate;
+package Color;
 
 /*巧克力颜色接口
 * 继承该接口的类：WhiteColor,BlackColor*/

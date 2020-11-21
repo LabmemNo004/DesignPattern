@@ -1,4 +1,8 @@
-package Chocolate;
+package Mould;
+
+import Color.Color;
+import Chocolate.Mould;
+import Shaped.MouldShape;
 
 /*模具型号：小型*/
 public class SmallMould extends Mould{
@@ -16,7 +20,7 @@ public class SmallMould extends Mould{
 
     }
 
-    public SmallMould(MouldShape s,Color c){
+    public SmallMould(MouldShape s, Color c){
         super(s,c);
         System.out.println("成功创建模具!该模具可以制作，");
         getInfo();

@@ -1,6 +1,6 @@
 package Prototype;
 
-import Chocolate.Mould;
+import Mould.Mould;
 
 public class PrototypeTest {
     public static void main(String[] args) {

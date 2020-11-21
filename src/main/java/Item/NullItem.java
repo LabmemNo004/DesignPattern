@@ -1,6 +1,8 @@
-package Chocolate;
+package Item;
 
-public class NullItem extends Items{
+import Item.Items;
+
+public class NullItem extends Items {
 	
 	@Override
     public String getName() {

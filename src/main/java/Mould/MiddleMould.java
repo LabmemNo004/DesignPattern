@@ -1,4 +1,8 @@
-package Chocolate;
+package Mould;
+
+import Color.Color;
+import Chocolate.Mould;
+import Shaped.MouldShape;
 
 /*模具型号：中型*/
 public class MiddleMould extends Mould{
@@ -15,7 +19,7 @@ public class MiddleMould extends Mould{
         System.out.println("颜色:"+color.getColor());
 
     }
-    public MiddleMould(MouldShape s,Color c){
+    public MiddleMould(MouldShape s, Color c){
         super(s,c);
         System.out.println("成功创建模具!该模具可以制作，");
         getInfo();

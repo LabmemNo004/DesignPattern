@@ -1,4 +1,5 @@
-import Chocolate.*;
+import Item.Items;
+import Pocket.Pocket;
 import org.junit.Test;
 
 public class NullItemTest {

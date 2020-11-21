@@ -39,7 +39,7 @@ public interface IChocolate {
     //删除巧克力最外层包装
     int getQuality();
     //获取巧克力质量系数
-    void Produce(Mould m);
+    void Produce();
     // 为 size color shape price 赋
     // 随机产生质量系
     void setMediator(ChocolateMediator chocolateMediator);

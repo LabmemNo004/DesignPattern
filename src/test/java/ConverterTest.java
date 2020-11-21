@@ -1,9 +1,9 @@
+import Color.WhiteColor;
 import Converter.SimiFinishedChocolate;
 import Converter.ChocolateConverter;
 import Chocolate.Chocolate;
-import Chocolate.BigMould;
-import Chocolate.StarShaped;
-import Chocolate.WhiteColor;
+import Mould.BigMould;
+import Shaped.StarShaped;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,7 +15,7 @@ public class ConverterTest {
         Chocolate chocolate = new Chocolate();
         BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
         //用模具初始化巧克力
-        chocolate.Produce(bigStarWhiteMould);
+        chocolate.setSSC(bigStarWhiteMould);
         SimiFinishedChocolate memento = SimiFinishedChocolate.getMemento(chocolate);
 
         ChocolateConverter converter = new ChocolateConverter();

@@ -6,9 +6,9 @@ import java.util.List;
 import Charlie.Charlie;
 import Material.Material;
 import Factory.Factory;
-import Observer.CharlieObserver;
 import Observer.MaterialObservable;
 import Observer.MaterialObserver;
+import Observer.CharlieObserver;
 import Color.Color.Colors;
 
 

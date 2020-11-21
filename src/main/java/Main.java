@@ -1,7 +1,7 @@
 import BusinessDelegate.BusinessDelegate;
 import BusinessDelegate.Client;
 import Factory.Factory;
-import FactoryParameter.FactoryParameter;
+import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
 
 public class Main {
@@ -24,12 +24,12 @@ public class Main {
 
         //这一段代码可以加在任何区域代码之中
         System.out.println("业务代理模式查看工厂巧克力状态");
-        businessDelegate.setBusinessService(FactoryParameter.SERVICE_DISPLAY_CHOCOLATE);
+        businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
         client.doTask();
 
         //这一段代码必须加在生产区域代码之中
         System.out.println("业务代理模式查看工人状态");
-        businessDelegate.setBusinessService(FactoryParameter.SERVICE_DISPLAY_WORKERS);
+        businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
         client.doTask();
 
         // 中介者模式

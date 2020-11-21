@@ -47,7 +47,7 @@ public class Converter<T, U> {
         System.out.println("=======使用转换器Converter模式======");
         Chocolate chocolate = new Chocolate();
         BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
-        chocolate.Produce(bigStarWhiteMould);
+        chocolate.setSSC(bigStarWhiteMould);
         System.out.println("待转换的chocolate状态如下");
         System.out.println("size: "+chocolate.getSize());
         System.out.println("shape: "+chocolate.getShape());

@@ -5,26 +5,26 @@ import java.io.Serializable;
 public abstract class Person implements Serializable {
     protected Attribute attribute;
 
-    public String getId()
+    protected String GetId()
     {
         return attribute.getPersonId();
     }
 
-    protected String getSex()
+    protected String GetSex()
     {
         return attribute.getSex();
     }
-    protected String getBirthTime()
+    protected String GetBirthTime()
     {
         return attribute.getBirthTime();
     }
 
-    protected Double getSalary()
+    protected Double GetSalary()
     {
         return attribute.getSalary();
     }
 
-    protected void setSalary(double salary)
+    protected void SetSalary(double salary)
     {
         attribute.setSalary(salary);
     }
@@ -32,8 +32,6 @@ public abstract class Person implements Serializable {
 
 
     public Person(Attribute attribute) {
-
         this.attribute = attribute;
-        System.out.println("使用私有数据模式完成了一次工人的创建");
     }
 }

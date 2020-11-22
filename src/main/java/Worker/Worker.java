@@ -1,18 +1,38 @@
 package Worker;
 //import Object.*;    hzj:这边object的作用是什么？？？？
 
+import FactoryParameter.*;
+
+
 public abstract class Worker extends Person {
 
     protected String type;
     protected Boolean state;
 
-    public Worker(Attribute attribute, String type) {
+    private  Attribute  _attribute;
+    public Worker(Attribute attribute)
+    {
+        super(attribute);
+        state=true;
+    }
+
+    public Worker(Attribute attribute,String type) {
         super(attribute);
         this.type=type;
         state=true;
     }
 
-    public abstract Extension GetExtensionWoker(String extensionType);
+
+    public void setType(Parameter.WorkType type){
+        _attribute.setType(type);
+    }
+
+    public Parameter.WorkType getWorkType() {
+        return _attribute.getWorkType();
+    }
+
+    public abstract Extension GetExtensionWorker();
+
     //hzj：增加mould
 
     public String getWorkTypeString()

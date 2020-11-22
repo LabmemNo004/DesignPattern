@@ -5,11 +5,11 @@ public class ConcreteExtension extends AbstractExtension{
     public ConcreteExtension(Worker owner)
     {
         super(owner);
-        if(owner.getWorkTypeString()=="PowderToLiquidWorker")
+        if(owner.getWorkTypeString()=="PowderToLiquid")
         {
             System.out.println("----Super PowerToLiquidWorker 进入工作----");
         }
-        else if(owner.getWorkTypeString()=="LiquidToSolidWorker")
+        else if(owner.getWorkTypeString()=="LiquidToSolid")
         {
             System.out.println("----Super LiquidToSolidWorker 进入工作----");
         }

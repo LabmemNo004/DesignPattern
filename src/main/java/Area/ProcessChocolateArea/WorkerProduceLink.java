@@ -18,11 +18,13 @@ public abstract class WorkerProduceLink {
         workers.add(worker);
     }
 
-    public void removeWorker(Worker worker) {
-        if(workers.contains(worker)){
-            workers.remove(worker);
+    public Worker removeWorker() {
+        if(!workers.isEmpty()){
+            Worker worker = workers.get(0);
+            workers.remove(0);
+            return worker;
         }
-        else System.out.println("该生产环节中不存在该工人");
+        return null;
     }
 
     public List<Worker> getWorkers(){

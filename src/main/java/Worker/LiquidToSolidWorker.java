@@ -1,5 +1,6 @@
 package Worker;
-import Chocolate.*;
+
+import Chocolate.Chocolate;
 import Mould.Mould;
 
 public class LiquidToSolidWorker extends Worker {
@@ -9,10 +10,8 @@ public class LiquidToSolidWorker extends Worker {
         super(attribute,type);
         _extension=new ConcreteExtension(this);
     }
-    public Chocolate work(Chocolate chocolate,Mould mould)//hzj：增加Mould
+    public Chocolate work(Chocolate chocolate, Mould mould)//hzj：增加Mould
     {
-        //留言：模板模式
-        System.out.println("=======使用 Template 模板模式======");
         System.out.println("----巧克力制作工序2：液转固-----");
         chocolate.setProduceStrategy(mould);
         chocolate.Produce();
@@ -21,7 +20,7 @@ public class LiquidToSolidWorker extends Worker {
     }
 
     @Override
-    public Extension GetExtensionWorker(String extensionType) {
+    public Extension GetExtensionWoker(String extensionType) {
         if(extensionType=="LiquidToSolid")
         {
             return this._extension;

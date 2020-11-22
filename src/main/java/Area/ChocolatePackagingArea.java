@@ -7,8 +7,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import FactoryParameter.Parameter;
 import Decorator.*;
-import Mediator.ChocolateMediator;
-import Memento.PackagingMachine;
 
 /*
  额外使用了Charlie类
@@ -16,8 +14,7 @@ import Memento.PackagingMachine;
 public class ChocolatePackagingArea extends Area implements Serializable {
 
     private static volatile ChocolatePackagingArea uniqueArea;//唯一的巧克力包装区实体对象
-    private final ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
-    private final PackagingMachine packagingMachine;//巧克力包装机器
+    private ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
 
     /*
     巧克力包装区构造函数
@@ -25,8 +22,6 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     private ChocolatePackagingArea(Charlie charlie,Factory factory) {
         super("3","PackagingArea",charlie,factory);
         this.chocolate=factory.getChocolates();//使用了未确定的Factory类的getChocolate()
-        this.packagingMachine=new PackagingMachine();
-        System.out.println("ChocolatePackagingArea has been initialized!");
     }
 
     /*
@@ -61,8 +56,7 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     /*
     Decorator模式
      */
-    public void decorator(){
-        System.out.println("=====使用Decorator模式=====");
+    public void filter(){
         for(IChocolate now:chocolate)
             if(now.getState()==2)
             {
@@ -82,17 +76,11 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     /*
     undo redo 包装 memento模式
      */
-    public void Packaging(){
-        System.out.println("=====使用Memento模式=====");
-        for(IChocolate now:chocolate){
-            if(now.getState()==2)
-            {
-                this.packagingMachine.resetMachine(now);
-                now.setState(Parameter.decoratedState);
-                now.setMediator(new ChocolateMediator());
-                now.getMediator().colleagueReport();
-            }
-        }
+    public void Decorator(){
+
+
+
+
 
     }
 

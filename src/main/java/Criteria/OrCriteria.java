@@ -8,9 +8,9 @@ public class OrCriteria implements Criteria{
     private Criteria criteria;
     private Criteria otherCriteria;
 
-    public OrCriteria(Criteria criteria,Criteria othercCriteria){
+    public OrCriteria(Criteria criteria,Criteria otherCriteria){
         this.criteria = criteria;
-        this.otherCriteria = othercCriteria;
+        this.otherCriteria = otherCriteria;
     }
 
     @Override

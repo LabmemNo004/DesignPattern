@@ -12,16 +12,11 @@ public class MeltArea extends WorkerProduceLink{
     public List<Chocolate> melt(Queue<Chocolate> powder){
         List<Chocolate> chocolates = new ArrayList<>();
         for(Worker w:getWorkers()){
-            if(w.getClass()!=PowderToLiquidWorker.class)
-            {
-                w= new Adapter(w);
-            }
             PowderToLiquidWorker worker = (PowderToLiquidWorker)w;
             Chocolate chocolate = powder.poll();//获取下一个巧克力
             if(chocolate==null)break;//可能出现人多巧克力少的情况
             meltChocolate(worker, chocolates, chocolate);
-            // if(worker instanceof concreteWorker)//出现强化工人的情况
-            if(worker.GetExtensionWorker("PowderToLiquid")!=null){
+            if(worker.getWorkTypeString().equals("SuperPowderToLiquid")){//出现强化工人
                 Chocolate _chocolate = powder.poll();//获取下一个巧克力
                 if(_chocolate==null)break;//可能出现人多巧克力少的情况
                 meltChocolate(worker, chocolates, _chocolate);

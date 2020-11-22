@@ -27,7 +27,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     private String comment;//Charlie作为工厂管理者，对巧克力的评价
     private String nickName;//由于Charlie比较喜欢某款巧克力，给巧克力取了一个别致的名字
     private Color.Colors color;//巧克力颜色
-    private Context state;//巧克力的状态
+    private final Context state;//巧克力的状态
     private int quality;//质量系数,随机产生,{0,1,2}
     private double price;//巧克力价格
     protected ArrayList<String> PackInfo ;//巧克力外层包装信息

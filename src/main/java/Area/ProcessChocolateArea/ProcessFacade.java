@@ -20,7 +20,7 @@ public class ProcessFacade {
     private FreezeArea freezeArea;
     private Queue<Chocolate> powder,liquid;
 
-    ProcessFacade(){
+    public ProcessFacade(){
         ChocolateProductionArea area = Factory.getInstance().getProductionArea();//获取唯一生产区
         smashArea = area.getSmashArea();
         meltArea = area.getMeltArea();

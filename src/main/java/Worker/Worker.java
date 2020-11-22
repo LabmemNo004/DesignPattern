@@ -25,7 +25,7 @@ public abstract class Worker extends Person {
         return _attribute.getWorkType();
     }
 
-    public abstract Extension GetExtensionWoker(String extensionType);
+    public abstract Extension GetExtensionWorker(String extensionType);
     //hzj：增加mould
 
     public String getWorkTypeString()

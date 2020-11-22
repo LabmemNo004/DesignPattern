@@ -12,6 +12,8 @@ public class PowderToLiquidWorker extends Worker {
 
     public Chocolate work(Chocolate chocolate)
     {
+        //留言：模板模式
+        System.out.println("=======使用 Template 模板模式======");
         System.out.println("----巧克力制作工序1：粉转液-----");
         chocolate.setState(Parameter.liquidState);
         //do something
@@ -19,7 +21,7 @@ public class PowderToLiquidWorker extends Worker {
     }
 
     @Override
-    public Extension GetExtensionWoker(String extensionType) {
+    public Extension GetExtensionWorker(String extensionType) {
         if(extensionType=="PowderToLiquid")
         {
             return this._extension;

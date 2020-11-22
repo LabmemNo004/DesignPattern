@@ -6,15 +6,18 @@ import Charlie.Charlie;
 import java.io.Serializable;
 import java.util.ArrayList;
 import FactoryParameter.Parameter;
-import Interpreter.ParseException;
-import Interpreter.Parser;
+import Decorator.*;
+import Mediator.ChocolateMediator;
+import Memento.PackagingMachine;
+
 /*
  额外使用了Charlie类
  */
 public class ChocolatePackagingArea extends Area implements Serializable {
 
     private static volatile ChocolatePackagingArea uniqueArea;//唯一的巧克力包装区实体对象
-    private ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
+    private final ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
+    private final PackagingMachine packagingMachine;//巧克力包装机器
 
     /*
     巧克力包装区构造函数
@@ -22,6 +25,8 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     private ChocolatePackagingArea(Charlie charlie,Factory factory) {
         super("3","PackagingArea",charlie,factory);
         this.chocolate=factory.getChocolates();//使用了未确定的Factory类的getChocolate()
+        this.packagingMachine=new PackagingMachine();
+        System.out.println("ChocolatePackagingArea has been initialized!");
     }
 
     /*
@@ -41,23 +46,53 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     /*
     获取巧克力个体售价
      */
-    public void setPrice() throws ParseException {
+    public void setPrice()  {
         for(IChocolate now:chocolate)
         {
             if(now.getState()==2)
             {
-                //String now_str = Parameter.chocolatePrice.get(now.getSize().toString())+ "+" + now.getShape().toString() + "+" + now.getColor().toString();
-                //将枚举类型按照 ”大小_形状_颜色“ 的字符串格式返回，用Interpreter模式识别返回价格(Double)
                 double chocolateValue = Parameter.chocolatePrice.get(now.getSize().toString())+Parameter.chocolatePrice.get(now.getShape().toString())+Parameter.chocolatePrice.get(now.getColor().toString());
-
                 now.setPrice(chocolateValue);
                 System.out.println("巧克力" + now.getName() + "估值完成，售价" + chocolateValue + "元");
             }
         }
     }
 
+    /*
+    Decorator模式
+     */
     public void decorator(){
+        System.out.println("=====使用Decorator模式=====");
+        for(IChocolate now:chocolate)
+            if(now.getState()==2)
+            {
+                int quality=now.getQuality();
+                if(quality==1)
+                {
+                    now=new HqChocolateDecorator(now);
+                    System.out.println("该巧克力被分类为优质巧克力");
+                }
+                else{
+                    now=new LqChocolateDecorator(now);
+                    System.out.println("该巧克力被分类为劣质巧克力");
+                }
+            }
+    }
 
+    /*
+    undo redo 包装 memento模式
+     */
+    public void Packaging(){
+        System.out.println("=====使用Memento模式=====");
+        for(IChocolate now:chocolate){
+            if(now.getState()==2)
+            {
+                this.packagingMachine.resetMachine(now);
+                now.setState(Parameter.decoratedState);
+                now.setMediator(new ChocolateMediator());
+                now.getMediator().colleagueReport();
+            }
+        }
 
     }
 

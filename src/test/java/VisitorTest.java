@@ -11,9 +11,9 @@ public class VisitorTest {
         StsChocolateVisitor stsChocolateVisitor=new StsChocolateVisitor();
         Factory factory=Factory.getInstance();
         ArrayList<IChocolate> chocolatesList=factory.getChocolates();
-        for(Iterator<IChocolate>it=chocolateList.iterator();it.hasNext(); ){
-            IChocolate chocolate=it.next();
-            chocolate.accept(stsChocolateVisitor);
+        for(int it=0;i<chocolatesList.size();it++){
+            IChocolate ichocolate=chocolatesList.get(it);
+            ichocolate.accept(stsChocolateVisitor);
         }
     }
 

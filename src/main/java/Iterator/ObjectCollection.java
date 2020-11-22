@@ -27,9 +27,9 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
 
     @Override
     public void delete(T item) {
-        collection.remove(item);//删除元素
-        size--;
-
+        if(collection.remove(item)){//删除元素
+            size--;
+        }
     }
 
     @Override

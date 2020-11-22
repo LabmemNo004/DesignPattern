@@ -20,7 +20,7 @@ public class ChocolateController {
         model.setComment(comment);
     }
 
-    public void setChocolateName(String name){//给巧克力取个别致的名字
+    public void setChocolateNickname(String name){//给巧克力取个别致的名字
         model.setNickname(name);
     }
 

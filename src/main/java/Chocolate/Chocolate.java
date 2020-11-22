@@ -3,6 +3,7 @@ package Chocolate;
 import Color.Color;
 import Item.Items;
 import Mediator.ChocolateMediator;
+import Memento.Memento;
 import Mould.*;
 import Shaped.MouldShape;
 import State.*;
@@ -53,6 +54,12 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public Chocolate(){//构造函数
         this.state=new Context();
+        this.PackInfo.add("black");
+        this.PackInfo.add("black");
+        this.PackInfo.add("white");
+        this.PackInfo.add("white");
+        this.PackInfo.add("black");
+        this.PackInfo.add("white");
     }
 
     public void setProduceStrategy(Mould m){
@@ -102,12 +109,12 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         this.name=size+" "+shape+" "+color+" "+"chocolate";
     }
 
-    public List<String> getPackInfo(){//获得巧克力外层包装信息
+    public ArrayList<String> getPackInfo(){//获得巧克力外层包装信息
         return PackInfo;
 
     }
 
-    public List<String>getPack(){//获得巧克力外层包装实体
+    public ArrayList<String>getPack(){//获得巧克力外层包装实体
         return Pack;
 
     }
@@ -115,6 +122,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     public void addPack(String pack){//增加巧克力最外层包装string（黑/白）
         Pack.add(pack);
     }
+
     public String deletePack(){//删除巧克力最外层包装
         return Pack.remove(Pack.size()-1);
 
@@ -141,7 +149,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public void setPrice(double p){//Charlie作为工厂的管理者，有权修改某款巧克力的价格，通过ChococlateController
         price=p;
-    }
+    }//设置巧克力价格
 
     public void setComment(String comment){//Charlie作为工厂的管理者，有权评价巧克力，通过ChococlateController
         this.comment=comment;
@@ -188,6 +196,21 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     public ChocolateMediator getMediator()
     {
         return chocolateMediator;
+    }
+
+    @Override
+    public Chocolate getChocolate() {
+        return this;
+    }
+
+    @Override
+    public Memento createMemento() {
+        return new Memento(this.Pack);
+    }
+
+    @Override
+    public void reinstateMemento(Memento mem) {
+        this.Pack=mem.getState();
     }
 
     /*public void produceSmallChocolate();

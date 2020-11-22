@@ -126,6 +126,11 @@ public class SmallChocolateFactory extends AbstractChocolateFactory{
         return this._BlackHeartMould;
     }
 
+    public ObjectCollection<SmallMould> getSmallMouldCollection(){
+        this.createAllMould();
+        return SmallMouldCollection;
+    }
+
     @Override
     public void useIterator() {
         Iterator<SmallMould> iter=SmallMouldCollection.iterator();

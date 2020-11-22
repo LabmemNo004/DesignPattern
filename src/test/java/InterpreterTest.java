@@ -2,6 +2,8 @@ import org.junit.Test;
 import FactoryParameter.Parameter;
 
 import static org.junit.Assert.assertEquals;
+import Interpreter.ParseException;
+import Interpreter.Parser;
 
 public class InterpreterTest {
     @Test

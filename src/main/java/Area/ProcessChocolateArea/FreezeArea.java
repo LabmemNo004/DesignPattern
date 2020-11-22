@@ -31,7 +31,7 @@ public class FreezeArea extends WorkerProduceLink{
         bigChocolateFactory.createAllMould();
         middleChocolateFactory.createAllMould();
         smallChocolateFactory.createAllMould();
-        moulds = new ObjectCollection<>();
+        moulds = new ObjectCollection<Mould>();
         Iterator<BigMould> bigIterator = bigChocolateFactory.getBigMouldCollection().iterator();
         while(bigIterator.hasNext()){moulds.add(bigIterator.next());}
         Iterator<SmallMould> smallIterator = smallChocolateFactory.getSmallMouldCollection().iterator();

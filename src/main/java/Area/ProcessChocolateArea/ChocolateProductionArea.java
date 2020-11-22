@@ -7,8 +7,9 @@ import Area.Area;
 import Charlie.Charlie;
 import Factory.Factory;
 import Worker.PowderToLiquidWorker;
-import Worker.Worker;
-//差一个worker类
+import Worker.*;
+
+
 
 public class ChocolateProductionArea extends Area{
     private List<Worker> freeWorkers,busyWorkers;

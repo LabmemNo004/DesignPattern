@@ -19,14 +19,20 @@ public class ProcessFacade {
     private MeltArea meltArea;
     private FreezeArea freezeArea;
     private Queue<Chocolate> powder,liquid;
+    private int producePermission=1;
 
-    public ProcessFacade(){
+    ProcessFacade(){
         ChocolateProductionArea area = Factory.getInstance().getProductionArea();//获取唯一生产区
         smashArea = area.getSmashArea();
         meltArea = area.getMeltArea();
         freezeArea = area.getFreezeArea();
         powder = new LinkedList<>();
         liquid = new LinkedList<>();
+    }
+
+    public void setProducePermission(int permission)
+    {
+        this.producePermission=permission;
     }
 
     public void produceChocolate(){
@@ -51,8 +57,10 @@ public class ProcessFacade {
             List<Chocolate> melted = meltArea.melt(powder);
             liquid.addAll(melted);
             //碾碎
+            if(producePermission==1){
             List<Chocolate> smashed = smashArea.smash();
             powder.addAll(smashed);
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ public class ChocolateProductionArea extends Area{
     private volatile static ChocolateProductionArea ourInstance;
 
     //构造函数
-    ChocolateProductionArea(Charlie charlie, Factory factory){// 留言：更新了super和参数
+    public ChocolateProductionArea(Charlie charlie, Factory factory){// 留言：更新了super和参数
         super("2","ProductionArea",charlie,factory);
         freeWorkers = new ArrayList<Worker>();
         busyWorkers = new ArrayList<Worker>();

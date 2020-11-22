@@ -53,6 +53,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public Chocolate(){//构造函数
         this.state=new Context();
+        PackInfo = new ArrayList<>();//留言：需要先初始化后续才能调用
+        Pack = new ArrayList<>();//留言：需要先初始化后续才能调用
         this.PackInfo.add("black");
         this.PackInfo.add("black");
         this.PackInfo.add("white");
@@ -65,10 +67,13 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         switch (m.getSize().toString()){
             case "big":
                 produceStrategy=new ProduceBigChocolate((BigMould)m);
+                break;//留言：加break退出switch
             case "middle":
                 produceStrategy=new ProduceMiddleChocolate((MiddleMould)m);
+                break;
             case "small":
                 produceStrategy=new ProduceSmallChocolate((SmallMould)m);
+                break;
         }
     }
 

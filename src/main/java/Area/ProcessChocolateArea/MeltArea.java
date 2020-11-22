@@ -16,8 +16,7 @@ public class MeltArea extends WorkerProduceLink{
             Chocolate chocolate = powder.poll();//获取下一个巧克力
             if(chocolate==null)break;//可能出现人多巧克力少的情况
             meltChocolate(worker, chocolates, chocolate);
-            // if(worker instanceof concreteWorker)//出现强化工人的情况
-            if(worker.GetExtensionWorker("PowderToLiquid")!=null){
+            if(worker.GetExtensionWorker(worker.getWorkTypeString())!=null){
                 Chocolate _chocolate = powder.poll();//获取下一个巧克力
                 if(_chocolate==null)break;//可能出现人多巧克力少的情况
                 meltChocolate(worker, chocolates, _chocolate);

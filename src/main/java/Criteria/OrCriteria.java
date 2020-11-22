@@ -15,6 +15,7 @@ public class OrCriteria implements Criteria{
 
     @Override
     public List<Chocolate> meetCriteria(List<Chocolate> chocolates) {
+        System.out.println("使用过滤器模式筛选质量系数为0和1的巧克力");
         List<Chocolate> firstCriteriaChocolates = criteria.meetCriteria(chocolates);
         List<Chocolate> otherCriteriaChocolates = otherCriteria.meetCriteria(chocolates);
 

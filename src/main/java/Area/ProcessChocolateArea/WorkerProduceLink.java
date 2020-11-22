@@ -18,13 +18,10 @@ public abstract class WorkerProduceLink {
         workers.add(worker);
     }
 
-    public Worker removeWorker() {
-        if(!workers.isEmpty()){
-            Worker worker = workers.get(0);
-            workers.remove(0);
-            return worker;
+    public void removeWorker(Worker worker) {
+        if(workers.contains(worker)){
+            workers.remove(worker);
         }
-        return null;
     }
 
     public List<Worker> getWorkers(){

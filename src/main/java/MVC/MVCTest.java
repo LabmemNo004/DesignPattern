@@ -15,6 +15,7 @@ public class MVCTest {
         ChocolateView view=new ChocolateView();
         ChocolateController controller=new ChocolateController(chocolate,view);
         controller.updateView();
+        System.out.println();
         controller.setChocolateComment("delicious and exquisite");
         controller.setChocolateNickname("LightStar");
         controller.setChocolatePrice(18.0);

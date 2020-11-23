@@ -12,5 +12,5 @@ public class LiquidToSolidWorkerBuilder extends WorkerBuilder{
     public void setWorkType() {
         this._worker.setType(Parameter.WorkType.LTS);//看worker里
     }
-    public void assignSpeed() { this._worker.setSpeed();}//worker里写函数，默认出事speed为1
+    public void assignSpeed() { this._worker.setWorkSpeed(1);}//worker里写函数，默认出事speed为1
 }

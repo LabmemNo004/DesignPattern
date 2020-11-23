@@ -1,6 +1,7 @@
 package Builder;
 
-import Worker.Worker;
+import Worker.*;
+
 
 
 
@@ -16,7 +17,8 @@ public abstract class WorkerBuilder {
 
 
     public void createNewWorker(){
-        _worker=new Worker();
+        Attribute attribute= new AttributeCreate().randomAttribute();
+        _worker=new Worker(attribute);
     }
 
 

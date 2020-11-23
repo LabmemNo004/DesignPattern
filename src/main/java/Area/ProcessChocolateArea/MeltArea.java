@@ -12,7 +12,7 @@ public class MeltArea extends WorkerProduceLink{
     public List<Chocolate> melt(Queue<Chocolate> powder){
         List<Chocolate> chocolates = new ArrayList<>();
         for(Worker w:getWorkers()){
-            if(w.getClass()!=PowderToLiquidWorker.class)
+            if(w.getClass()==LiquidToSolidWorker.class)
             {
                 w= new Adapter(w);
             }

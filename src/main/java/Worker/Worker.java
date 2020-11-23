@@ -4,10 +4,20 @@ package Worker;
 import FactoryParameter.*;
 
 
-public abstract class Worker extends Person {
+public class Worker extends Person {
 
     protected String type;
     protected Boolean state;
+
+    public int getWorkSpeed() {
+        return workSpeed;
+    }
+
+    public void setWorkSpeed(int workSpeed) {
+        this.workSpeed = workSpeed;
+    }
+
+    protected int workSpeed;
 
     private  Attribute  _attribute;
     public Worker(Attribute attribute)
@@ -31,7 +41,11 @@ public abstract class Worker extends Person {
         return _attribute.getWorkType();
     }
 
-    public abstract Extension GetExtensionWorker();
+    public Extension GetExtensionWorker()
+    {
+        return null;
+    }
+
 
     //hzj：增加mould
 
@@ -39,6 +53,8 @@ public abstract class Worker extends Person {
     {
         return type;
     }
-    public abstract String getWorkTypeStringZh();
+    public String getWorkTypeStringZh(){
+        return null;
+    }
 
 }

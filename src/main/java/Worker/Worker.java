@@ -8,6 +8,7 @@ public class Worker extends Person {
 
     protected String type;
     protected Boolean state;
+    protected Parameter.WorkType workType;
 
     public int getWorkSpeed() {
         return workSpeed;
@@ -34,11 +35,11 @@ public class Worker extends Person {
 
 
     public void setType(Parameter.WorkType type){
-        _attribute.setType(type);
+        this.workType=type;
     }
 
     public Parameter.WorkType getWorkType() {
-        return _attribute.getWorkType();
+        return workType;
     }
 
     public Extension GetExtensionWorker()

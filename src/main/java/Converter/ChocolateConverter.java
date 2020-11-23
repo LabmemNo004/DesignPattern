@@ -14,16 +14,7 @@ public class ChocolateConverter extends Converter<SimiFinishedChocolate, Chocola
 
     public ChocolateConverter(){
         super(simiFinishedChocolate->{
-            //Chocolate chocolate = new Chocolate();
-            //MouldCahce.loadCache();
-            //Mould clonedShape1 = (Mould) MouldCahce.getShape("bigStarWhite");
-            //System.out.println("======使用 Prototype原型======");
-            //System.out.println("Size: "+clonedShape1.getSize()+"   Shape: " + clonedShape1.getShape()+"   Color: "+clonedShape1.getColor());
-            //chocolate.setSSC(clonedShape1);
             Chocolate chocolate = new Chocolate();
-            BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
-            //用模具初始化巧克力
-            chocolate.setSSC(bigStarWhiteMould);
             SimiFinishedChocolate.simiToChoco(chocolate,simiFinishedChocolate);
             return chocolate;
         }, SimiFinishedChocolate::getMemento);

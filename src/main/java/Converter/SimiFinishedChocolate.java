@@ -36,10 +36,6 @@ public class SimiFinishedChocolate {
     }
     public static SimiFinishedChocolate getMemento(Chocolate chocolate){
         System.out.println("你正在获取chocolate的状态");
-        System.out.println("size: "+chocolate.getSize());
-        System.out.println("shape: "+chocolate.getShape());
-        System.out.println("color: "+chocolate.getColor());
-        System.out.println("state: "+chocolate.getState());
         return new SimiFinishedChocolate(chocolate);
     }
 
@@ -67,11 +63,11 @@ public class SimiFinishedChocolate {
     }
     public Mould.Size getSize(){//获取巧克力型号
         return size;
-    }
+    }//获取巧克力半成品大小
 
     public MouldShape.Shapes getShape(){//获取巧克力形状
         return shape;
-    }
+    }//获取巧克力半成品形状
 
     public Color.Colors getColor(){
         return color;//获取巧克力半成品颜色

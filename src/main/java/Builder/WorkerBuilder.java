@@ -1,12 +1,13 @@
 package Builder;
 
-import Worker.Worker;
+import Worker.*;
+import FactoryParameter.Parameter;
 
 
 
 public abstract class WorkerBuilder {
     protected Worker _worker;
-
+    private Attribute attribute=new Attribute("","","",0);
 
     public WorkerBuilder()  {System.out.println("======== 使用建造者 Builder 模式 ========");}
 
@@ -16,7 +17,7 @@ public abstract class WorkerBuilder {
 
 
     public void createNewWorker(){
-        _worker=new Worker();
+        _worker=new Worker(attribute,Parameter.WorkType.SPARE);
     }
 
 

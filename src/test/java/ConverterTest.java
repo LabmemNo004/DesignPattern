@@ -13,11 +13,10 @@ public class ConverterTest {
     public void test() {
         //创建一个巧克力和摸具
         Chocolate chocolate = new Chocolate();
-        BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
+        //BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
         //用模具初始化巧克力
-        chocolate.setSSC(bigStarWhiteMould);
+        //chocolate.setSSC(bigStarWhiteMould);
         SimiFinishedChocolate memento = SimiFinishedChocolate.getMemento(chocolate);
-
         ChocolateConverter converter = new ChocolateConverter();
         Assert.assertEquals(chocolate, converter.convertFromDto(memento));
         Assert.assertEquals(memento, converter.convertFromEntity(chocolate));

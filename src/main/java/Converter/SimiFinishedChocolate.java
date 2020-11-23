@@ -36,6 +36,10 @@ public class SimiFinishedChocolate {
     }
     public static SimiFinishedChocolate getMemento(Chocolate chocolate){
         System.out.println("你正在获取chocolate的状态");
+        System.out.println("size: "+chocolate.getSize());
+        System.out.println("shape: "+chocolate.getShape());
+        System.out.println("color: "+chocolate.getColor());
+        System.out.println("state: "+chocolate.getState());
         return new SimiFinishedChocolate(chocolate);
     }
 

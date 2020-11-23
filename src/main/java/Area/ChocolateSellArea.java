@@ -46,7 +46,7 @@ public class ChocolateSellArea extends Area {
     public void sellChocolate()//留言：使用回调模式销售巧克力
     {
         double addMoney=getPrice(areaChocolates);
-        addMoneyCallBack=new AddMoneyCallBack(addMoney,charlie);
+        addMoneyCallBack=new AddMoneyCallBack(addMoney);
         addMoneyCallBack.call();
         areaChocolates.clear();
     }

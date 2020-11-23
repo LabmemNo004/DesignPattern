@@ -23,12 +23,10 @@ public abstract class ChocolateDecorator  implements Serializable, IChocolate {
     /**
      * Decorator重写不相干的方法
      */
-    @Override
     public String getName() {
         return obj.getName();
     }
 
-    @Override
     public Mould.Size getSize(){return obj.getSize();};
 
     public MouldShape.Shapes getShape(){return obj.getShape();};
@@ -63,7 +61,9 @@ public abstract class ChocolateDecorator  implements Serializable, IChocolate {
 
     public Chocolate getChocolate(){return obj.getChocolate();};
 
-    public Memento createMemento(){return obj.createMemento();}
+    public Memento createMemento() {
+        return obj.createMemento();
+    }
 
     public void reinstateMemento(Memento mem) {
         obj.reinstateMemento(mem);

@@ -19,7 +19,7 @@ public class BuilderTest {
         System.out.println( director.toStringZh() );
         System.out.println("");
 
-        FarmerBuilder liquidToSolidWorkerBuilder = new LiquidToSolidWorkerBuilder();
+        WorkerBuilder liquidToSolidWorkerBuilder = new LiquidToSolidWorkerBuilder();
         director.setBuilder( liquidToSolidWorkerBuilder );
         director.constructWorker();
         Worker worker2 = director.getWorker();

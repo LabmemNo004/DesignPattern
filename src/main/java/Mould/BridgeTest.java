@@ -10,6 +10,7 @@ public class BridgeTest {
         Mould mould1= new BigMould(new SphericalShaped(),new BlackColor());
         Mould mould2=new MiddleMould(new SquareShaped(),new WhiteColor());
         Mould mould3=new SmallMould(new StarShaped(),new BlackColor());
+        System.out.println();
         System.out.println("模具mould1信息:");
         mould1.getInfo();
         System.out.println();

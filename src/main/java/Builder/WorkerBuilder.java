@@ -1,7 +1,11 @@
 package Builder;
 
 import Worker.*;
+<<<<<<< HEAD
 import FactoryParameter.Parameter;
+=======
+
+>>>>>>> 47631a2553e8dc3e367569150494d9b79507f41f
 
 
 
@@ -17,7 +21,12 @@ public abstract class WorkerBuilder {
 
 
     public void createNewWorker(){
+<<<<<<< HEAD
         _worker=new Worker(attribute,Parameter.WorkType.SPARE);
+=======
+        Attribute attribute= new AttributeCreate().randomAttribute();
+        _worker=new Worker(attribute);
+>>>>>>> 47631a2553e8dc3e367569150494d9b79507f41f
     }
 
 

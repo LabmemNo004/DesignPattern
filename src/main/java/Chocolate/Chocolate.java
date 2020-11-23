@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Random;
 
 
-
 /*巧克力类*/
 public class Chocolate extends Items implements IChocolate,Colleague{
     private String name;//巧克力的名字，即巧克力的基本信息，eg:small square white chocolate
@@ -28,7 +27,7 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     private String comment;//Charlie作为工厂管理者，对巧克力的评价
     private String nickName;//由于Charlie比较喜欢某款巧克力，给巧克力取了一个别致的名字
     private Color.Colors color;//巧克力颜色
-    private Context state;//巧克力的状态
+    private final Context state;//巧克力的状态
     private int quality;//质量系数,随机产生,{0,1,2}
     private double price;//巧克力价格
     protected ArrayList<String> PackInfo ;//巧克力外层包装信息
@@ -54,6 +53,10 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public Chocolate(){//构造函数
         this.state=new Context();
+        System.out.println("生成一个巧克力实例...");
+        System.out.println("当前状态："+state.getStateName());
+        PackInfo = new ArrayList<>();//留言：需要先初始化后续才能调用
+        Pack = new ArrayList<>();//留言：需要先初始化后续才能调用
         this.PackInfo.add("black");
         this.PackInfo.add("black");
         this.PackInfo.add("white");
@@ -66,10 +69,13 @@ public class Chocolate extends Items implements IChocolate,Colleague{
         switch (m.getSize().toString()){
             case "big":
                 produceStrategy=new ProduceBigChocolate((BigMould)m);
+                break;//留言：加break退出switch
             case "middle":
                 produceStrategy=new ProduceMiddleChocolate((MiddleMould)m);
+                break;
             case "small":
                 produceStrategy=new ProduceSmallChocolate((SmallMould)m);
+                break;
         }
     }
 
@@ -129,6 +135,10 @@ public class Chocolate extends Items implements IChocolate,Colleague{
     }
     public int getQuality(){//获得巧克力质量
         return quality;
+    }
+
+    public void setQuality(int quality) {//设置巧克力质量
+        this.quality = quality;
     }
 
     //留言：转换器模式需要对巧克力里面的属性操作，故加了设置巧克力color,size,shape,state的函数

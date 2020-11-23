@@ -63,11 +63,11 @@ public class SimiFinishedChocolate {
     }
     public Mould.Size getSize(){//获取巧克力型号
         return size;
-    }
+    }//获取巧克力半成品大小
 
     public MouldShape.Shapes getShape(){//获取巧克力形状
         return shape;
-    }
+    }//获取巧克力半成品形状
 
     public Color.Colors getColor(){
         return color;//获取巧克力半成品颜色

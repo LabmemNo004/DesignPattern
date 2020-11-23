@@ -16,6 +16,7 @@ public abstract class FreeWorkerBuilder extends WorkerBuilder{
 
 
   public void assignSpeed(){
+        this._worker.setWorkSpeed(0);
 
   }
 }

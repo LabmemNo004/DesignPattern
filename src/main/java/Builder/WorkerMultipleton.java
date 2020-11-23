@@ -26,11 +26,11 @@ static {
     workerBuilders.add(new LiquidToSolidWorkerBuilder());
     workerBuilders.add(new PowderToLiquidWorkerBuilder());
     Director director= new Director();
-    for(int i=0;i<8;i++){
+    for(int i=0;i<TYPE_NUM;i++){
         director.setBuilder(workerBuilders.get(i));
         director.constructWorker();;
         director.toStringZh();
-        for (int j=0;j<4;j++){
+        for (int j=0;j<Parameter.EACH_TYPE_NUM;j++){
             list.add(new WorkerMultipleton(Parameter.WORKER_NAMES.get(i * Parameter.EACH_TYPE_NUM + j), director));
         }
     }

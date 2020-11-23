@@ -6,8 +6,10 @@ import Area.Area;
 
 import Charlie.Charlie;
 import Factory.Factory;
-import Worker.Worker;
-//差一个worker类
+import Worker.PowderToLiquidWorker;
+import Worker.*;
+
+
 
 public class ChocolateProductionArea extends Area{
     private List<Worker> freeWorkers,busyWorkers;
@@ -37,6 +39,8 @@ public class ChocolateProductionArea extends Area{
         }
         return ourInstance;
     }
+
+
 
     //添加空闲工人
     public void addFreeWorker(Worker worker) {
@@ -69,21 +73,20 @@ public class ChocolateProductionArea extends Area{
     }
 
     //选择一个空闲工人置为忙碌
-    private Worker workerFreeToBusy() {
-        if(freeWorkers.size()==0){
-            System.out.println("无空闲生产工人");
-            return null;
+    private boolean workerFreeToBusy(Worker worker) {
+        if(!freeWorkers.contains(worker)){
+            System.out.println("生产区空闲工人列表不存在此工人");
+            return false;
         }
-        Worker worker = freeWorkers.get(0);
         removeFreeWorker(worker);
         addBusyWorker(worker);
-        return worker;
+        return true;
     }
 
     //将忙碌工人置为空闲
     private boolean workerBusyToFree(Worker worker){
         if(!busyWorkers.contains(worker)){
-            System.out.println("不存在该工人");
+            System.out.println("生产区忙碌工人列表不存在此工人");
             return false;
         }
         removeBusyWorker(worker);
@@ -104,16 +107,20 @@ public class ChocolateProductionArea extends Area{
         return freezeArea;
     }
 
-    //从总生产区分配工人到某个区域，参数只能传入meltArea或freezeArea，使用get函数获取
-    public <T extends WorkerProduceLink> void addAreaWorker(T area) {
-        Worker worker = workerFreeToBusy();
-        if(worker!=null)area.addWorker(worker);
+    //从总生产区分配工人到某个区域
+    public <T extends Worker> void addAreaWorker(Worker worker) {
+        if(workerFreeToBusy(worker)){
+            if(worker instanceof PowderToLiquidWorker)meltArea.addWorker(worker);
+            else freezeArea.addWorker(worker);
+        }
     }
 
-    //从某个区域收回工人到总生产区，参数只能传入meltArea或freezeArea，使用get函数获取
-    public <T extends WorkerProduceLink> boolean removeAreaWorker(T area) {
-        Worker worker = area.removeWorker();
-        if(worker==null)return false;
-        return workerBusyToFree(worker);
+    //从某个区域收回工人到总生产区
+    public <T extends Worker> void removeAreaWorker(Worker worker) {
+        if(workerBusyToFree(worker)){
+            if(worker instanceof PowderToLiquidWorker)meltArea.removeWorker(worker);
+            else freezeArea.removeWorker(worker);
+        }
+
     }
 }

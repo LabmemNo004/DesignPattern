@@ -11,5 +11,5 @@ public class PowderToLiquidWorkerBuilder extends WorkerBuilder{
     //}
     public void setWorkType() {
         this._worker.setType(Parameter.WorkType.PTL); }
-    public void assignSpeed() { this._worker.setSpeed();}
+    public void assignSpeed() { this._worker.setWorkSpeed(1);}
 }

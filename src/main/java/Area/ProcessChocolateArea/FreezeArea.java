@@ -19,11 +19,10 @@ import Iterator.ObjectCollection;
 import Chocolate.Chocolate;
 import Area.RawMaterialManagementArea;
 import Worker.LiquidToSolidWorker;
-import Worker.Worker;
+import Worker.*;
 public class FreezeArea extends WorkerProduceLink{
-    private RawMaterialManagementArea area = Factory.getInstance().getManageArea();
     private ObjectCollection<Mould> moulds;
-    private Iterator<Mould> iterator = moulds.iterator();
+    private Iterator<Mould> iterator;
 
     public FreezeArea(){
         BigChocolateFactory bigChocolateFactory = new BigChocolateFactory();
@@ -32,13 +31,14 @@ public class FreezeArea extends WorkerProduceLink{
         bigChocolateFactory.createAllMould();
         middleChocolateFactory.createAllMould();
         smallChocolateFactory.createAllMould();
-        moulds = new ObjectCollection<>();
+        moulds = new ObjectCollection<Mould>();
         Iterator<BigMould> bigIterator = bigChocolateFactory.getBigMouldCollection().iterator();
         while(bigIterator.hasNext()){moulds.add(bigIterator.next());}
         Iterator<SmallMould> smallIterator = smallChocolateFactory.getSmallMouldCollection().iterator();
         while(smallIterator.hasNext()){moulds.add(smallIterator.next());}
         Iterator<MiddleMould> middleIterator = middleChocolateFactory.getMiddleMouldCollection().iterator();
         while(middleIterator.hasNext()){moulds.add(middleIterator.next());}
+        iterator = moulds.iterator();
     }
     //使用模具凝固
     public List<Chocolate> freeze(Queue<Chocolate> liquid) {
@@ -48,7 +48,7 @@ public class FreezeArea extends WorkerProduceLink{
             Chocolate chocolate = liquid.poll();//获取液体巧克力
             if(chocolate==null)break;
             freezeChocolate(worker, chocolates, chocolate);
-            if(worker.GetExtensionWorker("LiquidToSolid")!=null){
+            if(worker.getWorkTypeString().equals("SuperLiquidToSolid")){
                 Chocolate _chocolate = liquid.poll();//获取液体巧克力
                 if(_chocolate==null)break;
                 freezeChocolate(worker, chocolates, _chocolate);
@@ -58,7 +58,7 @@ public class FreezeArea extends WorkerProduceLink{
     }
 
     private void freezeChocolate(LiquidToSolidWorker worker,List<Chocolate> chocolates,Chocolate chocolate){
-
+        RawMaterialManagementArea area = Factory.getInstance().getManageArea();
         // int mouldIdx = (int)Math.random()*100%moulds.getSize();//随机获取模具列表的索引
         //     Mould mould = moulds.get(mouldIdx);//获取对应模具
         Mould mould;
@@ -73,7 +73,6 @@ public class FreezeArea extends WorkerProduceLink{
         if(mould.getColor()==Colors.black)area.blackProduce();
         else area.whiteProduce();
         System.out.println("生产了一份巧克力");
-        chocolate.setQuality((int)(Math.random()*100%4));
         chocolates.add(chocolate);
     }
 }

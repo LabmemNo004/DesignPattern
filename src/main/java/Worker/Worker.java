@@ -4,12 +4,28 @@ package Worker;
 import FactoryParameter.*;
 
 
-public abstract class Worker extends Person {
+public class Worker extends Person {
 
     protected String type;
     protected Boolean state;
 
+    public int getWorkSpeed() {
+        return workSpeed;
+    }
+
+    public void setWorkSpeed(int workSpeed) {
+        this.workSpeed = workSpeed;
+    }
+
+    protected int workSpeed;
+
     private  Attribute  _attribute;
+    public Worker(Attribute attribute)
+    {
+        super(attribute);
+        state=true;
+    }
+
     public Worker(Attribute attribute,String type) {
         super(attribute);
         this.type=type;
@@ -25,13 +41,20 @@ public abstract class Worker extends Person {
         return _attribute.getWorkType();
     }
 
-    public abstract Extension GetExtensionWoker(String extensionType);
+    public Extension GetExtensionWorker()
+    {
+        return null;
+    }
+
+
     //hzj：增加mould
 
     public String getWorkTypeString()
     {
         return type;
     }
-    public abstract String getWorkTypeStringZh();
+    public String getWorkTypeStringZh(){
+        return null;
+    }
 
 }

@@ -41,7 +41,7 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
         private int point;
         @Override
         public boolean hasNext() {
-            if(size>point){
+            if(size>point+1){//留言：+1保证point不会溢出
                 return true;
             }
 

@@ -29,8 +29,6 @@ public abstract class Person implements Serializable {
         attribute.setSalary(salary);
     }
 
-
-
     public Person(Attribute attribute) {
         this.attribute = attribute;
     }

@@ -6,5 +6,5 @@ public abstract class Extension {
     public Extension(Worker owner) {
         this.owner = owner;
     }
-    public abstract void DoSomething();
+    public abstract void DoMore();
 }

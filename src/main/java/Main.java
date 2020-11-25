@@ -1,11 +1,15 @@
 import Area.ProcessChocolateArea.ChocolateProductionArea;
+<<<<<<< HEAD
 import Area.ProcessChocolateArea.MeltArea;
+=======
+>>>>>>> eb81c993058768d57246cbdd2771cbc1d9f43e85
 import Area.ProcessChocolateArea.ProcessFacade;
 import BusinessDelegate.BusinessDelegate;
 import BusinessDelegate.Client;
 import Factory.Factory;
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
+<<<<<<< HEAD
 import AbstractFactory.*;
 import Area.*;
 import Builder.*;
@@ -46,6 +50,11 @@ import Strategy.*;
 import Visitor.*;
 import Worker.*;
 
+=======
+import Worker.Attribute;
+import Worker.LiquidToSolidWorker;
+import Worker.PowderToLiquidWorker;
+>>>>>>> eb81c993058768d57246cbdd2771cbc1d9f43e85
 
 public class Main {
     public static void main(String[] args){
@@ -59,22 +68,62 @@ public class Main {
         // 多例模式
         // 私有类数据模式
         // 组合模式
+
+
+
         Factory factory = Factory.getInstance();
 
         //业务代理模式初始化，无需改动位置，可供查看工厂中_chocolates状态与生产区工人空闲与忙碌状态
         BusinessDelegate businessDelegate = new BusinessDelegate();
         Client client = new Client(businessDelegate);
 
-        //这一段代码可以加在任何区域代码之中
-        System.out.println("业务代理模式查看工厂巧克力状态");
-        businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
-        client.doTask();
 
-        //这一段代码必须加在生产区域代码之中
-        System.out.println("业务代理模式查看工人状态");
-        businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
-        client.doTask();
+        {
+            //这一段代码可以加在任何区域代码之中
+            System.out.println("业务代理模式查看工厂巧克力状态");
+            businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
+            client.doTask();
 
+            //这一段代码必须加在生产区域代码之中
+            System.out.println("业务代理模式查看工人状态");
+            businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
+            client.doTask();
+
+            // 中介者模式
+            ChocolateMediator chocolateMediator = new ChocolateMediator();
+            chocolateMediator.setFactory(factory);
+            factory.setMediatorForFactory(chocolateMediator);
+            factory.addMediatorForAll();
+
+            ChocolateProductionArea area=factory.getProductionArea();
+
+            Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
+            PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
+            area.addFreeWorker(p2lWorker1);
+            Attribute p2laAttribute2 = new Attribute("p2l2", "2020-11-2", "男", 200.0);
+            PowderToLiquidWorker p2lWorker2 = new PowderToLiquidWorker(p2laAttribute2, "SuperPowderToLiquid");
+            area.addFreeWorker(p2lWorker2);
+            Attribute l2saAttribute1 = new Attribute("l2s1", "2020-11-1", "女", 300.0);
+            LiquidToSolidWorker l2sWorker1 = new LiquidToSolidWorker(l2saAttribute1, "LiquidToSolid");
+            area.addFreeWorker(l2sWorker1);
+            Attribute l2saAttribute2 = new Attribute("l2s2", "2020-11-2", "女", 400.0);
+            LiquidToSolidWorker l2sWorker2 = new LiquidToSolidWorker(l2saAttribute2, "SuperLiquidToSolid");
+            area.addFreeWorker(l2sWorker2);
+
+            //分配到各个区域
+            area.addAreaWorker(p2lWorker1);
+            area.addAreaWorker(p2lWorker2);
+            area.addAreaWorker(l2sWorker1);
+            area.addAreaWorker(l2sWorker2);
+
+            ProcessFacade facade = new ProcessFacade();
+            facade.produceChocolate();//生产函数
+            area.removeAreaWorker(p2lWorker1);
+            area.removeAreaWorker(p2lWorker2);
+            area.removeAreaWorker(l2sWorker1);
+            area.removeAreaWorker(l2sWorker2);
+
+<<<<<<< HEAD
 
         //工厂模式
         System.out.println("======== 使用 工厂Factory 模式 ========");
@@ -166,97 +215,6 @@ public class Main {
         System.out.println("");
 
 
-        //规约模式
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-
-        String[] chocolateTag ={
-                "质量为低的大巧克力",
-                "质量为低的中巧克力",
-                "质量为低的小巧克力",
-                "质量为中的大巧克力",
-                "质量为中的中巧克力",
-                "质量为中的小巧克力",
-                "质量为高的大巧克力",
-                "质量为高的中巧克力",
-                "质量为高的小巧克力"
-        };
-        Chocolate[] chocolates={new Chocolate(),new Chocolate(),new Chocolate(),new Chocolate(),new Chocolate()
-                ,new Chocolate(),new Chocolate(),new Chocolate(),new Chocolate()};
-        chocolates[0].setQuality(1);chocolates[0].setSize(Mould.Size.big);
-        chocolates[1].setQuality(1);chocolates[1].setSize(Mould.Size.middle);
-        chocolates[2].setQuality(1);chocolates[2].setSize(Mould.Size.small);
-        chocolates[3].setQuality(2);chocolates[3].setSize(Mould.Size.big);
-        chocolates[4].setQuality(2);chocolates[4].setSize(Mould.Size.middle);
-        chocolates[5].setQuality(2);chocolates[5].setSize(Mould.Size.small);
-        chocolates[6].setQuality(3);chocolates[6].setSize(Mould.Size.big);
-        chocolates[7].setQuality(3);chocolates[7].setSize(Mould.Size.middle);
-        chocolates[8].setQuality(3);chocolates[8].setSize(Mould.Size.small);
-
-        for(int i=0;i<chocolates.length;i++)
-        {
-            chocolates[i].getSize();
-            System.out.println("生成巧克力"+chocolateTag[i]+"@"+chocolates[i].hashCode());
-
-        }
-
-        BigSizeSpecification isBig= new BigSizeSpecification();
-        HighQualitySpecification isHighQua=new HighQualitySpecification();
-        System.out.println("新建规约类 BigSizeSpecification@"+isBig.hashCode()+" 和HighQualitySpecification@"+isHighQua.hashCode());
-
-        System.out.println("组合得到四个具体规约法则。");
-        Specification big_high = isBig.and(isHighQua);
-        System.out.println("big_high@"+big_high.hashCode());
-        Specification big_not_high = isBig.and(isHighQua.not());
-        System.out.println("big_not_high@"+big_not_high.hashCode());
-        Specification not_big_high = isBig.not().and(isHighQua);
-        System.out.println("not_big_high@"+not_big_high.hashCode());
-        Specification not_big_not_high = isBig.not().and(isHighQua.not());
-        System.out.println("not_big_not_high@"+not_big_not_high.hashCode());
-
-        System.out.println("开始筛选：");
-        System.out.println("1. 使用规约模式big_high筛选质量高的大巧克力。");
-        for(int i=0;i<chocolates.length;i++){
-            if(big_high.isSatisfiedBy(chocolates[i])){
-                System.out.println("筛选出:"+chocolateTag[i]+" @"+chocolates[i].hashCode());
-            }
-        }
-        System.out.println("2. 使用规约模式big_not_high筛选质量高的中小巧克力。");
-        for(int i=0;i<chocolates.length;i++){
-            if(big_not_high.isSatisfiedBy(chocolates[i])){
-                System.out.println("筛选出:"+chocolateTag[i]+" @"+chocolates[i].hashCode());
-            }
-        }
-        System.out.println("3. 使用规约模式not_big_high筛选质量高的中小巧克力。");
-        for(int i=0;i<chocolates.length;i++){
-            if(not_big_high.isSatisfiedBy(chocolates[i])){
-                System.out.println("筛选出:"+chocolateTag[i]+" @"+chocolates[i].hashCode());
-            }
-        }
-        System.out.println("4. 使用规约模式not_big_not_high筛选质量为中低的中小巧克力。");
-        for(int i=0;i<chocolates.length;i++){
-            if(not_big_not_high.isSatisfiedBy(chocolates[i])){
-                System.out.println("筛选出:"+chocolateTag[i]+" @"+chocolates[i].hashCode());
-            }
-        }
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-        System.out.println("==================================");
-
-
-
-
 
         //原型模式
         System.out.println("======== 使用 原型Prototype 模式 ========");
@@ -332,6 +290,14 @@ public class Main {
         factoryDao.updateFactory(factory);
         System.out.println("巧克力工厂数据保存成功");
 
+=======
+            //包装区
+            factory.getPackageArea().setPrice();
+            factory.getPackageArea().decorator();
+            factory.getPackageArea().packaging();
+
+        }
+>>>>>>> eb81c993058768d57246cbdd2771cbc1d9f43e85
 
     }
 }

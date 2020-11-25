@@ -70,7 +70,7 @@ public static WorkerMultipleton getRandomInstance(){
             System.out.println("液转固种类工人数量已达上限");
         }
         else{
-            System.out.println("获取到液转固类农民:"+result.getName());
+            System.out.println("获取到液转固类工人:"+result.getName());
         }
         return result;
     }
@@ -89,7 +89,7 @@ public static WorkerMultipleton getRandomInstance(){
             System.out.println("粉转液种类工人数量已达上限");
         }
         else{
-            System.out.println("获取到粉转液类农民:"+result.getName());
+            System.out.println("获取到粉转液类工人:"+result.getName());
         }
         return result;
     }

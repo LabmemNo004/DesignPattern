@@ -1,6 +1,8 @@
 package Worker;
 
 import FactoryParameter.*;
+import Mould.BigMould;
+
 import java.io.Serializable;
 
 public class Attribute implements Serializable {
@@ -22,6 +24,12 @@ public class Attribute implements Serializable {
 
     public void setSalary(double salary) {
         Salary = salary;
+    }
+    public void setBirthTime(String time){
+        BirthTime=time;
+    }
+    public void setSex(String sex){
+        Sex=sex;
     }
 
     public Parameter.WorkType getWorkType(){

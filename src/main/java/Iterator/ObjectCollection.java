@@ -37,6 +37,11 @@ public class ObjectCollection<T> extends BaseCollection<T> implements Serializab
         return size;
     }
 
+    public List<T> getAllElements(){
+        return collection;
+    }
+
+
     class CollectionIterator implements Iterator<T>{//内部类，集合迭代器
         private int point;
         @Override

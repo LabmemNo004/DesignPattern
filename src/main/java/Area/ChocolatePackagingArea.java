@@ -49,7 +49,7 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     public void setPrice()  {
         for(IChocolate now:chocolate)
         {
-            if(now.getState()==2)
+            if(now!=null&&now.getState()==2)
             {
                 double chocolateValue = Parameter.chocolatePrice.get(now.getSize().toString())+Parameter.chocolatePrice.get(now.getShape().toString())+Parameter.chocolatePrice.get(now.getColor().toString());
                 now.setPrice(chocolateValue);
@@ -82,14 +82,13 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     /*
     undo redo 包装 memento模式
      */
-    public void Packaging(){
+    public void packaging(){
         System.out.println("=====使用Memento模式=====");
         for(IChocolate now:chocolate){
             if(now.getState()==2)
             {
                 this.packagingMachine.resetMachine(now);
                 now.setState(Parameter.decoratedState);
-                now.setMediator(new ChocolateMediator());
                 now.getMediator().colleagueReport();
             }
         }

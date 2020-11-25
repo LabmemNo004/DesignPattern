@@ -15,14 +15,14 @@ public class CompositeTest {
         System.out.println("背包"+childPocket2.getName()+" ,已满:"+childPocket2.isFull());
 
         Chocolate chocolate1=new Chocolate();
-        System.out.println("生产白色星形大巧克力");
         chocolate1.setName("白色星形大巧克力");
+        System.out.println("生产"+chocolate1.getName());
         Chocolate chocolate2=new Chocolate();
-        System.out.println("生产黑色方形小巧克力");
         chocolate2.setName("黑色方形小巧克力");
+        System.out.println("生产"+chocolate2.getName());
         Chocolate chocolate3=new Chocolate();
-        System.out.println("生产白色球形小巧克力");
         chocolate3.setName("白色球形小巧克力");
+        System.out.println("生产"+chocolate3.getName()+"\n");
 
         originPocket.add(chocolate1);
 
@@ -40,9 +40,9 @@ public class CompositeTest {
         originPocket.add(childPocket2);
         originPocket.add(chocolate3);
 
-        System.out.println("背包"+originPocket.getName()+"现在有"+originPocket.getCount()+"个巧克力");
+        System.out.println("\n背包"+originPocket.getName()+"现在有"+originPocket.getCount()+"个巧克力");
         System.out.println("背包"+childPocket1.getName()+"现在有"+childPocket1.getCount()+"个巧克力");
-        System.out.println("背包"+childPocket2.getName()+"现在有"+childPocket2.getCount()+"个巧克力");
+        System.out.println("背包"+childPocket2.getName()+"现在有"+childPocket2.getCount()+"个巧克力"+"\n");
 
         System.out.println("背包"+originPocket.getName()+" ,已满:"+originPocket.isFull());
         System.out.println("背包"+childPocket1.getName()+" ,已满:"+childPocket1.isFull());

@@ -101,4 +101,6 @@ public class Factory implements Serializable {
     }
 
     public ChocolateSellArea getSellArea() {return _sellArea;}
+
+    public ChocolatePackagingArea getPackageArea() {return _packagingArea;}
 }

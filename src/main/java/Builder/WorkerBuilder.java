@@ -23,6 +23,7 @@ public abstract class WorkerBuilder {
         _worker=new Worker(attribute);
         Attribute attribute= new AttributeCreate().randomAttribute();
         _worker=new Worker(attribute);
+        Parameter.WorkersBusinessObject.addWorker(_worker);
 
     }
 

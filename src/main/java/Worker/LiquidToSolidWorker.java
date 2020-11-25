@@ -9,6 +9,7 @@ public class LiquidToSolidWorker extends Worker {
         super(attribute,type);
         _extension=new ConcreteExtension(this);
     }
+
     public Chocolate work(Chocolate chocolate,Mould mould)//hzj：增加Mould
     {
         //留言：模板模式

@@ -1,7 +1,9 @@
 package Worker;
 //import Object.*;    hzj:这边object的作用是什么？？？？
 
+import Chocolate.Chocolate;
 import FactoryParameter.*;
+import Mould.Mould;
 
 
 public class Worker extends Person {
@@ -33,6 +35,13 @@ public class Worker extends Person {
         state=true;
     }
 
+    public Chocolate work(Chocolate chocolate, Mould mould)//hzj：增加Mould
+    {
+        System.out.println("工人开始工作");
+        System.out.println("从事空闲工作的工人部队巧克力进行加工工作");
+        System.out.println("工人结束工作");
+        return chocolate;
+    }
 
     public void setType(Parameter.WorkType type){
         this.workType=type;

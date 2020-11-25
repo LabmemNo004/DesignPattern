@@ -1,6 +1,6 @@
 package Area;
 
-import Charlie.Charlie;
+import Worker.Charlie;
 import Factory.Factory;
 
 import java.io.Serializable;

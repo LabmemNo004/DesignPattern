@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Area.Area;
 
-import Charlie.Charlie;
+import Worker.Charlie;
 import Factory.Factory;
 import Worker.PowderToLiquidWorker;
 import Worker.*;
@@ -43,8 +43,41 @@ public class ChocolateProductionArea extends Area{
 
 
     //添加空闲工人
-    public void addFreeWorker(Worker worker) {
-        freeWorkers.add(worker);
+
+    /**
+     * 使用扩展Extension模式
+     * @param worker
+     */
+    public void addFreeWorker(Object worker)
+    {
+        if(worker instanceof Worker)
+        {
+            Worker workerr=(Worker)worker;
+            freeWorkers.add(workerr);
+        }
+        if(worker instanceof Extension)
+        {
+            String str=((Extension) worker).getOwner().getWorkTypeString();
+            Worker workerr1,workerr2;
+            if(str=="LiquidToSolid")
+            {
+                int personid=freeWorkers.size()+busyWorkers.size()+1;
+                workerr1=new LiquidToSolidWorker(new Attribute(personid+"","2020-01-01","man",2345.7),"LiquidToSolid");
+                personid=personid+1;
+                workerr2=new LiquidToSolidWorker(new Attribute(personid+"","2020-02-01","woman",2346.7),"LiquidToSolid");
+                freeWorkers.add(workerr1);
+                freeWorkers.add(workerr2);
+            }
+            if(str=="PowderToLiquid")
+            {
+                int personid=freeWorkers.size()+busyWorkers.size()+1;
+                workerr1=new LiquidToSolidWorker(new Attribute(personid+"","2020-03-01","man",2345.7),"PowderToLiquid");
+                personid=personid+1;
+                workerr2=new LiquidToSolidWorker(new Attribute(personid+"","2020-04-01","woman",2346.7),"PowderToLiquid");
+                freeWorkers.add(workerr1);
+                freeWorkers.add(workerr2);
+            }
+        }
     }
 
     //删除空闲工人
@@ -58,8 +91,39 @@ public class ChocolateProductionArea extends Area{
     }
 
     //添加忙碌工人
-    public void addBusyWorker(Worker worker) {
-        busyWorkers.add(worker);
+    /**
+     * 使用扩展Extension模式
+     * @param worker
+     */
+    public void addBusyWorker(Object worker) {
+        if(worker instanceof Worker)
+        {
+            Worker workerr=(Worker)worker;
+            busyWorkers.add(workerr);
+        }
+        if(worker instanceof Extension)
+        {
+            String str=((Extension) worker).getOwner().getWorkTypeString();
+            Worker workerr1,workerr2;
+            if(str=="LiquidToSolid")
+            {
+                int personid=freeWorkers.size()+busyWorkers.size()+1;
+                workerr1=new LiquidToSolidWorker(new Attribute(personid+"","2020-01-01","man",2345.7),"LiquidToSolid");
+                personid=personid+1;
+                workerr2=new LiquidToSolidWorker(new Attribute(personid+"","2020-02-01","woman",2346.7),"LiquidToSolid");
+                busyWorkers.add(workerr1);
+                busyWorkers.add(workerr2);
+            }
+            if(str=="PowderToLiquid")
+            {
+                int personid=freeWorkers.size()+busyWorkers.size()+1;
+                workerr1=new LiquidToSolidWorker(new Attribute(personid+"","2020-03-01","man",2345.7),"PowderToLiquid");
+                personid=personid+1;
+                workerr2=new LiquidToSolidWorker(new Attribute(personid+"","2020-04-01","woman",2346.7),"PowderToLiquid");
+                busyWorkers.add(workerr1);
+                busyWorkers.add(workerr2);
+            }
+        }
     }
 
     //删除忙碌工人

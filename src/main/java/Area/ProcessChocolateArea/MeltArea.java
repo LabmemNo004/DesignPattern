@@ -9,23 +9,24 @@ import Worker.PowderToLiquidWorker;
 import Worker.*;
 
 public class MeltArea extends WorkerProduceLink{
-    public List<Chocolate> melt(Queue<Chocolate> powder){
+    public List<Chocolate> melt(Queue<Chocolate> powder)
+    {
         List<Chocolate> chocolates = new ArrayList<>();
-        for(Worker w:getWorkers()){
+        for(Worker w:getWorkers())
+        {
             if(w.getClass()==LiquidToSolidWorker.class)
             {
-                w= new Adapter(w);
+                w = new Adapter(w);
             }
             PowderToLiquidWorker worker = (PowderToLiquidWorker)w;
             Chocolate chocolate = powder.poll();//获取下一个巧克力
-            if(chocolate==null)break;//可能出现人多巧克力少的情况
+            if(chocolate==null) break;//可能出现人多巧克力少的情况
             meltChocolate(worker, chocolates, chocolate);
             if(worker.getWorkTypeString().equals("SuperPowderToLiquid")){//出现强化工人
                 Chocolate _chocolate = powder.poll();//获取下一个巧克力
                 if(_chocolate==null)break;//可能出现人多巧克力少的情况
                 meltChocolate(worker, chocolates, _chocolate);
             }
-            
         }
         return chocolates;
     }

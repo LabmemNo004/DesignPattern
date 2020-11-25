@@ -12,17 +12,17 @@ import Factory.Factory;
  * @description: FactoryDao is a interface which defines Factory Data access method
  * @designPattern: Dao(数据访问对象模式)
  */
-interface FactoryDao {
+public interface FactoryDao {
 
     /**
      * Gets factory Date.
      * @return the factory
      */
-    Factory getFactory();
+    public Factory getFactory();
 
     /**
      * Update factory Date .
      * @param factory the factory
      */
-    void updateFactory(Factory factory);
+    public void updateFactory(Factory factory);
 }

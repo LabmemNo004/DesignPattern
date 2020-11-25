@@ -7,4 +7,8 @@ public abstract class Extension {
         this.owner = owner;
     }
     public abstract void DoMore();
+    public Worker getOwner()
+    {
+        return owner;
+    }
 }

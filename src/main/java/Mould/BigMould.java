@@ -17,7 +17,6 @@ public class BigMould extends Mould{
         System.out.println("形状:"+shape.getShape());
         System.out.println("颜色:"+color.getColor());
 
-
     }
 
     public BigMould(MouldShape s, Color c){

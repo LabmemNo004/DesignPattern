@@ -12,7 +12,6 @@ public class AndSpecification extends CompositeSpecification{
     @Override
     public boolean isSatisfiedBy(Object params)
     {
-        return a.isSatisfiedBy(params)&b.isSatisfiedBy(params);
+        return a.isSatisfiedBy(params)&&b.isSatisfiedBy(params);
     }
-
 }

@@ -20,6 +20,7 @@ import Chocolate.Chocolate;
 import Area.RawMaterialManagementArea;
 import Worker.LiquidToSolidWorker;
 import Worker.*;
+import Chocolate.IChocolate;
 public class FreezeArea extends WorkerProduceLink{
     private ObjectCollection<Mould> moulds;
     private Iterator<Mould> iterator;
@@ -41,15 +42,15 @@ public class FreezeArea extends WorkerProduceLink{
         iterator = moulds.iterator();
     }
     //使用模具凝固
-    public List<Chocolate> freeze(Queue<Chocolate> liquid) {
-        List<Chocolate> chocolates = new ArrayList<>();
+    public List<IChocolate> freeze(Queue<IChocolate> liquid) {
+        List<IChocolate> chocolates = new ArrayList<>();
         for(Worker w:getWorkers()){
             LiquidToSolidWorker worker = (LiquidToSolidWorker)w;
-            Chocolate chocolate = liquid.poll();//获取液体巧克力
+            IChocolate chocolate = liquid.poll();//获取液体巧克力
             if(chocolate==null)break;
             freezeChocolate(worker, chocolates, chocolate);
             if(worker.getWorkTypeString().equals("SuperLiquidToSolid")){
-                Chocolate _chocolate = liquid.poll();//获取液体巧克力
+                IChocolate _chocolate = liquid.poll();//获取液体巧克力
                 if(_chocolate==null)break;
                 freezeChocolate(worker, chocolates, _chocolate);
             }
@@ -57,7 +58,7 @@ public class FreezeArea extends WorkerProduceLink{
         return chocolates;
     }
 
-    private void freezeChocolate(LiquidToSolidWorker worker,List<Chocolate> chocolates,Chocolate chocolate){
+    private void freezeChocolate(LiquidToSolidWorker worker,List<IChocolate> chocolates,IChocolate chocolate){
         RawMaterialManagementArea area = Factory.getInstance().getManageArea();
         // int mouldIdx = (int)Math.random()*100%moulds.getSize();//随机获取模具列表的索引
         //     Mould mould = moulds.get(mouldIdx);//获取对应模具
@@ -68,11 +69,11 @@ public class FreezeArea extends WorkerProduceLink{
             mould = iterator.next();
         }
         // chocolate.produce(mould);//赋值
-        worker.work(chocolate,mould);//生产工人将巧克力从液体变为固体
+        worker.work((Chocolate)chocolate,mould);//生产工人将巧克力从液体变为固体
         //减少原料
         if(mould.getColor()==Colors.black)area.blackProduce();
         else area.whiteProduce();
         System.out.println("生产了一份巧克力");
-        chocolates.add(chocolate);
+        chocolates.add((IChocolate)chocolate);
     }
 }

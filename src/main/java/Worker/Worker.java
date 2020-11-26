@@ -4,9 +4,9 @@ package Worker;
 import Chocolate.Chocolate;
 import FactoryParameter.*;
 import Mould.Mould;
+import Servant.*;
 
-
-public class Worker extends Person {
+public class Worker extends Person implements IWorked {
 
     protected String type;
     protected Boolean state;
@@ -38,8 +38,12 @@ public class Worker extends Person {
     public Chocolate work(Chocolate chocolate, Mould mould)//hzj：增加Mould
     {
         System.out.println("工人开始工作");
-        System.out.println("从事空闲工作的工人部队巧克力进行加工工作");
-        System.out.println("工人结束工作");
+
+        return chocolate;
+    }
+
+    public Chocolate worked(Chocolate chocolate, Mould mould){
+        this.work(chocolate,mould);
         return chocolate;
     }
 

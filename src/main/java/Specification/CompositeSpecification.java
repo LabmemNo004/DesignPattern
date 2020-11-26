@@ -20,6 +20,4 @@ public abstract class CompositeSpecification implements Specification{
     }
 
 
-
-
 }

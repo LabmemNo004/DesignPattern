@@ -53,7 +53,7 @@ public abstract class SolveStarvation {
     }
 
     /**
-     * 尝试解决动物饥饿的问题，并根据解决的结果调用相应函数表明成功解决和解决失败
+     * 尝试解决工人就餐（向食堂添加食物）的问题，并根据解决的结果调用相应函数表明成功解决和解决失败
      * @param starvation 具体需要解决的问题
      */
     public final void solve(Starvation starvation){

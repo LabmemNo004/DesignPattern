@@ -6,7 +6,7 @@ public class HighQualitySpecification extends CompositeSpecification{
     public boolean isSatisfiedBy(Object params)
     {
         Chocolate chocolate=(Chocolate) params;
-        if(chocolate.getQuality()>0)
+        if(chocolate.getQuality()==3)
         {
             return true;
         }

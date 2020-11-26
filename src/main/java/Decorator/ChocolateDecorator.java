@@ -43,6 +43,8 @@ public abstract class ChocolateDecorator  implements Serializable, IChocolate {
 
     public int getQuality(){return obj.getQuality();};
 
+    public void setQuality(int quality){};//留言：添加设置巧克力参数函数
+
     public int getState(){return obj.getState();}
 
     public void setSSC(Mould m){obj.setSSC(m);};

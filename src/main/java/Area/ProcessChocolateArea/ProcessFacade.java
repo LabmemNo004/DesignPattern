@@ -9,7 +9,6 @@ import Criteria.ChocolateOneCriteria;
 import Criteria.ChocolateZeroCriteria;
 import Criteria.OrCriteria;
 import Criteria.Criteria;
-import Chocolate.Chocolate;
 import Chocolate.IChocolate;
 import Factory.Factory;
 

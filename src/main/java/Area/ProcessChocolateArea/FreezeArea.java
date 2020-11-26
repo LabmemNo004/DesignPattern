@@ -44,15 +44,21 @@ public class FreezeArea extends WorkerProduceLink{
     //使用模具凝固
     public List<IChocolate> freeze(Queue<IChocolate> liquid) {
         List<IChocolate> chocolates = new ArrayList<>();
-        for(Worker w:getWorkers()){
-            LiquidToSolidWorker worker = (LiquidToSolidWorker)w;
-            IChocolate chocolate = liquid.poll();//获取液体巧克力
-            if(chocolate==null)break;
-            freezeChocolate(worker, chocolates, chocolate);
-            if(worker.getWorkTypeString().equals("SuperLiquidToSolid")){
-                IChocolate _chocolate = liquid.poll();//获取液体巧克力
-                if(_chocolate==null)break;
-                freezeChocolate(worker, chocolates, _chocolate);
+        OUTER:
+        for(Object w:getWorkers()){
+            if(w instanceof Worker){
+                LiquidToSolidWorker worker = (LiquidToSolidWorker)w;
+                IChocolate chocolate = liquid.poll();//获取液体巧克力
+                if(chocolate==null)break;
+                freezeChocolate(worker, chocolates, chocolate);
+            }
+            else{
+                Extension extension = (ConcreteExtension)w;
+                for (int i = 0; i < 2; i++) {
+                    IChocolate _chocolate = liquid.poll();//获取液体巧克力
+                    if(_chocolate==null)break OUTER;
+                    freezeChocolate((LiquidToSolidWorker)extension.getOwner(), chocolates, _chocolate);
+                }
             }
         }
         return chocolates;
@@ -70,6 +76,8 @@ public class FreezeArea extends WorkerProduceLink{
         }
         // chocolate.produce(mould);//赋值
         worker.work((Chocolate)chocolate,mould);//生产工人将巧克力从液体变为固体
+        int quality = (int)(Math.random()*100%4);
+        chocolate.setQuality(quality);
         //减少原料
         if(mould.getColor()==Colors.black)area.blackProduce();
         else area.whiteProduce();

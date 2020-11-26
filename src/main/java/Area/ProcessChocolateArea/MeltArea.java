@@ -6,27 +6,36 @@ import java.util.Queue;
 
 import Chocolate.Chocolate;
 import Worker.PowderToLiquidWorker;
-import Worker.*;
+import Worker.Worker;
 import Chocolate.IChocolate;
+import Worker.LiquidToSolidWorker;
+import Worker.Adapter;
+import Worker.Extension;
+import Worker.ConcreteExtension;
 
 public class MeltArea extends WorkerProduceLink{
     public List<IChocolate> melt(Queue<IChocolate> powder){
         List<IChocolate> chocolates = new ArrayList<>();
-        for(Worker w:getWorkers()){
+        OUTER:
+        for(Object w:getWorkers()){
             if(w.getClass()==LiquidToSolidWorker.class)
             {
-                w= new Adapter(w);
+                w= new Adapter((LiquidToSolidWorker)w);
             }
-            PowderToLiquidWorker worker = (PowderToLiquidWorker)w;
-            IChocolate chocolate = powder.poll();//获取下一个巧克力
-            if(chocolate==null)break;//可能出现人多巧克力少的情况
-            meltChocolate(worker, chocolates, chocolate);
-            if(worker.getWorkTypeString().equals("SuperPowderToLiquid")){//出现强化工人
-                IChocolate _chocolate = powder.poll();//获取下一个巧克力
-                if(_chocolate==null)break;//可能出现人多巧克力少的情况
-                meltChocolate(worker, chocolates, _chocolate);
+            if(w instanceof Worker){//普通工人
+                PowderToLiquidWorker worker = (PowderToLiquidWorker)w;
+                IChocolate chocolate = powder.poll();//获取下一个巧克力
+                if(chocolate==null)break;//可能出现人多巧克力少的情况
+                meltChocolate(worker, chocolates, chocolate);
             }
-            
+            else{//强化工人
+                Extension extension = (ConcreteExtension)w;
+                for (int i = 0; i < 2; i++) {
+                    IChocolate chocolate = powder.poll();//获取下一个巧克力
+                    if(chocolate==null)break OUTER;//可能出现人多巧克力少的情况
+                    meltChocolate((PowderToLiquidWorker)extension.getOwner(), chocolates, chocolate);
+                }
+            }
         }
         return chocolates;
     }

@@ -11,8 +11,8 @@ public class DisplayWorkerState implements BusinessService{
     public void doProcessing() {
         Factory factory=Factory.getInstance();
 
-        List<Worker> freeList=factory.getProductionArea().getFreeWorkers();
-        List<Worker> busyList=factory.getProductionArea().getBusyWorkers();
+        List<Object> freeList=factory.getProductionArea().getFreeWorkers();//留言：由于使用扩展对象模式需要修改对象类型
+        List<Object> busyList=factory.getProductionArea().getBusyWorkers();//留言：由于使用扩展对象模式需要修改对象类型
 
         System.out.println("\n========使用业务代表 Business Delegate 模式========");
         System.out.println("=======通过终端执行\"查看当前工人工作状态=======");

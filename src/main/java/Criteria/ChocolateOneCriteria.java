@@ -13,6 +13,6 @@ public class ChocolateOneCriteria implements Criteria{
                 qualifiedChocolates.add(chocolate);
             }
         }
-        return chocolates;
+        return qualifiedChocolates;
     }    
 }

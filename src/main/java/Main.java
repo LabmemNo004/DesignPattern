@@ -33,31 +33,36 @@ public class Main {
 
 
         Factory factory = Factory.getInstance();
-        ChocolateProductionArea productionArea = factory.getProductionArea();//获取唯一生产区
 
         //业务代理模式初始化，无需改动位置，可供查看工厂中_chocolates状态与生产区工人空闲与忙碌状态
         BusinessDelegate businessDelegate = new BusinessDelegate();
         Client client = new Client(businessDelegate);
 
-        //在生产区创建四个工人
-        Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
-        PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
-        productionArea.addFreeWorker(p2lWorker1);//加入普通粉转液工人
-        Attribute p2laAttribute2 = new Attribute("p2l2", "2020-11-2", "男", 200.0);
-        PowderToLiquidWorker p2lWorker2 = new PowderToLiquidWorker(p2laAttribute2, "PowderToLiquid");
-        Extension Superp2lWorker2 = p2lWorker2.GetExtensionWorker();//强化工人
-        productionArea.addFreeWorker(Superp2lWorker2);//加入加强粉转液工人
-        Attribute l2saAttribute1 = new Attribute("l2s1", "2020-11-1", "女", 300.0);
-        LiquidToSolidWorker l2sWorker1 = new LiquidToSolidWorker(l2saAttribute1, "LiquidToSolid");
-        productionArea.addFreeWorker(l2sWorker1);//加入普通液转固工人
-        Attribute l2saAttribute2 = new Attribute("l2s2", "2020-11-2", "女", 400.0);
-        LiquidToSolidWorker l2sWorker2 = new LiquidToSolidWorker(l2saAttribute2, "LiquidToSolid");
-        Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
-        productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
-
         ChocolateSellArea sellArea = factory.getSellArea();
         ChocolatePackagingArea packagingArea = factory.getPackageArea();
         ChocolateProductionArea productionAreaarea = factory.getProductionArea();
+
+        //在生产区创建四个工人
+        Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
+        PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
+        productionAreaarea.addFreeWorker(p2lWorker1);//加入普通粉转液工人
+        Attribute p2laAttribute2 = new Attribute("p2l2", "2020-11-2", "男", 200.0);
+        PowderToLiquidWorker p2lWorker2 = new PowderToLiquidWorker(p2laAttribute2, "PowderToLiquid");
+        Extension Superp2lWorker2 = p2lWorker2.GetExtensionWorker();//强化工人
+        productionAreaarea.addFreeWorker(Superp2lWorker2);//加入加强粉转液工人
+        Attribute l2saAttribute1 = new Attribute("l2s1", "2020-11-1", "女", 300.0);
+        LiquidToSolidWorker l2sWorker1 = new LiquidToSolidWorker(l2saAttribute1, "LiquidToSolid");
+        productionAreaarea.addFreeWorker(l2sWorker1);//加入普通液转固工人
+        Attribute l2saAttribute2 = new Attribute("l2s2", "2020-11-2", "女", 400.0);
+        LiquidToSolidWorker l2sWorker2 = new LiquidToSolidWorker(l2saAttribute2, "LiquidToSolid");
+        Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
+        productionAreaarea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
+
+        //分配到各个区域
+        productionAreaarea.addAreaWorker(p2lWorker1);//分配一个普通工人和一个强化工人到融化环节
+        productionAreaarea.addAreaWorker(Superp2lWorker2);
+        productionAreaarea.addAreaWorker(l2sWorker1);//分配一个普通工人和一个强化工人到凝固环节
+        productionAreaarea.addAreaWorker(Superl2sWorker2);
 
         ChocolateMediator chocolateMediator = new ChocolateMediator();
         chocolateMediator.setFactory(factory);
@@ -73,14 +78,12 @@ public class Main {
             
 
             //输出工人列表信息
-            System.out.println(productionArea.getFreeWorkers().size());
-            System.out.println(productionArea.getBusyWorkers().size());
-            //分配到各个区域
-            productionArea.addAreaWorker(p2lWorker1);
-            productionArea.addAreaWorker(Superp2lWorker2);
-            productionArea.addAreaWorker(l2sWorker1);
-            productionArea.addAreaWorker(Superl2sWorker2);
+            System.out.println(productionAreaarea.getFreeWorkers().size());
+            System.out.println(productionAreaarea.getBusyWorkers().size());
 
+            //外观模式
+            //过滤器模式
+            //观察者模式
             ProcessFacade facade = new ProcessFacade();
             facade.produceChocolate();//生产函数
 
@@ -88,12 +91,6 @@ public class Main {
             System.out.println("业务代理模式查看工人状态");
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
             client.doTask();
-
-            //回收到总生产区
-            productionArea.removeAreaWorker(p2lWorker1);
-            productionArea.removeAreaWorker(Superp2lWorker2);
-            productionArea.removeAreaWorker(l2sWorker1);
-            productionArea.removeAreaWorker(Superl2sWorker2);
 
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");
@@ -129,6 +126,16 @@ public class Main {
                     case "n":
                     case "no":
                     case "0":
+                        //回收到总生产区
+                        productionAreaarea.removeAreaWorker(p2lWorker1);
+                        productionAreaarea.removeAreaWorker(Superp2lWorker2);
+                        productionAreaarea.removeAreaWorker(l2sWorker1);
+                        productionAreaarea.removeAreaWorker(Superl2sWorker2);
+                        //从总生产区中移出
+                        productionAreaarea.removeFreeWorker(p2lWorker1);
+                        productionAreaarea.removeFreeWorker(Superp2lWorker2);
+                        productionAreaarea.removeFreeWorker(l2sWorker1);
+                        productionAreaarea.removeFreeWorker(Superl2sWorker2);
                         return;
                     default:
                         continue;
@@ -165,7 +172,7 @@ public class Main {
             field3.use();
 
             DeFactory largeFieldFactory = new LargeFieldFactory();
-            LargeField largeField1 = (LargeField) largeFieldFactory.create("building ChocolateProductionArea");
+            LargeField largeField1 = (LargeField) largeFieldFactory.create("building ChocolateproductionAreaarea");
             System.out.println("Create a large field for " + largeField1.getUsage() + ".");
             largeField1.use();
 
@@ -194,30 +201,30 @@ public class Main {
             System.out.println("======== 扩展对象 Extension objects 模式 ========");
             System.out.println("");
             Extension plusl2sWorker2 = l2sWorker2.GetExtensionWorker();
-            productionArea.addFreeWorker(plusl2sWorker2);
+            productionAreaarea.addFreeWorker(plusl2sWorker2);
 
             //输出工人列表信息
-            System.out.println(productionArea.getFreeWorkers().size());
-            System.out.println(productionArea.getBusyWorkers().size());
+            System.out.println(productionAreaarea.getFreeWorkers().size());
+            System.out.println(productionAreaarea.getBusyWorkers().size());
             //分配到各个区域
-            productionArea.addAreaWorker(p2lWorker1);
-            productionArea.addAreaWorker(p2lWorker2);
-            productionArea.addAreaWorker(l2sWorker1);
-            productionArea.addAreaWorker(l2sWorker2);
-            System.out.println(productionArea.getFreeWorkers().size());
-            System.out.println(productionArea.getBusyWorkers().size());
-            System.out.println(productionArea.getMeltArea().getWorkers().size());
-            System.out.println(productionArea.getFreezeArea().getWorkers().size());
+            productionAreaarea.addAreaWorker(p2lWorker1);
+            productionAreaarea.addAreaWorker(p2lWorker2);
+            productionAreaarea.addAreaWorker(l2sWorker1);
+            productionAreaarea.addAreaWorker(l2sWorker2);
+            System.out.println(productionAreaarea.getFreeWorkers().size());
+            System.out.println(productionAreaarea.getBusyWorkers().size());
+            System.out.println(productionAreaarea.getMeltArea().getWorkers().size());
+            System.out.println(productionAreaarea.getFreezeArea().getWorkers().size());
             ProcessFacade facade1 = new ProcessFacade();
             facade1.produceChocolate();//生产函数
-            productionArea.removeAreaWorker(p2lWorker1);
-            productionArea.removeAreaWorker(p2lWorker2);
-            productionArea.removeAreaWorker(l2sWorker1);
-            productionArea.removeAreaWorker(l2sWorker2);
-            System.out.println(productionArea.getFreeWorkers().size());
-            System.out.println(productionArea.getBusyWorkers().size());
-            System.out.println(productionArea.getMeltArea().getWorkers().size());
-            System.out.println(productionArea.getFreezeArea().getWorkers().size());
+            productionAreaarea.removeAreaWorker(p2lWorker1);
+            productionAreaarea.removeAreaWorker(p2lWorker2);
+            productionAreaarea.removeAreaWorker(l2sWorker1);
+            productionAreaarea.removeAreaWorker(l2sWorker2);
+            System.out.println(productionAreaarea.getFreeWorkers().size());
+            System.out.println(productionAreaarea.getBusyWorkers().size());
+            System.out.println(productionAreaarea.getMeltArea().getWorkers().size());
+            System.out.println(productionAreaarea.getFreezeArea().getWorkers().size());
             System.out.println(factory.getChocolates().size());
 
             //责任链模式

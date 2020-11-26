@@ -26,12 +26,11 @@ public class DisplayChocolates implements BusinessService{
         {
             if(now.getState()== Parameter.powderState||now.getState()== Parameter.liquidState) waitProcess++;
             else if(now.getState()== Parameter.producedState) waitPackage++;
-            else if(now.getState()== Parameter.decoratedState) waitSell++;
-            else if(now.getState()== Parameter.soldState) hasSell++;
+            else if(now.getState()== Parameter.waitSoldState) waitSell++;
             else continue;
         }
 
         System.out.println("当前工厂流水线中巧克力数为:"+chocolates.size());
-        System.out.println("当前流水线总体巧克力状态为: 待生产:"+waitProcess+"; 待加工:"+waitPackage+"; 待销售:"+waitSell+"; 已销售:"+hasSell);
+        System.out.println("当前流水线总体巧克力状态为: 待生产:"+waitProcess+"; 待加工:"+waitPackage+"; 待销售:"+waitSell);
     }
 }

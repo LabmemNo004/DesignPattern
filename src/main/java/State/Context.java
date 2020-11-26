@@ -38,7 +38,10 @@ public class Context {
 		    break; 
 	    case Parameter.soldState:
 	    	this.state = new SoldState(this);
-		    break; 
+		    break;
+		case Parameter.waitSoldState:
+			this.state=new waitSoldState(this);
+			break;
 	    default : 
 	    	System.out.println("Error, unknown stateValue! Check your input in setState()");
 	}

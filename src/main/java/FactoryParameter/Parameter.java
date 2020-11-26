@@ -46,6 +46,7 @@ public class Parameter implements Serializable{
 	public final static int liquidState=12;
 	public final static int producedState=2;
 	public final static int decoratedState=3;
+	public final static int waitSoldState=35;
 	public final static int soldState=4;
 
 

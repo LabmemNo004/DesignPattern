@@ -31,13 +31,14 @@ public class ChocolateMediator implements Mediator{
             if(now.getState()== Parameter.decoratedState)
             {
                 _waitSellChocolates.add(now);
+                now.setState(Parameter.waitSoldState);
             }
         }//等待达到阈值
         if(_waitSellChocolates.size()>=threshold)
         {
             for(IChocolate now:_chocolates)
             {
-                if(now.getState()== Parameter.decoratedState)
+                if(now.getState()== Parameter.waitSoldState)
                 {
                     now.setState(Parameter.soldState);
                 }

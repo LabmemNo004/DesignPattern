@@ -34,8 +34,9 @@ public class Main {
         BusinessDelegate businessDelegate = new BusinessDelegate();
         Client client = new Client(businessDelegate);
 
-
-        {
+        int i=0;
+        while(i<10) {
+            i++;
             // 中介者模式
             ChocolateMediator chocolateMediator = new ChocolateMediator();
             chocolateMediator.setFactory(factory);
@@ -89,19 +90,23 @@ public class Main {
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
 
-            ChocolatePackagingArea packagingArea=factory.getPackageArea();
+            ChocolatePackagingArea packagingArea = factory.getPackageArea();
             factory.addMediatorForAll();
             packagingArea.setPrice();
             packagingArea.decorator();
             packagingArea.packaging();
 
-            ChocolateSellArea sellArea=factory.getSellArea();
+            ChocolateSellArea sellArea = factory.getSellArea();
             sellArea.clearSoldChocolates();
 
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
+
+            System.out.println("当前余额——"+factory.getCharlie().getAccount());
+
+        }
 
             /*
             //工厂模式
@@ -335,6 +340,5 @@ public class Main {
             factoryDao.updateFactory(factory);
             System.out.println("巧克力工厂数据保存成功");
             */
-        }
     }
 }

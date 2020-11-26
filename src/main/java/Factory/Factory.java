@@ -33,6 +33,7 @@ public class Factory implements Serializable {
      */
     private Factory(){
         this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
+        this._charlie=Charlie.getInstance();
         this._manageArea=RawMaterialManagementArea.getInstance(Charlie.getInstance(),this);
         this._productionArea=ChocolateProductionArea.getInstance(Charlie.getInstance(),this);
         this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.getInstance(),this);

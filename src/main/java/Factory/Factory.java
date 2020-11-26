@@ -98,7 +98,6 @@ public class Factory implements Serializable {
 
     public ChocolateSellArea getSellArea() {return _sellArea;}
 
-<<<<<<< HEAD
     public void setCharlie(Charlie charlie)
     {
         _charlie=charlie;
@@ -108,7 +107,6 @@ public class Factory implements Serializable {
     {
         return _charlie;
     }
-=======
     public ChocolatePackagingArea getPackageArea() {return _packagingArea;}
->>>>>>> eb81c993058768d57246cbdd2771cbc1d9f43e85
+
 }

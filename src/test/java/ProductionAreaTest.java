@@ -9,7 +9,7 @@ import Worker.PowderToLiquidWorker;
 
 public class ProductionAreaTest {
     @Test
-    public void test(String[] args){
+    public void test(){
         Factory factory = Factory.getInstance();//获取工厂对象
         ChocolateProductionArea area = factory.getProductionArea();
         //在生产区创建四个工人

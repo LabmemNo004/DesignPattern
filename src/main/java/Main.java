@@ -1,4 +1,5 @@
 import Area.ChocolatePackagingArea;
+import Area.ChocolateSellArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
 
 import Area.ProcessChocolateArea.ProcessFacade;
@@ -93,6 +94,9 @@ public class Main {
             packagingArea.setPrice();
             packagingArea.decorator();
             packagingArea.packaging();
+
+            ChocolateSellArea sellArea=factory.getSellArea();
+            sellArea.clearSoldChocolates();
 
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");

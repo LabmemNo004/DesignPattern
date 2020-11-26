@@ -84,15 +84,15 @@ public class ChocolatePackagingArea extends Area implements Serializable {
      */
     public void packaging(){
         System.out.println("=====使用Memento模式=====");
-        for(IChocolate now:chocolate){
-            if(now.getState()==2)
+        for(int i=0;i<Parameter.chocolatesCount;++i){
+            IChocolate now=chocolate.get(i);
+            if(now.getState()==Parameter.producedState)
             {
                 this.packagingMachine.resetMachine(now);
                 now.setState(Parameter.decoratedState);
                 now.getMediator().colleagueReport();
             }
         }
-
     }
 
 

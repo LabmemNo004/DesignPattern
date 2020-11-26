@@ -1,6 +1,7 @@
 package Area;
 
 import CallBack.AddMoneyCallBack;
+import FactoryParameter.Parameter;
 import Worker.Charlie;
 import Chocolate.IChocolate;
 import Factory.Factory;
@@ -62,6 +63,20 @@ public class ChocolateSellArea extends Area {
         }
         System.out.println("售出"+chocolates.size()+"个巧克力，得到"+sum_val+"元");
         return sum_val;
+    }
+
+    public void clearSoldChocolates()
+    {
+        //巧克力已售出，清空巧克力列表的已售出巧克力
+        for(int i=0;i<factory.getChocolates().size();++i)
+        {
+            IChocolate now=factory.getChocolates().get(i);
+            if(now.getState()== Parameter.soldState)
+            {
+                factory.getChocolates().remove(now);
+                i--;
+            }
+        }
     }
 
     private ChocolateSellArea(Charlie charlie,Factory factory)

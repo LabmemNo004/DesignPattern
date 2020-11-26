@@ -39,7 +39,6 @@ public class Main {
         BusinessDelegate businessDelegate = new BusinessDelegate();
         Client client = new Client(businessDelegate);
 
-<<<<<<< HEAD
         //在生产区创建四个工人
         Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
         PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
@@ -56,10 +55,7 @@ public class Main {
         Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
         productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
 
-        int i=0;
-        while(i<10) {
-            i++;
-=======
+
         ChocolateSellArea sellArea = factory.getSellArea();
         ChocolatePackagingArea packagingArea = factory.getPackageArea();
         ChocolateProductionArea productionAreaarea = factory.getProductionArea();
@@ -69,31 +65,13 @@ public class Main {
         factory.setMediatorForFactory(chocolateMediator);
 
         while(true) {
->>>>>>> 455ac4fc42250bda7ed58a2909bcaf3ea1bb442f
             // 中介者模式
 
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
-<<<<<<< HEAD
-            
-=======
 
-            //在生产区创建四个工人
-            Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
-            PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
-            productionAreaarea.addFreeWorker(p2lWorker1);
-            Attribute p2laAttribute2 = new Attribute("p2l2", "2020-11-2", "男", 200.0);
-            PowderToLiquidWorker p2lWorker2 = new PowderToLiquidWorker(p2laAttribute2, "SuperPowderToLiquid");
-            productionAreaarea.addFreeWorker(p2lWorker2);
-            Attribute l2saAttribute1 = new Attribute("l2s1", "2020-11-1", "女", 300.0);
-            LiquidToSolidWorker l2sWorker1 = new LiquidToSolidWorker(l2saAttribute1, "LiquidToSolid");
-            productionAreaarea.addFreeWorker(l2sWorker1);
-            Attribute l2saAttribute2 = new Attribute("l2s2", "2020-11-2", "女", 400.0);
-            LiquidToSolidWorker l2sWorker2 = new LiquidToSolidWorker(l2saAttribute2, "SuperLiquidToSolid");
-            productionAreaarea.addFreeWorker(l2sWorker2);
->>>>>>> 455ac4fc42250bda7ed58a2909bcaf3ea1bb442f
             //输出工人列表信息
             System.out.println(productionArea.getFreeWorkers().size());
             System.out.println(productionArea.getBusyWorkers().size());
@@ -160,6 +138,16 @@ public class Main {
 
             System.out.println("\n\n==========================进入下一轮流水线==========================\n");
         }
+
+
+
+
+
+
+
+
+
+
 
             /*
             //工厂模式

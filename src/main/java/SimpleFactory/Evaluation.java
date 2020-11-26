@@ -2,7 +2,7 @@ package SimpleFactory;
 
 public abstract class Evaluation {
 	
-	String customer_name;
+	public String customer_name;
 	
 	/**
      * Abstract method: get the result of an evaluation from a customer

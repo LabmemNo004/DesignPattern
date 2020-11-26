@@ -9,12 +9,9 @@ import Area.ChocolateSellArea;
 import Area.ChocolatePackagingArea;
 import Area.RawMaterialManagementArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
-import Charlie.Charlie;
+import Worker.*;//modify by hzj 11-24
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
-
-
-
 
 
 
@@ -35,12 +32,11 @@ public class Factory implements Serializable {
      * 构造函数
      */
     private Factory(){
-        this._manageArea=RawMaterialManagementArea.getInstance(Charlie.charlie,this);
-        this._productionArea=ChocolateProductionArea.getInstance(Charlie.charlie,this);
-        this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.charlie,this);
-        this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
+        this._manageArea=RawMaterialManagementArea.getInstance(Charlie.getInstance(),this);
+        this._productionArea=ChocolateProductionArea.getInstance(Charlie.getInstance(),this);
+        this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.getInstance(),this);
+        this._sellArea=ChocolateSellArea.getInstance(Charlie.getInstance(),this);
         this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
-
     }
 
     public static Factory getInstance() //留言：增加了双重检查锁
@@ -102,5 +98,15 @@ public class Factory implements Serializable {
 
     public ChocolateSellArea getSellArea() {return _sellArea;}
 
+    public void setCharlie(Charlie charlie)
+    {
+        _charlie=charlie;
+    }
+
+    public Charlie getCharlie()
+    {
+        return _charlie;
+    }
     public ChocolatePackagingArea getPackageArea() {return _packagingArea;}
+
 }

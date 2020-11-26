@@ -1,6 +1,7 @@
 package Worker;
 
 
+import Factory.Factory;
 import Worker.Attribute.*;
 import java.io.Serializable;
 import SolveStarvation.*;
@@ -8,8 +9,9 @@ import DiningRoom.*;
 import Area.*;
 
 public class Charlie extends Person implements Serializable {
-    private static Charlie instance=new Charlie();
+    private static Charlie charlie =new Charlie();
     private double account;
+    private Factory factory;
 
     private Charlie()
     {
@@ -19,17 +21,17 @@ public class Charlie extends Person implements Serializable {
 
     public static Charlie getInstance()
     {
-        System.out.println("=====使用单例模式=====");
-        Charlie temp=instance;
+        System.out.println("使用单例模式创建Charlie实例");
+        Charlie temp=charlie;
         if(temp==null)
         {
             synchronized (Charlie.class)
             {
-                temp=instance;
+                temp=charlie;
                 if(temp==null)
                 {
-                    instance=new Charlie();
-                    temp=instance;
+                    charlie=new Charlie();
+                    temp=charlie;
                 }
             }
         }
@@ -76,6 +78,14 @@ public class Charlie extends Person implements Serializable {
         }
         System.out.println("There is not enough money");
         return false;
+    }
+
+    /**
+     * 设置charlie拥有的工厂
+     */
+    public void setFactory(Factory factory)
+    {
+        this.factory=factory;
     }
 
 }

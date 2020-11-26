@@ -2,7 +2,7 @@ package Area;
 
 import Chocolate.IChocolate;
 import Factory.Factory;
-import Charlie.Charlie;
+import Worker.Charlie;
 import java.io.Serializable;
 import java.util.ArrayList;
 import FactoryParameter.Parameter;
@@ -94,10 +94,6 @@ public class ChocolatePackagingArea extends Area implements Serializable {
         }
 
     }
-
-
-
-
 
 
 

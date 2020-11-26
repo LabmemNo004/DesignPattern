@@ -3,7 +3,7 @@ package Area;
 import java.util.ArrayList;
 import java.util.List;
 
-import Charlie.Charlie;
+import Worker.Charlie;
 import Material.Material;
 import Factory.Factory;
 import Observer.MaterialObservable;

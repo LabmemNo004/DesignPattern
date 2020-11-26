@@ -1,7 +1,7 @@
 package Area;
 
 import CallBack.AddMoneyCallBack;
-import Charlie.Charlie;
+import Worker.Charlie;
 import Chocolate.IChocolate;
 import Factory.Factory;
 

@@ -39,7 +39,7 @@ public class Charlie implements Robot{
     public boolean reduceAccount(Double gold)
     {
 
-        System.out.println("\n\n========当前余额—— " + account + " 元========");
+        System.out.println("\n========当前余额—— " + account + " 元========");
         if (account <gold) {
             return false;
         }

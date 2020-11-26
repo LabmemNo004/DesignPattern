@@ -14,6 +14,8 @@ import Charlie.Charlie;
 import Worker.LiquidToSolidWorker;
 import Worker.PowderToLiquidWorker;
 
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -43,9 +45,7 @@ public class Main {
         chocolateMediator.setFactory(factory);
         factory.setMediatorForFactory(chocolateMediator);
 
-        int i=0;
-        while(i<10) {
-            i++;
+        while(true) {
             // 中介者模式
 
             //这一段代码可以加在任何区域代码之中
@@ -99,9 +99,6 @@ public class Main {
             packagingArea.decorator();
             packagingArea.packaging();
 
-
-            sellArea.clearSoldChocolates();
-
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
@@ -109,6 +106,30 @@ public class Main {
 
             System.out.println("========当前余额——"+ Charlie.charlie.getAccount()+"========");
 
+            sellArea.clearSoldChocolates();
+
+            System.out.println("\n\n==========================选择进入下一轮流水线==========================\n");
+
+            while(true) {
+                System.out.println("==========是否继续:?y/n==========");
+                Scanner input=new Scanner(System.in);
+                String inputStr = input.next();
+                switch (inputStr) {
+                    case "y":
+                    case "yes":
+                    case "1":
+                        break;
+                    case "n":
+                    case "no":
+                    case "0":
+                        return;
+                    default:
+                        continue;
+                }
+                break;
+            }
+
+            System.out.println("\n\n==========================进入下一轮流水线==========================\n");
         }
 
             /*

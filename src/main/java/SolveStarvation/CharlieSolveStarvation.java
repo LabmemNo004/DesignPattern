@@ -2,6 +2,7 @@ package SolveStarvation;
 
 import Worker.*;
 import Area.*;
+import Charlie.Charlie;
 
 
 /**
@@ -22,7 +23,7 @@ public class CharlieSolveStarvation extends SolveStarvation{
     @Override
     public boolean resolve(Starvation starvation)
     {
-        return Charlie.getInstance().solveStarvation(this,starvation);
+        return Charlie.charlie.solveStarvation(this,starvation);
     }
     public Area getArea()
     {

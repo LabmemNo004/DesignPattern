@@ -9,9 +9,9 @@ import Area.ChocolateSellArea;
 import Area.ChocolatePackagingArea;
 import Area.RawMaterialManagementArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
-import Worker.*;//modify by hzj 11-24
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
+import Charlie.Charlie;
 
 
 
@@ -33,11 +33,11 @@ public class Factory implements Serializable {
      */
     private Factory(){
         this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
-        this._charlie=Charlie.getInstance();
-        this._manageArea=RawMaterialManagementArea.getInstance(Charlie.getInstance(),this);
-        this._productionArea=ChocolateProductionArea.getInstance(Charlie.getInstance(),this);
-        this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.getInstance(),this);
-        this._sellArea=ChocolateSellArea.getInstance(Charlie.getInstance(),this);
+        this._charlie=Charlie.charlie;
+        this._manageArea=RawMaterialManagementArea.getInstance(Charlie.charlie,this);
+        this._productionArea=ChocolateProductionArea.getInstance(Charlie.charlie,this);
+        this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.charlie,this);
+        this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
     }
 
     public static Factory getInstance() //留言：增加了双重检查锁

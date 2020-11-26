@@ -2,7 +2,7 @@ package Area;
 
 import Chocolate.IChocolate;
 import Factory.Factory;
-import Worker.Charlie;
+import Charlie.Charlie;
 import java.io.Serializable;
 import java.util.ArrayList;
 import FactoryParameter.Parameter;

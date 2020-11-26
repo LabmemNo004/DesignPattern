@@ -2,8 +2,7 @@ package Area;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import Worker.Charlie;
+import Charlie.Charlie;
 import Material.Material;
 import Factory.Factory;
 import Observer.MaterialObservable;

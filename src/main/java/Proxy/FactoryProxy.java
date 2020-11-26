@@ -23,6 +23,7 @@ public class FactoryProxy implements Robot{
     public boolean reduceAccount(Double m) {
         if (gold < m) {
             System.out.println("代理：Charlie的财产不足"+m+"元，消费失败。");
+            System.out.println("当前余额—— " + Charlie.charlie.getAccount() + " 元");
             return false;
         }
         gold -= m;

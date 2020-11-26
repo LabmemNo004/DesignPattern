@@ -2,7 +2,7 @@ package Area;
 
 import CallBack.AddMoneyCallBack;
 import FactoryParameter.Parameter;
-import Worker.Charlie;
+import Charlie.Charlie;
 import Chocolate.IChocolate;
 import Factory.Factory;
 

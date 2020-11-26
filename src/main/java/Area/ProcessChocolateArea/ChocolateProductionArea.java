@@ -3,10 +3,9 @@ package Area.ProcessChocolateArea;
 import java.util.ArrayList;
 import java.util.List;
 import Area.Area;
-
-import Worker.Charlie;
 import Factory.Factory;
 import Worker.PowderToLiquidWorker;
+import Charlie.Charlie;
 import Worker.*;
 
 
@@ -19,7 +18,7 @@ public class ChocolateProductionArea extends Area{
     private volatile static ChocolateProductionArea ourInstance;
 
     //构造函数
-    ChocolateProductionArea(Charlie charlie, Factory factory){// 留言：更新了super和参数
+    ChocolateProductionArea( Charlie charlie, Factory factory){// 留言：更新了super和参数
         super("2","ProductionArea",charlie,factory);
         freeWorkers = new ArrayList<Worker>();
         busyWorkers = new ArrayList<Worker>();

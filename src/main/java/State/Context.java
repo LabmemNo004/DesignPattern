@@ -1,11 +1,14 @@
 package State;
 
 import FactoryParameter.Parameter;
+
+import java.io.Serializable;
+
 /**
  * The Context Class: Context.
  */
 
-public class Context {
+public class Context implements Serializable {
 	
 	private State state;
 

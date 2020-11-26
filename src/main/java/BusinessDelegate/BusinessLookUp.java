@@ -5,7 +5,9 @@ import BusinessDelegate.Business.DisplayChocolates;
 import BusinessDelegate.Business.DisplayWorkerState;
 import FactoryParameter.Parameter;
 
-public class BusinessLookUp {
+import java.io.Serializable;
+
+public class BusinessLookUp implements Serializable {
     public BusinessService getBusinessService(String serviceType)
     {
         if(serviceType.equalsIgnoreCase(Parameter.SERVICE_DISPLAY_CHOCOLATE))

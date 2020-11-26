@@ -3,7 +3,9 @@ import Chocolate.*;
 import Mould.*;
 import Strategy.*;
 
-public class ProduceView{
+import java.io.Serializable;
+
+public class ProduceView implements Serializable {
     private ProduceChocolate produceStrategy;
     public Chocolate chocolate;
     public void produceChocolateView(Mould m){

@@ -12,7 +12,7 @@ import java.util.concurrent.*;
 
 public class Charlie implements Robot{
 
-    private double account=1000;
+    private double account=3000;
     private Charlie()
     {
 

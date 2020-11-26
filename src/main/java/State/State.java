@@ -1,10 +1,12 @@
 package State;
 
+import java.io.Serializable;
+
 /**
  * The Abstract Class: State.
  */
 
-public abstract class State {
+public abstract class State implements Serializable {
 	
 	public String stateName;
 	public int stateValue;

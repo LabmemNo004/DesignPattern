@@ -1,6 +1,8 @@
 package SolveStarvation;
 
-public abstract class SolveStarvation {
+import java.io.Serializable;
+
+public abstract class SolveStarvation implements Serializable {
     private SolveStarvation _next;
     private String _name;
 

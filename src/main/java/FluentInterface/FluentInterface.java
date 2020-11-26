@@ -1,6 +1,8 @@
 package FluentInterface;
 
-public class FluentInterface {
+import java.io.Serializable;
+
+public class FluentInterface implements Serializable {
     private String[] fields;
 
     private String[] from;

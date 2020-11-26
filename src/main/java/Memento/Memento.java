@@ -1,8 +1,9 @@
 package Memento;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Memento {
+public class Memento implements Serializable {
 
     public Memento(ArrayList<String> history){
         this.history=(ArrayList<String>)history.clone();

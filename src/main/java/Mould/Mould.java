@@ -4,10 +4,12 @@ import Color.Color;
 import Shaped.MouldShape;
 import Item.TheObject;
 
+import java.io.Serializable;
+
 /*模具基类
 * 它的子类：BigMould,MiddleMould,SmallMould*/
 public abstract class
-Mould extends TheObject implements Cloneable{
+Mould extends TheObject implements Cloneable, Serializable {
     protected MouldShape shape;//模具形状
     protected Color color;//巧克力颜色
     public static enum Size{big,middle,small};//三种模具型号

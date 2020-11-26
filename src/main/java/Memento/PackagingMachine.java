@@ -2,10 +2,11 @@ package Memento;
 
 import Chocolate.IChocolate;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class PackagingMachine {
+public class PackagingMachine implements Serializable {
     private IChocolate _chocolate;
     private Command[] _commandList;
 

@@ -5,7 +5,9 @@ import Iterator.ObjectCollection;
 import Mould.*;
 import AbstractFactory.*;
 
-public class Dispatcher {
+import java.io.Serializable;
+
+public class Dispatcher implements Serializable {
     private ProduceView produceview;
 
     private BigChocolateFactory bigMouldFactory=new BigChocolateFactory();

@@ -2,7 +2,9 @@ package MVC;
 
 /*巧克力视图类*/
 
-public class ChocolateView {
+import java.io.Serializable;
+
+public class ChocolateView implements Serializable {
     public void showChocolateView(String type,String name,double price,String comment){//打印视图信息
         System.out.println("巧克力信息如下:");
         System.out.println("类型:"+type);

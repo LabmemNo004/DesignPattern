@@ -2,7 +2,9 @@ package BusinessDelegate;
 
 import BusinessDelegate.Business.BusinessService;
 
-public class BusinessDelegate {
+import java.io.Serializable;
+
+public class BusinessDelegate implements Serializable {
     private BusinessLookUp lookUpService=new BusinessLookUp();
     private BusinessService businessService;
     private String serviceType;

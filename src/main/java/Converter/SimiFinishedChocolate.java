@@ -6,11 +6,12 @@ import Mould.Mould;
 import Shaped.MouldShape;
 import State.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SimiFinishedChocolate {
+public class SimiFinishedChocolate implements Serializable {
     private Mould.Size size;//巧克力大小
     private MouldShape.Shapes shape;//巧克力形状
     private Color.Colors color;//巧克力颜色

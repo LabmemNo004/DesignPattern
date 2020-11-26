@@ -9,9 +9,10 @@ import Shaped.MouldShape;
 import State.State;
 import Visitor.ChocolateVisitor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public interface IChocolate {
+public interface IChocolate extends Serializable {
     String getName();
     //获得巧克力的名称 eg:small square white chocolate
     Mould.Size getSize();

@@ -1,5 +1,6 @@
 package Area.ProcessChocolateArea;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -13,7 +14,7 @@ import Chocolate.IChocolate;
 import Factory.Factory;
 
 //外观模式，封装生产这一系列操作
-public class ProcessFacade {
+public class ProcessFacade implements Serializable {
     private SmashArea smashArea;
     private MeltArea meltArea;
     private FreezeArea freezeArea;

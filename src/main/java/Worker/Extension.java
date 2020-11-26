@@ -1,6 +1,8 @@
 package Worker;
 
-public abstract class Extension {
+import java.io.Serializable;
+
+public abstract class Extension implements Serializable {
     protected Worker owner;
 
     public Extension(Worker owner) {

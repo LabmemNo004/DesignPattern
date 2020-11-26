@@ -1,8 +1,9 @@
 package Worker;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class AttributeCreate {
+public class AttributeCreate implements Serializable {
     private Attribute _attribute;
 
     private   String getName(int len)

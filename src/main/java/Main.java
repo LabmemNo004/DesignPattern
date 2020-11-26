@@ -5,6 +5,8 @@ import Area.ProcessChocolateArea.ChocolateProductionArea;
 import Area.ProcessChocolateArea.ProcessFacade;
 import BusinessDelegate.BusinessDelegate;
 import BusinessDelegate.Client;
+import Dao.FactoryDao;
+import Dao.FactoryDaoImpl;
 import Factory.Factory;
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
@@ -129,6 +131,9 @@ public class Main {
                     case "n":
                     case "no":
                     case "0":
+                        FactoryDao factoryDao = new FactoryDaoImpl();
+                        factoryDao.updateFactory(factory);
+                        System.out.println("巧克力工厂数据保存成功");
                         return;
                     default:
                         continue;
@@ -138,6 +143,8 @@ public class Main {
 
             System.out.println("\n\n==========================进入下一轮流水线==========================\n");
         }
+
+
 
 
 

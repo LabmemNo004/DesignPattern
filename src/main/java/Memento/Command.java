@@ -2,9 +2,10 @@ package Memento;
 
 import Chocolate.IChocolate;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Command {
+public abstract class Command implements Serializable {
     protected IChocolate _chocolate;
     protected static Memento[] _mementoList=new Memento[20];
     protected static Command[] _commandList=new Command[20];

@@ -1,6 +1,8 @@
 package FrontController;
 
-public class FrontController {
+import java.io.Serializable;
+
+public class FrontController implements Serializable {
     private Dispatcher dispatcher;
 
 

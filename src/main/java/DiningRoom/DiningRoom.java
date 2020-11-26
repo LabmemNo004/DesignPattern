@@ -1,6 +1,8 @@
 package DiningRoom;
 
-public class DiningRoom {
+import java.io.Serializable;
+
+public class DiningRoom implements Serializable {
     private int food_remained;
     private int threshold;
 

@@ -13,7 +13,7 @@ import Memento.PackagingMachine;
 /*
  额外使用了Charlie类
  */
-public class ChocolatePackagingArea extends Area implements Serializable {
+public class ChocolatePackagingArea extends Area  {
 
     private static volatile ChocolatePackagingArea uniqueArea;//唯一的巧克力包装区实体对象
     private ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）

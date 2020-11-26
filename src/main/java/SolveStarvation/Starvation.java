@@ -1,8 +1,9 @@
 package SolveStarvation;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class Starvation {
+public class Starvation implements Serializable {
     public int _required_food_amount = 0;
     public int _required_money_amount = 0;
 

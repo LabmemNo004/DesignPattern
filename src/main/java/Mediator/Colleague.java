@@ -1,6 +1,8 @@
 package Mediator;
 
-public interface Colleague {
+import java.io.Serializable;
+
+public interface Colleague extends Serializable {
     //给组员设置中介者
     public abstract void setMediator(ChocolateMediator chocolateMediator);
 

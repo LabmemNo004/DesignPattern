@@ -2,6 +2,8 @@ package Dao;
 
 import Factory.Factory;
 
+import java.io.Serializable;
+
 
 /**
  * FactoryDao is a interface which defines Factory Data access method
@@ -12,7 +14,7 @@ import Factory.Factory;
  * @description: FactoryDao is a interface which defines Factory Data access method
  * @designPattern: Dao(数据访问对象模式)
  */
-public interface FactoryDao {
+public interface FactoryDao extends Serializable {
 
     /**
      * Gets factory Date.

@@ -3,6 +3,8 @@ package DeFactory;
 import Land.Land;
 import Land.Field;
 import Land.LargeField;
+
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -12,7 +14,7 @@ import java.util.*;
  * @description:
  * @designPattern:
  */
-public abstract class DeFactory {
+public abstract class DeFactory implements Serializable {
     /**
      * Create land.
      * 创建土地并在工厂中进行注册。

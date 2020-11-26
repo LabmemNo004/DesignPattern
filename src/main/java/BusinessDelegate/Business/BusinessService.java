@@ -1,5 +1,7 @@
 package BusinessDelegate.Business;
 
-public interface BusinessService {
+import java.io.Serializable;
+
+public interface BusinessService extends Serializable {
     public void doProcessing();
 }

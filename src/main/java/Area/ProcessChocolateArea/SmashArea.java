@@ -1,12 +1,13 @@
 package Area.ProcessChocolateArea;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import Chocolate.Chocolate;
 import Chocolate.IChocolate;
 
-public class SmashArea{
+public class SmashArea implements Serializable {
 
     public List<IChocolate> smash() {
 		List<IChocolate> chocolates = new ArrayList<>();

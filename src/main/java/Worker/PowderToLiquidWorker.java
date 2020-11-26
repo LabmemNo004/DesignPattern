@@ -1,8 +1,10 @@
 package Worker;
 import Chocolate.*;
 import FactoryParameter.Parameter;
+import Mould.Mould;
+import Servant.IWorked;
 
-public class PowderToLiquidWorker extends Worker {
+public class PowderToLiquidWorker extends Worker implements IWorked {
     private ConcreteExtension _extension;
 
     public PowderToLiquidWorker(Attribute attribute, String type) {
@@ -18,6 +20,12 @@ public class PowderToLiquidWorker extends Worker {
         chocolate.setState(Parameter.liquidState);
         //do something
         return chocolate;
+    }
+
+    @Override
+    public Chocolate worked(Chocolate chocolate, Mould mould){
+        Chocolate _c=this.work(chocolate,mould);
+        return _c;
     }
 
     @Override

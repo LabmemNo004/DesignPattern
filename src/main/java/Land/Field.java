@@ -9,7 +9,7 @@ public class Field extends Land {
      * The Usage.
      * 这块土地的用途
      */
-    String _usage;
+
 
     /**
      * Instantiates a new Field.

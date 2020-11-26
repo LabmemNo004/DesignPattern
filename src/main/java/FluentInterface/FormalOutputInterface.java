@@ -19,7 +19,7 @@ public class FormalOutputInterface extends FluentInterface{
     }
 
     @Override
-    public String getOutput() {
+    public String getQuery() {
         StringBuilder sqlBuilder = new StringBuilder();
         sqlBuilder.append("SELECT ")
                 .append("chocolate")

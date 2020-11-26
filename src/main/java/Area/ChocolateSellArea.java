@@ -61,7 +61,7 @@ public class ChocolateSellArea extends Area {
             //将枚举类型按照 ”大小_形状_颜色“ 的字符串格式返回，用Interpreter模式识别返回价格(Double)
             sum_val+=now.getPrice();
         }
-        System.out.println("售出"+chocolates.size()+"个巧克力，得到"+sum_val+"元");
+        System.out.println("========售出"+chocolates.size()+"个巧克力，得到"+sum_val+"元========");
         return sum_val;
     }
 

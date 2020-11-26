@@ -72,7 +72,10 @@ public class Factory implements Serializable {
      */
     public void addMediatorForAll(){
         for(IChocolate now:_chocolates){
-            now.setMediator(_chocolateMediator);
+            if(now.getMediator()==null)
+            {
+                now.setMediator(_chocolateMediator);
+            }
         }
     }
 

@@ -36,11 +36,4 @@ public class FluentInterface {
                 .append(String.join(" AND ", where));
         return sqlBuilder.toString();
     }
-
-    public static void main(String[] args) {
-        FluentInterface sql = new FluentInterface();
-        sql.select("a", "b", "c").from("table AS a").where("a=1", "b=1");
-        String query = sql.getQuery();
-        System.out.println(query);
-    }
 }

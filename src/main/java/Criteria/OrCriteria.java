@@ -2,7 +2,7 @@ package Criteria;
 
 import java.util.List;
 
-import Chocolate.Chocolate;
+import Chocolate.IChocolate;
 
 public class OrCriteria implements Criteria{
     private Criteria criteria;
@@ -14,12 +14,12 @@ public class OrCriteria implements Criteria{
     }
 
     @Override
-    public List<Chocolate> meetCriteria(List<Chocolate> chocolates) {
+    public List<IChocolate> meetCriteria(List<IChocolate> chocolates) {
         System.out.println("使用过滤器模式筛选质量系数为0和1的巧克力");
-        List<Chocolate> firstCriteriaChocolates = criteria.meetCriteria(chocolates);
-        List<Chocolate> otherCriteriaChocolates = otherCriteria.meetCriteria(chocolates);
+        List<IChocolate> firstCriteriaChocolates = criteria.meetCriteria(chocolates);
+        List<IChocolate> otherCriteriaChocolates = otherCriteria.meetCriteria(chocolates);
 
-        for(Chocolate chocolate:otherCriteriaChocolates){
+        for(IChocolate chocolate:otherCriteriaChocolates){
             if(!firstCriteriaChocolates.contains(chocolate)){
                 firstCriteriaChocolates.add(chocolate);
             }

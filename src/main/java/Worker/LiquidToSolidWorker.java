@@ -1,5 +1,6 @@
 package Worker;
 import Chocolate.*;
+import FactoryParameter.Parameter;
 import Mould.Mould;
 import Servant.IWorked;
 
@@ -18,6 +19,7 @@ public class LiquidToSolidWorker extends Worker implements IWorked {
         System.out.println("----巧克力制作工序2：液转固-----");
         chocolate.setProduceStrategy(mould);
         chocolate.Produce();
+        chocolate.setState(Parameter.producedState);
         //do something
         return chocolate;
     }

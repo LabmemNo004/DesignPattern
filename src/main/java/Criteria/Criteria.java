@@ -1,9 +1,9 @@
 package Criteria;
 
 import java.util.List;
-import Chocolate.Chocolate;
+import Chocolate.IChocolate;
 
 public interface Criteria {
     //过滤巧克力
-    public List<Chocolate> meetCriteria(List<Chocolate> chocolates);
+    public List<IChocolate> meetCriteria(List<IChocolate> chocolates);
 }

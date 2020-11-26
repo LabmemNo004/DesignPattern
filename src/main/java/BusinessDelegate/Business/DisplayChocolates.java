@@ -14,8 +14,8 @@ public class DisplayChocolates implements BusinessService{
 
         ArrayList<IChocolate> chocolates=factory.getChocolates();//留言：Chocolate -->IChocolate
 
-        System.out.println("使用业务代表 Business Delegate 模式");
-        System.out.println("通过终端执行\"查看流水线中巧克力");
+        System.out.println("\n========使用业务代表 Business Delegate 模式========");
+        System.out.println("========通过终端执行\"查看流水线中巧克力========");
 
         int waitProcess=0;
         int waitPackage=0;

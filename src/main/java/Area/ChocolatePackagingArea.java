@@ -16,8 +16,8 @@ import Memento.PackagingMachine;
 public class ChocolatePackagingArea extends Area implements Serializable {
 
     private static volatile ChocolatePackagingArea uniqueArea;//唯一的巧克力包装区实体对象
-    private final ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
-    private final PackagingMachine packagingMachine;//巧克力包装机器
+    private ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
+    private PackagingMachine packagingMachine;//巧克力包装机器
 
     /*
     巧克力包装区构造函数
@@ -49,7 +49,7 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     public void setPrice()  {
         for(IChocolate now:chocolate)
         {
-            if(now!=null&&now.getState()==2)
+            if(now.getState()==2)
             {
                 double chocolateValue = Parameter.chocolatePrice.get(now.getSize().toString())+Parameter.chocolatePrice.get(now.getShape().toString())+Parameter.chocolatePrice.get(now.getColor().toString());
                 now.setPrice(chocolateValue);

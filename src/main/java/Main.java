@@ -55,9 +55,13 @@ public class Main {
         Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
         productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
 
+<<<<<<< HEAD
         int i=0;
         while(i<10) {
             i++;
+=======
+
+>>>>>>> db0a94bf008e432f2163bf3154e929920e2718a4
         ChocolateSellArea sellArea = factory.getSellArea();
         ChocolatePackagingArea packagingArea = factory.getPackageArea();
         ChocolateProductionArea productionAreaarea = factory.getProductionArea();
@@ -73,7 +77,11 @@ public class Main {
             System.out.println("业务代理模式查看工厂巧克力状态");
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> db0a94bf008e432f2163bf3154e929920e2718a4
             //输出工人列表信息
             System.out.println(productionArea.getFreeWorkers().size());
             System.out.println(productionArea.getBusyWorkers().size());
@@ -140,6 +148,16 @@ public class Main {
 
             System.out.println("\n\n==========================进入下一轮流水线==========================\n");
         }
+
+
+
+
+
+
+
+
+
+
 
             /*
             //工厂模式

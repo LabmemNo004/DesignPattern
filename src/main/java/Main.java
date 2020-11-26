@@ -39,7 +39,6 @@ public class Main {
             ChocolateMediator chocolateMediator = new ChocolateMediator();
             chocolateMediator.setFactory(factory);
             factory.setMediatorForFactory(chocolateMediator);
-            factory.addMediatorForAll();
 
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");
@@ -90,7 +89,7 @@ public class Main {
             client.doTask();
 
             ChocolatePackagingArea packagingArea=factory.getPackageArea();
-
+            factory.addMediatorForAll();
             packagingArea.setPrice();
             packagingArea.decorator();
             packagingArea.packaging();

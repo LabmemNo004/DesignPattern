@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Memento {
 
     public Memento(ArrayList<String> history){
-        this.history=history;
+        this.history=(ArrayList<String>)history.clone();
 
     }
 

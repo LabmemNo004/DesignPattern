@@ -24,7 +24,7 @@ public class ChocolatePackagingArea extends Area implements Serializable {
      */
     private ChocolatePackagingArea(Charlie charlie,Factory factory) {
         super("3","PackagingArea",charlie,factory);
-        this.chocolate=factory.getChocolates();//使用了未确定的Factory类的getChocolate()
+        this.chocolate=factory.getChocolates();
         this.packagingMachine=new PackagingMachine();
         System.out.println("ChocolatePackagingArea has been initialized!");
     }

@@ -31,7 +31,7 @@ public abstract class Command {
         _commandList[_numCommand-1]._chocolate.reinstateMemento(_mementoList[_numCommand-1]);
         System.out.println("***Undo!***");
         _numCommand--;
-        System.out.println("***Redo!***");
+
 
     }
     public static void redo(){
@@ -39,8 +39,9 @@ public abstract class Command {
             System.out.println("***Attempt to run of end!***");
             return;
         }
-        _commandList[_numCommand].add();
         System.out.println("***Redo!***");
+        _commandList[_numCommand].add();
+
         _numCommand++;
     }
 

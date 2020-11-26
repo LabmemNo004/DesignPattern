@@ -46,14 +46,15 @@ public class PackagingMachine {
             else{
                 _commandList[1].execute();
             }
-
+            pointer=Command._numCommand;
             //测试redo /undo
             if(pointer==3) {
                 Command.undo();
                 Command.undo();
                 Command.redo();
+                Command.redo();
             }
-            pointer=Command._numCommand;
+
         }
         System.out.println("巧克力的外包装层为：");
         for(String now :_chocolate.getPack()){

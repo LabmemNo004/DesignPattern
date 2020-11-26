@@ -1,8 +1,9 @@
 package Worker;
 import Chocolate.*;
 import Mould.Mould;
+import Servant.IWorked;
 
-public class LiquidToSolidWorker extends Worker {
+public class LiquidToSolidWorker extends Worker implements IWorked {
     private ConcreteExtension _extension;
 
     public LiquidToSolidWorker(Attribute attribute, String type) {
@@ -19,6 +20,12 @@ public class LiquidToSolidWorker extends Worker {
         chocolate.Produce();
         //do something
         return chocolate;
+    }
+
+    @Override
+    public Chocolate worked(Chocolate chocolate,Mould mould){
+        Chocolate _c=this.work(chocolate,mould);
+        return _c;
     }
 
     @Override

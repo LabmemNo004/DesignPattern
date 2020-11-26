@@ -10,6 +10,7 @@ import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
 
 import Worker.Attribute;
+import Charlie.Charlie;
 import Worker.LiquidToSolidWorker;
 import Worker.PowderToLiquidWorker;
 
@@ -104,7 +105,7 @@ public class Main {
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
 
-            System.out.println("当前余额——"+factory.getCharlie().getAccount());
+            System.out.println("当前余额——"+ Charlie.charlie.getAccount());
 
         }
 

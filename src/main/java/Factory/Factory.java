@@ -32,11 +32,11 @@ public class Factory implements Serializable {
      * 构造函数
      */
     private Factory(){
+        this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
         this._manageArea=RawMaterialManagementArea.getInstance(Charlie.getInstance(),this);
         this._productionArea=ChocolateProductionArea.getInstance(Charlie.getInstance(),this);
         this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.getInstance(),this);
         this._sellArea=ChocolateSellArea.getInstance(Charlie.getInstance(),this);
-        this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
     }
 
     public static Factory getInstance() //留言：增加了双重检查锁

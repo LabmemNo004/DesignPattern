@@ -16,7 +16,7 @@ public class AddMoneyCallBack implements MoneyCallBack{
     }
 
     public boolean call() {
-        System.out.println("======== 使用回调 Callback 模式 ========");
+        System.out.println("\n======== 使用回调 Callback 模式 ========\n");
         Charlie.charlie.addAccount(_addMoney);
         return true;
     }

@@ -8,6 +8,7 @@ import Material.Material;
 import Color.Color.Colors;
 import SolveStarvation.CharlieSolveStarvation;
 import SolveStarvation.Starvation;
+import java.util.concurrent.*;
 
 public class Charlie implements Robot{
 
@@ -19,26 +20,40 @@ public class Charlie implements Robot{
     
     public void addAccount(Double  gold)
     {
-        System.out.println("当前余额—— " + account + " 元");
+
+        System.out.println("========当前余额—— " + account + " 元========");
 
         account+=gold;
-        System.out.println("销售盈利 " + gold + " 元");
+        System.out.println("========销售盈利 " + gold + " 元========");
 
-        System.out.println("当前余额—— " + account + " 元");
+        System.out.println("========当前余额—— " + account + " 元========");
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
     public boolean reduceAccount(Double gold)
     {
-        System.out.println("当前余额—— " + account + " 元");
+
+        System.out.println("\n\n========当前余额—— " + account + " 元========");
         if (account <gold) {
             return false;
         }
         account -= gold;
-        System.out.println("购买原材料支出 " + gold + " 元");
-        System.out.println("当前余额—— " + account + " 元");
-        return true;
+        System.out.println("========购买原材料支出 " + gold + " 元========");
+        System.out.println("========当前余额—— " + account + " 元========");
 
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return true;
 
     }
 

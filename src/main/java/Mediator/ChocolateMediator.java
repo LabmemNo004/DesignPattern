@@ -20,7 +20,7 @@ public class ChocolateMediator implements Mediator{
     @Override
     public void colleagueReport()
     {
-        System.out.println("=====使用Mediator模式=====");
+        System.out.println("\n=====使用Mediator模式=====");
         if(_chocolates==null)
         {
             System.out.println("工厂巧克力列表为空");
@@ -58,6 +58,16 @@ public class ChocolateMediator implements Mediator{
     {
         threshold=30;
         _waitSellChocolates=new ArrayList<IChocolate>();
+        if(_chocolates!=null)
+        {
+            for(IChocolate now:_chocolates)
+            {
+                if(now.getState()== Parameter.waitSoldState)
+                {
+                    _waitSellChocolates.add(now);
+                }
+            }
+        }
         System.out.println("ChocolateMediator has been initialized!");
     }
 

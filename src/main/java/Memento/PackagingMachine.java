@@ -56,9 +56,5 @@ public class PackagingMachine {
             }
 
         }
-        System.out.println("巧克力的外包装层为：");
-        for(String now :_chocolate.getPack()){
-            System.out.println(now);
-        }
     }
 }

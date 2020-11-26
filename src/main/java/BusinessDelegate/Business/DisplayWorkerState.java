@@ -4,6 +4,7 @@ import Factory.Factory;
 import Worker.Worker;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 public class DisplayWorkerState implements BusinessService{
@@ -20,5 +21,12 @@ public class DisplayWorkerState implements BusinessService{
 
         System.out.println("当前忙碌工人数量为:"+freeList.size());
         System.out.println("当前空闲工人个数为:"+busyList.size());
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

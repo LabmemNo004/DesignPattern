@@ -35,21 +35,23 @@ public class Main {
         BusinessDelegate businessDelegate = new BusinessDelegate();
         Client client = new Client(businessDelegate);
 
+        ChocolateSellArea sellArea = factory.getSellArea();
+        ChocolatePackagingArea packagingArea = factory.getPackageArea();
+        ChocolateProductionArea productionAreaarea = factory.getProductionArea();
+
+        ChocolateMediator chocolateMediator = new ChocolateMediator();
+        chocolateMediator.setFactory(factory);
+        factory.setMediatorForFactory(chocolateMediator);
+
         int i=0;
         while(i<10) {
             i++;
             // 中介者模式
-            ChocolateMediator chocolateMediator = new ChocolateMediator();
-            chocolateMediator.setFactory(factory);
-            factory.setMediatorForFactory(chocolateMediator);
 
             //这一段代码可以加在任何区域代码之中
             System.out.println("业务代理模式查看工厂巧克力状态");
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
-
-            ChocolateProductionArea productionAreaarea = factory.getProductionArea();
-
 
             //在生产区创建四个工人
             Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
@@ -91,13 +93,13 @@ public class Main {
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
 
-            ChocolatePackagingArea packagingArea = factory.getPackageArea();
+
             factory.addMediatorForAll();
             packagingArea.setPrice();
             packagingArea.decorator();
             packagingArea.packaging();
 
-            ChocolateSellArea sellArea = factory.getSellArea();
+
             sellArea.clearSoldChocolates();
 
             //这一段代码可以加在任何区域代码之中
@@ -105,7 +107,7 @@ public class Main {
             businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
             client.doTask();
 
-            System.out.println("当前余额——"+ Charlie.charlie.getAccount());
+            System.out.println("========当前余额——"+ Charlie.charlie.getAccount()+"========");
 
         }
 

@@ -16,6 +16,7 @@ public class FactoryDaoImpl implements FactoryDao{
     @Override
     public Factory getFactory(){
         try {
+            System.out.println("========使用数据访问对象DAO模式========");
             FileInputStream in = new FileInputStream(filePath);
             int size = in.available();
             byte[] buffer = new byte[size];
@@ -36,6 +37,7 @@ public class FactoryDaoImpl implements FactoryDao{
     public void updateFactory(Factory factory) {
 
         try {
+            System.out.println("========使用数据访问对象DAO模式========");
             String str=toString(factory);
             FileOutputStream fileOut = new FileOutputStream(filePath);
             fileOut.write(str.getBytes());

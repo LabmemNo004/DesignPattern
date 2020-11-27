@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 /*物品集合类*/
-public class ObjectCollection<T> extends BaseCollection<T> implements Serializable{
+public class ObjectCollection<T> extends BaseCollection<T> {
     private int size;//集合中的元素个数
     private List<T> collection;//将元素放在列表中
 

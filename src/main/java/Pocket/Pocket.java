@@ -13,7 +13,7 @@ public class Pocket extends Items {
 
     public boolean isFull()
     {
-        return pocketList.size()<scale;
+        return pocketList.size()>=scale;
     }
     
 
@@ -23,7 +23,7 @@ public class Pocket extends Items {
         if(scale<=0) this.scale=1;
         else this.scale=scale;
         System.out.println("该Pocket名字为"+name+",容量为:"+scale);
-        pocketList=new ArrayList<>(Arrays.asList(new Items[this.scale]));
+        pocketList=new ArrayList<>(this.scale);
     }
 
     @Override
@@ -46,14 +46,19 @@ public class Pocket extends Items {
     }
     
     public Items getItem(int index) {
-    	if(index > -1 && index < pocketList.size()) return pocketList.get(index);
+    	if(index > -1 && index < this.scale) return pocketList.get(index);
     	else return new NullItem();
     }
     
     public void add(Items item){
-        if(isFull()||item==null)
+        if(item==null)
         {
-            System.out.println("当前神奇背包——"+this.name+"已满或加入物品不存在");
+            System.out.println("加入物品不存在");
+            return;
+        }
+        else if(isFull())
+        {
+            System.out.println("向神奇背包——"+this.name+"加入"+item.getName()+"，但是当前背包已满！");
             return;
         }
         pocketList.add(item);

@@ -2,7 +2,9 @@ package Visitor;
 
 import Chocolate.Chocolate;
 
-public interface ChocolateVisitor {
+import java.io.Serializable;
+
+public interface ChocolateVisitor extends Serializable {
 
     public void visit(Chocolate chocolate);
 }

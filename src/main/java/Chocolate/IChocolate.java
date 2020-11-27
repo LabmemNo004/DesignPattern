@@ -9,9 +9,10 @@ import Shaped.MouldShape;
 import State.State;
 import Visitor.ChocolateVisitor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public interface IChocolate {
+public interface IChocolate extends Serializable {
     String getName();
     //获得巧克力的名称 eg:small square white chocolate
     Mould.Size getSize();
@@ -40,6 +41,8 @@ public interface IChocolate {
     //删除巧克力最外层包装
     int getQuality();
     //获取巧克力质量系数
+    void setQuality(int quality);
+    //设置巧克力质量系数
     void Produce();
     // 为 size color shape price 赋
     // 随机产生质量系

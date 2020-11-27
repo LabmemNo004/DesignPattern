@@ -1,5 +1,6 @@
 package Area.ProcessChocolateArea;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -9,16 +10,15 @@ import Criteria.ChocolateOneCriteria;
 import Criteria.ChocolateZeroCriteria;
 import Criteria.OrCriteria;
 import Criteria.Criteria;
-import Chocolate.Chocolate;
 import Chocolate.IChocolate;
 import Factory.Factory;
 
 //外观模式，封装生产这一系列操作
-public class ProcessFacade {
+public class ProcessFacade implements Serializable {
     private SmashArea smashArea;
     private MeltArea meltArea;
     private FreezeArea freezeArea;
-    private Queue<Chocolate> powder,liquid;
+    private Queue<IChocolate> powder,liquid;
     private int producePermission=1;
 
     public ProcessFacade(){
@@ -45,7 +45,7 @@ public class ProcessFacade {
         Criteria orCriteria = new OrCriteria(zeroCriteria,oneCriteria);
         while(chocolates.size()<100){
             //凝固塑形
-            List<Chocolate> produced = orCriteria.meetCriteria(freezeArea.freeze(liquid));
+            List<IChocolate> produced = orCriteria.meetCriteria(freezeArea.freeze(liquid));
             int offset = 100 - chocolates.size();
             if(offset<produced.size()){//加入全局巧克力list
                 for(int i=0;i<offset;i++){
@@ -54,11 +54,11 @@ public class ProcessFacade {
             }
             else chocolates.addAll(produced);
             //融化
-            List<Chocolate> melted = meltArea.melt(powder);
+            List<IChocolate> melted = meltArea.melt(powder);
             liquid.addAll(melted);
             //碾碎
             if(producePermission==1){
-            List<Chocolate> smashed = smashArea.smash();
+            List<IChocolate> smashed = smashArea.smash();
             powder.addAll(smashed);
             }
         }

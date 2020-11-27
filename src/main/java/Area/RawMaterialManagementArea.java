@@ -2,7 +2,6 @@ package Area;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import Charlie.Charlie;
 import Material.Material;
 import Factory.Factory;
@@ -41,6 +40,14 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
 
     public int getWhiteMaterialNum(){
         return whiteMaterial.getNum();
+    }
+
+    public  void setBlackMaterialNum(int n){
+        blackMaterial.setNum(n);
+    }
+
+    public  void setWhiteMaterialNum(int n){
+        whiteMaterial.setNum(n);
     }
 
 

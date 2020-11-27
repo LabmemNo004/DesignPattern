@@ -1,6 +1,8 @@
 package BusinessDelegate;
 
-public class Client {
+import java.io.Serializable;
+
+public class Client implements Serializable {
     BusinessDelegate businessDelegate;
 
     public Client(BusinessDelegate businessDelegate)

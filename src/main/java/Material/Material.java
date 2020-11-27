@@ -22,4 +22,5 @@ public class Material extends TheObject {
     public void reduce(int x){//减少原料
         num-=x;
     }
+    public void setNum(int n){this.num=n;}
 }

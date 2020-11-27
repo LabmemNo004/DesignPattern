@@ -2,10 +2,11 @@ package Memento;
 
 import Chocolate.IChocolate;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class PackagingMachine {
+public class PackagingMachine implements Serializable {
     private IChocolate _chocolate;
     private Command[] _commandList;
 
@@ -18,7 +19,7 @@ public class PackagingMachine {
         _commandList[0]=new CommandBlack();
         _commandList[1]=new CommandWhite();
 
-        System.out.println("PackagingMachine has been initialized!");
+        System.out.println("PackagingMachine 准备就绪!");
 
     }
     public void resetMachine(IChocolate chocolate){
@@ -46,18 +47,15 @@ public class PackagingMachine {
             else{
                 _commandList[1].execute();
             }
-
+            pointer=Command._numCommand;
             //测试redo /undo
             if(pointer==3) {
                 Command.undo();
                 Command.undo();
                 Command.redo();
+                Command.redo();
             }
-            pointer=Command._numCommand;
-        }
-        System.out.println("巧克力的外包装层为：");
-        for(String now :_chocolate.getPack()){
-            System.out.println(now);
+
         }
     }
 }

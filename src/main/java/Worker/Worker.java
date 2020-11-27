@@ -39,6 +39,7 @@ public class Worker extends Person implements IWorked {
     {
         System.out.println("=======工人开始工作=======");
 
+
         return chocolate;
     }
 

@@ -17,6 +17,7 @@ public abstract class ChocolateDecorator  implements Serializable, IChocolate {
     protected IChocolate obj;
 
     public ChocolateDecorator(IChocolate obj){
+        System.out.println("========使用装饰器Decorator模式========");
         this.obj=obj;
         System.out.println("Create: "+this.getClass()+" @"+this.hashCode());
     }
@@ -42,6 +43,8 @@ public abstract class ChocolateDecorator  implements Serializable, IChocolate {
     public String deletePack(){return obj.deletePack();};
 
     public int getQuality(){return obj.getQuality();};
+
+    public void setQuality(int quality){};
 
     public int getState(){return obj.getState();}
 

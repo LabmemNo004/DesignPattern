@@ -1,6 +1,9 @@
 package Interpreter;
 import FactoryParameter.Parameter;
-public class Parser {
+
+import java.io.Serializable;
+
+public class Parser implements Serializable {
 
     public static Expression parse(String exp) throws ParseException {
         String[] nodes = exp.split(" ");

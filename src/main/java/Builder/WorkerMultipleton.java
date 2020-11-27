@@ -26,11 +26,11 @@ static {
     workerBuilders.add(new LiquidToSolidWorkerBuilder());
     workerBuilders.add(new PowderToLiquidWorkerBuilder());
     Director director= new Director();
-    for(int i=0;i<8;i++){
+    for(int i=0;i<TYPE_NUM;i++){
         director.setBuilder(workerBuilders.get(i));
         director.constructWorker();;
         director.toStringZh();
-        for (int j=0;j<4;j++){
+        for (int j=0;j<Parameter.EACH_TYPE_NUM;j++){
             list.add(new WorkerMultipleton(Parameter.WORKER_NAMES.get(i * Parameter.EACH_TYPE_NUM + j), director));
         }
     }
@@ -70,7 +70,7 @@ public static WorkerMultipleton getRandomInstance(){
             System.out.println("液转固种类工人数量已达上限");
         }
         else{
-            System.out.println("获取到液转固类农民:"+result.getName());
+            System.out.println("获取到液转固类工人:"+result.getName());
         }
         return result;
     }
@@ -89,7 +89,7 @@ public static WorkerMultipleton getRandomInstance(){
             System.out.println("粉转液种类工人数量已达上限");
         }
         else{
-            System.out.println("获取到粉转液类农民:"+result.getName());
+            System.out.println("获取到粉转液类工人:"+result.getName());
         }
         return result;
     }

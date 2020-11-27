@@ -4,6 +4,8 @@ import Land.Land;
 import Land.Field;
 import Land.LargeField;
 
+import java.io.Serializable;
+import java.util.*;
 
 /**
  * 土地工厂，是一个抽象基类。
@@ -12,7 +14,7 @@ import Land.LargeField;
  * @description:
  * @designPattern:
  */
-public abstract class DeFactory {
+public abstract class DeFactory implements Serializable {
     /**
      * Create land.
      * 创建土地并在工厂中进行注册。
@@ -20,6 +22,9 @@ public abstract class DeFactory {
      * @param usage the usage
      * @return the land
      */
+
+    private static final Map _usages = new HashMap<String,Land>(); // 土地用途记录表，统计注册土地的用途
+
     public final Land create(String usage) {
         Land land = createLand(usage);
         registerLand(land);
@@ -35,6 +40,7 @@ public abstract class DeFactory {
      */
     protected abstract Land createLand(String usage);
 
+
     /**
      * Register land.
      * 抽象方法：在工厂中对土地进行注册
@@ -42,4 +48,6 @@ public abstract class DeFactory {
      * @param land the land
      */
     protected abstract void registerLand(Land land);
+
+
 }

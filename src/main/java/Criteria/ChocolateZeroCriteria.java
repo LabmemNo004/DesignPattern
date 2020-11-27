@@ -2,18 +2,17 @@ package Criteria;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import Chocolate.Chocolate;
+import Chocolate.IChocolate;
 
 public class ChocolateZeroCriteria implements Criteria{
     @Override
-    public List<Chocolate> meetCriteria(List<Chocolate> chocolates) {
-        List<Chocolate> qualifiedChocolates = new ArrayList<>();
-        for(Chocolate chocolate:chocolates){
+    public List<IChocolate> meetCriteria(List<IChocolate> chocolates) {
+        List<IChocolate> qualifiedChocolates = new ArrayList<>();
+        for(IChocolate chocolate:chocolates){
             if(chocolate.getQuality() == 0){
                 qualifiedChocolates.add(chocolate);
             }
         }
-        return chocolates;
+        return qualifiedChocolates;
     }
 }

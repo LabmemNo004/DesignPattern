@@ -6,6 +6,7 @@ import FactoryParameter.Parameter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ChocolateMediator implements Mediator{
 
@@ -19,7 +20,7 @@ public class ChocolateMediator implements Mediator{
     @Override
     public void colleagueReport()
     {
-        System.out.println("=====使用Mediator模式=====");
+        System.out.println("\n=========使用 中介者 Mediator模式=========");
         if(_chocolates==null)
         {
             System.out.println("工厂巧克力列表为空");
@@ -30,18 +31,20 @@ public class ChocolateMediator implements Mediator{
             if(now.getState()== Parameter.decoratedState)
             {
                 _waitSellChocolates.add(now);
-                now.setState(Parameter.soldState);
+                now.setState(Parameter.waitSoldState);
             }
         }//等待达到阈值
         if(_waitSellChocolates.size()>=threshold)
         {
-            factory.getSellArea().addSellAreaChoclates(_waitSellChocolates);
-            factory.getSellArea().sellChocolate();
-            //巧克力已售出，清空巧克力列表的已售出巧克力
             for(IChocolate now:_chocolates)
             {
-                if(now.getState()==Parameter.soldState) _chocolates.remove(now);
-            }
+                if(now.getState()== Parameter.waitSoldState)
+                {
+                    now.setState(Parameter.soldState);
+                }
+            }//等待达到阈值
+            factory.getSellArea().addSellAreaChoclates(_waitSellChocolates);
+            factory.getSellArea().sellChocolate();
             _waitSellChocolates.clear();
             System.out.println("巧克力已从包装区运送到销售区");
         }
@@ -55,6 +58,16 @@ public class ChocolateMediator implements Mediator{
     {
         threshold=30;
         _waitSellChocolates=new ArrayList<IChocolate>();
+        if(_chocolates!=null)
+        {
+            for(IChocolate now:_chocolates)
+            {
+                if(now.getState()== Parameter.waitSoldState)
+                {
+                    _waitSellChocolates.add(now);
+                }
+            }
+        }
         System.out.println("ChocolateMediator has been initialized!");
     }
 

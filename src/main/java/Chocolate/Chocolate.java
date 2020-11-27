@@ -53,6 +53,8 @@ public class Chocolate extends Items implements IChocolate,Colleague{
 
     public Chocolate(){//构造函数
         this.state=new Context();
+        System.out.println("生成一个巧克力实例...");
+        System.out.println("当前状态："+state.getStateName());
         PackInfo = new ArrayList<>();//留言：需要先初始化后续才能调用
         Pack = new ArrayList<>();//留言：需要先初始化后续才能调用
         this.PackInfo.add("black");

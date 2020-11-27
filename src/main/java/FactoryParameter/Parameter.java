@@ -12,8 +12,9 @@ import java.util.Arrays;
 public class Parameter implements Serializable{
 	public static double whiteMeterialPrice=6;//白巧克力原材料价格
 	public static double blackMeterialPrice=3;//黑巧克力原材料价格
-	public static String SERVICE_DISPLAY_CHOCOLATE="DisplayChocolate";
-	public static String SERVICE_DISPLAY_WORKERS="DisplayWorkers";
+	public final static String SERVICE_DISPLAY_CHOCOLATE="DisplayChocolate";
+	public final static String SERVICE_DISPLAY_WORKERS="DisplayWorkers";
+	public final static String SERVICE_DISPLAY_MATERIAL="DisplayMaterial";
 	public static Map<String,Double> chocolatePrice=new HashMap<String,Double>(){{
 		put("black",5.0);
 		put("white",10.0);
@@ -46,6 +47,7 @@ public class Parameter implements Serializable{
 	public final static int liquidState=12;
 	public final static int producedState=2;
 	public final static int decoratedState=3;
+	public final static int waitSoldState=35;
 	public final static int soldState=4;
 
 
@@ -87,8 +89,6 @@ public class Parameter implements Serializable{
 	public Parameter(){
 		whiteMeterialPrice=6;
 		blackMeterialPrice=3;
-		SERVICE_DISPLAY_CHOCOLATE= "DisplayChocolate";
-		SERVICE_DISPLAY_WORKERS="DisplayWorkers";
 
 		chocolatePrice=new HashMap<String,Double>(){{
 			put("black",5.0);

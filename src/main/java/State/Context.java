@@ -1,11 +1,14 @@
 package State;
 
 import FactoryParameter.Parameter;
+
+import java.io.Serializable;
+
 /**
  * The Context Class: Context.
  */
 
-public class Context {
+public class Context implements Serializable {
 	
 	private State state;
 
@@ -38,9 +41,12 @@ public class Context {
 		    break; 
 	    case Parameter.soldState:
 	    	this.state = new SoldState(this);
-		    break; 
+		    break;
+		case Parameter.waitSoldState:
+			this.state=new waitSoldState(this);
+			break;
 	    default : 
-	    	System.out.println("Error, unknown stateValue! Check your input in setState()");
+	    	System.out.println("错误,未知的状态值! 检查setState()中的输入");
 	}
 	}
 	

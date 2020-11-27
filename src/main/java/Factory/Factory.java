@@ -9,12 +9,9 @@ import Area.ChocolateSellArea;
 import Area.ChocolatePackagingArea;
 import Area.RawMaterialManagementArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
-import Charlie.Charlie;
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
-
-
-
+import Charlie.Charlie;
 
 
 
@@ -30,20 +27,20 @@ public class Factory implements Serializable {
 
     private ChocolateMediator _chocolateMediator;
 
-    private final ArrayList<IChocolate> _chocolates; // 留言：把Chocolate 类改成 IChocolate 接口
+    private ArrayList<IChocolate> _chocolates; // 留言：把Chocolate 类改成 IChocolate 接口
     /**
      * 构造函数
      */
     private Factory(){
+        this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
+        this._charlie=Charlie.charlie;
         this._manageArea=RawMaterialManagementArea.getInstance(Charlie.charlie,this);
         this._productionArea=ChocolateProductionArea.getInstance(Charlie.charlie,this);
         this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.charlie,this);
         this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
-        this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
-
     }
 
-    public static Factory getInstance() //留言：增加了双重检查锁
+    public static Factory getInstance() //增加了双重检查锁
     {
         //双重检查锁
         if(_instance==null)
@@ -75,7 +72,10 @@ public class Factory implements Serializable {
      */
     public void addMediatorForAll(){
         for(IChocolate now:_chocolates){
-            now.setMediator(_chocolateMediator);
+            if(now.getMediator()==null)
+            {
+                now.setMediator(_chocolateMediator);
+            }
         }
     }
 
@@ -101,4 +101,25 @@ public class Factory implements Serializable {
     }
 
     public ChocolateSellArea getSellArea() {return _sellArea;}
+
+    public void setCharlie(Charlie charlie)
+    {
+        _charlie=charlie;
+    }
+
+    public Charlie getCharlie()
+    {
+        return _charlie;
+    }
+    public ChocolatePackagingArea getPackageArea() {return _packagingArea;}
+
+    public void setChocolates(ArrayList<IChocolate>chocolates){
+
+        _chocolates.clear();
+        for(IChocolate now:chocolates){
+            _chocolates.add(now);
+        }
+
+    }
+
 }

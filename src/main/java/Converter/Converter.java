@@ -1,6 +1,7 @@
 package Converter;
 
 
+import java.io.Serializable;
 import java.util.function.Function;
 import Chocolate.*;
 import Color.WhiteColor;
@@ -11,7 +12,7 @@ import Shaped.StarShaped;
  * @author : SCH001
  * @description : converter，实现dto（Data Transfer Object）对象和entity（实体）对象的转换
  */
-public class Converter<T, U> {
+public class Converter<T, U> implements Serializable {
 
     private final Function<T, U> _fromDto;
     private final Function<U, T> _fromEntity;

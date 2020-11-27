@@ -21,6 +21,9 @@ public class DoubleCheckedLockingTest {
     }
     @Test
     public void test(){
+        System.out.println("测试DoubleCheckedLocking模式：");
+
+        System.out.println("");
         MyThread[] threads = new MyThread[10];
         for(int i = 0;i<10;i++){
             threads[i] = new MyThread(i);

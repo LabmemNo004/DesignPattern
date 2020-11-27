@@ -13,18 +13,18 @@ import Memento.PackagingMachine;
 /*
  额外使用了Charlie类
  */
-public class ChocolatePackagingArea extends Area implements Serializable {
+public class ChocolatePackagingArea extends Area  {
 
     private static volatile ChocolatePackagingArea uniqueArea;//唯一的巧克力包装区实体对象
-    private final ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
-    private final PackagingMachine packagingMachine;//巧克力包装机器
+    private ArrayList<IChocolate> chocolate;//巧克力列表（工厂中的）
+    private PackagingMachine packagingMachine;//巧克力包装机器
 
     /*
     巧克力包装区构造函数
      */
     private ChocolatePackagingArea(Charlie charlie,Factory factory) {
         super("3","PackagingArea",charlie,factory);
-        this.chocolate=factory.getChocolates();//使用了未确定的Factory类的getChocolate()
+        this.chocolate=factory.getChocolates();
         this.packagingMachine=new PackagingMachine();
         System.out.println("ChocolatePackagingArea has been initialized!");
     }
@@ -82,23 +82,18 @@ public class ChocolatePackagingArea extends Area implements Serializable {
     /*
     undo redo 包装 memento模式
      */
-    public void Packaging(){
+    public void packaging(){
         System.out.println("=====使用Memento模式=====");
-        for(IChocolate now:chocolate){
-            if(now.getState()==2)
+        for(int i=0;i<Parameter.chocolatesCount;++i){
+            IChocolate now=chocolate.get(i);
+            if(now.getState()==Parameter.producedState)
             {
                 this.packagingMachine.resetMachine(now);
                 now.setState(Parameter.decoratedState);
-                now.setMediator(new ChocolateMediator());
                 now.getMediator().colleagueReport();
             }
         }
-
     }
-
-
-
-
 
 
 

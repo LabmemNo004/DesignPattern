@@ -35,6 +35,6 @@ public class Field extends Land {
 
     @Override
     public void use() {
-        System.out.println("This field is used.");
+        System.out.println("这一小片土地已经被使用");
     }
 }

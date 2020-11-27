@@ -1,6 +1,7 @@
 package Area;
 
 import CallBack.AddMoneyCallBack;
+import FactoryParameter.Parameter;
 import Charlie.Charlie;
 import Chocolate.IChocolate;
 import Factory.Factory;
@@ -46,7 +47,7 @@ public class ChocolateSellArea extends Area {
     public void sellChocolate()//留言：使用回调模式销售巧克力
     {
         double addMoney=getPrice(areaChocolates);
-        addMoneyCallBack=new AddMoneyCallBack(addMoney,charlie);
+        addMoneyCallBack=new AddMoneyCallBack(addMoney);
         addMoneyCallBack.call();
         areaChocolates.clear();
     }
@@ -60,8 +61,22 @@ public class ChocolateSellArea extends Area {
             //将枚举类型按照 ”大小_形状_颜色“ 的字符串格式返回，用Interpreter模式识别返回价格(Double)
             sum_val+=now.getPrice();
         }
-        System.out.println("售出"+chocolates.size()+"个巧克力，得到"+sum_val+"元");
+        System.out.println("========售出"+chocolates.size()+"个巧克力，得到"+sum_val+"元========");
         return sum_val;
+    }
+
+    public void clearSoldChocolates()
+    {
+        //巧克力已售出，清空巧克力列表的已售出巧克力
+        for(int i=0;i<factory.getChocolates().size();++i)
+        {
+            IChocolate now=factory.getChocolates().get(i);
+            if(now.getState()== Parameter.soldState)
+            {
+                factory.getChocolates().remove(now);
+                i--;
+            }
+        }
     }
 
     private ChocolateSellArea(Charlie charlie,Factory factory)

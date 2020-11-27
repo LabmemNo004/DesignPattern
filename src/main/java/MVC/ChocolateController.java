@@ -1,8 +1,11 @@
 package MVC;
 
 import Chocolate.Chocolate;
+
+import java.io.Serializable;
+
 /*巧克力控制类*/
-public class ChocolateController {
+public class ChocolateController implements Serializable {
     private Chocolate model;//巧克力实例
     private ChocolateView view;//巧克力视图
 

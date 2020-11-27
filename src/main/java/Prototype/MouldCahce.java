@@ -8,9 +8,10 @@ import Shaped.SquareShaped;
 import Shaped.StarShaped;
 
 
+import java.io.Serializable;
 import java.util.Hashtable;
 
-public class MouldCahce {
+public class MouldCahce implements Serializable {
     private static Hashtable<String, Mould> shapeMap
             = new Hashtable<String, Mould>();
 

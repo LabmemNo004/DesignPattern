@@ -2,6 +2,7 @@ package BusinessDelegate;
 
 import BusinessDelegate.Business.BusinessService;
 import BusinessDelegate.Business.DisplayChocolates;
+import BusinessDelegate.Business.DisplayMaterial;
 import BusinessDelegate.Business.DisplayWorkerState;
 import FactoryParameter.Parameter;
 
@@ -17,6 +18,10 @@ public class BusinessLookUp implements Serializable {
         else if(serviceType.equalsIgnoreCase(Parameter.SERVICE_DISPLAY_WORKERS))
         {
             return new DisplayWorkerState();
+        }
+        else if(serviceType.equalsIgnoreCase(Parameter.SERVICE_DISPLAY_MATERIAL))
+        {
+            return new DisplayMaterial();
         }
         else return null;
     }

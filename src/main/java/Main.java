@@ -73,10 +73,11 @@ public class Main {
             System.out.println("=========                              1.开始生产巧克力                               =========");
             System.out.println("=========                              2.显示工厂巧克力状态                            =========");
             System.out.println("=========                              3.显示工厂工人状态                              =========");
-            System.out.println("=========                              4.显示账户状态                                 =========");
-            System.out.println("=========                              5.保存当前工厂状态                              =========");
-            System.out.println("=========                              6.加载已保存的工厂                              =========");
-            System.out.println("=========                              7.离开工厂                                    =========");
+            System.out.println("=========                              4.显示工厂原料状态                              =========");
+            System.out.println("=========                              5.显示账户状态                                 =========");
+            System.out.println("=========                              6.保存当前工厂状态                              =========");
+            System.out.println("=========                              7.加载已保存的工厂                              =========");
+            System.out.println("=========                              8.离开工厂                                    =========");
             System.out.println("=========                              输入命令编号n，执行命令                          =========");
             System.out.println("==============================================================================================");
             System.out.println("请输入命令编号：");
@@ -95,10 +96,10 @@ public class Main {
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
-                //输出工人列表信息
+                System.out.println("业务代理模式查看原料状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
+                client.doTask();
 
-                System.out.println(productionArea.getFreeWorkers().size());
-                System.out.println(productionArea.getBusyWorkers().size());
                 //分配到各个区域
                 productionArea.addAreaWorker(p2lWorker1);
                 productionArea.addAreaWorker(Superp2lWorker2);
@@ -136,7 +137,11 @@ public class Main {
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
-                System.out.println("========当前余额——" + Charlie.charlie.getAccount() + "========");
+                System.out.println("业务代理模式查看原料状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
+                client.doTask();
+
+                System.out.println("\n========当前余额——" + Charlie.charlie.getAccount() + "========");
 
                 sellArea.clearSoldChocolates();
 
@@ -185,19 +190,25 @@ public class Main {
                 client.doTask();
             }
 
+            else if(inputChoice.equals("4"))
+            {
+                System.out.println("业务代理模式查看原料状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
+                client.doTask();
+            }
 
-            else if(inputChoice.equals("4")){
+            else if(inputChoice.equals("5")){
                 System.out.println("\n\n========当前余额——" + Charlie.charlie.getAccount() + "========");
             }
 
 
-            else if(inputChoice.equals("5")){
+            else if(inputChoice.equals("6")){
                 FactoryDao factoryDao = new FactoryDaoImpl();
                 factoryDao.updateFactory(factory);
                 System.out.println("巧克力工厂数据保存成功");
             }
 
-            else if(inputChoice.equals("6")){
+            else if(inputChoice.equals("7")){
                 FactoryDao factoryDao = new FactoryDaoImpl();
                 Factory factory1= factoryDao.getFactory();
                 if(factory1==null){
@@ -214,7 +225,7 @@ public class Main {
             }
 
 
-            else if(inputChoice.equals("7")){
+            else if(inputChoice.equals("8")){
                 System.out.println("查理休假=====================程序结束");
                 break;
             }

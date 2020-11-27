@@ -24,8 +24,8 @@ public class ProducedState extends State{
      * @param context the context
      */
 	public void jumpState(Context context) {
-		System.out.println("目前的巧克力状态:"+context.getStateName());
+		System.out.println("目前的巧克力状态:"+context.getStateName()+"(生产完状态)");
 		context.setState(Parameter.decoratedState);
-		System.out.println("跳转到下一个巧克力状态:"+context.getStateName());
+		System.out.println("跳转到下一个巧克力状态:"+context.getStateName()+"(包装完状态)");
 	}
 }

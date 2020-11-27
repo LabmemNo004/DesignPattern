@@ -24,8 +24,8 @@ public class SoldState extends State{
      * @param context the context
      */
 	public void jumpState(Context context) {
-		System.out.println("目前的巧克力状态:"+context.getStateName());
-		System.out.println("巧克力已经在最后一个状态:"+context.getStateName());
+		System.out.println("目前的巧克力状态:"+context.getStateName()+"(已销售状态)");
+		System.out.println("巧克力已经在最后一个状态:"+context.getStateName()+"(已销售状态)");
 	}
 
 }

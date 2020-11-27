@@ -92,11 +92,11 @@ public class Main {
                 // 中介者模式
 
                 //这一段代码可以加在任何区域代码之中
-                System.out.println("业务代理模式查看工厂巧克力状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
-                System.out.println("业务代理模式查看原料状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看原料状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
                 client.doTask();
 
@@ -110,7 +110,7 @@ public class Main {
                 facade.produceChocolate();//生产函数
 
                 //这一段代码必须加在生产区域代码之中
-                System.out.println("业务代理模式查看工人状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工人状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
                 client.doTask();
 
@@ -122,7 +122,7 @@ public class Main {
 
 
                 //这一段代码可以加在任何区域代码之中
-                System.out.println("业务代理模式查看工厂巧克力状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
@@ -133,11 +133,11 @@ public class Main {
                 packagingArea.packaging();
 
                 //这一段代码可以加在任何区域代码之中
-                System.out.println("业务代理模式查看工厂巧克力状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
-                System.out.println("业务代理模式查看原料状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看原料状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
                 client.doTask();
 
@@ -178,21 +178,21 @@ public class Main {
 
 
             else if(inputChoice.equals("2")){
-                System.out.println("业务代理模式查看工厂巧克力状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
             }
 
 
             else if(inputChoice.equals("3")){
-                System.out.println("业务代理模式查看工人状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工人状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
                 client.doTask();
             }
 
             else if(inputChoice.equals("4"))
             {
-                System.out.println("业务代理模式查看原料状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看原料状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
                 client.doTask();
             }
@@ -236,11 +236,6 @@ public class Main {
 
 
         }
-
-
-
-
-
     }
 }
 

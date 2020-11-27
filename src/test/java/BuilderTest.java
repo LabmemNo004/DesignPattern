@@ -1,5 +1,5 @@
 import org.junit.Test;
-import Worker.*;//待完成
+import Worker.*;
 import Builder.*;
 
 public class BuilderTest {

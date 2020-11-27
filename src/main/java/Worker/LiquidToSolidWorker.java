@@ -10,6 +10,7 @@ public class LiquidToSolidWorker extends Worker implements IWorked {
     public LiquidToSolidWorker(Attribute attribute, String type) {
         super(attribute,type);
         _extension=new ConcreteExtension(this);
+
     }
 
     public Chocolate work(Chocolate chocolate,Mould mould)//hzj：增加Mould

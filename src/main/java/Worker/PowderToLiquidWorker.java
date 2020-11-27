@@ -7,6 +7,7 @@ public class PowderToLiquidWorker extends Worker {
 
     public PowderToLiquidWorker(Attribute attribute, String type) {
         super(attribute,type);
+        System.out.println("----使用构造函数模式生成了一个对象-----");
         _extension=new ConcreteExtension(this);
     }
 

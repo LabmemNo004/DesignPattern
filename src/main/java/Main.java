@@ -257,20 +257,6 @@ public class Main {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             /*
             //工厂模式
             System.out.println("======== 使用 工厂Factory 模式 ========");

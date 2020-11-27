@@ -1,5 +1,7 @@
 package FactoryParameter;
 
+import TransferObject.WorkerBO;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -15,6 +17,7 @@ public class Parameter implements Serializable{
 	public final static String SERVICE_DISPLAY_CHOCOLATE="DisplayChocolate";
 	public final static String SERVICE_DISPLAY_WORKERS="DisplayWorkers";
 	public final static String SERVICE_DISPLAY_MATERIAL="DisplayMaterial";
+	public static WorkerBO WorkersBusinessObject=new WorkerBO();
 	public static Map<String,Double> chocolatePrice=new HashMap<String,Double>(){{
 		put("black",5.0);
 		put("white",10.0);

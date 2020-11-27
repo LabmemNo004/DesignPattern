@@ -7,28 +7,34 @@ import java.io.Serializable;
 public abstract class Person extends OrganizationComponent implements Serializable {
     protected Attribute attribute;
 
-    protected String GetId()
+    public String GetId()
     {
         return attribute.getPersonId();
     }
 
-    protected String GetSex()
+    public String GetSex()
     {
         return attribute.getSex();
     }
-    protected String GetBirthTime()
+    public String GetBirthTime()
     {
         return attribute.getBirthTime();
     }
 
-    protected Double GetSalary()
+    public double GetSalary()
     {
         return attribute.getSalary();
     }
 
-    protected void SetSalary(double salary)
+    public void SetSalary(double salary)
     {
         attribute.setSalary(salary);
+    }
+    public void setBirthTime(String time){
+        attribute.setBirthTime(time);
+    }
+    public void setSex(String sex){
+        attribute.setSex(sex);
     }
 
     public Person(Attribute attribute)

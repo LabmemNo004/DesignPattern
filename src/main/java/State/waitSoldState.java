@@ -24,10 +24,7 @@ public class waitSoldState extends State{
      * @param context the context
      */
     public void jumpState(Context context) {
-    	/*
-        System.out.println("Current chocolate state:"+context.getStateName());
-        System.out.println("Already in the last state:"+context.getStateName());
-        */
+    	
     	System.out.println("目前的巧克力状态:"+context.getStateName());
     	context.setState(Parameter.soldState);
         System.out.println("跳转到下一个巧克力状态:"+context.getStateName());

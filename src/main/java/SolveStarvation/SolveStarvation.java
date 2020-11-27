@@ -38,19 +38,22 @@ public abstract class SolveStarvation implements Serializable {
     protected abstract boolean resolve(Starvation starvation);
 
     /**
-     * 喂食成功
+     * 解决成功
      * @param starvation 具体需要解决的问题
      */
-    protected void finish(Starvation starvation){
+    protected void finish(Starvation starvation)
+    {
+        System.out.println("======== 使用责任链 Chain of Responsibilities 模式 =========");
         System.out.println(starvation + " It is solved by " + this);
     }
 
     /**
-     * 喂食失败
+     * 解决失败
      * @param starvation 具体需要解决的问题
      */
     protected void fail(Starvation starvation)
     {
+        System.out.println("======== 使用责任链 Chain of Responsibilities 模式 =========");
         System.out.println(starvation + "solving has been failed.");
     }
 
@@ -59,7 +62,6 @@ public abstract class SolveStarvation implements Serializable {
      * @param starvation 具体需要解决的问题
      */
     public final void solve(Starvation starvation){
-        System.out.println("======== 使用责任链 Chain of Responsibilities 模式 =========");
         if(resolve(starvation)){
             finish(starvation);
         }else if (_next !=null){

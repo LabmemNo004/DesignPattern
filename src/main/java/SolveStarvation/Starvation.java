@@ -8,7 +8,7 @@ public class Starvation implements Serializable {
     public int _required_money_amount = 0;
 
     /**
-     * @return 解决饥饿所需要的食物
+     * @return 所需要的食物
      */
     @Override
     public String toString(){

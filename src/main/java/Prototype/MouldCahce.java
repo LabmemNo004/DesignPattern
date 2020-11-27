@@ -17,6 +17,7 @@ public class MouldCahce implements Serializable {
 
     //静态方法，通过原型创建相同的模具
     public static Mould getShape(String shape) {
+        System.out.println("========使用原型 Prototype 模式========");
         Mould cachedShape = shapeMap.get(shape);
         return (Mould) cachedShape.clone();
     }
@@ -24,7 +25,7 @@ public class MouldCahce implements Serializable {
     //将所有类型的模具装入hashmap中。
     //size:big,middle,small  color：white,black  shape:star,heart,spherical，square共24种模板
     public static void loadCache() {
-        System.out.println("======将所有类型的模具加入模板哈希表中======");
+        System.out.println("========将所有类型的模具加入模板哈希表中========");
         BigMould bigStarWhiteMould=new BigMould(new StarShaped(),new WhiteColor());
         shapeMap.put("bigStarWhite",bigStarWhiteMould);
         BigMould bigHeartWhiteMould=new BigMould(new HeartShaped(),new WhiteColor());

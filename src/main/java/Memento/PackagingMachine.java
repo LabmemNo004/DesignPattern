@@ -19,7 +19,7 @@ public class PackagingMachine implements Serializable {
         _commandList[0]=new CommandBlack();
         _commandList[1]=new CommandWhite();
 
-        System.out.println("PackagingMachine has been initialized!");
+        System.out.println("PackagingMachine 准备就绪!");
 
     }
     public void resetMachine(IChocolate chocolate){

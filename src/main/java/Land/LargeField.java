@@ -34,6 +34,6 @@ public class LargeField extends Land{
 
     @Override
     public void use() {
-        System.out.println("This large field is used.");
+        System.out.println("这一大片土地已经被使用");
     }
 }

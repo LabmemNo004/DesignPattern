@@ -80,7 +80,7 @@ public class Main {
             System.out.println("=====7.离开工厂                                                =====");
             System.out.println("=====输入命令编号n，执行命令                                     =====");
             System.out.println("==================================================================");
-            System.out.println("n=");
+            System.out.println("请输入命令编号：");
             Scanner inputOut = new Scanner(System.in);
             String inputChoice = inputOut.next();
 
@@ -196,6 +196,14 @@ public class Main {
                 FactoryDao factoryDao = new FactoryDaoImpl();
                 factoryDao.updateFactory(factory);
                 System.out.println("巧克力工厂数据保存成功");
+            }
+
+            else if(inputChoice.equals("6")){
+                FactoryDao factoryDao = new FactoryDaoImpl();
+                Factory factory1= factoryDao.getFactory();
+                Charlie.charlie.setAccount(factory1.getCharlie().getAccount());
+                factory.setChocolates(factory1.getChocolates());
+                System.out.println("巧克力工厂数据加载成功");
             }
 
 

@@ -27,7 +27,7 @@ public class Factory implements Serializable {
 
     private ChocolateMediator _chocolateMediator;
 
-    private final ArrayList<IChocolate> _chocolates; // 留言：把Chocolate 类改成 IChocolate 接口
+    private ArrayList<IChocolate> _chocolates; // 留言：把Chocolate 类改成 IChocolate 接口
     /**
      * 构造函数
      */
@@ -40,7 +40,7 @@ public class Factory implements Serializable {
         this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
     }
 
-    public static Factory getInstance() //留言：增加了双重检查锁
+    public static Factory getInstance() //增加了双重检查锁
     {
         //双重检查锁
         if(_instance==null)
@@ -112,5 +112,14 @@ public class Factory implements Serializable {
         return _charlie;
     }
     public ChocolatePackagingArea getPackageArea() {return _packagingArea;}
+
+    public void setChocolates(ArrayList<IChocolate>chocolates){
+
+        _chocolates.clear();
+        for(IChocolate now:chocolates){
+            _chocolates.add(now);
+        }
+
+    }
 
 }

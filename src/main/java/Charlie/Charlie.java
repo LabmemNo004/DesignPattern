@@ -81,5 +81,12 @@ public class Charlie implements Robot{
         return false;
     }
 
+    public void setAccount(double account)
+    {
+        this.account=account;
+    }
+
     static public Charlie charlie=new Charlie();
+
+
 }

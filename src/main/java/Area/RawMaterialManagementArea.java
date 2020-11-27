@@ -42,6 +42,14 @@ public class RawMaterialManagementArea extends Area  implements MaterialObservab
         return whiteMaterial.getNum();
     }
 
+    public  void setBlackMaterialNum(int n){
+        blackMaterial.setNum(n);
+    }
+
+    public  void setWhiteMaterialNum(int n){
+        whiteMaterial.setNum(n);
+    }
+
 
     //原料的生产
     public void blackProduce(){//用了单例就不用静态

@@ -19,7 +19,7 @@ public abstract class Person implements Serializable {
         return attribute.getBirthTime();
     }
 
-    public Double GetSalary()
+    public double GetSalary()
     {
         return attribute.getSalary();
     }

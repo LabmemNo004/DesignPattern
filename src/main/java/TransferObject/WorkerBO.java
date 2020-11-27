@@ -75,8 +75,8 @@ public class WorkerBO {
         setBirthTime(id,w.GetBirthTime());
         setSalary(id,w.GetSalary());
         setSex(id,w.GetSex());
-        System.out.println("Worker:"+id);
-        System.out.println("update!!!");
+        System.out.println("更新");
+        System.out.println("Worker:"+id+"的信息");
         System.out.println("更新后，该工人信息如下:");
         System.out.println("Id:"+id);
         System.out.println("BirthYear:"+w.GetBirthTime());

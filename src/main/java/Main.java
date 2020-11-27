@@ -66,7 +66,6 @@ public class Main {
         ChocolatePackagingArea packagingArea = factory.getPackageArea();//获取唯一包装区
 
         // 中介者模式
-
         ChocolateMediator chocolateMediator = new ChocolateMediator();//初始化中介者
         chocolateMediator.setFactory(factory);
         factory.setMediatorForFactory(chocolateMediator);

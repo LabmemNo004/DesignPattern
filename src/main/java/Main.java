@@ -200,11 +200,17 @@ public class Main {
             else if(inputChoice.equals("6")){
                 FactoryDao factoryDao = new FactoryDaoImpl();
                 Factory factory1= factoryDao.getFactory();
-                Charlie.charlie.setAccount(factory1.getCharlie().getAccount());
-                factory.setChocolates(factory1.getChocolates());
-                factory.getManageArea().setBlackMaterialNum(factory1.getManageArea().getBlackMaterialNum());
-                factory.getManageArea().setWhiteMaterialNum(factory1.getManageArea().getWhiteMaterialNum());
-                System.out.println("巧克力工厂数据加载成功");
+                if(factory1==null){
+                    System.out.println("巧克力工厂数据加载失败，请重新存档");
+
+                }
+                else {
+                    Charlie.charlie.setAccount(factory1.getCharlie().getAccount());
+                    factory.setChocolates(factory1.getChocolates());
+                    factory.getManageArea().setBlackMaterialNum(factory1.getManageArea().getBlackMaterialNum());
+                    factory.getManageArea().setWhiteMaterialNum(factory1.getManageArea().getWhiteMaterialNum());
+                    System.out.println("巧克力工厂数据加载成功");
+                }
             }
 
 

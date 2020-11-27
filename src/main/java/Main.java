@@ -1,7 +1,6 @@
 import Area.ChocolatePackagingArea;
 import Area.ChocolateSellArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
-
 import Area.ProcessChocolateArea.ProcessFacade;
 import BusinessDelegate.BusinessDelegate;
 import BusinessDelegate.Client;
@@ -10,16 +9,12 @@ import Dao.FactoryDaoImpl;
 import Factory.Factory;
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
-
 import Worker.Attribute;
 import Worker.Extension;
 import Charlie.Charlie;
 import Worker.LiquidToSolidWorker;
 import Worker.PowderToLiquidWorker;
-
 import Command.*;
-
-
 import java.util.Scanner;
 
 

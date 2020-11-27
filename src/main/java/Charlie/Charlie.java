@@ -77,7 +77,7 @@ public class Charlie implements Robot{
                 return true;
             }
         }
-        System.out.println("There is not enough money");
+        System.out.println("账户余额不足!");
         return false;
     }
 

@@ -21,6 +21,10 @@ public class MeltArea extends WorkerProduceLink{
             if(w.getClass()==LiquidToSolidWorker.class)
             {
                 w= new Adapter((LiquidToSolidWorker)w);
+
+                System.out.println("======== 使用适配器模式 ========");
+                System.out.println("======== 适配了一个工人 ========");
+
             }
             if(w instanceof Worker){//普通工人
                 PowderToLiquidWorker worker = (PowderToLiquidWorker)w;
@@ -28,6 +32,7 @@ public class MeltArea extends WorkerProduceLink{
                 if(chocolate==null)break;//可能出现人多巧克力少的情况
                 meltChocolate(worker, chocolates, chocolate);
             }
+
             else{//强化工人
                 Extension extension = (ConcreteExtension)w;
                 for (int i = 0; i < 2; i++) {

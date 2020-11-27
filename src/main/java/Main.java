@@ -17,6 +17,9 @@ import Charlie.Charlie;
 import Worker.LiquidToSolidWorker;
 import Worker.PowderToLiquidWorker;
 
+import Command.*;
+
+
 import java.util.Scanner;
 
 
@@ -58,8 +61,11 @@ public class Main {
         Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
         productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
 
+
         ChocolateSellArea sellArea = factory.getSellArea();//获取唯一销售区
         ChocolatePackagingArea packagingArea = factory.getPackageArea();//获取唯一包装区
+
+        // 中介者模式
 
         ChocolateMediator chocolateMediator = new ChocolateMediator();//初始化中介者
         chocolateMediator.setFactory(factory);
@@ -89,7 +95,9 @@ public class Main {
             if(inputChoice.equals("1")) {
 
             while (true) {
+
                 // 中介者模式
+                ProduceCommand produceCommand =new  ProduceCommand();
 
                 //这一段代码可以加在任何区域代码之中
                 System.out.println("业务代理模式查看工厂巧克力状态");
@@ -106,11 +114,16 @@ public class Main {
                 productionArea.addAreaWorker(l2sWorker1);
                 productionArea.addAreaWorker(Superl2sWorker2);
 
+
                 ProcessFacade facade = new ProcessFacade();
+                produceCommand.startProduce(facade);
+                System.out.println("======使用命令模式======");
+                System.out.println("======更改了生成许可======");
                 facade.produceChocolate();//生产函数
 
                 //这一段代码必须加在生产区域代码之中
                 System.out.println("业务代理模式查看工人状态");
+
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
                 client.doTask();
 
@@ -121,8 +134,9 @@ public class Main {
                 productionArea.removeAreaWorker(Superl2sWorker2);
 
 
-                //这一段代码可以加在任何区域代码之中
-                System.out.println("业务代理模式查看工厂巧克力状态");
+
+                //业务代理模式，这一段代码可以加在任何区域代码之中
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
@@ -132,12 +146,13 @@ public class Main {
                 packagingArea.decorator();
                 packagingArea.packaging();
 
-                //这一段代码可以加在任何区域代码之中
-                System.out.println("业务代理模式查看工厂巧克力状态");
+
+                //业务代理模式，这一段代码可以加在任何区域代码之中
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
 
-                System.out.println("业务代理模式查看原料状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看原料状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
                 client.doTask();
 
@@ -177,22 +192,26 @@ public class Main {
             }
 
 
+            //业务代理模式
             else if(inputChoice.equals("2")){
-                System.out.println("业务代理模式查看工厂巧克力状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工厂巧克力状态 ======");
+
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
                 client.doTask();
             }
 
 
+            //业务代理模式
             else if(inputChoice.equals("3")){
-                System.out.println("业务代理模式查看工人状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看工人状态 ======");
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
                 client.doTask();
             }
-
+            //业务代理模式
             else if(inputChoice.equals("4"))
             {
-                System.out.println("业务代理模式查看原料状态");
+                System.out.println("======使用业务代理模式 Businesses Delegate 查看原料状态 ======");
+
                 businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_MATERIAL);
                 client.doTask();
             }
@@ -236,11 +255,6 @@ public class Main {
 
 
         }
-
-
-
-
-
     }
 }
 

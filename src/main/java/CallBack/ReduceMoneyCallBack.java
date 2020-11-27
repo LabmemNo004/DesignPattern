@@ -18,7 +18,7 @@ public class ReduceMoneyCallBack implements MoneyCallBack{
     public boolean call() {
         System.out.println("\n======== 使用回调 Callback 模式 ========\n");
         if (Charlie.charlie.getAccount()<_reduceMoney) {
-            throw new RuntimeException("charlie doesn't have enough money");
+            throw new RuntimeException("charlie账户余额不足");
         }
         else {
             System.out.println("回调扣除资金 " + _reduceMoney + " 元");

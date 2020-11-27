@@ -37,7 +37,8 @@ public class Worker extends Person implements IWorked {
 
     public Chocolate work(Chocolate chocolate, Mould mould)//hzj：增加Mould
     {
-        System.out.println("工人开始工作");
+        System.out.println("=======工人开始工作=======");
+
 
         return chocolate;
     }

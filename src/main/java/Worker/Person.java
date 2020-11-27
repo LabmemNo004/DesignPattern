@@ -35,6 +35,7 @@ public abstract class Person extends OrganizationComponent implements Serializab
     {
         super(attribute.getPersonId());
         this.attribute = attribute;
+        System.out.println("======== 使用私有数据设计模式生成了一个人 ========");
     }
 
     @Override

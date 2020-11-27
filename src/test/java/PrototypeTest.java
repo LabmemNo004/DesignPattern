@@ -1,6 +1,9 @@
-import Mould.Mould;
+import Color.WhiteColor;
+import Mould.*;
 import Prototype.MouldCahce;
+import Shaped.StarShaped;
 import org.junit.Test;
+
 
 public class PrototypeTest {
     @Test
@@ -8,6 +11,7 @@ public class PrototypeTest {
         MouldCahce.loadCache();
         System.out.println("======测试 Prototype 原型模式======");
         Mould clonedShape1 = (Mould) MouldCahce.getShape("bigStarWhite");
+        System.out.println(clonedShape1.getClass().getName());
         System.out.println("Size: "+clonedShape1.getSize()+"   Shape: " + clonedShape1.getShape()+"   Color: "+clonedShape1.getColor());
         Mould clonedShape2 = (Mould) MouldCahce.getShape("middleSquareBlack");
         System.out.println("Size: "+clonedShape2.getSize()+"   Shape: " + clonedShape2.getShape()+"   Color: "+clonedShape2.getColor());

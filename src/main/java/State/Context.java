@@ -46,7 +46,7 @@ public class Context implements Serializable {
 			this.state=new waitSoldState(this);
 			break;
 	    default : 
-	    	System.out.println("错误, 未知的 状态值! 请检查setState()中的输入");
+	    	System.out.println("错误,未知的状态值! 检查setState()中的输入");
 	}
 	}
 	

@@ -25,7 +25,7 @@ public class DecoratedState extends State{
      */
 	public void jumpState(Context context) {
 		System.out.println("目前的巧克力状态:"+context.getStateName());
-		context.setState(Parameter.soldState);
+		context.setState(Parameter.waitSoldState);
 		System.out.println("跳转到下一个巧克力状态:"+context.getStateName());
 	}
 }

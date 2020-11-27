@@ -71,5 +71,7 @@ public class Worker extends Person implements IWorked {
     public String getWorkTypeStringZh(){
         return null;
     }
-
+    public void setAttribute(Attribute a){
+        attribute=a;
+    }
 }

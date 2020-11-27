@@ -31,5 +31,6 @@ public abstract class Person implements Serializable {
 
     public Person(Attribute attribute) {
         this.attribute = attribute;
+        System.out.println("======== 使用私有数据设计模式生成了一个人 ========");
     }
 }

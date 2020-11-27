@@ -12,12 +12,13 @@ public class FrontController implements Serializable {
 
 
     public boolean isAuthenticUser() {
-        System.out.println("User:Charlie is authenticated successfully");
+        System.out.println("======== 使用FrontController前端控制器 模式 ========");
+        System.out.println("用户：Charlie身份认证成功");
         return true;
     }
 
     private void trackRequest(String request){
-        System.out.println("Produce requested: " + request);
+        System.out.println("巧克力生产请求: " + request);
     }
 
     public void dispatchRequest(String request) {

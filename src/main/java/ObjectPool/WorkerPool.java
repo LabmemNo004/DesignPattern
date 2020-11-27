@@ -41,7 +41,7 @@ public class WorkerPool{
     }
 
     class WorkerStatus {
-        protected boolean poolFree;
+        protected boolean poolFree=true;
         public void WorkerStatus(){
             poolFree=true;
         }
@@ -66,6 +66,7 @@ public class WorkerPool{
     public Worker create(){
         Attribute attribute=new Attribute("","","",0);
         Worker workerCreated=new Worker(attribute);
+        pool.put(workerCreated, new WorkerStatus());
         return workerCreated;
     };
 }

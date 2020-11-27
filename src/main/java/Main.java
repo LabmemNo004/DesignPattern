@@ -58,95 +58,166 @@ public class Main {
         Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
         productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
 
-        ChocolateSellArea sellArea = factory.getSellArea();
-        ChocolatePackagingArea packagingArea = factory.getPackageArea();
-        ChocolateProductionArea productionAreaarea = factory.getProductionArea();
+        ChocolateSellArea sellArea = factory.getSellArea();//获取唯一销售区
+        ChocolatePackagingArea packagingArea = factory.getPackageArea();//获取唯一包装区
 
-
-
-        ChocolateMediator chocolateMediator = new ChocolateMediator();
+        ChocolateMediator chocolateMediator = new ChocolateMediator();//初始化中介者
         chocolateMediator.setFactory(factory);
         factory.setMediatorForFactory(chocolateMediator);
 
         while(true) {
-            // 中介者模式
-
-            //这一段代码可以加在任何区域代码之中
-            System.out.println("业务代理模式查看工厂巧克力状态");
-            businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
-            client.doTask();
-
-            //输出工人列表信息
-
-            System.out.println(productionArea.getFreeWorkers().size());
-            System.out.println(productionArea.getBusyWorkers().size());
-            //分配到各个区域
-            productionArea.addAreaWorker(p2lWorker1);
-            productionArea.addAreaWorker(Superp2lWorker2);
-            productionArea.addAreaWorker(l2sWorker1);
-            productionArea.addAreaWorker(Superl2sWorker2);
-
-            ProcessFacade facade = new ProcessFacade();
-            facade.produceChocolate();//生产函数
-
-            //这一段代码必须加在生产区域代码之中
-            System.out.println("业务代理模式查看工人状态");
-            businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
-            client.doTask();
-
-            //回收到总生产区
-            productionArea.removeAreaWorker(p2lWorker1);
-            productionArea.removeAreaWorker(Superp2lWorker2);
-            productionArea.removeAreaWorker(l2sWorker1);
-            productionArea.removeAreaWorker(Superl2sWorker2);
+            System.out.println("\n\n==========================查理的巧克力工厂==========================");
+            System.out.println("=====查理经营着世界最先进的巧克力工厂，查理可以使用一些命令来控制工厂的  =====");
+            System.out.println("=====生产以及获得工厂的一些信息。                                 =====");
+            System.out.println("=====查理可以使用的命令如下。                                    =====");
+            System.out.println("=====命令：                                                   =====");
+            System.out.println("=====1.开始生产巧克力                                          =====");
+            System.out.println("=====2.显示工厂巧克力状态                                       =====");
+            System.out.println("=====3.显示工厂工人状态                                         =====");
+            System.out.println("=====4.显示账户状态                                            =====");
+            System.out.println("=====5.保存当前工厂状态                                         =====");
+            System.out.println("=====6.加载已保存的工厂                                         =====");
+            System.out.println("=====7.离开工厂                                                =====");
+            System.out.println("=====输入命令编号n，执行命令                                     =====");
+            System.out.println("==================================================================");
+            System.out.println("n=");
+            Scanner inputOut = new Scanner(System.in);
+            String inputChoice = inputOut.next();
 
 
-            //这一段代码可以加在任何区域代码之中
-            System.out.println("业务代理模式查看工厂巧克力状态");
-            businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
-            client.doTask();
+
+            if(inputChoice.equals("1")) {
+
+            while (true) {
+                // 中介者模式
+
+                //这一段代码可以加在任何区域代码之中
+                System.out.println("业务代理模式查看工厂巧克力状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
+                client.doTask();
+
+                //输出工人列表信息
+
+                System.out.println(productionArea.getFreeWorkers().size());
+                System.out.println(productionArea.getBusyWorkers().size());
+                //分配到各个区域
+                productionArea.addAreaWorker(p2lWorker1);
+                productionArea.addAreaWorker(Superp2lWorker2);
+                productionArea.addAreaWorker(l2sWorker1);
+                productionArea.addAreaWorker(Superl2sWorker2);
+
+                ProcessFacade facade = new ProcessFacade();
+                facade.produceChocolate();//生产函数
+
+                //这一段代码必须加在生产区域代码之中
+                System.out.println("业务代理模式查看工人状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
+                client.doTask();
+
+                //回收到总生产区
+                productionArea.removeAreaWorker(p2lWorker1);
+                productionArea.removeAreaWorker(Superp2lWorker2);
+                productionArea.removeAreaWorker(l2sWorker1);
+                productionArea.removeAreaWorker(Superl2sWorker2);
 
 
-            factory.addMediatorForAll();
-            packagingArea.setPrice();
-            packagingArea.decorator();
-            packagingArea.packaging();
+                //这一段代码可以加在任何区域代码之中
+                System.out.println("业务代理模式查看工厂巧克力状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
+                client.doTask();
 
-            //这一段代码可以加在任何区域代码之中
-            System.out.println("业务代理模式查看工厂巧克力状态");
-            businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
-            client.doTask();
 
-            System.out.println("========当前余额——"+ Charlie.charlie.getAccount()+"========");
+                factory.addMediatorForAll();
+                packagingArea.setPrice();
+                packagingArea.decorator();
+                packagingArea.packaging();
 
-            sellArea.clearSoldChocolates();
+                //这一段代码可以加在任何区域代码之中
+                System.out.println("业务代理模式查看工厂巧克力状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
+                client.doTask();
 
-            System.out.println("\n\n==========================选择进入下一轮流水线==========================\n");
+                System.out.println("========当前余额——" + Charlie.charlie.getAccount() + "========");
 
-            while(true) {
-                System.out.println("==========是否继续:?y/n==========");
-                Scanner input=new Scanner(System.in);
-                String inputStr = input.next();
-                switch (inputStr) {
-                    case "y":
-                    case "yes":
-                    case "1":
-                        break;
-                    case "n":
-                    case "no":
-                    case "0":
-                        FactoryDao factoryDao = new FactoryDaoImpl();
-                        factoryDao.updateFactory(factory);
-                        System.out.println("巧克力工厂数据保存成功");
-                        return;
-                    default:
-                        continue;
+                sellArea.clearSoldChocolates();
+
+                System.out.println("\n\n==========================选择进入下一轮流水线==========================\n");
+
+                boolean symbol = false;
+                while (true) {
+                    System.out.println("==========是否继续:?y/n==========");
+                    Scanner input = new Scanner(System.in);
+                    String inputStr = input.next();
+                    switch (inputStr) {
+                        case "y":
+                        case "yes":
+                        case "1":
+                            symbol = false;
+                            break;
+                        case "n":
+                        case "no":
+                        case "0":
+                            symbol = true;
+                            break;
+                        default:
+                            continue;
+                    }
+                    break;
                 }
+                if (symbol) {
+                    break;
+                }
+
+                System.out.println("\n\n==========================进入下一轮流水线==========================\n");
+            }
+            }
+
+
+            else if(inputChoice.equals("2")){
+                System.out.println("业务代理模式查看工厂巧克力状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_CHOCOLATE);
+                client.doTask();
+            }
+
+
+            else if(inputChoice.equals("3")){
+                System.out.println("业务代理模式查看工人状态");
+                businessDelegate.setBusinessService(Parameter.SERVICE_DISPLAY_WORKERS);
+                client.doTask();
+            }
+
+
+            else if(inputChoice.equals("4")){
+                System.out.println("\n\n========当前余额——" + Charlie.charlie.getAccount() + "========");
+            }
+
+
+            else if(inputChoice.equals("5")){
+                FactoryDao factoryDao = new FactoryDaoImpl();
+                factoryDao.updateFactory(factory);
+                System.out.println("巧克力工厂数据保存成功");
+            }
+
+
+            else if(inputChoice.equals("7")){
+                System.out.println("查理休假外出=====================程序结束");
                 break;
             }
 
-            System.out.println("\n\n==========================进入下一轮流水线==========================\n");
+            else{
+                System.out.println("请输入正确的命令码");
+            }
+
+
         }
+
+
+
+
+
+    }
+}
+
 
 
 
@@ -392,5 +463,4 @@ public class Main {
             factoryDao.updateFactory(factory);
             System.out.println("巧克力工厂数据保存成功");
             */
-    }
-}
+

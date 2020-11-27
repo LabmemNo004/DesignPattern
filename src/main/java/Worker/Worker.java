@@ -1,13 +1,16 @@
 package Worker;
 //import Object.*;    hzj:这边object的作用是什么？？？？
 
+import Chocolate.Chocolate;
 import FactoryParameter.*;
+import Mould.Mould;
+import Servant.*;
 
-
-public class Worker extends Person {
+public class Worker extends Person implements IWorked {
 
     protected String type;
     protected Boolean state;
+    protected Parameter.WorkType workType;
 
     public int getWorkSpeed() {
         return workSpeed;
@@ -32,13 +35,24 @@ public class Worker extends Person {
         state=true;
     }
 
+    public Chocolate work(Chocolate chocolate, Mould mould)//hzj：增加Mould
+    {
+        System.out.println("=======工人开始工作=======");
+
+        return chocolate;
+    }
+
+    public Chocolate worked(Chocolate chocolate, Mould mould){
+        this.work(chocolate,mould);
+        return chocolate;
+    }
 
     public void setType(Parameter.WorkType type){
-        _attribute.setType(type);
+        this.workType=type;
     }
 
     public Parameter.WorkType getWorkType() {
-        return _attribute.getWorkType();
+        return workType;
     }
 
     public Extension GetExtensionWorker()

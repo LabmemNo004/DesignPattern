@@ -14,7 +14,7 @@ public class ConcreteExtension extends AbstractExtension{
             System.out.println("----Super LiquidToSolidWorker 进入工作----");
         }
     }
-    public void DoSomething()
+    public void DoMore()
     {
         System.out.println("----SuperWoker进入工作----");
     }

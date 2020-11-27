@@ -34,8 +34,8 @@ public class DisplayChocolates implements BusinessService{
 
 
 
-        System.out.println("当前工厂流水线中巧克力数为:"+chocolates.size());
-        System.out.println("当前流水线总体巧克力状态为: 待生产:"+waitProcess+"; 待加工:"+waitPackage+"; 待销售:"+waitSell+"; 已销售:"+hasSell);
+        System.out.println("当前一轮工厂流水线中巧克力数为:"+chocolates.size());
+        System.out.println("当前一轮流水线总体巧克力状态为: 待生产:"+waitProcess+"; 待加工:"+waitPackage+"; 待销售:"+waitSell+"; 已销售:"+hasSell);
 
         try {
             TimeUnit.SECONDS.sleep(1);

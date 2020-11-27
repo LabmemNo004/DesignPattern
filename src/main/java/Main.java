@@ -66,20 +66,19 @@ public class Main {
         factory.setMediatorForFactory(chocolateMediator);
 
         while(true) {
-            System.out.println("\n\n==========================查理的巧克力工厂==========================");
-            System.out.println("=====查理经营着世界最先进的巧克力工厂，查理可以使用一些命令来控制工厂的  =====");
-            System.out.println("=====生产以及获得工厂的一些信息。                                 =====");
-            System.out.println("=====查理可以使用的命令如下。                                    =====");
-            System.out.println("=====命令：                                                   =====");
-            System.out.println("=====1.开始生产巧克力                                          =====");
-            System.out.println("=====2.显示工厂巧克力状态                                       =====");
-            System.out.println("=====3.显示工厂工人状态                                         =====");
-            System.out.println("=====4.显示账户状态                                            =====");
-            System.out.println("=====5.保存当前工厂状态                                         =====");
-            System.out.println("=====6.加载已保存的工厂                                         =====");
-            System.out.println("=====7.离开工厂                                                =====");
-            System.out.println("=====输入命令编号n，执行命令                                     =====");
-            System.out.println("==================================================================");
+            System.out.println("\n\n======================================查理的巧克力工厂==========================================");
+            System.out.println("========= 查理经营着世界最先进的巧克力工厂,查理可以使用一些命令来控制工厂的生产以及获得工厂的一些信息 =========");
+            System.out.println("=========                            查理可以使用的命令如下                             =========");
+            System.out.println("=========                                  命令:                                    =========");
+            System.out.println("=========                              1.开始生产巧克力                               =========");
+            System.out.println("=========                              2.显示工厂巧克力状态                            =========");
+            System.out.println("=========                              3.显示工厂工人状态                              =========");
+            System.out.println("=========                              4.显示账户状态                                 =========");
+            System.out.println("=========                              5.保存当前工厂状态                              =========");
+            System.out.println("=========                              6.加载已保存的工厂                              =========");
+            System.out.println("=========                              7.离开工厂                                    =========");
+            System.out.println("=========                              输入命令编号n，执行命令                          =========");
+            System.out.println("==============================================================================================");
             System.out.println("请输入命令编号：");
             Scanner inputOut = new Scanner(System.in);
             String inputChoice = inputOut.next();

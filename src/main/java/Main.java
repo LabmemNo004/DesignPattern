@@ -115,7 +115,7 @@ public class Main {
                 productionArea.addAreaWorker(Superl2sWorker2);
 
 
-                ProcessFacade facade = new ProcessFacade();1
+                ProcessFacade facade = new ProcessFacade();
                 produceCommand.startProduce(facade);
                 System.out.println("======使用命令模式======");
                 System.out.println("======更改了生成许可======");

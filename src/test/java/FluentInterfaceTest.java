@@ -1,7 +1,7 @@
 import FluentInterface.FormalOutputInterface;
 import org.junit.Test;
 
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;
+
 
 public class FluentInterfaceTest {
     @Test

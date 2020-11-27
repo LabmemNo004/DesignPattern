@@ -1,4 +1,4 @@
-package FrontController;
+import FrontController.*;
 
 /*FrontController+Strategy 模式测试*/
 public class FrontControllerTest {

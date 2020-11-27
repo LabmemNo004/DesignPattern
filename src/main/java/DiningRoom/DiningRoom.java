@@ -8,7 +8,7 @@ public class DiningRoom implements Serializable {
 
     public DiningRoom()
     {
-        food_remained=0;
+        food_remained=100;
         threshold=10;
     }
 

@@ -15,7 +15,7 @@ public class AreaSolveStarvation extends SolveStarvation{
      */
     public AreaSolveStarvation(Area area_)
     {
-        super("area");
+        super(area_.getAreaName()+"");
         area=area_;
     }
     /**

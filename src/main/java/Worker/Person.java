@@ -1,8 +1,10 @@
 package Worker;
 
+import OrganizationComponent.OrganizationComponent;
+
 import java.io.Serializable;
 
-public abstract class Person implements Serializable {
+public abstract class Person extends OrganizationComponent implements Serializable {
     protected Attribute attribute;
 
     protected String GetId()
@@ -29,7 +31,19 @@ public abstract class Person implements Serializable {
         attribute.setSalary(salary);
     }
 
-    public Person(Attribute attribute) {
+    public Person(Attribute attribute)
+    {
+        super(attribute.getPersonId());
         this.attribute = attribute;
     }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    public void print() {
+        System.out.println("+++++++++++"+getName()+"+++++++++++");
+    }
+
 }

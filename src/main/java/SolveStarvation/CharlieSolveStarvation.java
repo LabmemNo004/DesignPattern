@@ -12,7 +12,7 @@ public class CharlieSolveStarvation extends SolveStarvation{
     private Area _area;
     public CharlieSolveStarvation(Area area)
     {
-        super("Owner");
+        super("Charlie");
         _area=area;
     }
     /**

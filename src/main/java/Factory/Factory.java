@@ -4,6 +4,7 @@ import Chocolate.IChocolate;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import Area.ChocolateSellArea;
 import Area.ChocolatePackagingArea;
@@ -12,10 +13,11 @@ import Area.ProcessChocolateArea.ChocolateProductionArea;
 import FactoryParameter.Parameter;
 import Mediator.ChocolateMediator;
 import Charlie.Charlie;
+import OrganizationComponent.OrganizationComponent;
 
 
 
-public class Factory implements Serializable {
+public class Factory extends OrganizationComponent implements Serializable  {
 
     private static volatile Factory _instance;
     private Charlie _charlie;//工厂主Charlie
@@ -28,16 +30,50 @@ public class Factory implements Serializable {
     private ChocolateMediator _chocolateMediator;
 
     private ArrayList<IChocolate> _chocolates; // 留言：把Chocolate 类改成 IChocolate 接口
+
+    ArrayList<OrganizationComponent> organizationComponentList = new ArrayList<OrganizationComponent>();
+
+
     /**
      * 构造函数
      */
     private Factory(){
+        super("factory");
         this._chocolates=new ArrayList<Chocolate.IChocolate>(Parameter.chocolatesCount);
         this._charlie=Charlie.charlie;
         this._manageArea=RawMaterialManagementArea.getInstance(Charlie.charlie,this);
         this._productionArea=ChocolateProductionArea.getInstance(Charlie.charlie,this);
         this._packagingArea=ChocolatePackagingArea.getInstance(Charlie.charlie,this);
         this._sellArea=ChocolateSellArea.getInstance(Charlie.charlie,this);
+        organizationComponentList.add(_productionArea);
+        organizationComponentList.add(_packagingArea);
+        organizationComponentList.add(_sellArea);
+    }
+
+
+
+    @Override
+    protected void add(OrganizationComponent organizationComponent) {
+        System.out.println("对不起，由于规模限制，本工厂暂不进行区域扩充");
+    }
+
+    @Override
+    protected void remove(OrganizationComponent organizationComponent) {
+        System.out.println("对不起，本工厂暂不进行区域缩减");
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+    /**
+     * 输出工厂包含的所有区域
+     */
+    public void print() {
+        System.out.println("==========="+getName()+"===========");
+        for (OrganizationComponent organizationComponent:organizationComponentList) {
+            organizationComponent.print();
+        }
     }
 
     public static Factory getInstance() //增加了双重检查锁

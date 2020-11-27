@@ -40,7 +40,6 @@ public class ChocolateProductionArea extends Area{
     }
 
 
-
     //添加空闲工人
 
     /**
@@ -76,11 +75,22 @@ public class ChocolateProductionArea extends Area{
         //         freeWorkers.add(workerr2);
         //     }
         // }
-        if(worker instanceof Worker||worker instanceof Extension)freeWorkers.add(worker);
+        if(worker instanceof Worker)
+        {
+            organizationComponentList.add((Worker)worker);
+            freeWorkers.add(worker);
+        }
+        if(worker instanceof Extension)freeWorkers.add(worker);
     }
 
     //删除空闲工人
-    public boolean removeFreeWorker(Object worker) {
+    public boolean removeFreeWorker(Object worker)
+    {
+
+        if(worker instanceof Worker)
+        {
+            organizationComponentList.remove((Worker)worker);
+        }
         return freeWorkers.remove(worker);
     }
 
@@ -95,7 +105,12 @@ public class ChocolateProductionArea extends Area{
      * @param worker
      */
     public void addBusyWorker(Object worker) {
-        if(worker instanceof Worker||worker instanceof Extension)busyWorkers.add(worker);
+        if(worker instanceof Worker)
+        {
+            organizationComponentList.add((Worker)worker);
+            busyWorkers.add(worker);
+        }
+        if(worker instanceof Extension)busyWorkers.add(worker);
         // if(worker instanceof Worker)
         // {
         //     Worker workerr=(Worker)worker;
@@ -127,7 +142,12 @@ public class ChocolateProductionArea extends Area{
     }
 
     //删除忙碌工人
-    public boolean removeBusyWorker(Object worker) {
+    public boolean removeBusyWorker(Object worker)
+    {
+        if(worker instanceof Worker)
+        {
+            organizationComponentList.remove((Worker)worker);
+        }
         return busyWorkers.remove(worker);
     }
 

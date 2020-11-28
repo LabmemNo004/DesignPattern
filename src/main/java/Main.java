@@ -15,8 +15,13 @@ import Worker.Extension;
 import Charlie.Charlie;
 import Worker.LiquidToSolidWorker;
 import Worker.PowderToLiquidWorker;
+import Worker.Worker;
 import Command.*;
 import java.util.Scanner;
+import Builder.WorkerBuilder;
+import Builder.Director;
+import Builder.LiquidToSolidWorkerBuilder;
+import Builder.PowderToLiquidWorkerBuilder;
 
 
 /*
@@ -46,21 +51,49 @@ public class Main {
 
 
         //在生产区创建四个工人
-        Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
-        PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
+        // Attribute p2laAttribute1 = new Attribute("p2l1", "2020-11-1", "男", 100.0);
+        // PowderToLiquidWorker p2lWorker1 = new PowderToLiquidWorker(p2laAttribute1, "PowderToLiquid");
+        // productionArea.addFreeWorker(p2lWorker1);//加入普通粉转液工人
+        // Attribute p2laAttribute2 = new Attribute("p2l2", "2020-11-2", "男", 200.0);
+        // PowderToLiquidWorker p2lWorker2 = new PowderToLiquidWorker(p2laAttribute2, "PowderToLiquid");
+        // Extension Superp2lWorker2 = p2lWorker2.GetExtensionWorker();//强化工人
+        // productionArea.addFreeWorker(Superp2lWorker2);//加入加强粉转液工人
+        // Attribute l2saAttribute1 = new Attribute("l2s1", "2020-11-1", "女", 300.0);
+        // LiquidToSolidWorker l2sWorker1 = new LiquidToSolidWorker(l2saAttribute1, "LiquidToSolid");
+        // productionArea.addFreeWorker(l2sWorker1);//加入普通液转固工人
+        // Attribute l2saAttribute2 = new Attribute("l2s2", "2020-11-2", "女", 400.0);
+        // LiquidToSolidWorker l2sWorker2 = new LiquidToSolidWorker(l2saAttribute2, "LiquidToSolid");
+        // Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
+        // productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
+
+        //使用builder模式创建工人
+        Director director = new Director();
+
+        WorkerBuilder powderToLiquidWorkerBuilder1 = new PowderToLiquidWorkerBuilder();
+        director.setBuilder( powderToLiquidWorkerBuilder1 );
+        director.constructWorker();
+        PowderToLiquidWorker p2lWorker1 = (PowderToLiquidWorker)director.getWorker();
         productionArea.addFreeWorker(p2lWorker1);//加入普通粉转液工人
-        Attribute p2laAttribute2 = new Attribute("p2l2", "2020-11-2", "男", 200.0);
-        PowderToLiquidWorker p2lWorker2 = new PowderToLiquidWorker(p2laAttribute2, "PowderToLiquid");
+
+        WorkerBuilder powderToLiquidWorkerBuilder2 = new PowderToLiquidWorkerBuilder();
+        director.setBuilder( powderToLiquidWorkerBuilder2 );
+        director.constructWorker();
+        PowderToLiquidWorker p2lWorker2 = (PowderToLiquidWorker)director.getWorker();
         Extension Superp2lWorker2 = p2lWorker2.GetExtensionWorker();//强化工人
         productionArea.addFreeWorker(Superp2lWorker2);//加入加强粉转液工人
-        Attribute l2saAttribute1 = new Attribute("l2s1", "2020-11-1", "女", 300.0);
-        LiquidToSolidWorker l2sWorker1 = new LiquidToSolidWorker(l2saAttribute1, "LiquidToSolid");
+
+        WorkerBuilder liquidToSolidWorkerBuilder1 = new LiquidToSolidWorkerBuilder();
+        director.setBuilder( liquidToSolidWorkerBuilder1 );
+        director.constructWorker();
+        LiquidToSolidWorker l2sWorker1 = (LiquidToSolidWorker)director.getWorker();
         productionArea.addFreeWorker(l2sWorker1);//加入普通液转固工人
-        Attribute l2saAttribute2 = new Attribute("l2s2", "2020-11-2", "女", 400.0);
-        LiquidToSolidWorker l2sWorker2 = new LiquidToSolidWorker(l2saAttribute2, "LiquidToSolid");
+
+        WorkerBuilder liquidToSolidWorkerBuilder2 = new LiquidToSolidWorkerBuilder();
+        director.setBuilder( liquidToSolidWorkerBuilder2 );
+        director.constructWorker();
+        LiquidToSolidWorker l2sWorker2 = (LiquidToSolidWorker)director.getWorker();
         Extension Superl2sWorker2 = l2sWorker2.GetExtensionWorker();//强化工人
         productionArea.addFreeWorker(Superl2sWorker2);//加入加强液转固工人
-
 
         ChocolateSellArea sellArea = factory.getSellArea();//获取唯一销售区
         ChocolatePackagingArea packagingArea = factory.getPackageArea();//获取唯一包装区

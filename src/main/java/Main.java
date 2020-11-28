@@ -1,3 +1,4 @@
+
 import Area.ChocolatePackagingArea;
 import Area.ChocolateSellArea;
 import Area.ProcessChocolateArea.ChocolateProductionArea;
@@ -17,6 +18,10 @@ import Worker.PowderToLiquidWorker;
 import Command.*;
 import java.util.Scanner;
 
+
+/*
+team connector's qq 1085201315  ,if you have some questions about the project ,please contact us ...
+ */
 
 public class Main {
     public static void main(String[] args) {

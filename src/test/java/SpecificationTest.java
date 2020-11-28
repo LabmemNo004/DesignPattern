@@ -23,14 +23,14 @@ public class SpecificationTest {
         Chocolate[] chocolates={new Chocolate(),new Chocolate(),new Chocolate(),new Chocolate(),new Chocolate()
                 ,new Chocolate(),new Chocolate(),new Chocolate(),new Chocolate()};
         chocolates[0].setQuality(1);chocolates[0].setSize(Mould.Size.big);
-        chocolates[1].setQuality(1);chocolates[0].setSize(Mould.Size.middle);
-        chocolates[2].setQuality(1);chocolates[0].setSize(Mould.Size.small);
-        chocolates[3].setQuality(2);chocolates[0].setSize(Mould.Size.big);
-        chocolates[4].setQuality(2);chocolates[0].setSize(Mould.Size.middle);
-        chocolates[5].setQuality(2);chocolates[0].setSize(Mould.Size.small);
-        chocolates[6].setQuality(3);chocolates[0].setSize(Mould.Size.big);
-        chocolates[7].setQuality(3);chocolates[0].setSize(Mould.Size.middle);
-        chocolates[8].setQuality(3);chocolates[0].setSize(Mould.Size.small);
+        chocolates[1].setQuality(1);chocolates[1].setSize(Mould.Size.middle);
+        chocolates[2].setQuality(1);chocolates[2].setSize(Mould.Size.small);
+        chocolates[3].setQuality(2);chocolates[3].setSize(Mould.Size.big);
+        chocolates[4].setQuality(2);chocolates[4].setSize(Mould.Size.middle);
+        chocolates[5].setQuality(2);chocolates[5].setSize(Mould.Size.small);
+        chocolates[6].setQuality(3);chocolates[6].setSize(Mould.Size.big);
+        chocolates[7].setQuality(3);chocolates[7].setSize(Mould.Size.middle);
+        chocolates[8].setQuality(3);chocolates[8].setSize(Mould.Size.small);
 
         for(int i=0;i<chocolates.length;i++)
         {

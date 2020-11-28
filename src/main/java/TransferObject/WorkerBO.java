@@ -88,7 +88,7 @@ public class WorkerBO {
         Worker w;
         DecimalFormat df=new DecimalFormat("#.00");
         if(iter.hasNext()){
-            System.out.println("通过Transfer Object模式获得工人基本信息如下:");
+            System.out.println("======通过传输对象 Transfer Object 模式获得工人基本信息如下=====");
         }
         else{
             System.out.println("当前还不存在工人!");

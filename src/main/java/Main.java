@@ -102,6 +102,7 @@ public class Main {
         ChocolateMediator chocolateMediator = new ChocolateMediator();//初始化中介者
         chocolateMediator.setFactory(factory);
         factory.setMediatorForFactory(chocolateMediator);
+        Parameter.WorkersBusinessObject.getAllWorker();
 
         while(true) {
             System.out.println("\n\n======================================查理的巧克力工厂==========================================");

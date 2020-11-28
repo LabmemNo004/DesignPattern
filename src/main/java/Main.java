@@ -40,6 +40,7 @@ public class Main {
         // 多例模式
         // 私有类数据模式
         // 组合模式
+        //传输对象模式
 
 
         Factory factory = Factory.getInstance();
@@ -102,6 +103,8 @@ public class Main {
         ChocolateMediator chocolateMediator = new ChocolateMediator();//初始化中介者
         chocolateMediator.setFactory(factory);
         factory.setMediatorForFactory(chocolateMediator);
+
+        //传输对象模式
         Parameter.WorkersBusinessObject.getAllWorker();
 
         while(true) {

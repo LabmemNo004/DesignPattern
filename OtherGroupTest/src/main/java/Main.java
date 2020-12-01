@@ -45,7 +45,7 @@ import mediator.FootballCourt;
 import mediator.TennisCourt;
 import memento.MementoDemo;
 import multiton.RoomDistributor;
-import nullobject.NullObjectDemo;
+import nullobject.NullObjectTestDemo;
 import observer.ObserverDemo;
 import pipeline.PipelineDemo;
 import privateclassdata.entity.PlayerData;
@@ -76,7 +76,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static specification.SelectorDemo.boxingSelector;
+import static specification.SelectorTestDemo.boxingSelector;
 
 public class Main {
     public static void main(String[] args){
@@ -607,7 +607,7 @@ public class Main {
 
 
         System.out.println("---------------- [Pattern] NullObject ----------------");
-        NullObjectDemo.runNullObjectDemo();
+        NullObjectTestDemo.runNullObjectDemo();
         System.out.println("------------------------ END ------------------------");
         System.out.println("");
 

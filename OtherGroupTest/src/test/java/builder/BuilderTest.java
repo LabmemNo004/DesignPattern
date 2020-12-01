@@ -1,15 +1,19 @@
 package builder;
 
+
+
 import entity.Stadium;
 import org.junit.Test;
 
 /**
  * Builder测试类
+ * @TestBy: 1852346
+ * @TestTime: 2020/12/01 21:00
  */
 public class BuilderTest {
     @Test
     public void builderTest() {
-        System.out.println("---------------- [Pattern] Builder ----------------");
+        System.out.println("----------------[test] [Pattern] Builder ----------------");
 //        生成指挥者类
         StadiumDirector stadiumDirector = new StadiumDirector();
 
@@ -29,6 +33,6 @@ public class BuilderTest {
         stadiumDirector.setStadiumBuilder(swimmingPoolBuilder);
         stadiumDirector.CompetitionAreaCount(20).SpectatorAreaCount(12).constructStadium();
 
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("------------------------ [test] END ------------------------");
     }
 }

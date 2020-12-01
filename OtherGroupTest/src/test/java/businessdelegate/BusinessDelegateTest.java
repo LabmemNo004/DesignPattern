@@ -1,14 +1,16 @@
 package businessdelegate;
-
 import org.junit.Test;
-
+/*
+* @Author:Sophie
+* @Date:2020/12/01 22:07
+* */
 public class BusinessDelegateTest {
     @Test
     public void businessDelegateTest() {
-        System.out.println("---------------- [Pattern] BusinessDelegate ----------------");
+        System.out.println("---------------- 业务代表 BusinessDelegate 模式----------------");
         try {
-            QueryDelegate queryDelegate = new QueryDelegate(OfflineQuery.class.getName());
-            queryDelegate.setQueryType();
+            QueryDelegate MyqueryDelegate = new QueryDelegate(OfflineQuery.class.getName());
+            MyqueryDelegate.setQueryType();
             Dog dogAthlete = new Dog(queryDelegate);
             dogAthlete.doQuery();
         } catch (ClassNotFoundException e) {
@@ -18,6 +20,6 @@ public class BusinessDelegateTest {
         } catch (InstantiationException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("------------------------ END ------------------------");
+
     }
 }

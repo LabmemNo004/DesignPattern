@@ -5,29 +5,31 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-/**
- * Proxy测试类
- */
+/*
+ * @Author:Sophie
+ * @Description:代理模式测试
+ * @Date:2020/12/01 23:05
+ * */
 public class ProxyTest {
     @Test
     public void proxyTest() throws InterruptedException {
-        System.out.println("---------------- [Pattern] Proxy ----------------");
+        System.out.println("---------------- 代理 Proxy 模式 ----------------");
 //        定义运动员列表
         ArrayList<Athlete> athletes = new ArrayList<>();
 //        加入运动员
-        athletes.add(new Athlete("Jerry", "跑步"));
-        athletes.add(new Athlete("泡泡", "游泳"));
-        athletes.add(new Athlete("Tom", "跳高"));
+        athletes.add(new Athlete("Amy", "长跑"));
+        athletes.add(new Athlete("Bob", "跳远"));
+        athletes.add(new Athlete("Candy", "游泳"));
 //        运动员代理类，用运动员列表初始化
-        AthleteProxy athleteProxy = new AthleteProxy(athletes);
+        AthleteProxy athletesProxy = new AthleteProxy(athletes);
 //        记者类
-        Reporter reporter = new Reporter("丽塔");
+        Reporter reporter = new Reporter("David");
 //        问题数组
-        String[] questions = {"你是谁？", "你有信心获胜吗？", "你想对你的支持者说些什么？"};
+        String[] questions = {"你参加了什么项目？", "你对接下来的比赛有信心吗？", "你有什么目标？"};
 //        采访
-        reporter.interview(athleteProxy, "Jerry", questions);
-        reporter.interview(athleteProxy, "泡泡", questions);
-        reporter.interview(athleteProxy, "李华", questions);
-        System.out.println("------------------------ END ------------------------");
+        reporter.interview(athletesProxy, "Amy", questions);
+        reporter.interview(athletesProxy, "Bob", questions);
+        reporter.interview(athletesProxy, "Eric", questions);
+
     }
 }

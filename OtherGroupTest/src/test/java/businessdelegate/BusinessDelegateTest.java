@@ -2,6 +2,7 @@ package businessdelegate;
 import org.junit.Test;
 /*
 * @Author:Sophie
+* @Description:业务代表模式测试
 * @Date:2020/12/01 22:07
 * */
 public class BusinessDelegateTest {
@@ -11,15 +12,12 @@ public class BusinessDelegateTest {
         try {
             QueryDelegate MyqueryDelegate = new QueryDelegate(OfflineQuery.class.getName());
             MyqueryDelegate.setQueryType();
-            Dog dogAthlete = new Dog(queryDelegate);
-            dogAthlete.doQuery();
+            Dog ADogathlete = new Dog(MyqueryDelegate);
+            ADogathlete.doQuery();
         } catch (ClassNotFoundException e) {
             System.out.println("此查询类型不存在！");
-        } catch (IllegalAccessException e) {
-            System.out.println(e.getMessage());
-        } catch (InstantiationException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 }

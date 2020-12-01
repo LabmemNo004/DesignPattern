@@ -3,16 +3,15 @@ package filter;
 import org.junit.Test;
 
 /**
- * description: 过滤器模式测试类
- * date: 11/12/20 12:42 AM
- * author: fourwood
- */
+ * @Tester LabmemNo004
+ * @Date: 18:11 2020/12/1
+ **/
 public class FilterTest {
 
     @Test
     public void filterTest() {
-        System.out.println("---------------- [Pattern] Filter ----------------");
+        System.out.println("=============== TEST [Filter] ===============");
         DishesFilterDemo.dishesFilterTest();
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("=============== TEST END ===============");
     }
 }

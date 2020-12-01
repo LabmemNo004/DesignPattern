@@ -6,9 +6,6 @@ public class TwitterInformationSender extends InformationSender {
         this.informationSender = informationSender;
     }
     @Override
-    /**
-     * 发送信息
-     */
     public void sendInformation(String message) {
         //获取相应的wrapper
         String wrapper = getWrapper("Twitter", message.length(), "#");

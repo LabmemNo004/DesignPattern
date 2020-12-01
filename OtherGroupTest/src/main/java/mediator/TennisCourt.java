@@ -8,10 +8,6 @@ public class TennisCourt extends AbstractCourt {
         this.mediator = mediator;
     }
 
-    /**
-     *
-     * @param startTime 球场开始使用的时间
-     */
     @Override
     public void changeStartTime(String startTime) {
         this.startTime = startTime;
@@ -21,10 +17,6 @@ public class TennisCourt extends AbstractCourt {
         mediator.doNotify("TennisCourt", startTime);
     }
 
-    /**
-     *
-     * @param court 需要借用设备的球场
-     */
     @Override
     public void borrow(String court) {
         System.out.println("==========================");
@@ -32,11 +24,6 @@ public class TennisCourt extends AbstractCourt {
         System.out.println("==========================");
         mediator.doNotify("BTennisCourt", court);
     }
-
-    /**
-     *
-     * @param court
-     */
     @Override
     public void lend(String court) {
         System.out.println("==========================");

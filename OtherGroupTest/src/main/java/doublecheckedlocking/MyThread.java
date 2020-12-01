@@ -8,7 +8,6 @@ package doublecheckedlocking;
 public class MyThread implements Runnable{
     private OlympicsYard _yard;
     private int _id;
-    //构造函数
     public MyThread(int id){
         _id = id;
     }

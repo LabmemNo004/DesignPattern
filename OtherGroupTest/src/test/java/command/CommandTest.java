@@ -6,16 +6,17 @@ import org.junit.Test;
 
 /**
  * 
- * @author Zhang
- *该类用于测试Command设计模式
+ * @Tester transparency
+ * @Date 19:35 2020/12/1
+ * 该类用于测试Command设计模式
  */
 public class CommandTest {
 	@Test
 	public void commandTest() {
-		System.out.println("---------------- [Pattern] Command ----------------");
-        Player myPlayer=new Player();
-		AwardMedalCommand command=new AwardMedalCommand(myPlayer,"Swimming", Material.Gold);
-		command.execute();
-		System.out.println("------------------------ END ------------------------");
+		System.out.println("================ TEST Command ================");
+        Player player = new Player();
+		AwardMedalCommand cmd = new AwardMedalCommand(player,"Swimming", Material.Gold);
+		cmd.execute();
+		System.out.println("========================TEST END ========================");
 	}
 }

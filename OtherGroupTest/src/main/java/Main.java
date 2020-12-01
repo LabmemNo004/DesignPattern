@@ -30,7 +30,7 @@ import extensionobjects.Race;
 import facade.FacadeDemo;
 import factorymethod.FactoryMethodDemo;
 import filter.DishesFilterDemo;
-import flyweight.FlyWeightDemo;
+import flyweight.FlyWeightTestDemo;
 import frontcontroller.FrontController;
 import immutable.ImmutableDemo;
 import interpreter.Const;
@@ -601,7 +601,7 @@ public class Main {
 
 
         System.out.println("---------------- [Pattern] FlyWeight ----------------");
-        FlyWeightDemo.flyWeightTest();
+        FlyWeightTestDemo.flyWeightTest();
         System.out.println("------------------------ END ------------------------");
         System.out.println("");
 

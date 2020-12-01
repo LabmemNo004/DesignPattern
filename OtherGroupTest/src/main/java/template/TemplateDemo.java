@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * @Author Max Leung
  * @Description:
- * @Date: Created in 13:21 2020/11/13
- * @Modified By:
+ * @Date: Created in 21:21 2020/12/01
+ * @Modified By:IsabellCur
  **/
 public class TemplateDemo {
     public static void templateTest(){
@@ -46,6 +46,7 @@ public class TemplateDemo {
         System.out.println("鱼代表队：\n");
         fishOpenCeremony.openCeremonyProcess();
         System.out.println("\n");
+        //好像不能直接加其他代表队
 
 
         System.out.println("开幕式结束\n");

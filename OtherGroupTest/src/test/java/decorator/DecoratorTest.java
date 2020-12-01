@@ -2,6 +2,13 @@ package decorator;
 
 import org.junit.Test;
 
+/**
+ * @Author
+ * @Description:
+ * @Date: Created in 20:35 2020/12/01
+ * @Modified By:IsabelleCur
+ **/
+
 public class DecoratorTest {
     @Test
     public void decoratorTest() {

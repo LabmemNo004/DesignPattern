@@ -6,33 +6,33 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 /**
- * Author: CINDY DENG 1850477
- * Date: 2020/11/23,14:07
+ * Author: Wenkai Tian
+ * Date: 2020/12/1,15:07
  * Version: 1.0
  */
 public class BalkingTest {
 
     @Test
     public void balkingTest(){
-        System.out.println("---------------- [Pattern] Balking ----------------");
-        ArrayList<Vest> vestArrayList = new ArrayList<Vest>();
+        System.out.println("====== 测试 Balking 犹豫设计模式======");
+        ArrayList<Vest> balkingTestList = new ArrayList<Vest>();
         for (int i = 0; i < 10; i++) {
-            Vest vest = new Vest(i);
-            vestArrayList.add(vest);
+            Vest vestTest = new Vest(i);
+            balkingTestList.add(vestTest);
         }
 
-        ChangeThread changeThread = new ChangeThread("Athlete",vestArrayList);
-        SaveThread saveThread = new SaveThread("Saver",vestArrayList);
+        ChangeThread changeThreadTest = new ChangeThread("Athlete",balkingTestList);
+        SaveThread saveThreadTest = new SaveThread("Saver",balkingTestList);
         try{
-            changeThread.start();
-            saveThread.start();
-            changeThread.join();
-            saveThread.join();
+            changeThreadTest.start();
+            saveThreadTest.start();
+            changeThreadTest.join();
+            saveThreadTest.join();
         }catch (Exception e){
             e.printStackTrace();
         }
 
 
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("====== 测试完毕 ======");
     }
 }

@@ -11,7 +11,7 @@ import builder.*;
 import businessdelegate.Dog;
 import businessdelegate.OfflineQuery;
 import businessdelegate.QueryDelegate;
-import callback.CallbackDemo;
+import callback.CallbackTestDemo;
 import chainofresponsibility.SetReferees;
 import command.AwardMedalCommand;
 import composite.Equipment;
@@ -75,7 +75,6 @@ import workerthread.RunnerThread;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import static specification.SelectorDemo.boxingSelector;
 
@@ -722,7 +721,7 @@ public class Main {
 
 
         System.out.println("---------------- [Pattern] Callback ----------------");
-        CallbackDemo.callbackTest();
+        CallbackTestDemo.callbackTest();
         System.out.println("------------------------ END ------------------------");
         System.out.println("");
 

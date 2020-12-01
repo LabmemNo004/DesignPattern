@@ -4,6 +4,11 @@ import factorymethod.myapp.RaceScorer;
 import factorymethod.myapp.ShootingScorer;
 
 /**
+ * @Tester Neko
+ * @Date: 15:36 2020/12/1
+ **/
+
+/**
  * 工厂方法 Demo 类
  * 拥有一个静态方法，用于运行工厂方法 Demo
  */
@@ -22,6 +27,8 @@ public class FactoryMethodDemo {
         raceScorer.addResult("Abby");
         raceScorer.addResult("Bob");
         raceScorer.addResult("Cindy");
+        System.out.println("===============TEST===============");
+        raceScorer.addResult("David");
 
         System.out.println("                                        [ ShootingScorer : addResult(String name) : 射击记分员创建并添加运动员的成绩单 ]");
 
@@ -29,6 +36,7 @@ public class FactoryMethodDemo {
         shootingScorer.addResult("Abby");
         shootingScorer.addResult("Bob");
         shootingScorer.addResult("Cindy");
+        shootingScorer.addResult("David");
 
         raceScorer.showResults();
         shootingScorer.showResults();

@@ -6,6 +6,11 @@ import simplefactory.entity.IceCreamStaff;
 import java.util.Vector;
 
 /**
+ * @Tester Neko
+ * @Date: 15:55 2020/12/1
+ **/
+
+/**
  * 简单工厂 Demo类
  */
 public class SimpleFactoryDemo {
@@ -22,8 +27,11 @@ public class SimpleFactoryDemo {
         myIceCream.add(IceCreamStaff.getIceCream("香草冰淇淋"));
         System.out.println("买巧克力冰淇淋");
         myIceCream.add(IceCreamStaff.getIceCream("巧克力冰淇淋"));
+        System.out.println("TEST:==========买蓝莓圣代==========");
+        myIceCream.add(IceCreamStaff.getIceCream("蓝莓圣代"));
         System.out.println("买抹茶冰淇淋");
         myIceCream.add(IceCreamStaff.getIceCream("抹茶冰淇淋"));
+
 
         for(IceCream ic : myIceCream){
             System.out.println("得到了一个"+ic.getName());

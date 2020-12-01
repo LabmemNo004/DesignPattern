@@ -13,11 +13,10 @@ public class DoubleCheckedLockingTest {
     @Test
     public void test(){
         System.out.println("----------------Test [Pattern] DoubleCheckedLocking ----------------");
-        MyThread[] threads = new MyThread[10];
-        for(int i = 0;i<10;i++){
+        MyThread[] threads = new MyThread[5];
+        for(int i = 0;i<5;i++){
             threads[i] = new MyThread(i);
         }
-
         for(MyThread thread : threads){
             thread.run();
         }

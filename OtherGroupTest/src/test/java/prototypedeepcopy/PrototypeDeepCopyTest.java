@@ -7,11 +7,15 @@ import org.junit.Test;
  * Author: CINDY DENG 1850477
  * Date: 2020/11/21,12:51
  * Version: 1.0
+ *
+ * @TestBy: 1852346
+ * @TestTime: 2020/12/01 21:00
  */
+
 public class PrototypeDeepCopyTest {
     @Test
     public void test() throws CloneNotSupportedException{
-        System.out.println("---------------- [Pattern] Prototype ----------------");
+        System.out.println("---------------- [test][Pattern] Prototype ----------------");
         Athlete athlete1 = new Athlete("ALEX", "highJump");
         Athlete athlete2 = new Athlete("Cathy","highJump");
         Athlete athlete3 = new Athlete("Tim","highJump");
@@ -35,6 +39,6 @@ public class PrototypeDeepCopyTest {
         tmpCertificate2.printCertificate();
         tmpCertificate3.printCertificate();
         tmpCertificate4.printCertificate();
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("------------------------[test] END ------------------------");
     }
 }

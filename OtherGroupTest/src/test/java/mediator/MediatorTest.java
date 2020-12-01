@@ -1,11 +1,15 @@
 package mediator;
 
 import org.junit.Test;
+/**
+ * @TestBy: 1852346
+ * @TestTime: 2020/12/01 21:00
+ */
 
 public class MediatorTest {
     @Test
     public void mediatorTest() {
-        System.out.println("---------------- [Pattern] Mediator ----------------");
+        System.out.println("----------------[test] [Pattern] Mediator ----------------");
         DispatchMediator dispatchMediator = new DispatchMediator();
         TennisCourt tennisCourt = new TennisCourt(dispatchMediator);
         FootballCourt footballCourt = new FootballCourt(dispatchMediator);
@@ -19,6 +23,6 @@ public class MediatorTest {
         tennisCourt.borrow("BasketballCourt");
         footballCourt.borrow("BasketballCourt");
 
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("------------------------[test] END ------------------------");
     }
 }

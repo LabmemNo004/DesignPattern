@@ -1,11 +1,15 @@
 package workerthread;
 
 import org.junit.Test;
+/**
+ * @TestBy: 1852346
+ * @TestTime: 2020/12/01 21:00
+ */
 
 public class WorkerThreadTest {
     @Test
     public void WorkerThreadTest() {
-        System.out.println("---------------- [Pattern] WorkerThread ----------------");
+        System.out.println("---------------- [test][Pattern] WorkerThread ----------------");
 
         final CheckPoint checkPoint = new CheckPoint(99);
         checkPoint.startVolunteer();
@@ -30,7 +34,7 @@ public class WorkerThreadTest {
         finally {
             // 手动结束所有的 Volunteer 线程
             checkPoint.stopVolunteer();
-            System.out.println("------------------------ END ------------------------");
+            System.out.println("------------------------[test] END ------------------------");
         }
     }
 }

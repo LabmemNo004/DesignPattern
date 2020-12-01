@@ -3,16 +3,14 @@ package converter;
 import org.junit.Test;
 
 /**
- * @Author Max Leung
- * @Description:
- * @Date: Created in 14:29 2020/11/16
- * @Modified By:
+ * @Author: wjm
+ * @Date: Created in 2020/12/01
  **/
 public class ConverterTest {
     @Test
     public void converterTest(){
-        System.out.println("---------------- [Pattern] Converter ----------------");
+        System.out.println("===========Converter Test===========");
         ConverterDemo.converterTest();
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("===========Converter Test End===========");
     }
 }

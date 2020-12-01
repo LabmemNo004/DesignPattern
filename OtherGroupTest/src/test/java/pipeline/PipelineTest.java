@@ -1,14 +1,13 @@
 package pipeline;
 
 /**
- * description: 管道模式测试类
- * date: 11/23/20 20:06 PM
- * author: cjsmt
+ * @Author: wjm
+ * @Date: Created in 2020/12/01
  */
 public class PipelineTest {
     public void pipelineTest(){
-        System.out.println("---------------- [Pattern] Pipeline -----------------");
+        System.out.println("===========Pipeline Test===========");
         PipelineDemo.pipelineTest();
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("-===========Pipeline Test End===========");
     }
 }

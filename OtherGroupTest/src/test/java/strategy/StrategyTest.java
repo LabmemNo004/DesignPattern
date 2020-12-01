@@ -3,18 +3,19 @@ package strategy;
 import org.junit.Test;
 
 /**
- * Strategy测试类
+ * @Author: wjm
+ * @Date: Created in 2020/12/01
  */
 public class StrategyTest {
     @Test
     public void StrategyTest() {
-        System.out.println("---------------- [Pattern] Strategy ----------------");
+        System.out.println("===========Strategy Test===========");
 //        创建动物并进行进食、训练以及表演
-        Rabbit rabbit = new Rabbit("兔斯基", "跑步");
+        Rabbit rabbit = new Rabbit("Snow", "run");
         rabbit.eat();
-        Bird bird = new Bird("愤怒的小鸟", "竞速飞行");
+        Bird bird = new Bird("Fluffy", "fly");
         bird.eat();
-        Fish fish = new Fish("小丑鱼", "花样游泳");
+        Fish fish = new Fish("Nemo", "swim");
         fish.eat();
         rabbit.train();
         bird.train();
@@ -22,6 +23,6 @@ public class StrategyTest {
         bird.perform();
         fish.perform();
         rabbit.perform();
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("===========Strategy Test End===========");
     }
 }

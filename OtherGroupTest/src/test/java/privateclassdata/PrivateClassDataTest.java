@@ -16,13 +16,15 @@ public class PrivateClassDataTest {
 	public void privateClassDataTest() {
 		System.out.println("---------------- [Pattern] PrivateClassData ----------------");
 		Player myPlayer=new Player();
+
 		//初始化运动员信息
 		System.out.println("初始化运动员信息");
 		myPlayer.initPlayerData();
+
 		PlayerData myData=myPlayer.playerData;
-		System.out.println(myData.getPlayerId());
-		System.out.println(myData.getPlayerName());
-		System.out.println(myData.getPlayerType());
+		System.out.println("运动员ID："+myData.getPlayerId());
+		System.out.println("运动员姓名："+myData.getPlayerName());
+		System.out.println("运动员动物类型："+myData.getPlayerType());
 		
 		//设置运动员信息
 		myData.setPlayerId("CNN1");
@@ -30,10 +32,12 @@ public class PrivateClassDataTest {
 		myData.setPlayerType("Monkey");
 		
 		//检查输出
-		System.out.println(myPlayer.playerData.getPlayerId());
-		System.out.println(myPlayer.playerData.getPlayerName());
-		System.out.println(myPlayer.playerData.getPlayerType());
+		System.out.println("运动员ID："+myPlayer.playerData.getPlayerId());
+		System.out.println("运动员姓名："+myPlayer.playerData.getPlayerName());
+		System.out.println("运动员动物类型："+myPlayer.playerData.getPlayerType());
 		System.out.println("------------------------ END ------------------------");
+
+
 	}
 }
 

@@ -4,7 +4,7 @@ package template;
  * @Author Max Leung
  * @Description:
  * @Date: Created in 13:15 2020/11/13
- * @Modified By:
+ * @Modified By:IsabellCur
  **/
 public class FishOpenCeremony extends DefaultOpenCeremony{
     @Override

@@ -31,6 +31,7 @@ public abstract class DefaultOpenCeremony{
         System.out.println("代表队到达主席台\n");
         openCeremonyPerform();
         System.out.println("代表队走出运动场！\n\n");
+        //对模版类理解透彻，且hi实现了丰富的子类，贴合实际情况、丰富了趣味性
     }
 
     /**

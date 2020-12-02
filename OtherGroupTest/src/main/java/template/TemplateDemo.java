@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class TemplateDemo {
     public static void templateTest(){
         System.out.println("运动会开幕式开始了！\n\n");
+        //创建各种动物的openCeremony类
         BearOpenCeremony bearOpenCeremony = new BearOpenCeremony();
         BirdOpenCeremony birdOpenCeremony = new BirdOpenCeremony();
         ChickenOpenCeremony chickenOpenCeremony = new ChickenOpenCeremony();
@@ -46,7 +47,7 @@ public class TemplateDemo {
         System.out.println("鱼代表队：\n");
         fishOpenCeremony.openCeremonyProcess();
         System.out.println("\n");
-        //好像不能直接加其他代表队
+
 
 
         System.out.println("开幕式结束\n");

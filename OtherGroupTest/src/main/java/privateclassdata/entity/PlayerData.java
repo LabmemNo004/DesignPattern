@@ -19,6 +19,7 @@ public class PlayerData /*implements Serializable*/ {
 	/**
 	 * 无参构造函数
 	 */
+	//应在初始化是设置参数，而不应该是用无参构造函数，这雨设计模式的意图和原理相悖
 	public PlayerData(){
 		this._id="Unknown";
 		this._name="Unknown";

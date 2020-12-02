@@ -6,9 +6,9 @@ package interpreter;
  * @Version: 1.0
  */
 public class Const {
-    public static final String FOOD_WORM = "Worms";
+    public static final String FOOD_WORM = "worms";
     public static final String FOOD_GRASS = "grass_dish";
-    public static final String FOOD_FRIEDRISE = "fried_rise";
+    public static final String FOOD_FRIEDRISE = "fried_rice";
 
 
 

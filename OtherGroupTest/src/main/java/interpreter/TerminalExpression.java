@@ -6,6 +6,7 @@ import java.rmi.UnexpectedException;
  * @Author: CINDY DENG
  * @Date: 2020/11/12,16:16
  * @Version: 1.0
+ * @Modified: IsabelleCur: 完整清晰，好评！
  */
 
 //终态表达式，number
@@ -31,6 +32,7 @@ public class TerminalExpression implements Expression{
 
     //根据菜名获得菜品的价格
     public static double getValue(String str) throws UnexpectedException{
+        //建议：可以多提供几种可选菜品哟！
         switch (str){
             case Const.FOOD_FRIEDRISE:
                 return Const.PRICE_PER_FRIEDRISE;

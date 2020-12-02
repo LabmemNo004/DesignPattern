@@ -32,6 +32,7 @@ public class AdapterDemo {
         boolean loginStatus = payer.login("test1","4567");
         if(loginStatus==false){
             System.out.println("账号：test1,密码：4567 登陆失败！\n");
+            //应该根据变量值变化，不应该写成静态字符串
         }
         else{
             System.out.println("账号：test1,密码：4567 登陆成功！\n");

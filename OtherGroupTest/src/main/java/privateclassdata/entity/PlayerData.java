@@ -1,6 +1,15 @@
 package privateclassdata.entity;
 
 //import java.io.Serializable;
+
+/**
+ *
+ * @author Zhang
+ *该类用于测试PrivateClassData设计模式
+ *@Date: Modified in 20:35 2020/12/01
+ *@Modified By:IsabelleCur
+
+ */
 public class PlayerData /*implements Serializable*/ {
 	//运动员的基本信息
 	private String _id;

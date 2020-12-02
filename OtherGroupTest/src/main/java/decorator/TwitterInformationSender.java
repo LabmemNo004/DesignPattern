@@ -8,6 +8,7 @@ public class TwitterInformationSender extends InformationSender {
     @Override
     public void sendInformation(String message) {
         //获取相应的wrapper
+        System.out.println("获取相应的wrapper");
         String wrapper = getWrapper("Twitter", message.length(), "#");
 
         System.out.println(wrapper);

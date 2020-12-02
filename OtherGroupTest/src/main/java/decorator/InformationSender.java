@@ -2,6 +2,13 @@ package decorator;
 
 import java.util.Collections;
 
+/**
+ * @Author
+ * @Description:
+ * @Date: Created in 20:35 2020/12/01
+ * @Modified By:IsabelleCur
+ **/
+
 public abstract class InformationSender {
     /**
      * 用来发送未经decorator修饰的信息

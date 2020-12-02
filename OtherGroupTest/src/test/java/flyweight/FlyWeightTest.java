@@ -1,18 +1,15 @@
 package flyweight;
 
 import org.junit.Test;
-
 /**
- * description: 享元模式测试类
- * date: 11/11/20 10:53 PM
- * author: fourwood
+ * @Tester transparency
+ * @Date 20:03 2020/12/1
  */
 public class FlyWeightTest {
-
     @Test
     public void flyWeightTest(){
-        System.out.println("---------------- [Pattern] FlyWeight ----------------");
-        FlyWeightDemo.flyWeightTest();
-        System.out.println("------------------------ END ------------------------");
+        System.out.println("================ TEST FlyWeight ================");
+        FlyWeightTestDemo.flyWeightTest();
+        System.out.println("========================TEST END ========================");
     }
 }

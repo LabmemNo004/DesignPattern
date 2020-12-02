@@ -3,8 +3,8 @@ import java.util.*;
 /**
  * @Author Max Leung
  * @Description:A simple demp for the design pattern of adapter which integrate the different interface from Wepay and Alipay.
- * @Date: Created in 21:02 2020/11/12
- * @Modified By:
+ * @Date: Created in 20:02 2020/12/01
+ * @Modified By:IsabelleCur
  **/
 public class AdapterDemo {
     /**
@@ -96,7 +96,7 @@ public class AdapterDemo {
     }
 
     public void adapterTest(){
-
+        //Alibaba & WeChat
         System.out.println("Alipay:\n");
         transaction(1);
 

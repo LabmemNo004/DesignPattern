@@ -3,17 +3,16 @@ package memento;
 
 import org.junit.Test;
 
-/**
- * description: 备忘录模式测试类
- * data: 11/17/20 18：23 PM
- * author: cjsmt
- */
+/*
+ * @Author:Sophie
+ * @Description:备忘录模式测试
+ * @Date:2020/12/01 22:55
+ * */
 public class MementoTest {
     @Test
     public void mementoTest(){
 
-        System.out.println("---------------- [Pattern] Memento ----------------");
+        System.out.println("---------------- 备忘录 Memento 模式 ----------------");
         MementoDemo.mementoTest();
-        System.out.println("------------------------ END ------------------------");
     }
 }

@@ -7,6 +7,9 @@ import privateclassdata.entity.PlayerData;
  * 
  * @author Zhang
  *该类用于测试PrivateClassData设计模式
+ *@Date: Modified in 20:35 2020/12/01
+ *@Modified By:IsabelleCur
+
  */
 public class PrivateClassDataTest {
 	@Test
@@ -14,6 +17,7 @@ public class PrivateClassDataTest {
 		System.out.println("---------------- [Pattern] PrivateClassData ----------------");
 		Player myPlayer=new Player();
 		//初始化运动员信息
+		System.out.println("初始化运动员信息");
 		myPlayer.initPlayerData();
 		PlayerData myData=myPlayer.playerData;
 		System.out.println(myData.getPlayerId());

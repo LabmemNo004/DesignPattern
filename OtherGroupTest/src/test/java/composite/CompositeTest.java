@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class CompositeTest {
     @Test
-    public void compositetest()
+    public void Compositetest()
     {
 
         System.out.println("----------------测试设计模式：Composite 组合模式 ----------------");

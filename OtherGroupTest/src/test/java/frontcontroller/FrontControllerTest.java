@@ -10,7 +10,7 @@ import org.junit.Test;
 public class FrontControllerTest {
 
     @Test
-    public void frontControllerTest(){
+    public void FrontControllerTest(){
 
         System.out.println("----------------测试设计模式： FrontController 前端控制器模式----------------");
 

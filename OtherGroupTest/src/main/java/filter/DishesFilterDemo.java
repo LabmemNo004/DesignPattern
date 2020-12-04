@@ -13,8 +13,6 @@ import java.util.ArrayList;
 public class DishesFilterDemo {
     /*
      * description: 过滤器模式演示代码
-     * date: 18:11 2020/12/1
-     * author: LabmemNo004
      *
      * @param
      * @return void

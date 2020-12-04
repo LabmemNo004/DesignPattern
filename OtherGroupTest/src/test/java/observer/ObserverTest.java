@@ -13,7 +13,7 @@ import entity.SportType;
 public class ObserverTest {
 
     @Test
-    public void observerTest(){
+    public void ObserverTest(){
 
         System.out.println("----------------测试设计模式：Observer 观察者模式----------------");
         

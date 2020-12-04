@@ -44,7 +44,7 @@ public class EventEntryForm {
                         return false;
                     }
                 }
-                break;
+                //break;
             }
         }
         return true;

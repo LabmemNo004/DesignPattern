@@ -10,7 +10,7 @@ import org.junit.Test;
 public class StateDemoTest {
 
     @Test
-    public void runStateDemo() {
+    public void StateTest() {
         System.out.println("----------------测试设计模式：State 状态模式 ----------------");
         
         /**

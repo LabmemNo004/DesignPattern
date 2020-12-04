@@ -11,16 +11,19 @@ import entity.Event;
 public class FacadeDemo {
 
     public static void facadeTest(){
-        Animal bird = new Bird("zhizhi");
-        Animal fish = new Fish("paopao");
-        Animal rabbit = new Rabbit("tiaotiao");
+        Animal bird = new Bird("Amy");
+        Animal fish = new Fish("Bob");
+        Animal rabbit = new Rabbit("Candy");
 
-        System.out.println("                                        [ RegisterForm : signUp() : 根据Athlete的eventToSignUp属性选择运动项目报名子系统进行报名 ]");
+        System.out.println("[ RegisterForm : signUp() : 根据Athlete的eventToSignUp属性选择运动项目报名子系统进行报名 ]");
+        System.out.println("bird "+bird.getName()+"报名:");
         RegisterForm registerForm1 = new RegisterForm(bird);   registerForm1.signUp();
+        System.out.println("fish "+fish.getName()+"报名:");
         RegisterForm registerForm2 = new RegisterForm(fish);   registerForm2.signUp();
+        System.out.println("rabbit "+rabbit.getName()+"报名:");
         RegisterForm registerForm3 = new RegisterForm(rabbit); registerForm3.signUp();
-
         rabbit.setEventToSignUp(Event.RUN);
+        System.out.println("rabbit "+rabbit.getName()+"报名:");
         RegisterForm registerForm4 = new RegisterForm(rabbit); registerForm4.signUp();
     }
 }

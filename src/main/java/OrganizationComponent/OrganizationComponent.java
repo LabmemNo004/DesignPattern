@@ -7,7 +7,9 @@ import Factory.Factory;
 import Worker.Attribute;
 import Worker.PowderToLiquidWorker;
 
-public abstract class OrganizationComponent {
+import java.io.Serializable;
+
+public abstract class OrganizationComponent implements Serializable {
     private String name;
 
     public OrganizationComponent(String name) {
